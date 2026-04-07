@@ -1586,12 +1586,19 @@ function OptionsPage() {
         </div>
       </section>
 
-      <CTASection
-        title="Ready to plan?"
-        description="Move from the option overview into the state you need so the service type connects to logistics, resources, and next steps."
-        primary={{ path: '/planning-hubs', label: 'Open Planning' }}
-        secondary={{ path: '/planning-hubs#future-planning', label: 'Planning Ahead' }}
-      />
+      <section className="section section-cta">
+        <div className="container">
+          <div className="cta-box">
+            <h2>Ready to plan?</h2>
+            <p>Move from the option overview into the state you need so the service type connects to logistics, resources, and next steps.</p>
+            <div className="cta-actions">
+              <Link to="/planning-hubs" className="cta-text-link">
+                Search for your state &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
