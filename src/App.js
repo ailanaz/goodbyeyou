@@ -60,38 +60,6 @@ const platformCards = [
   },
 ];
 
-const planningModes = [
-  {
-    id: 'future-planning',
-    label: 'Planning Ahead',
-    title: 'Making future arrangements',
-    description:
-      'Open the state that will shape your plans, then work through the options, logistics, provider paths, and questions that apply there.',
-    points: [
-      'See which alternative options are available there',
-      'Work through timing, providers, and official steps',
-      'Use Resources when process questions come up',
-    ],
-    searchPlaceholder: 'Enter the state you want to plan in',
-    helperLead: 'Want a broader service overview first?',
-    helperLink: { path: '/afterdeathguide', label: 'When Time Has Run Out' },
-  },
-  {
-    id: 'current-planning',
-    label: 'Planning Now',
-    title: 'Making arrangements for a recent loss',
-    description:
-      'Open the state where the service will be held so you can move into the local options, providers, documents, and next steps tied to a recent loss.',
-    points: [
-      'Use Resources for what to do first',
-      'Open state-specific planning and provider paths',
-      'Follow the paperwork, timing, and next steps that apply there',
-    ],
-    searchPlaceholder: 'Enter the state where the service will be held',
-    helperLead: 'Not sure where to start right now?',
-    helperLink: { path: '/resources', label: 'Open Resources' },
-  },
-];
 
 const optionPreviewCards = [
   {
@@ -714,11 +682,6 @@ const legalWhen = [
   },
 ];
 
-const sitemapItems = [
-  { path: '/funeraloptions', title: 'When You Have Time', description: 'Pre-plan alternative funeral options with state-specific search' },
-  { path: '/afterdeathguide', title: 'When Time Has Run Out', description: 'Immediate-need steps and state-specific next moves after a death' },
-  { path: '/resources', title: 'Resources', description: 'What to know and do when a death occurs' },
-];
 
 const navItems = [
   { path: '/funeraloptions', label: 'When You Have Time' },
@@ -943,61 +906,6 @@ function CTASection({ title, description, primary, secondary, note }) {
   );
 }
 
-function PlanningPathCard({ mode }) {
-  const [query, setQuery] = useState('');
-  const navigate = useNavigate();
-
-  const matchedHub = query.trim().length > 0
-    ? hubDirectory.find((hub) =>
-        hub.searchTerms.some((term) =>
-          term.toLowerCase() === query.trim().toLowerCase()
-        ) || hub.region.toLowerCase() === query.trim().toLowerCase()
-      )
-    : null;
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (matchedHub) {
-      navigate(`/states/${matchedHub.id}`);
-    }
-  };
-
-  return (
-    <div className="path-card anchor-card" id={mode.id}>
-      <div className="path-label">{mode.label}</div>
-      <h3>{mode.title}</h3>
-      <p>{mode.description}</p>
-      <ul className="path-list">
-        {mode.points.map((point) => (
-          <li key={point}>{point}</li>
-        ))}
-      </ul>
-      <div className="path-state-block">
-        <p className="path-state-label">Search your state</p>
-        <form className="path-state-search" onSubmit={handleSearch}>
-          <input
-            type="text"
-            className="state-search-input"
-            placeholder={mode.searchPlaceholder}
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <button type="submit" className="btn btn-primary" disabled={!matchedHub}>
-            Open State Planning
-          </button>
-        </form>
-        {query.trim().length > 0 && !matchedHub && (
-          <p className="state-search-no-match">No matching state found. Check spelling or try the full state name.</p>
-        )}
-        <div className="path-search-actions">
-          <p className="path-helper">
-            {mode.helperLead} <Link to={mode.helperLink.path}>{mode.helperLink.label}</Link>.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function StateSearchBlock({ placeholder, buttonLabel }) {
   const [query, setQuery] = useState('');
