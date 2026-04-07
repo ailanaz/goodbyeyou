@@ -74,7 +74,7 @@ const planningModes = [
     ],
     searchPlaceholder: 'Enter the state you want to plan in',
     helperLead: 'Want a broader service overview first?',
-    helperLink: { path: '/afterdeathguide', label: 'Explore alternative options' },
+    helperLink: { path: '/afterdeathguide', label: 'When Time Has Run Out' },
   },
   {
     id: 'current-planning',
@@ -536,7 +536,7 @@ const resourceCategories = [
       'What logistics may shape the decision',
       'What resources or providers may be needed next',
     ],
-    link: { path: '/funeraloptions', label: 'Open Planning ->' },
+    link: { path: '/funeraloptions', label: 'Search Your State ->' },
   },
   {
     title: 'Provider and service resources',
@@ -715,27 +715,24 @@ const legalWhen = [
 ];
 
 const sitemapItems = [
-  { path: '/funeraloptions', title: 'Planning', description: 'Open a state page for alternative options, logistics, and next steps' },
+  { path: '/funeraloptions', title: 'When You Have Time', description: 'Pre-plan alternative funeral options with state-specific search' },
+  { path: '/afterdeathguide', title: 'When Time Has Run Out', description: 'Immediate-need steps and state-specific next moves after a death' },
   { path: '/resources', title: 'Resources', description: 'What to know and do when a death occurs' },
-  { path: '/afterdeathguide', title: 'The Guide', description: 'Browse non-traditional service paths and how they work' },
 ];
 
 const navItems = [
-  { path: '/funeraloptions', label: 'Planning' },
-  { path: '/afterdeathguide', label: 'The Guide' },
+  { path: '/funeraloptions', label: 'When You Have Time' },
+  { path: '/afterdeathguide', label: 'When Time Has Run Out' },
 ];
 
-const utilityNavItems = [
-  { path: '/funeraloptions#future-planning', label: 'Planning Ahead' },
-  { path: '/funeraloptions#current-planning', label: 'Planning Now' },
-];
+const utilityNavItems = [];
 
 const desktopNavLeft = [
-  { path: '/funeraloptions', label: 'Planning' },
+  { path: '/funeraloptions', label: 'When You Have Time' },
 ];
 
 const desktopNavRight = [
-  { path: '/afterdeathguide', label: 'The Guide' },
+  { path: '/afterdeathguide', label: 'When Time Has Run Out' },
 ];
 
 function useDocumentTitle(title) {
@@ -1002,6 +999,46 @@ function PlanningPathCard({ mode }) {
   );
 }
 
+function StateSearchBlock({ placeholder, buttonLabel }) {
+  const [query, setQuery] = useState('');
+  const navigate = useNavigate();
+
+  const matchedHub = query.trim().length > 0
+    ? hubDirectory.find((hub) =>
+        hub.searchTerms.some((term) =>
+          term.toLowerCase() === query.trim().toLowerCase()
+        ) || hub.region.toLowerCase() === query.trim().toLowerCase()
+      )
+    : null;
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (matchedHub) {
+      navigate(`/states/${matchedHub.id}`);
+    }
+  };
+
+  return (
+    <div className="state-search-block">
+      <form className="path-state-search" onSubmit={handleSearch}>
+        <input
+          type="text"
+          className="state-search-input"
+          placeholder={placeholder || 'Enter a state name'}
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <button type="submit" className="btn btn-primary" disabled={!matchedHub}>
+          {buttonLabel || 'Open State Page'}
+        </button>
+      </form>
+      {query.trim().length > 0 && !matchedHub && (
+        <p className="state-search-no-match">No matching state found. Check spelling or try the full state name.</p>
+      )}
+    </div>
+  );
+}
+
 function Navigation() {
   const [navOpen, setNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -1107,7 +1144,7 @@ function Navigation() {
           ))}
           <li>
             <Link to="/funeraloptions" className="nav-mobile-cta">
-              Open Plan
+              Search Your State
             </Link>
           </li>
         </ul>
@@ -1134,24 +1171,27 @@ function Footer() {
             <h4>Start Here</h4>
             <ul>
               <li>
-                <Link to="/funeraloptions#future-planning">Planning Ahead</Link>
+                <Link to="/funeraloptions">When You Have Time</Link>
               </li>
               <li>
-                <Link to="/funeraloptions#current-planning">Planning Now</Link>
+                <Link to="/afterdeathguide">When Time Has Run Out</Link>
               </li>
               <li>
-                <Link to="/funeraloptions">Open a State Page</Link>
+                <Link to="/resources">The Guide</Link>
+              </li>
+              <li>
+                <Link to="/exploreoptions">Explore Your Options</Link>
               </li>
             </ul>
           </div>
           <div className="footer-col">
-            <h4>Main Pages</h4>
+            <h4>More</h4>
             <ul>
               <li>
-                <Link to="/funeraloptions">Planning</Link>
+                <Link to="/providers">Providers</Link>
               </li>
               <li>
-                <Link to="/afterdeathguide">The Guide</Link>
+                <Link to="/legal-resources">Legal Resources</Link>
               </li>
             </ul>
           </div>
@@ -1160,12 +1200,6 @@ function Footer() {
             <ul>
               <li>
                 <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/legal-resources">Legal Resources</Link>
-              </li>
-              <li>
-                <Link to="/providers">Providers</Link>
               </li>
               <li>
                 <PlaceholderAnchor>Privacy</PlaceholderAnchor>
@@ -1194,7 +1228,7 @@ function HomeAboutSection() {
         'Questions, timing, and next steps',
         'Provider and document pathways',
       ],
-      link: { path: '/funeraloptions#future-planning', label: 'Open Planning Ahead ->' },
+      link: { path: '/funeraloptions#future-planning', label: 'When You Have Time ->' },
     },
     {
       eyebrow: 'Planning now',
@@ -1207,7 +1241,7 @@ function HomeAboutSection() {
         'State-specific options and logistics',
         'Provider and document pathways',
       ],
-      link: { path: '/funeraloptions#current-planning', label: 'Open Planning Now ->' },
+      link: { path: '/funeraloptions#current-planning', label: 'When Time Has Run Out ->' },
     },
     {
       eyebrow: 'Support',
@@ -1241,23 +1275,6 @@ function HomeAboutSection() {
 
       <EditorialSections sections={sections} />
 
-      <section className="section section-map">
-        <div className="container">
-          <SectionIntro
-            eyebrow="Explore"
-            title="Where to go next."
-            subtitle="Move into the page that matches what you need most right now."
-          />
-          <div className="sitemap-grid">
-            {sitemapItems.map((item) => (
-              <Link to={item.path} className="sitemap-item" key={item.path}>
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }
@@ -1268,39 +1285,39 @@ function HomePage() {
 
   const homePathwayCards = [
     {
-      label: 'Planning Ahead',
-      title: 'Make your own plans before they are needed.',
+      label: 'When You Have Time',
+      title: 'Plan before the pressure starts.',
       description:
-        'Start with Plan when you want to open the state that shapes your options, timing, and next steps.',
-      path: '/funeraloptions#future-planning',
-      linkLabel: 'Open Planning Ahead',
+        'Search your state to see what alternative services are available, what the rules are, and who can help - all before the time comes.',
+      path: '/funeraloptions',
+      linkLabel: 'Start Pre-Planning',
       art: '/home-card-future.svg',
     },
     {
-      label: 'Planning Now',
-      title: 'Make arrangements after a death with clearer next steps.',
+      label: 'When Time Has Run Out',
+      title: 'Someone has died. Here is where to start.',
       description:
-        'Use Plan for the state where the service will be held and connect the work to resources, documents, and next steps.',
-      path: '/funeraloptions#current-planning',
-      linkLabel: 'Open Planning Now',
+        'Search your state for immediate-need steps, providers, documents, and next moves so you can act without guessing.',
+      path: '/afterdeathguide',
+      linkLabel: 'Get Started Now',
       art: '/home-card-current.svg',
     },
     {
-      label: 'Resources',
+      label: 'The Guide',
       title: 'Know what to do when a death occurs.',
       description:
         'Work through what to do first, who may need to be contacted, and what official steps may shape the next move.',
       path: '/resources',
-      linkLabel: 'Open Resources',
+      linkLabel: 'Open The Guide',
       art: '/home-card-resources.svg',
     },
     {
-      label: 'Alternative Options',
+      label: 'Explore Your Options',
       title: 'Compare non-traditional service paths.',
       description:
-        'Look at the service types people most often compare before moving into state-specific planning.',
-      path: '/afterdeathguide',
-      linkLabel: 'Open Alternative Options',
+        'See the alternative funeral service types people consider most, what each one involves, and what to keep in mind.',
+      path: '/exploreoptions',
+      linkLabel: 'View All Options',
       art: '/home-card-vault.svg',
     },
   ];
@@ -1330,12 +1347,12 @@ function HomePage() {
 
   const homeInfoCards = [
     {
-      eyebrow: 'Alternative Options',
+      eyebrow: 'Pre-Planning',
       title: 'Start with the kind of service you are considering.',
       description:
         'Home funeral, green burial, conservation burial, aquamation, natural organic reduction, whole-body donation, and other uncommon paths belong in the planning flow from the start.',
-      path: '/afterdeathguide',
-      linkLabel: 'View Alternative Options',
+      path: '/funeraloptions',
+      linkLabel: 'When You Have Time',
     },
     {
       eyebrow: 'Legal Resources',
@@ -1349,13 +1366,13 @@ function HomePage() {
 
   const homeActionCards = [
     {
-      title: 'Open Plan',
-      description: 'Open the state you need and begin there.',
+      title: 'When You Have Time',
+      description: 'Pre-plan alternative options by state.',
       path: '/funeraloptions',
     },
     {
-      title: 'Open Options',
-      description: 'Compare the service paths first.',
+      title: 'When Time Has Run Out',
+      description: 'Immediate steps and state-specific next moves.',
       path: '/afterdeathguide',
     },
     {
@@ -1383,8 +1400,8 @@ function HomePage() {
               from the first call to final arrangements.
             </p>
             <div className="home-hero-actions">
-              <Link to="/afterdeathguide" className="home-hero-link">
-                Explore Options &rarr;
+              <Link to="/funeraloptions" className="home-hero-link">
+                Search Your State &rarr;
               </Link>
             </div>
           </div>
@@ -1536,15 +1553,134 @@ function HomePage() {
 }
 
 function OptionsPage() {
-  useDocumentTitle('After-Death Guide - Alternative Funeral Options - GoodbyeYou');
-  useMetaDescription('Browse alternative after-death service types including home funeral, green burial, aquamation, natural organic reduction, and whole-body donation with details on how each option works.');
+  useDocumentTitle('When Time Has Run Out - Immediate After-Death Steps - GoodbyeYou');
+  useMetaDescription('Immediate steps after a death for alternative funeral arrangements. Search your state for 24-hour checklists, providers, documents, and next moves for home funeral, green burial, and more.');
+
+  const immediateSteps = [
+    {
+      number: '01',
+      title: 'Do not rush into a decision',
+      description:
+        'You are not required to call a funeral home immediately. In most states, you have time. Take a moment before committing to any service.',
+    },
+    {
+      number: '02',
+      title: 'Confirm the death has been pronounced',
+      description:
+        'A physician, hospice nurse, or coroner will need to officially pronounce the death. If the person died at home under hospice care, call the hospice team first.',
+    },
+    {
+      number: '03',
+      title: 'Search for your state',
+      description:
+        'Open your state page below to see what alternative services are allowed, what providers are available, and what documents you may need in the next 24 to 48 hours.',
+    },
+    {
+      number: '04',
+      title: 'Check if the person left any documented wishes',
+      description:
+        'Look for advance directives, disposition authorizations, or written instructions about the type of service they wanted. This shapes what happens next.',
+    },
+    {
+      number: '05',
+      title: 'Identify who has legal authority',
+      description:
+        'The next-of-kin or designated agent usually has authority over disposition. Confirm this early to avoid delays or disagreements.',
+    },
+    {
+      number: '06',
+      title: 'Contact providers that match the service path',
+      description:
+        'If the person wanted a home funeral, green burial, aquamation, or another alternative service, your state page will point you toward the right providers.',
+    },
+    {
+      number: '07',
+      title: 'Handle required paperwork',
+      description:
+        'Death certificates, burial or transit permits, and disposition authorizations may all need attention within specific timeframes. Your state page covers what applies there.',
+    },
+  ];
 
   return (
     <>
       <PageHero
-        eyebrow="Alternative Options"
-        title="Beyond the traditional."
-        subtitle="Use this overview to understand alternative funeral service types before moving into state-specific planning."
+        eyebrow="When Time Has Run Out"
+        title="Someone has died. Here is where to start."
+        subtitle="You do not have to figure this out alone. Search your state, follow the steps, and move at the pace that works."
+      />
+
+      <section className="section">
+        <div className="container">
+          <SectionIntro
+            title="Search for your state."
+            subtitle="Your state page will show available alternative services, providers, required documents, and the steps that apply where you are."
+          />
+          <StateSearchBlock
+            placeholder="Enter the state where the death occurred"
+            buttonLabel="Open State Page"
+          />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionIntro
+            title="What to do in the first 24 to 48 hours."
+            subtitle="These are the steps that most people need to work through right away. Your state page will fill in the specifics."
+          />
+          <div className="option-detail-list">
+            {immediateSteps.map((step) => (
+              <div className="option-detail" key={step.number}>
+                <div className="option-detail-header">
+                  <div className="option-number">{step.number}</div>
+                  <h2>{step.title}</h2>
+                </div>
+                <div className="option-detail-body">
+                  <p>{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionIntro
+            title="What your state page covers."
+            subtitle="Once you open your state, everything you need will be in one place."
+          />
+          <div className="features-grid">
+            {planningHubFeatures.map((feature) => (
+              <div className="feature-card" key={feature.title}>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTASection
+        title="Not dealing with an immediate loss?"
+        description="If you are planning ahead for yourself or someone else, use the pre-planning path instead."
+        primary={{ path: '/funeraloptions', label: 'When You Have Time' }}
+        secondary={{ path: '/resources', label: 'Open Resources' }}
+      />
+    </>
+  );
+}
+
+function ExploreOptionsPage() {
+  useDocumentTitle('Explore Alternative Funeral Options - GoodbyeYou');
+  useMetaDescription('Browse alternative funeral service types including home funeral, green burial, aquamation, natural organic reduction, and whole-body donation with details on what each involves.');
+
+  return (
+    <>
+      <PageHero
+        eyebrow="Explore Your Options"
+        title="Alternative funeral services at a glance."
+        subtitle="See the service types people consider most, what each one involves, and what to keep in mind before choosing a path."
       />
 
       <section className="section">
@@ -1600,40 +1736,101 @@ function OptionsPage() {
         </div>
       </section>
 
-      <section className="section section-cta">
-        <div className="container">
-          <div className="cta-box">
-            <h2>Ready to plan?</h2>
-            <p>Move from the option overview into the state you need so the service type connects to logistics, resources, and next steps.</p>
-            <div className="cta-actions">
-              <Link to="/funeraloptions" className="cta-text-link">
-                Search for your state &rarr;
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        title="Ready to search your state?"
+        description="Open the state page that matches where your arrangements will take place."
+        primary={{ path: '/funeraloptions', label: 'When You Have Time' }}
+        secondary={{ path: '/afterdeathguide', label: 'When Time Has Run Out' }}
+      />
     </>
   );
 }
 
 function PlanningHubsPage() {
-  useDocumentTitle('Funeral Options by State - Alternative Planning - GoodbyeYou');
-  useMetaDescription('Search for alternative funeral options by state. Open your state page to see available services, providers, documents, timing, and next steps for non-traditional arrangements.');
+  useDocumentTitle('When You Have Time - Pre-Plan Alternative Funeral Options - GoodbyeYou');
+  useMetaDescription('Pre-plan alternative funeral options by state. Search your state to see available services, rules, providers, and resources for home funeral, green burial, aquamation, and more.');
+
+  const prePlanSteps = [
+    {
+      number: '01',
+      title: 'Search for your state',
+      description:
+        'Open the state page where you want your arrangements to take place. Each state has different rules, options, and providers.',
+    },
+    {
+      number: '02',
+      title: 'See what is available there',
+      description:
+        'Your state page will show which alternative services are allowed, including home funeral, green burial, aquamation, natural organic reduction, and whole-body donation.',
+    },
+    {
+      number: '03',
+      title: 'Review rules and requirements',
+      description:
+        'See state-specific regulations, permits, timelines, funeral director involvement requirements, and documentation that may apply.',
+    },
+    {
+      number: '04',
+      title: 'Find providers and resources',
+      description:
+        'Connect with providers, facilities, and organizations that support the service type you are considering in that state.',
+    },
+    {
+      number: '05',
+      title: 'Work through the legal side',
+      description:
+        'Review advance directives, disposition authorizations, and any legal steps that need to be handled before the time comes.',
+    },
+  ];
 
   return (
     <>
       <PageHero
-        eyebrow="Planning"
-        title="Choose a path and open your state."
-        subtitle="Start with planning ahead or planning now, then open the state page you need."
+        eyebrow="When You Have Time"
+        title="Plan before the pressure starts."
+        subtitle="Search your state to see what alternative services are available, what the rules are, and who can help."
       />
 
       <section className="section">
         <div className="container">
           <SectionIntro
-            title="What you can work through here."
-            subtitle="Each state page brings together alternative options, logistics, resources, providers, documents, and official steps in one place."
+            title="Start with your state."
+            subtitle="Type the state where you want your arrangements to happen. Your state page will bring together everything you need in one place."
+          />
+          <StateSearchBlock
+            placeholder="Enter the state you want to plan in"
+            buttonLabel="Open State Page"
+          />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionIntro
+            title="How to use your state page."
+            subtitle="Each state page covers the full picture so you can move through it at your own pace."
+          />
+          <div className="option-detail-list">
+            {prePlanSteps.map((step) => (
+              <div className="option-detail" key={step.number}>
+                <div className="option-detail-header">
+                  <div className="option-number">{step.number}</div>
+                  <h2>{step.title}</h2>
+                </div>
+                <div className="option-detail-body">
+                  <p>{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionIntro
+            title="What your state page covers."
+            subtitle="Everything is organized so you can focus on what matters to you without jumping between sites."
           />
           <div className="features-grid">
             {planningHubFeatures.map((feature) => (
@@ -1646,25 +1843,10 @@ function PlanningHubsPage() {
         </div>
       </section>
 
-      <section className="section section-paths" id="planning-modes">
-        <div className="container">
-          <SectionIntro
-            eyebrow="Choose Your Path"
-            title="Future planning or recent loss."
-            subtitle="Pick the path that matches your situation, then go straight into the state page you need."
-          />
-          <div className="paths-grid">
-            {planningModes.map((mode) => (
-              <PlanningPathCard mode={mode} key={mode.id} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <CTASection
-        title="Need another place to start?"
-        description="Use Resources for what to do after a death, or explore the service types before you choose a path."
-        primary={{ path: '/afterdeathguide', label: 'Explore Options' }}
+        title="Already dealing with a loss?"
+        description="If someone has died and you need to act now, use the immediate-need path instead."
+        primary={{ path: '/afterdeathguide', label: 'When Time Has Run Out' }}
         secondary={{ path: '/resources', label: 'Open Resources' }}
       />
     </>
@@ -1786,7 +1968,7 @@ function ResourcesPage() {
       <CTASection
         title="Find what you need."
         description="Open the state you need for local planning, or use legal resources when forms, authority, or document access become part of the work."
-        primary={{ path: '/funeraloptions', label: 'Open Planning' }}
+        primary={{ path: '/funeraloptions', label: 'Search Your State' }}
         secondary={{ path: '/legal-resources', label: 'Legal Resources' }}
       />
     </>
@@ -1822,7 +2004,7 @@ function ProvidersPage() {
         'See which services are active where you are',
         'Connect provider choices back to logistics',
       ],
-      link: { path: '/funeraloptions', label: 'Open Planning ->' },
+      link: { path: '/funeraloptions', label: 'Search Your State ->' },
     },
     {
       eyebrow: 'Specialized services',
@@ -1867,11 +2049,11 @@ function ProvidersPage() {
           <div className="more-box">
             <h2 className="section-title">Provider availability changes by state.</h2>
             <p>
-              Availability, legality, and service mix vary by state. Use Planning to narrow
+              Availability, legality, and service mix vary by state. Search your state to narrow
               the provider list to what is actually possible where you are.
             </p>
             <Link to="/funeraloptions" className="btn btn-outline-dark more-link-button">
-              Open Planning
+              Search Your State
             </Link>
           </div>
         </div>
@@ -1880,8 +2062,8 @@ function ProvidersPage() {
       <CTASection
         title="Start connecting."
         description="Open your state for local providers, or compare options before you choose a path."
-        primary={{ path: '/funeraloptions', label: 'Open Planning' }}
-        secondary={{ path: '/afterdeathguide', label: 'Explore Options' }}
+        primary={{ path: '/funeraloptions', label: 'Search Your State' }}
+        secondary={{ path: '/afterdeathguide', label: 'When Time Has Run Out' }}
       />
     </>
   );
@@ -1903,7 +2085,7 @@ function LegalResourcesPage() {
         legalFeatures[3].title,
         legalWhen[1].title,
       ],
-      link: { path: '/funeraloptions', label: 'Open Planning ->' },
+      link: { path: '/funeraloptions', label: 'Search Your State ->' },
     },
     {
       eyebrow: 'Authority',
@@ -1973,7 +2155,7 @@ function LegalResourcesPage() {
       <CTASection
         title="Start with your state."
         description="Open your state to see what applies where you are, then come back here for the document and authority side of the process."
-        primary={{ path: '/funeraloptions', label: 'Open Planning' }}
+        primary={{ path: '/funeraloptions', label: 'Search Your State' }}
         secondary={{ path: '/resources', label: 'All Resources' }}
       />
     </>
@@ -1989,6 +2171,7 @@ function AppLayout() {
         <Route path="/funeraloptions" element={<PlanningHubsPage />} />
         <Route path="/states/:hubId" element={<PlanningHubDetailPage />} />
         <Route path="/afterdeathguide" element={<OptionsPage />} />
+        <Route path="/exploreoptions" element={<ExploreOptionsPage />} />
         <Route path="/resources" element={<ResourcesPage />} />
         <Route path="/providers" element={<ProvidersPage />} />
         <Route path="/legal-resources" element={<LegalResourcesPage />} />

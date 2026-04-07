@@ -5,8 +5,8 @@ Alternative funeral planning resources with state-specific options, providers, a
 ## Pages
 
 - `/` - Home
-- `/funeraloptions` - Planning (state search, planning paths)
-- `/afterdeathguide` - The Guide (alternative service types)
+- `/funeraloptions` - When You Have Time (pre-planning with state search)
+- `/afterdeathguide` - When Time Has Run Out (immediate-need steps with state search)
 - `/states/[state]` - State-specific planning pages
 - `/resources` - After-death resources
 - `/providers` - Provider directory

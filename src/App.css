@@ -1002,6 +1002,11 @@ ul { list-style: none; }
     text-decoration: none;
 }
 
+.state-search-block {
+    max-width: 560px;
+    margin: 0 auto 24px;
+}
+
 .path-state-search {
     display: flex;
     flex-direction: column;
