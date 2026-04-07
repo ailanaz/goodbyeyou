@@ -722,8 +722,7 @@ const sitemapItems = [
 
 const navItems = [
   { path: '/planning-hubs', label: 'Planning' },
-  { path: '/resources', label: 'Resources' },
-  { path: '/options', label: 'Alternative Options' },
+  { path: '/options', label: 'The Guide' },
 ];
 
 const utilityNavItems = [
@@ -733,11 +732,10 @@ const utilityNavItems = [
 
 const desktopNavLeft = [
   { path: '/planning-hubs', label: 'Planning' },
-  { path: '/resources', label: 'Resources' },
 ];
 
 const desktopNavRight = [
-  { path: '/options', label: 'Alternative Options' },
+  { path: '/options', label: 'The Guide' },
 ];
 
 function useDocumentTitle(title) {
@@ -1141,10 +1139,7 @@ function Footer() {
                 <Link to="/planning-hubs">Planning</Link>
               </li>
               <li>
-                <Link to="/resources">Resources</Link>
-              </li>
-              <li>
-                <Link to="/options">Alternative Options</Link>
+                <Link to="/options">The Guide</Link>
               </li>
             </ul>
           </div>
