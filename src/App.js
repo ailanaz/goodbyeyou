@@ -1370,8 +1370,8 @@ function HomePage() {
               from the first call to final arrangements.
             </p>
             <div className="home-hero-actions">
-              <Link to="/planning-hubs" className="btn btn-primary">
-                Open Plan
+              <Link to="/options" className="home-hero-link">
+                Explore Options &rarr;
               </Link>
             </div>
           </div>
