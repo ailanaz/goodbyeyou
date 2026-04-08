@@ -3044,3 +3044,88 @@ ul { list-style: none; }
         padding: 48px 20px;
     }
 }
+
+/* ========================================
+   Interactive US Map
+   ======================================== */
+
+.us-map-wrapper {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.us-map-container {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: 24px 20px 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+.us-map-svg {
+    width: 100%;
+    height: auto;
+    stroke: var(--color-border);
+    stroke-width: 0.75;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.us-map-state {
+    transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+.us-map-state--unavailable {
+    fill: var(--color-surface-alt);
+    cursor: default;
+}
+
+.us-map-state--unavailable:hover {
+    fill: var(--color-border-light);
+}
+
+.us-map-state--available {
+    fill: var(--color-primary);
+    stroke: var(--color-primary-dark);
+    cursor: pointer;
+}
+
+.us-map-state--available:hover {
+    fill: var(--color-primary-dark);
+    stroke: var(--color-primary-dark);
+}
+
+.us-map-tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--color-primary-dark);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.us-map-hint {
+    margin-top: 12px;
+    font-size: 0.825rem;
+    color: var(--color-text-light);
+}
+
+@media (max-width: 600px) {
+    .us-map-container {
+        padding: 16px 12px 12px;
+    }
+
+    .us-map-tooltip {
+        display: none;
+    }
+}
