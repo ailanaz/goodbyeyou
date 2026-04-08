@@ -1273,18 +1273,33 @@ function HomePage() {
 
   const homeActionCards = [
     {
-      title: 'When You Have Time',
-      description: 'Pre-plan alternative options by state.',
+      title: 'Planning ahead',
+      description: 'Plan before the arrangements are needed.',
+      bullets: [
+        'Alternative options tied to the state',
+        'Questions, timing, and next steps',
+        'Provider and document pathways',
+      ],
       path: '/funeralplanning',
     },
     {
-      title: 'When Time Has Run Out',
-      description: 'Immediate steps and state-specific next moves.',
+      title: 'Planning now',
+      description: 'Work through a recent loss with clearer direction.',
+      bullets: [
+        'What to do first',
+        'State-specific options and logistics',
+        'Provider and document pathways',
+      ],
       path: '/afterdeathguide',
     },
     {
-      title: 'Open Resources',
-      description: 'What to do and where to start when a death occurs.',
+      title: 'Support',
+      description: 'Keep the process moving when questions come up.',
+      bullets: [
+        'What to do when a death occurs',
+        'Legal and official resources',
+        'Provider paths when needed',
+      ],
       path: '/resources',
     },
   ];
@@ -1379,6 +1394,13 @@ function HomePage() {
               <Link to={card.path} className="home-action-card" key={card.title}>
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>
+                {card.bullets && (
+                  <ul className="home-action-bullets">
+                    {card.bullets.map((b) => (
+                      <li key={b}>{b}</li>
+                    ))}
+                  </ul>
+                )}
               </Link>
             ))}
           </div>
