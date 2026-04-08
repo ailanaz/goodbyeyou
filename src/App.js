@@ -1207,23 +1207,7 @@ function HomeAboutSection() {
   ];
 
   return (
-    <>
-      <section className="section">
-        <div className="container">
-          <div className="about-statement">
-            <h2 className="section-title">What GoodbyeYou helps with.</h2>
-            <p className="about-lead">
-              Alternative funeral planning often means moving between service choices, state rules,
-              logistics, providers, documents, and next steps. GoodbyeYou keeps those pieces close
-              enough together that decisions can keep moving.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <EditorialSections sections={sections} />
-
-    </>
+    <EditorialSections sections={sections} />
   );
 }
 
@@ -1384,19 +1368,6 @@ function HomePage() {
                 Open Plan
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section home-band">
-        <div className="container">
-          <div className="home-band-box">
-            <p className="section-eyebrow">GoodbyeYou</p>
-            <h2>Alternative funeral services resource and support.</h2>
-            <p>
-              State-specific planning and real resources so the process is easier to carry
-              out.
-            </p>
           </div>
         </div>
       </section>
