@@ -508,6 +508,7 @@ ul { list-style: none; }
     font-size: 1.62rem;
     font-weight: 500;
     line-height: 1.2;
+    min-height: 3.89rem;
     margin-bottom: 14px;
     color: #fff;
 }

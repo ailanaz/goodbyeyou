@@ -1236,7 +1236,7 @@ function HomePage() {
       label: 'When You Have Time',
       title: <>State-specific resources for planning<br />uncommon after-death services.</>,
       description:
-        'Search your state to see what alternative services are available, what the rules are, and who can help - all before the time comes.',
+        'Explore available options, state regulations, and local providers.',
       path: '/funeralplanning',
       linkLabel: 'Start Pre-Planning',
       art: '/time.png',
@@ -1245,7 +1245,7 @@ function HomePage() {
       label: 'When Time Has Run Out',
       title: 'State-specific logistics for uncommon services during a loss.',
       description:
-        'Search your state for immediate-need steps, providers, documents, and next moves so you can act without guessing.',
+        'Navigate available options, state regulations, and local resources.',
       path: '/afterdeathguide',
       linkLabel: 'Get Started Now',
       art: '/no-time.png',
@@ -1477,7 +1477,7 @@ function OptionsPage() {
       <PageHero
         eyebrow="When Time Has Run Out"
         title="State-specific logistics for uncommon services during a loss."
-        subtitle="You do not have to figure this out alone. Search your state, follow the steps, and move at the pace that works."
+        subtitle="Navigate available options, state regulations, and local resources."
       />
 
       <section className="section">
@@ -1658,7 +1658,7 @@ function PlanningHubsPage() {
       <PageHero
         eyebrow="When You Have Time"
         title={<>State-specific resources for planning<br />uncommon after-death services.</>}
-        subtitle="Search your state to see what alternative services are available, what the rules are, and who can help."
+        subtitle="Explore available options, state regulations, and local providers."
       />
 
       <section className="section">
