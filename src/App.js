@@ -1275,11 +1275,6 @@ function HomePage() {
               and clear steps for both pre-planning and immediate-need scenarios,<br />
               from the first call to final arrangements.
             </p>
-            <div className="home-hero-actions">
-              <Link to="/exploreoptions" className="home-hero-link">
-                Explore Your Options &rarr;
-              </Link>
-            </div>
           </div>
         </div>
       </section>
