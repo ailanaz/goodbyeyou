@@ -1341,27 +1341,6 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section home-options-panel" id="services">
-        <div className="container">
-          <div className="home-frame">
-            <SectionIntro
-              eyebrow="Alternative Services"
-              title="Alternative services people plan around."
-              subtitle="Start with the service path, then go into Plan for the state-specific rules, logistics, providers, and next steps."
-            />
-            <div className="home-options-grid">
-              {homeOptionCards.map((card) => (
-                <div className="home-option-card" key={card.title}>
-                  <div className="home-option-number">{card.number}</div>
-                  <h3>{card.title}</h3>
-                  <p>{card.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="section home-plan-preview" id="support">
         <div className="container">
           <div className="home-plan-preview-shell">
@@ -1390,41 +1369,6 @@ function HomePage() {
                 Open Plan
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section home-resources-callout">
-        <div className="container">
-          <div className="home-resources-card">
-            <p className="section-eyebrow">Resources</p>
-            <h2 className="section-title">
-              When a death occurs, start with the information people usually need first.
-            </h2>
-            <p className="section-subtitle">
-              Resources helps with what to do first, who may need to be contacted, which
-              documents may matter, and how the next steps connect back into planning.
-            </p>
-            <Link to="/resources" className="btn btn-primary">
-              Open Resources
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section home-info">
-        <div className="container">
-          <div className="home-info-grid">
-            {homeInfoCards.map((card) => (
-              <div className="home-info-card" key={card.title}>
-                <p className="section-eyebrow">{card.eyebrow}</p>
-                <h2>{card.title}</h2>
-                <p>{card.description}</p>
-                <Link to={card.path} className="btn btn-outline-dark">
-                  {card.linkLabel}
-                </Link>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -1597,7 +1541,6 @@ function ExploreOptionsPage() {
             {optionDetails.map((option) => (
               <div className="option-detail" id={option.id} key={option.id}>
                 <div className="option-detail-header">
-                  <div className="option-number">{option.number}</div>
                   <h2>{option.title}</h2>
                 </div>
                 <div className="option-detail-body">
