@@ -61,87 +61,6 @@ const platformCards = [
 ];
 
 
-const optionPreviewCards = [
-  {
-    number: '01',
-    title: 'Home Funeral',
-    description: 'Family-directed care at home with preparation, visitation, and vigil before final disposition.',
-  },
-  {
-    number: '02',
-    title: 'Green Burial',
-    description: 'Burial without embalming, using biodegradable containers in natural settings.',
-  },
-  {
-    number: '03',
-    title: 'Conservation Burial',
-    description: 'Green burial within protected conservation areas that fund land preservation.',
-  },
-  {
-    number: '04',
-    title: 'Aquamation',
-    description: 'Water-based cremation using alkaline hydrolysis instead of flame.',
-  },
-  {
-    number: '05',
-    title: 'Natural Organic Reduction',
-    description: 'Natural processes transform the body into nutrient-rich soil over several weeks.',
-  },
-  {
-    number: '06',
-    title: 'Whole-Body Donation',
-    description: 'Donating the body to medical science for education, research, or surgical training.',
-  },
-  {
-    number: '07',
-    title: 'Burial at Sea',
-    description:
-      'Full-body burial or ash scattering in open water, following EPA and Coast Guard requirements.',
-  },
-  {
-    number: '08',
-    title: 'Ash Scattering',
-    description:
-      'Scattering ashes at sea, on private land, or in a place that mattered to the person.',
-  },
-  {
-    number: '09',
-    title: 'Tree and Nature-Based Memorials',
-    description:
-      'Biodegradable urns, tree planting, and living memorial options connected to cremated remains.',
-  },
-  {
-    number: '10',
-    title: 'Memorial Diamonds and Gemstones',
-    description:
-      'Diamonds or gemstones created from ashes or hair as a lasting memorial keepsake.',
-  },
-  {
-    number: '11',
-    title: 'Ashes in Art or Keepsakes',
-    description:
-      'Ashes incorporated into jewelry, glass, pottery, or other keepsake pieces.',
-  },
-  {
-    number: '12',
-    title: 'Celebration of Life',
-    description:
-      'A service centered more on the person, their story, and how they lived than on a traditional funeral format.',
-  },
-  {
-    number: '13',
-    title: 'Space Burials',
-    description:
-      'A symbolic portion of ashes sent into space through a memorial launch service.',
-  },
-  {
-    number: '14',
-    title: 'Digital Memorials',
-    description:
-      'Online memorial spaces that hold stories, photos, videos, messages, and tribute material.',
-  },
-];
-
 const optionDetails = [
   {
     id: 'home-funeral',
@@ -1351,8 +1270,6 @@ function HomePage() {
     },
   ];
 
-  const homeOptionCards = optionPreviewCards.slice(0, 4);
-
   const homeGuidanceItems = [
     {
       title: 'Open a state page',
@@ -1371,25 +1288,6 @@ function HomePage() {
       description:
         'Use resources, legal references, and provider paths when questions around the process come up.',
       icon: platformCards[1].icon,
-    },
-  ];
-
-  const homeInfoCards = [
-    {
-      eyebrow: 'Pre-Planning',
-      title: 'Start with the kind of service you are considering.',
-      description:
-        'Home funeral, green burial, conservation burial, aquamation, natural organic reduction, whole-body donation, and other uncommon paths belong in the planning flow from the start.',
-      path: '/funeralplanning',
-      linkLabel: 'When You Have Time',
-    },
-    {
-      eyebrow: 'Legal Resources',
-      title: 'Use the paperwork and authority side when it matters.',
-      description:
-        'Use legal and official resources when forms, authority, document access, or state requirements start shaping what can happen next.',
-      path: '/legal-resources',
-      linkLabel: 'Open Legal Resources',
     },
   ];
 
