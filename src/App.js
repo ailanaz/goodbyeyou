@@ -757,7 +757,13 @@ function ResourceArtwork({ story }) {
       <div className="editorial-art-frame">
         <span className="editorial-art-label">{story.eyebrow}</span>
         <strong className="editorial-art-title">{story.title}</strong>
-        <div className="editorial-art-graphic">{illustrations[story.variant]}</div>
+        {story.image ? (
+          <div className="editorial-art-graphic">
+            <img src={story.image} alt={story.eyebrow} className="editorial-art-image" />
+          </div>
+        ) : (
+          <div className="editorial-art-graphic">{illustrations[story.variant]}</div>
+        )}
         <div className="editorial-art-tags">
           {commonTags.map((item) => (
             <span className="editorial-art-tag" key={item}>
@@ -780,7 +786,7 @@ function EditorialSections({ sections }) {
               <div className="editorial-copy">
                 <p className="editorial-kicker">{story.eyebrow}</p>
                 <h2 className="editorial-title">{story.title}</h2>
-                <p className="editorial-body">{story.description}</p>
+                {story.description && <p className="editorial-body">{story.description}</p>}
                 <ul className="editorial-points">
                   {story.items.map((item) => (
                     <li key={item}>{item}</li>
@@ -1166,11 +1172,11 @@ function Footer() {
 function HomeAboutSection() {
   const sections = [
     {
-      eyebrow: 'Planning ahead',
+      eyebrow: 'When You Have Time',
       variant: 'education',
-      title: 'Plan before the arrangements are needed.',
-      description:
-        'Use Plan to open the state that matters to you and work through alternative service options, logistics, provider paths, and official steps before they need to be used.',
+      image: '/time.png',
+      title: 'State-specific resources for planning uncommon after-death services.',
+      description: '',
       items: [
         'Alternative options tied to the state',
         'Questions, timing, and next steps',
@@ -1179,11 +1185,11 @@ function HomeAboutSection() {
       link: { path: '/funeralplanning#future-planning', label: 'When You Have Time ->' },
     },
     {
-      eyebrow: 'Planning now',
+      eyebrow: 'When Time Has Run Out',
       variant: 'state',
-      title: 'Work through a recent loss with clearer direction.',
-      description:
-        'Use GoodbyeYou after a death to move from what happened first into the state page, the option path, and the steps shaping the arrangement.',
+      image: '/no-time.png',
+      title: 'State-specific logistics for uncommon services during a loss.',
+      description: '',
       items: [
         'What to do first',
         'State-specific options and logistics',
@@ -1192,11 +1198,11 @@ function HomeAboutSection() {
       link: { path: '/funeralplanning#current-planning', label: 'When Time Has Run Out ->' },
     },
     {
-      eyebrow: 'Support',
+      eyebrow: 'Know the Steps',
       variant: 'providers',
-      title: 'Keep the process moving when questions come up.',
-      description:
-        'Resources, legal references, and provider paths help when paperwork, timing, authority, or coordination start shaping what can happen next.',
+      image: '/questions.png',
+      title: 'Know what to do when a loss occurs.',
+      description: '',
       items: [
         'What to do when a death occurs',
         'Legal and official resources',
@@ -1329,7 +1335,7 @@ function HomePage() {
               <img src="/home-plan-scene.svg" alt="" />
             </div>
             <div className="home-plan-preview-copy">
-              <p className="section-eyebrow">Planning</p>
+              <p className="section-eyebrow">Navigate the Process</p>
               <h2 className="section-title">Open the state page you need.</h2>
               <p className="section-subtitle">
                 Planning is where state-specific alternative funeral planning lives. It keeps the

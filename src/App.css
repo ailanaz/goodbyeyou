@@ -1439,6 +1439,14 @@ ul { list-style: none; }
     max-height: 172px;
 }
 
+.editorial-art-image {
+    width: 100%;
+    height: auto;
+    max-height: 172px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
 .editorial-art-tags {
     display: flex;
     flex-wrap: wrap;
