@@ -1551,7 +1551,7 @@ function PlanningHubsPage() {
         <div className="container">
           <SectionIntro
             title="Search Your State"
-            subtitle="Use the map or the search box below to open the state page where you want your arrangements to happen."
+            subtitle="Search or select a state to view uncommon service logistics and resources."
           />
           <USMapInteractive />
           <StateSearchBlock
