@@ -1199,7 +1199,7 @@ function HomePage() {
         'Search your state to see what alternative services are available, what the rules are, and who can help - all before the time comes.',
       path: '/funeraloptions',
       linkLabel: 'Start Pre-Planning',
-      art: '/home-card-future.svg',
+      art: '/time.png',
     },
     {
       label: 'When Time Has Run Out',
@@ -1208,7 +1208,7 @@ function HomePage() {
         'Search your state for immediate-need steps, providers, documents, and next moves so you can act without guessing.',
       path: '/afterdeathguide',
       linkLabel: 'Get Started Now',
-      art: '/home-card-current.svg',
+      art: '/no-time.png',
     },
     {
       label: 'The Guide',
@@ -1217,7 +1217,7 @@ function HomePage() {
         'Work through what to do first, who may need to be contacted, and what official steps may shape the next move.',
       path: '/resources',
       linkLabel: 'Open The Guide',
-      art: '/home-card-resources.svg',
+      art: '/questions.png',
     },
     {
       label: 'Explore Your Options',
@@ -1226,7 +1226,7 @@ function HomePage() {
         'See the alternative funeral service types people consider most, what each one involves, and what to keep in mind.',
       path: '/exploreoptions',
       linkLabel: 'View All Options',
-      art: '/home-card-vault.svg',
+      art: '/running-time.png',
     },
   ];
 
