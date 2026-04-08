@@ -758,19 +758,29 @@ function ResourceArtwork({ story }) {
         <span className="editorial-art-label">{story.eyebrow}</span>
         <strong className="editorial-art-title">{story.title}</strong>
         {story.image ? (
-          <div className="editorial-art-graphic">
-            <img src={story.image} alt={story.eyebrow} className="editorial-art-image" />
-          </div>
+          <>
+            <div className="editorial-art-graphic">
+              <img src={story.image} alt={story.imageLabel || story.eyebrow} className="editorial-art-image" />
+            </div>
+            {story.imageLabel && <span className="editorial-art-label">{story.imageLabel}</span>}
+            {story.imageLink && (
+              <Link to={story.imageLink.path} className="editorial-art-img-link">
+                {story.imageLink.label} &rarr;
+              </Link>
+            )}
+          </>
         ) : (
-          <div className="editorial-art-graphic">{illustrations[story.variant]}</div>
+          <>
+            <div className="editorial-art-graphic">{illustrations[story.variant]}</div>
+            <div className="editorial-art-tags">
+              {commonTags.map((item) => (
+                <span className="editorial-art-tag" key={item}>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </>
         )}
-        <div className="editorial-art-tags">
-          {commonTags.map((item) => (
-            <span className="editorial-art-tag" key={item}>
-              {item}
-            </span>
-          ))}
-        </div>
       </div>
     </div>
   );
@@ -1172,9 +1182,11 @@ function Footer() {
 function HomeAboutSection() {
   const sections = [
     {
-      eyebrow: 'When You Have Time',
+      eyebrow: 'Planning ahead',
       variant: 'education',
       image: '/time.png',
+      imageLabel: 'When You Have Time',
+      imageLink: { path: '/funeralplanning', label: 'Start Pre-Planning' },
       title: 'State-specific resources for planning uncommon after-death services.',
       description: '',
       items: [
@@ -1185,9 +1197,11 @@ function HomeAboutSection() {
       link: { path: '/funeralplanning#future-planning', label: 'When You Have Time ->' },
     },
     {
-      eyebrow: 'When Time Has Run Out',
+      eyebrow: 'Planning now',
       variant: 'state',
       image: '/no-time.png',
+      imageLabel: 'When Time Has Run Out',
+      imageLink: { path: '/afterdeathguide', label: 'Get Started Now' },
       title: 'State-specific logistics for uncommon services during a loss.',
       description: '',
       items: [
@@ -1198,9 +1212,11 @@ function HomeAboutSection() {
       link: { path: '/funeralplanning#current-planning', label: 'When Time Has Run Out ->' },
     },
     {
-      eyebrow: 'Know the Steps',
+      eyebrow: 'Support',
       variant: 'providers',
       image: '/questions.png',
+      imageLabel: 'Know the Steps',
+      imageLink: { path: '/resources', label: 'Navigate the Steps' },
       title: 'Know what to do when a loss occurs.',
       description: '',
       items: [
@@ -1220,41 +1236,6 @@ function HomeAboutSection() {
 function HomePage() {
   useDocumentTitle('GoodbyeYou - Alternative Funeral Planning Resources');
   useMetaDescription('Find alternative funeral options by state, including home funeral, green burial, aquamation, and other non-traditional after-death services with clear next steps.');
-
-  const homePathwayCards = [
-    {
-      label: 'When You Have Time',
-      title: <>State-specific resources for planning<br />uncommon after-death services.</>,
-      description: '',
-      path: '/funeralplanning',
-      linkLabel: 'Start Pre-Planning',
-      art: '/time.png',
-    },
-    {
-      label: 'When Time Has Run Out',
-      title: 'State-specific logistics for uncommon services during a loss.',
-      description: '',
-      path: '/afterdeathguide',
-      linkLabel: 'Get Started Now',
-      art: '/no-time.png',
-    },
-    {
-      label: 'Know the Steps',
-      title: 'Know what to do when a loss occurs.',
-      description: '',
-      path: '/resources',
-      linkLabel: 'Open Know the Steps',
-      art: '/questions.png',
-    },
-    {
-      label: 'Explore Your Options',
-      title: 'Explore uncommon service options.',
-      description: '',
-      path: '/exploreoptions',
-      linkLabel: 'View All Options',
-      art: '/running-time.png',
-    },
-  ];
 
   const homeGuidanceItems = [
     {
@@ -1303,27 +1284,18 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section home-pathways" id="start">
+      <section className="section home-intro" id="start">
         <div className="container">
-          <div className="home-pathways-grid">
-            {homePathwayCards.map((card) => (
-              <Link
-                to={card.path}
-                className="home-pathway-card"
-                key={card.title}
-              >
-                <div
-                  className="home-pathway-media"
-                  style={{ backgroundImage: `linear-gradient(180deg, rgba(56, 59, 91, 0.08) 0%, rgba(56, 59, 91, 0.9) 100%), url(${card.art})` }}
-                />
-                <div className="home-pathway-content">
-                  <div className="home-pathway-label">{card.label}</div>
-                  <h2>{card.title}</h2>
-                  {card.description && <p>{card.description}</p>}
-                  <span className="home-pathway-link">{card.linkLabel}</span>
-                </div>
-              </Link>
-            ))}
+          <div className="home-intro-box">
+            <p className="section-eyebrow">GoodbyeYou</p>
+            <h2>Alternative funeral services resource and support.</h2>
+            <p>
+              State-specific planning and real resources so the process is easier to carry
+              out.
+            </p>
+            <Link to="/exploreoptions" className="home-intro-link">
+              Explore Alternative Service Options &rarr;
+            </Link>
           </div>
         </div>
       </section>
@@ -1356,19 +1328,6 @@ function HomePage() {
                 Explore Alternative Service Options
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section home-band">
-        <div className="container">
-          <div className="home-band-box">
-            <p className="section-eyebrow">GoodbyeYou</p>
-            <h2>Alternative funeral services resource and support.</h2>
-            <p>
-              State-specific planning and real resources so the process is easier to carry
-              out.
-            </p>
           </div>
         </div>
       </section>
