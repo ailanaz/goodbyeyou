@@ -1284,22 +1284,6 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section home-intro" id="start">
-        <div className="container">
-          <div className="home-intro-box">
-            <p className="section-eyebrow">GoodbyeYou</p>
-            <h2>Alternative funeral services resource and support.</h2>
-            <p>
-              State-specific planning and real resources so the process is easier to carry
-              out.
-            </p>
-            <Link to="/exploreoptions" className="home-intro-link">
-              Explore Alternative Service Options &rarr;
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <section className="section home-plan-preview" id="support">
         <div className="container">
           <div className="home-plan-preview-shell">
