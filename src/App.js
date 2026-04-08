@@ -969,9 +969,10 @@ function USMapInteractive() {
   );
 }
 
-function StateSearchBlock({ placeholder, buttonLabel }) {
+function StateSearchBlock({ placeholder, buttonLabel, variant = 'default' }) {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
+  const isInlineSearch = variant === 'inline-search';
 
   const matchedHub = query.trim().length > 0
     ? hubDirectory.find((hub) =>
@@ -989,18 +990,46 @@ function StateSearchBlock({ placeholder, buttonLabel }) {
   };
 
   return (
-    <div className="state-search-block">
-      <form className="path-state-search" onSubmit={handleSearch}>
-        <input
-          type="text"
-          className="state-search-input"
-          placeholder={placeholder || 'Enter a state name'}
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button type="submit" className="btn btn-primary" disabled={!matchedHub}>
-          {buttonLabel || 'Open State Page'}
-        </button>
+    <div className={`state-search-block ${isInlineSearch ? 'state-search-block--inline' : ''}`}>
+      <form
+        className={`path-state-search ${isInlineSearch ? 'path-state-search--inline' : ''}`}
+        onSubmit={handleSearch}
+      >
+        <div className={`state-search-field ${isInlineSearch ? 'state-search-field--inline' : ''}`}>
+          <input
+            type="text"
+            className="state-search-input"
+            placeholder={placeholder || 'Enter a state name'}
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          {isInlineSearch ? (
+            <button
+              type="submit"
+              className="state-search-icon-button"
+              aria-label={buttonLabel || 'Open State Page'}
+              disabled={!matchedHub}
+            >
+              <svg
+                className="state-search-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-3.5-3.5" />
+              </svg>
+            </button>
+          ) : (
+            <button type="submit" className="btn btn-primary" disabled={!matchedHub}>
+              {buttonLabel || 'Open State Page'}
+            </button>
+          )}
+        </div>
       </form>
       {query.trim().length > 0 && !matchedHub && (
         <p className="state-search-no-match">No matching state found. Check spelling or try the full state name.</p>
@@ -1510,39 +1539,6 @@ function PlanningHubsPage() {
   useDocumentTitle('When You Have Time - Pre-Plan Alternative Funeral Options - GoodbyeYou');
   useMetaDescription('Pre-plan alternative funeral options by state. Search your state to see available services, rules, providers, and resources for home funeral, green burial, aquamation, and more.');
 
-  const prePlanSteps = [
-    {
-      number: '01',
-      title: 'Search for your state',
-      description:
-        'Open the state page where you want your arrangements to take place. Each state has different rules, options, and providers.',
-    },
-    {
-      number: '02',
-      title: 'See what is available there',
-      description:
-        'Your state page will show which alternative services are allowed, including home funeral, green burial, aquamation, natural organic reduction, and whole-body donation.',
-    },
-    {
-      number: '03',
-      title: 'Review rules and requirements',
-      description:
-        'See state-specific regulations, permits, timelines, funeral director involvement requirements, and documentation that may apply.',
-    },
-    {
-      number: '04',
-      title: 'Find providers and resources',
-      description:
-        'Connect with providers, facilities, and organizations that support the service type you are considering in that state.',
-    },
-    {
-      number: '05',
-      title: 'Work through the legal side',
-      description:
-        'Review advance directives, disposition authorizations, and any legal steps that need to be handled before the time comes.',
-    },
-  ];
-
   return (
     <>
       <PageHero
@@ -1554,36 +1550,15 @@ function PlanningHubsPage() {
       <section className="section">
         <div className="container">
           <SectionIntro
-            title="Start with your state."
-            subtitle="Type the state where you want your arrangements to happen. Your state page will bring together everything you need in one place."
+            title="Search Your State"
+            subtitle="Use the map or the search box below to open the state page where you want your arrangements to happen."
           />
+          <USMapInteractive />
           <StateSearchBlock
             placeholder="Enter the state you want to plan in"
             buttonLabel="Open State Page"
+            variant="inline-search"
           />
-          <USMapInteractive />
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <SectionIntro
-            title="How to use your state page."
-            subtitle="Each state page covers the full picture so you can move through it at your own pace."
-          />
-          <div className="option-detail-list">
-            {prePlanSteps.map((step) => (
-              <div className="option-detail" key={step.number}>
-                <div className="option-detail-header">
-                  <div className="option-number">{step.number}</div>
-                  <h2>{step.title}</h2>
-                </div>
-                <div className="option-detail-body">
-                  <p>{step.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
