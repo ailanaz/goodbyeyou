@@ -1353,7 +1353,7 @@ function HomePage() {
                 ))}
               </div>
               <Link to="/funeralplanning" className="btn btn-primary">
-                Open Plan
+                Explore Alternative Service Options
               </Link>
             </div>
           </div>
