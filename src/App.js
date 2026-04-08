@@ -1234,7 +1234,7 @@ function HomePage() {
   const homePathwayCards = [
     {
       label: 'When You Have Time',
-      title: 'Plan before the pressure starts.',
+      title: 'State-specific resources for planning uncommon after-death services.',
       description:
         'Search your state to see what alternative services are available, what the rules are, and who can help - all before the time comes.',
       path: '/funeralplanning',
@@ -1243,7 +1243,7 @@ function HomePage() {
     },
     {
       label: 'When Time Has Run Out',
-      title: 'Someone has died. Here is where to start.',
+      title: 'State-specific logistics for uncommon services during a loss.',
       description:
         'Search your state for immediate-need steps, providers, documents, and next moves so you can act without guessing.',
       path: '/afterdeathguide',
@@ -1476,7 +1476,7 @@ function OptionsPage() {
     <>
       <PageHero
         eyebrow="When Time Has Run Out"
-        title="Someone has died. Here is where to start."
+        title="State-specific logistics for uncommon services during a loss."
         subtitle="You do not have to figure this out alone. Search your state, follow the steps, and move at the pace that works."
       />
 
@@ -1657,7 +1657,7 @@ function PlanningHubsPage() {
     <>
       <PageHero
         eyebrow="When You Have Time"
-        title="Plan before the pressure starts."
+        title="State-specific resources for planning uncommon after-death services."
         subtitle="Search your state to see what alternative services are available, what the rules are, and who can help."
       />
 
