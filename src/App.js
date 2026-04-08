@@ -1308,8 +1308,8 @@ function HomePage() {
               from the first call to final arrangements.
             </p>
             <div className="home-hero-actions">
-              <Link to="/funeraloptions" className="home-hero-link">
-                Search Your State &rarr;
+              <Link to="/exploreoptions" className="home-hero-link">
+                Explore Your Options &rarr;
               </Link>
             </div>
           </div>

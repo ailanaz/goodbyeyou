@@ -3,9 +3,10 @@
   "configurations": [
     {
       "name": "goodbyeyou",
-      "runtimeExecutable": "/usr/local/bin/node",
-      "runtimeArgs": ["/usr/local/lib/node_modules/npm/bin/npm-cli.js", "start"],
-      "port": 3000
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["-c", "PATH=/usr/local/bin:$PATH npm start"],
+      "port": 3000,
+      "cwd": "/Users/macair/Documents/goodbyeyou"
     }
   ]
 }
