@@ -648,12 +648,12 @@ function PlaceholderAnchor({ children }) {
   );
 }
 
-function PageHero({ eyebrow, title, subtitle, warm = false }) {
+function PageHero({ eyebrow, title, subtitle, warm = false, titleClassName = '' }) {
   return (
     <section className={`page-hero${warm ? ' page-hero-warm' : ''}`}>
       <div className="container">
         <p className="page-hero-eyebrow">{eyebrow}</p>
-        <h1 className="page-hero-title">{title}</h1>
+        <h1 className={`page-hero-title ${titleClassName}`.trim()}>{title}</h1>
         <p className="page-hero-sub">{subtitle}</p>
       </div>
     </section>
@@ -1543,6 +1543,7 @@ function PlanningHubsPage() {
     <>
       <PageHero
         eyebrow="When You Have Time"
+        titleClassName="page-hero-title--planning"
         title={<>State-specific resources for planning<br />uncommon after-death services.</>}
         subtitle="Explore available options, state regulations, and local providers."
       />

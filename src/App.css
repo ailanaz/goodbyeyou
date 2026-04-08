@@ -1886,6 +1886,12 @@ ul { list-style: none; }
     max-width: 700px;
 }
 
+.page-hero-title--planning {
+    max-width: 860px;
+    font-size: clamp(2.1rem, 4.2vw, 3.15rem);
+    text-wrap: balance;
+}
+
 .page-hero-sub {
     font-size: 1.0625rem;
     line-height: 1.75;
