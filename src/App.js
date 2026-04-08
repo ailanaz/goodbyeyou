@@ -1271,39 +1271,6 @@ function HomePage() {
     },
   ];
 
-  const homeActionCards = [
-    {
-      title: 'Planning ahead',
-      description: 'Plan before the arrangements are needed.',
-      bullets: [
-        'Alternative options tied to the state',
-        'Questions, timing, and next steps',
-        'Provider and document pathways',
-      ],
-      path: '/funeralplanning',
-    },
-    {
-      title: 'Planning now',
-      description: 'Work through a recent loss with clearer direction.',
-      bullets: [
-        'What to do first',
-        'State-specific options and logistics',
-        'Provider and document pathways',
-      ],
-      path: '/afterdeathguide',
-    },
-    {
-      title: 'Support',
-      description: 'Keep the process moving when questions come up.',
-      bullets: [
-        'What to do when a death occurs',
-        'Legal and official resources',
-        'Provider paths when needed',
-      ],
-      path: '/resources',
-    },
-  ];
-
   return (
     <>
       <section
@@ -1387,22 +1354,15 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section home-actions">
+      <section className="section home-band">
         <div className="container">
-          <div className="home-actions-grid">
-            {homeActionCards.map((card) => (
-              <Link to={card.path} className="home-action-card" key={card.title}>
-                <h3>{card.title}</h3>
-                <p>{card.description}</p>
-                {card.bullets && (
-                  <ul className="home-action-bullets">
-                    {card.bullets.map((b) => (
-                      <li key={b}>{b}</li>
-                    ))}
-                  </ul>
-                )}
-              </Link>
-            ))}
+          <div className="home-band-box">
+            <p className="section-eyebrow">GoodbyeYou</p>
+            <h2>Alternative funeral services resource and support.</h2>
+            <p>
+              State-specific planning and real resources so the process is easier to carry
+              out.
+            </p>
           </div>
         </div>
       </section>
