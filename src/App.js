@@ -1286,12 +1286,12 @@ function HomePage() {
 
       <section className="section home-plan-preview" id="support">
         <div className="container">
+          <p className="section-eyebrow" style={{ textAlign: 'center', marginBottom: '32px' }}>Navigate the Process</p>
           <div className="home-plan-preview-shell">
             <div className="home-plan-preview-art">
               <img src="/home-plan-scene.svg" alt="" />
             </div>
             <div className="home-plan-preview-copy">
-              <p className="section-eyebrow">Navigate the Process</p>
               <h2 className="section-title">Open the state page you need.</h2>
               <p className="section-subtitle">
                 Planning is where state-specific alternative funeral planning lives. It keeps the
@@ -1308,9 +1308,6 @@ function HomePage() {
                   </div>
                 ))}
               </div>
-              <Link to="/funeralplanning" className="btn btn-primary">
-                Explore Alternative Service Options
-              </Link>
             </div>
           </div>
         </div>
