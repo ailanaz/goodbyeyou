@@ -1125,7 +1125,7 @@ function Footer() {
                 <Link to="/afterdeathguide">When Time Has Run Out</Link>
               </li>
               <li>
-                <Link to="/resources">The Guide</Link>
+                <Link to="/resources">Know the Steps</Link>
               </li>
               <li>
                 <Link to="/exploreoptions">Explore Your Options</Link>
@@ -1251,12 +1251,12 @@ function HomePage() {
       art: '/no-time.png',
     },
     {
-      label: 'The Guide',
+      label: 'Know the Steps',
       title: 'Know what to do when a death occurs.',
       description:
         'Work through what to do first, who may need to be contacted, and what official steps may shape the next move.',
       path: '/resources',
-      linkLabel: 'Open The Guide',
+      linkLabel: 'Open Know the Steps',
       art: '/questions.png',
     },
     {
