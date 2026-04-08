@@ -814,6 +814,11 @@ function EditorialSections({ sections }) {
             </article>
           ))}
         </div>
+        <div className="editorial-bottom-link">
+          <Link to="/exploreoptions" className="home-hero-link">
+            Explore Your Options &rarr;
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -1287,7 +1292,6 @@ function HomePage() {
               <img src="/home-plan-scene.svg" alt="" />
             </div>
             <div className="home-plan-preview-copy">
-              <h2 className="section-title">Open the state page you need.</h2>
               <p className="section-subtitle">
                 Planning is where state-specific alternative funeral planning lives. It keeps the
                 service path, logistics, provider routes, documents, and next steps connected.

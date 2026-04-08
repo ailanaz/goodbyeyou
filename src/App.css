@@ -1342,6 +1342,11 @@ ul { list-style: none; }
     gap: 56px;
 }
 
+.editorial-bottom-link {
+    text-align: center;
+    margin-top: 56px;
+}
+
 .editorial-section {
     display: grid;
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
