@@ -1235,8 +1235,7 @@ function HomePage() {
     {
       label: 'When You Have Time',
       title: <>State-specific resources for planning<br />uncommon after-death services.</>,
-      description:
-        'Explore available options, state regulations, and local providers.',
+      description: '',
       path: '/funeralplanning',
       linkLabel: 'Start Pre-Planning',
       art: '/time.png',
@@ -1244,26 +1243,23 @@ function HomePage() {
     {
       label: 'When Time Has Run Out',
       title: 'State-specific logistics for uncommon services during a loss.',
-      description:
-        'Navigate available options, state regulations, and local resources.',
+      description: '',
       path: '/afterdeathguide',
       linkLabel: 'Get Started Now',
       art: '/no-time.png',
     },
     {
       label: 'Know the Steps',
-      title: 'Know what to do when a death occurs.',
-      description:
-        'Work through what to do first, who may need to be contacted, and what official steps may shape the next move.',
+      title: 'Know what to do when a loss occurs.',
+      description: '',
       path: '/resources',
       linkLabel: 'Open Know the Steps',
       art: '/questions.png',
     },
     {
       label: 'Explore Your Options',
-      title: 'Compare non-traditional service paths.',
-      description:
-        'See the alternative funeral service types people consider most, what each one involves, and what to keep in mind.',
+      title: 'Explore uncommon service options.',
+      description: '',
       path: '/exploreoptions',
       linkLabel: 'View All Options',
       art: '/running-time.png',
@@ -1351,7 +1347,7 @@ function HomePage() {
                 <div className="home-pathway-content">
                   <div className="home-pathway-label">{card.label}</div>
                   <h2>{card.title}</h2>
-                  <p>{card.description}</p>
+                  {card.description && <p>{card.description}</p>}
                   <span className="home-pathway-link">{card.linkLabel}</span>
                 </div>
               </Link>
