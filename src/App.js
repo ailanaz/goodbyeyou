@@ -1292,10 +1292,6 @@ function HomePage() {
               <img src="/home-plan-scene.svg" alt="" />
             </div>
             <div className="home-plan-preview-copy">
-              <p className="section-subtitle">
-                Planning is where state-specific alternative funeral planning lives. It keeps the
-                service path, logistics, provider routes, documents, and next steps connected.
-              </p>
               <div className="home-guidance-list">
                 {homeGuidanceItems.map((item) => (
                   <div className="home-guidance-item" key={item.title}>
