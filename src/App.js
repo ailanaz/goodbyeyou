@@ -1234,7 +1234,7 @@ function HomePage() {
   const homePathwayCards = [
     {
       label: 'When You Have Time',
-      title: 'State-specific resources for planning uncommon after-death services.',
+      title: <>State-specific resources for planning<br />uncommon after-death services.</>,
       description:
         'Search your state to see what alternative services are available, what the rules are, and who can help - all before the time comes.',
       path: '/funeralplanning',
@@ -1657,7 +1657,7 @@ function PlanningHubsPage() {
     <>
       <PageHero
         eyebrow="When You Have Time"
-        title="State-specific resources for planning uncommon after-death services."
+        title={<>State-specific resources for planning<br />uncommon after-death services.</>}
         subtitle="Search your state to see what alternative services are available, what the rules are, and who can help."
       />
 
