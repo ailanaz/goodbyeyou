@@ -3,64 +3,6 @@ import { BrowserRouter as Router, Link, NavLink, Navigate, Route, Routes, useLoc
 import './App.css';
 import { hubDirectory } from './siteContent';
 
-const platformCards = [
-  {
-    title: 'Search the state you need',
-    description:
-      'Open the state page that brings together alternative options, timing, providers, documents, and next steps.',
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="24" cy="12" r="8" />
-        <circle cx="12" cy="36" r="8" />
-        <circle cx="36" cy="36" r="8" />
-        <path d="M20 18l-4 12" />
-        <path d="M28 18l4 12" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Use real resources',
-    description:
-      'Go to Resources for what to do first, who may need to be contacted, documents, official steps, and supporting pathways.',
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M8 10h32v28H8z" />
-        <path d="M16 18h16" />
-        <path d="M16 24h12" />
-        <path d="M16 30h8" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Keep the process moving',
-    description:
-      'Work through providers, official steps, timing, and open questions without losing the service path you are considering.',
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="7" y="8" width="34" height="32" rx="3" />
-        <path d="M15 18h18" />
-        <path d="M15 24h12" />
-        <path d="M15 30h10" />
-        <circle cx="32" cy="29" r="5" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Choose the path that fits',
-    description:
-      'Use GoodbyeYou for future planning or recent loss, depending on whether you are planning your own arrangements or making them after a death.',
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M22 40v-4a6 6 0 00-6-6H8a6 6 0 00-6 6v4" />
-        <circle cx="12" cy="18" r="6" />
-        <path d="M46 40v-4a6 6 0 00-6-6h-8a6 6 0 00-6 6v4" />
-        <circle cx="36" cy="18" r="6" />
-      </svg>
-    ),
-  },
-];
-
-
 const optionDetails = [
   {
     id: 'home-funeral',
@@ -1109,8 +1051,7 @@ function Navigation() {
             ))}
           </ul>
           <Link to="/" className="nav-logo">
-            <img src="/logo-full-cropped.png" alt="Goodbye You" className="nav-logo-image" />
-            <span className="nav-logo-tagline">Goodbye to you. Goodbye from you. Goodbye for you.</span>
+            <img src="/logo-full-w-tag-cropped.png" alt="Goodbye You" className="nav-logo-image" />
           </Link>
           <ul className="nav-links nav-links-right">
             {desktopNavRight.map((item) => (
@@ -1277,19 +1218,19 @@ function HomePage() {
       title: 'Select your state',
       description:
         'Access the specific legal and logistical requirements for the state where the service will occur.',
-      icon: platformCards[0].icon,
+      icon: <img src="/Select%20your%20state.png" alt="" className="home-guidance-icon-image" />,
     },
     {
       title: 'View integrated logistics',
       description:
         'Review service availability, provider directories, and official filing requirements within a single, unified interface.',
-      icon: platformCards[3].icon,
+      icon: <img src="/View%20integrated%20logistics.png" alt="" className="home-guidance-icon-image" />,
     },
     {
       title: 'Access regulatory resources',
       description:
         'Refer to state-specific legal codes, transport permits, and official contact data as needed to complete the process.',
-      icon: platformCards[1].icon,
+      icon: <img src="/Access%20regulatory%20resources.png" alt="" className="home-guidance-icon-image" />,
     },
   ];
 
