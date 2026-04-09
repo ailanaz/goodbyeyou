@@ -1570,10 +1570,11 @@ ul { list-style: none; }
 }
 
 .editorial-art-img-link {
-    display: inline-block;
+    display: block;
     margin-top: 12px;
+    text-align: center;
     font-family: var(--font-heading);
-    font-size: 0.88rem;
+    font-size: 1.05rem;
     font-weight: 500;
     color: var(--color-accent);
     text-decoration: none;
