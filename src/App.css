@@ -1418,8 +1418,8 @@ ul { list-style: none; }
 
 .editorial-bottom-cta {
     font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 700;
     color: var(--color-primary-dark);
     text-decoration: none;
     transition: opacity 0.2s;
@@ -1906,6 +1906,12 @@ ul { list-style: none; }
     max-width: 860px;
     font-size: clamp(2.1rem, 4.2vw, 3.15rem);
     text-wrap: balance;
+}
+
+.page-hero-title--centered {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .page-hero-sub {

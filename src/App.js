@@ -967,7 +967,7 @@ function USMapInteractive({ variant = 'planning' }) {
           })}
         </svg>
       </div>
-      <p className="us-map-hint">Click a highlighted state to open its planning page.</p>
+      <p className="us-map-hint">Click a highlighted state to open its {variant === 'immediate' ? 'logistics' : 'planning'} page.</p>
     </div>
   );
 }
@@ -1219,7 +1219,7 @@ function HomeAboutSection() {
       image: '/time-w.png',
       imageLabel: 'When You Have Time',
       imageLink: { path: '/funeralplanning', label: 'Start Pre-Planning' },
-      title: 'State-specific resources for planning uncommon after-death services.',
+      title: 'Resources for planning uncommon after-death services.',
       description: '',
       items: [
         'Alternative options tied to the state',
@@ -1234,7 +1234,7 @@ function HomeAboutSection() {
       image: '/no-time-w.png',
       imageLabel: 'When Time Has Run Out',
       imageLink: { path: '/afterdeathguide', label: 'Get Started Now' },
-      title: 'State-specific logistics for uncommon services during a loss.',
+      title: 'Resources for uncommon services during a loss.',
       description: '',
       items: [
         'What to do first',
@@ -1342,7 +1342,7 @@ function HomePage() {
 
 function OptionsPage() {
   useDocumentTitle('When Time Has Run Out - Immediate After-Death Steps - GoodbyeYou');
-  useMetaDescription('Immediate steps after a death for alternative funeral arrangements. Search your state for 24-hour checklists, providers, documents, and next moves for home funeral, green burial, and more.');
+  useMetaDescription('Immediate steps after a death for alternative funeral arrangements. Search your state for checklists, providers, and documents for uncommon services.');
 
   const immediateSteps = [
     {
@@ -1393,7 +1393,8 @@ function OptionsPage() {
     <>
       <PageHero
         eyebrow="When Time Has Run Out"
-        title="State-specific logistics for uncommon services during a loss."
+        titleClassName="page-hero-title--centered"
+        title="Resources for uncommon services during a loss."
         subtitle="Navigate available options, state regulations, and local resources."
       />
 
@@ -1463,7 +1464,7 @@ function OptionsPage() {
 
 function ExploreOptionsPage() {
   useDocumentTitle('Explore Alternative Funeral Options - GoodbyeYou');
-  useMetaDescription('Browse alternative funeral service types including home funeral, green burial, aquamation, natural organic reduction, and whole-body donation with details on what each involves.');
+  useMetaDescription('Browse alternative funeral services including home funeral, green burial, aquamation, natural organic reduction, and whole-body donation.');
 
   return (
     <>
@@ -1536,15 +1537,15 @@ function ExploreOptionsPage() {
 }
 
 function PlanningHubsPage() {
-  useDocumentTitle('When You Have Time - Pre-Plan Alternative Funeral Options - GoodbyeYou');
-  useMetaDescription('Pre-plan alternative funeral options by state. Search your state to see available services, rules, providers, and resources for home funeral, green burial, aquamation, and more.');
+  useDocumentTitle('When You Have Time - Pre-Plan Funeral Options - GoodbyeYou');
+  useMetaDescription('Pre-plan alternative funeral options by state. Search your state for available services, providers, and resources for uncommon after-death services.');
 
   return (
     <>
       <PageHero
         eyebrow="When You Have Time"
-        titleClassName="page-hero-title--planning"
-        title={<>State-specific resources for planning<br />uncommon after-death services.</>}
+        titleClassName="page-hero-title--planning page-hero-title--centered"
+        title={<>Resources for planning<br />uncommon after-death services.</>}
         subtitle="Explore available options, state regulations, and local providers."
       />
 
@@ -1747,6 +1748,7 @@ function ResourcesPage() {
     <>
       <PageHero
         eyebrow="Resources"
+        titleClassName="page-hero-title--centered"
         title="What to do when a death occurs."
         subtitle="Use this page for what to do first, who may need to be contacted, documents, official steps, provider pathways, and links back into planning."
       />
@@ -1790,7 +1792,7 @@ function ResourcesPage() {
 
 function ProvidersPage() {
   useDocumentTitle('Alternative Funeral Providers - GoodbyeYou');
-  useMetaDescription('Find alternative funeral service providers including home funeral directors, green burial cemeteries, aquamation facilities, and non-traditional after-death service providers.');
+  useMetaDescription('Find alternative funeral providers including home funeral directors, green burial cemeteries, aquamation facilities, and non-traditional service providers.');
 
   const sections = [
     {
@@ -1884,7 +1886,7 @@ function ProvidersPage() {
 
 function LegalResourcesPage() {
   useDocumentTitle('Legal and Official Resources - Funeral Planning - GoodbyeYou');
-  useMetaDescription('Legal resources for alternative funeral planning including advance directives, disposition authorizations, state-specific requirements, and official documents needed for non-traditional services.');
+  useMetaDescription('Legal resources for alternative funeral planning including advance directives, disposition authorizations, and state-specific official documents.');
 
   const sections = [
     {
