@@ -363,9 +363,9 @@ ul { list-style: none; }
 .home-hero {
     position: relative;
     min-height: calc(84vh - 50px);
-    padding: 188px 0 96px;
+    padding: 160px 0;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     background-color: var(--color-primary-dark);
     background-position: center center;
     background-size: cover;
@@ -382,6 +382,7 @@ ul { list-style: none; }
 .home-hero .container {
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 
 .home-hero-content {
@@ -3263,7 +3264,7 @@ ul { list-style: none; }
 
     .home-hero {
         min-height: auto;
-        padding: 152px 0 80px;
+        padding: 144px 0 120px;
     }
 
     .hero-content {
