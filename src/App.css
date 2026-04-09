@@ -1405,6 +1405,12 @@ ul { list-style: none; }
     background: var(--color-bg);
 }
 
+.section-editorial--home .editorial-art {
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
 .editorial-stack {
     display: flex;
     flex-direction: column;

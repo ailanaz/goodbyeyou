@@ -656,7 +656,7 @@ function PageHero({ eyebrow, title, subtitle, warm = false, titleClassName = '' 
       <div className="container">
         <p className="page-hero-eyebrow">{eyebrow}</p>
         <h1 className={`page-hero-title ${titleClassName}`.trim()}>{title}</h1>
-        <p className="page-hero-sub">{subtitle}</p>
+        {subtitle ? <p className="page-hero-sub">{subtitle}</p> : null}
       </div>
     </section>
   );
@@ -788,9 +788,9 @@ function ResourceArtwork({ story }) {
   );
 }
 
-function EditorialSections({ sections }) {
+function EditorialSections({ sections, className = '' }) {
   return (
-    <section className="section section-editorial">
+    <section className={`section section-editorial ${className}`.trim()}>
       <div className="container">
         <div className="editorial-stack">
           {sections.map((story, index) => (
@@ -1261,7 +1261,7 @@ function HomeAboutSection() {
   ];
 
   return (
-    <EditorialSections sections={sections} />
+    <EditorialSections sections={sections} className="section-editorial--home" />
   );
 }
 
@@ -1466,8 +1466,8 @@ function ExploreOptionsPage() {
     <>
       <PageHero
         eyebrow="Explore Your Options"
-        title="Alternative funeral services at a glance."
-        subtitle="See the service types people consider most, what each one involves, and what to keep in mind before choosing a path."
+        titleClassName="page-hero-title--centered"
+        title="Alternative funeral service options."
       />
 
       <section className="section">
