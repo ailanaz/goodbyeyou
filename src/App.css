@@ -3172,8 +3172,6 @@ ul { list-style: none; }
 
     .nav-mobile-links li:last-child a {
         border-bottom: none;
-        text-align: center;
-        margin-top: 12px;
     }
 
     .paths-grid {
