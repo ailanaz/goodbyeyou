@@ -1341,7 +1341,7 @@ function HomePage() {
 }
 
 function OptionsPage() {
-  useDocumentTitle('Funeral Services - Immediate After-Death Steps - GoodbyeYou');
+  useDocumentTitle('When Time Has Run Out - Immediate After-Death Steps - GoodbyeYou');
   useMetaDescription('Immediate steps after a death for alternative funeral arrangements. Search your state for checklists, providers, and documents for uncommon services.');
 
   const immediateSteps = [
@@ -1392,7 +1392,7 @@ function OptionsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Funeral Services"
+        eyebrow="When Time Has Run Out"
         titleClassName="page-hero-title--centered"
         title="Resources for uncommon services when experiencing a recent loss."
         subtitle="Navigate available options, state regulations, and local resources."
