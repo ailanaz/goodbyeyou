@@ -363,7 +363,7 @@ ul { list-style: none; }
    ======================================== */
 .home-hero {
     position: relative;
-    min-height: calc(84vh - 50px);
+    min-height: calc(78vh - 50px);
     padding: 156px 0;
     display: flex;
     align-items: center;
@@ -390,7 +390,7 @@ ul { list-style: none; }
     max-width: 1120px;
     margin: 0 auto;
     text-align: center;
-    transform: translateY(78px);
+    transform: translateY(104px);
 }
 
 .home-hero-eyebrow {
@@ -3182,7 +3182,7 @@ ul { list-style: none; }
     }
 
     .home-hero-content {
-        transform: translateY(44px);
+        transform: translateY(56px);
     }
 
     .nav-links {
@@ -3277,7 +3277,7 @@ ul { list-style: none; }
 
     .home-hero {
         min-height: auto;
-        padding: 140px 0 117px;
+        padding: 132px 0 108px;
     }
 
     .hero-content {
