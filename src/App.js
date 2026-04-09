@@ -1241,7 +1241,7 @@ function HomeAboutSection() {
         'State-specific options and logistics',
         'Provider and document pathways',
       ],
-      link: { path: '/funeralplanning#current-planning', label: 'Direction when you are experiencing a loss' },
+      link: { path: '/when-time-has-run-out', label: 'Direction when you are experiencing a loss' },
     },
     {
       eyebrow: 'Support',
@@ -1922,7 +1922,7 @@ function LegalResourcesPage() {
         legalWhen[2].title,
         legalWhen[4].title,
       ],
-      link: { path: '/funeralplanning#current-planning', label: 'Go to Planning Now ->' },
+      link: { path: '/when-time-has-run-out', label: 'Go to Planning Now ->' },
     },
     {
       eyebrow: 'Professional support',
@@ -1997,7 +1997,7 @@ function AppLayout() {
         <Route path="/options" element={<Navigate to="/when-time-has-run-out" replace />} />
         <Route path="/options/:optionId" element={<Navigate to="/when-time-has-run-out" replace />} />
         <Route path="/plan-ahead" element={<Navigate to="/funeralplanning#future-planning" replace />} />
-        <Route path="/planning-now" element={<Navigate to="/funeralplanning#current-planning" replace />} />
+        <Route path="/planning-now" element={<Navigate to="/when-time-has-run-out" replace />} />
         <Route path="/resources" element={<Navigate to="/after-death-steps" replace />} />
         <Route path="/vault" element={<Navigate to="/after-death-steps" replace />} />
         <Route path="/legal" element={<Navigate to="/legal-resources" replace />} />
