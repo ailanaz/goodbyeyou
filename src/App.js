@@ -1530,7 +1530,7 @@ function ExploreOptionsPage() {
         title="Ready to search your state?"
         description="Open the state page that matches where your arrangements will take place."
         primary={{ path: '/funeralplanning', label: 'When You Have Time' }}
-        secondary={{ path: '/funeral-services', label: 'Funeral Services' }}
+        secondary={{ path: '/when-time-has-run-out', label: 'When Time Has Run Out' }}
       />
     </>
   );
@@ -1584,7 +1584,7 @@ function PlanningHubsPage() {
       <CTASection
         title="Already dealing with a loss?"
         description="If someone has died and you need to act now, use the immediate-need path instead."
-        primary={{ path: '/funeral-services', label: 'Funeral Services' }}
+        primary={{ path: '/when-time-has-run-out', label: 'When Time Has Run Out' }}
         secondary={{ path: '/after-death-steps', label: 'Open Resources' }}
       />
     </>
