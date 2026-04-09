@@ -755,14 +755,12 @@ function ResourceArtwork({ story }) {
   return (
     <div className={`editorial-art editorial-art-${story.variant}`}>
       <div className="editorial-art-frame">
-        <span className="editorial-art-label">{story.eyebrow}</span>
-        <strong className="editorial-art-title">{story.title}</strong>
         {story.image ? (
           <>
+            <span className="editorial-art-label">{story.imageLabel || story.eyebrow}</span>
             <div className="editorial-art-graphic">
               <img src={story.image} alt={story.imageLabel || story.eyebrow} className="editorial-art-image" />
             </div>
-            {story.imageLabel && <span className="editorial-art-label">{story.imageLabel}</span>}
             {story.imageLink && (
               <Link to={story.imageLink.path} className="editorial-art-img-link">
                 {story.imageLink.label} &rarr;
@@ -771,6 +769,8 @@ function ResourceArtwork({ story }) {
           </>
         ) : (
           <>
+            <span className="editorial-art-label">{story.eyebrow}</span>
+            <strong className="editorial-art-title">{story.title}</strong>
             <div className="editorial-art-graphic">{illustrations[story.variant]}</div>
             <div className="editorial-art-tags">
               {commonTags.map((item) => (
