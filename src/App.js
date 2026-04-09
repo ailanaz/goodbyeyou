@@ -1160,7 +1160,7 @@ function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/" className="footer-logo">
-              Goodbye<span>You</span>
+              <img src="/logo-wordmark.png" alt="Goodbye You" className="footer-logo-image" />
             </Link>
             <p>
               Alternative funeral planning resources with state-specific information. Helpful next steps and guidance for all.
