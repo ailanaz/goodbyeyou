@@ -758,9 +758,9 @@ function ResourceArtwork({ story }) {
         {story.image ? (
           <>
             <span className="editorial-art-label">{story.imageLabel || story.eyebrow}</span>
-            <div className="editorial-art-graphic">
+            <Link to={story.imageLink ? story.imageLink.path : '#'} className="editorial-art-graphic">
               <img src={story.image} alt={story.imageLabel || story.eyebrow} className="editorial-art-image" />
-            </div>
+            </Link>
             {story.imageLink && (
               <Link to={story.imageLink.path} className="editorial-art-img-link">
                 {story.imageLink.label} &rarr;
@@ -905,7 +905,7 @@ const stateIdToAbbr = {
   illinois: 'IL', california: 'CA', washington: 'WA',
 };
 
-function USMapInteractive() {
+function USMapInteractive({ variant = 'planning' }) {
   const navigate = useNavigate();
   const [hoveredState, setHoveredState] = useState(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
@@ -919,7 +919,8 @@ function USMapInteractive() {
   const handleStateClick = (abbr) => {
     const hub = availableStates[abbr];
     if (hub) {
-      navigate(`/states/${hub.id}`);
+      const basePath = variant === 'immediate' ? '/immediate' : '/states';
+      navigate(`${basePath}/${hub.id}`);
     }
   };
 
@@ -969,7 +970,7 @@ function USMapInteractive() {
   );
 }
 
-function StateSearchBlock({ placeholder, buttonLabel, variant = 'default' }) {
+function StateSearchBlock({ placeholder, buttonLabel, variant = 'default', basePath = '/states' }) {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
   const isInlineSearch = variant === 'inline-search';
@@ -985,7 +986,7 @@ function StateSearchBlock({ placeholder, buttonLabel, variant = 'default' }) {
   const handleSearch = (e) => {
     e.preventDefault();
     if (matchedHub) {
-      navigate(`/states/${matchedHub.id}`);
+      navigate(`${basePath}/${matchedHub.id}`);
     }
   };
 
@@ -1228,7 +1229,7 @@ function HomeAboutSection() {
         'Questions, timing, and next steps',
         'Provider and document pathways',
       ],
-      link: { path: '/funeralplanning#future-planning', label: 'When You Have Time ->' },
+      link: { path: '/funeralplanning#future-planning', label: 'Options for when you have time to plan' },
     },
     {
       eyebrow: 'Planning now',
@@ -1243,7 +1244,7 @@ function HomeAboutSection() {
         'State-specific options and logistics',
         'Provider and document pathways',
       ],
-      link: { path: '/funeralplanning#current-planning', label: 'When Time Has Run Out ->' },
+      link: { path: '/funeralplanning#current-planning', label: 'Direction when you are experiencing a loss' },
     },
     {
       eyebrow: 'Support',
@@ -1258,7 +1259,7 @@ function HomeAboutSection() {
         'Legal and official resources',
         'Provider paths when needed',
       ],
-      link: { path: '/resources', label: 'Open Resources ->' },
+      link: { path: '/resources', label: 'Know what to do when a death occurs' },
     },
   ];
 
@@ -1405,9 +1406,11 @@ function OptionsPage() {
             title="Search for your state."
             subtitle="Your state page will show available alternative services, providers, required documents, and the steps that apply where you are."
           />
+          <USMapInteractive variant="immediate" />
           <StateSearchBlock
             placeholder="Enter the state where the death occurred"
             buttonLabel="Open State Page"
+            basePath="/immediate"
           />
         </div>
       </section>
@@ -1590,74 +1593,159 @@ function PlanningHubsPage() {
   );
 }
 
+function StateSectionBlock({ section }) {
+  return (
+    <section className="section">
+      <div className="container">
+        <h2 className="state-section-title">{section.title}</h2>
+        <div className="state-section-items">
+          {section.items.map((item) => (
+            <div className="state-section-item" key={item.label}>
+              <h3>{item.label}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function PlanningHubDetailPage() {
   const { hubId } = useParams();
   const hub = hubDirectory.find((entry) => entry.id === hubId);
 
-  useDocumentTitle(hub ? `${hub.title} - Alternative Funeral Options - GoodbyeYou` : 'Funeral Options - GoodbyeYou');
-  useMetaDescription(hub ? `Alternative funeral options in ${hub.region}. Find ${hub.region} providers, documents, timing, and next steps for home funeral, green burial, aquamation, and other non-traditional services.` : 'Find alternative funeral options by state.');
+  useDocumentTitle(hub ? `State-Specific Planning: ${hub.region} - GoodbyeYou` : 'Funeral Options - GoodbyeYou');
+  useMetaDescription(hub ? `Pre-plan alternative funeral options in ${hub.region}. Explore ${hub.region} service availability, providers, costs, and legal documentation for home funeral, green burial, aquamation, and more.` : 'Find alternative funeral options by state.');
 
   if (!hub) {
     return <Navigate to="/funeralplanning" replace />;
-    /* hub not found - redirect back to planning */
   }
+
+  const planData = hub.planning;
 
   return (
     <>
-      <PageHero eyebrow={hub.region} title={hub.title} subtitle={hub.summary} />
+      <PageHero
+        eyebrow="When You Have Time"
+        title={`State-Specific Planning: ${hub.region}`}
+        subtitle={planData ? planData.intro : hub.summary}
+      />
 
-      <section className="section">
-        <div className="container">
-          <SectionIntro
-            eyebrow="Inside Planning"
-            title="What this state page covers."
-            subtitle="Use this page to work through the local side of the arrangement, including options, next steps, providers, and documents."
-          />
-          <div className="features-grid">
-            {hub.modules.map((module) => (
-              <div className="feature-card" key={module.title}>
-                <h3>{module.title}</h3>
-                <p>{module.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {planData && planData.sections.map((section) => (
+        <StateSectionBlock section={section} key={section.title} />
+      ))}
 
-      <section className="section section-features">
-        <div className="container">
-          <SectionIntro
-            eyebrow="Focus"
-            title="What to work through here."
-            subtitle={hub.note}
-          />
-          <div className="resource-detail-grid">
-            <div className="resource-detail-card">
-              <h3>Focus areas</h3>
-              <ul className="resource-list">
-                {hub.focusAreas.map((area) => (
-                  <li key={area}>{area}</li>
+      {!planData && (
+        <>
+          <section className="section">
+            <div className="container">
+              <SectionIntro
+                eyebrow="Inside Planning"
+                title="What this state page covers."
+                subtitle="Use this page to work through the local side of the arrangement, including options, next steps, providers, and documents."
+              />
+              <div className="features-grid">
+                {hub.modules.map((module) => (
+                  <div className="feature-card" key={module.title}>
+                    <h3>{module.title}</h3>
+                    <p>{module.description}</p>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
-            <div className="resource-detail-card">
-              <h3>Keep moving</h3>
-              <p>Use this state page alongside Resources, providers, and legal resources as the arrangement takes shape.</p>
-              <ul className="resource-list">
-                <li>Use Resources for what to do after a death</li>
-                <li>Keep provider details and document locations close at hand</li>
-                <li>Open provider and legal-resource pages when the state plan points there</li>
-              </ul>
+          </section>
+
+          <section className="section section-features">
+            <div className="container">
+              <SectionIntro
+                eyebrow="Focus"
+                title="What to work through here."
+                subtitle={hub.note}
+              />
+              <div className="resource-detail-grid">
+                <div className="resource-detail-card">
+                  <h3>Focus areas</h3>
+                  <ul className="resource-list">
+                    {hub.focusAreas.map((area) => (
+                      <li key={area}>{area}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="resource-detail-card">
+                  <h3>Keep moving</h3>
+                  <p>Use this state page alongside Resources, providers, and legal resources as the arrangement takes shape.</p>
+                  <ul className="resource-list">
+                    <li>Use Resources for what to do after a death</li>
+                    <li>Keep provider details and document locations close at hand</li>
+                    <li>Open provider and legal-resource pages when the state plan points there</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
+        </>
+      )}
 
       <CTASection
-        title="Keep planning from here."
-        description="From here, move into Resources, providers, or legal resources as the state plan requires."
-        primary={{ path: '/resources', label: 'Explore Resources' }}
-        secondary={{ path: '/legal-resources', label: 'Legal Resources' }}
+        title="Already dealing with a loss?"
+        description="If someone has died and you need to act now, use the immediate-need path instead."
+        primary={{ path: `/immediate/${hub.id}`, label: 'When Time Has Run Out' }}
+        secondary={{ path: '/resources', label: 'Open Resources' }}
+      />
+    </>
+  );
+}
+
+function ImmediateStateDetailPage() {
+  const { hubId } = useParams();
+  const hub = hubDirectory.find((entry) => entry.id === hubId);
+
+  useDocumentTitle(hub ? `Immediate Logistics: ${hub.region} - GoodbyeYou` : 'Immediate Logistics - GoodbyeYou');
+  useMetaDescription(hub ? `Immediate after-death logistics in ${hub.region}. Navigate authority, custody, transport, providers, paperwork, and deadlines for alternative funeral services.` : 'Find immediate after-death logistics by state.');
+
+  if (!hub) {
+    return <Navigate to="/afterdeathguide" replace />;
+  }
+
+  const immData = hub.immediate;
+
+  return (
+    <>
+      <PageHero
+        eyebrow="When Time Has Run Out"
+        title={`Immediate Logistics: ${hub.region}`}
+        subtitle={immData ? immData.intro : hub.summary}
+      />
+
+      {immData && immData.sections.map((section) => (
+        <StateSectionBlock section={section} key={section.title} />
+      ))}
+
+      {!immData && (
+        <section className="section">
+          <div className="container">
+            <SectionIntro
+              title="What your state page covers."
+              subtitle="Once you open your state, everything you need will be in one place."
+            />
+            <div className="features-grid">
+              {hub.modules.map((module) => (
+                <div className="feature-card" key={module.title}>
+                  <h3>{module.title}</h3>
+                  <p>{module.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <CTASection
+        title="Not dealing with an immediate loss?"
+        description="If you are planning ahead for yourself or someone else, use the pre-planning path instead."
+        primary={{ path: `/states/${hub.id}`, label: 'When You Have Time' }}
+        secondary={{ path: '/resources', label: 'Open Resources' }}
       />
     </>
   );
@@ -1907,6 +1995,7 @@ function AppLayout() {
         <Route path="/" element={<HomePage />} />
         <Route path="/funeralplanning" element={<PlanningHubsPage />} />
         <Route path="/states/:hubId" element={<PlanningHubDetailPage />} />
+        <Route path="/immediate/:hubId" element={<ImmediateStateDetailPage />} />
         <Route path="/afterdeathguide" element={<OptionsPage />} />
         <Route path="/exploreoptions" element={<ExploreOptionsPage />} />
         <Route path="/resources" element={<ResourcesPage />} />

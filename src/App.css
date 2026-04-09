@@ -1576,7 +1576,7 @@ ul { list-style: none; }
     text-align: center;
     font-family: var(--font-heading);
     font-size: 1.05rem;
-    font-weight: 500;
+    font-weight: 700;
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     transition: color 0.2s;
@@ -2428,6 +2428,43 @@ ul { list-style: none; }
 /* ========================================
    Resource Detail (resources page)
    ======================================== */
+.state-section-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.state-section-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.state-section-item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: 8px;
+    padding: 24px 28px;
+}
+
+.state-section-item h3 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.state-section-item p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--color-text-mid);
+}
+
 .resource-detail-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
