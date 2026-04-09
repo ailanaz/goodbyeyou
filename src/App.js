@@ -604,8 +604,8 @@ const legalWhen = [
 
 const navItems = [
   { path: '/funeralplanning', label: 'When You Have Time' },
-  { path: '/afterdeathguide', label: 'When Time Has Run Out' },
-  { path: '/resources', label: 'Know the Steps' },
+  { path: '/funeral-services', label: 'When Time Has Run Out' },
+  { path: '/after-death-steps', label: 'Know the Steps' },
   { path: '/exploreoptions', label: 'Explore Your Options' },
 ];
 
@@ -616,7 +616,7 @@ const desktopNavLeft = [
 ];
 
 const desktopNavRight = [
-  { path: '/afterdeathguide', label: 'When Time Has Run Out' },
+  { path: '/funeral-services', label: 'When Time Has Run Out' },
 ];
 
 function useDocumentTitle(title) {
@@ -1170,10 +1170,10 @@ function Footer() {
                 <Link to="/funeralplanning">When You Have Time</Link>
               </li>
               <li>
-                <Link to="/afterdeathguide">When Time Has Run Out</Link>
+                <Link to="/funeral-services">When Time Has Run Out</Link>
               </li>
               <li>
-                <Link to="/resources">Know the Steps</Link>
+                <Link to="/after-death-steps">Know the Steps</Link>
               </li>
               <li>
                 <Link to="/exploreoptions">Explore Your Options</Link>
@@ -1233,7 +1233,7 @@ function HomeAboutSection() {
       variant: 'state',
       image: '/no-time-w.png',
       imageLabel: 'When Time Has Run Out',
-      imageLink: { path: '/afterdeathguide', label: 'Get Started Now' },
+      imageLink: { path: '/funeral-services', label: 'Get Started Now' },
       title: 'Resources for uncommon services during a loss.',
       description: '',
       items: [
@@ -1248,7 +1248,7 @@ function HomeAboutSection() {
       variant: 'providers',
       image: '/questions-w.png',
       imageLabel: 'Know the Steps',
-      imageLink: { path: '/resources', label: 'Navigate the Steps' },
+      imageLink: { path: '/after-death-steps', label: 'Navigate the Steps' },
       title: 'Know what to do when a loss occurs.',
       description: '',
       items: [
@@ -1256,7 +1256,7 @@ function HomeAboutSection() {
         'Legal and official resources',
         'Provider paths when needed',
       ],
-      link: { path: '/resources', label: 'Know what to do when a death occurs' },
+      link: { path: '/after-death-steps', label: 'Know what to do when a death occurs' },
     },
   ];
 
@@ -1456,7 +1456,7 @@ function OptionsPage() {
         title="Not dealing with an immediate loss?"
         description="If you are planning ahead for yourself or someone else, use the pre-planning path instead."
         primary={{ path: '/funeralplanning', label: 'When You Have Time' }}
-        secondary={{ path: '/resources', label: 'Open Resources' }}
+        secondary={{ path: '/after-death-steps', label: 'Open Resources' }}
       />
     </>
   );
@@ -1530,7 +1530,7 @@ function ExploreOptionsPage() {
         title="Ready to search your state?"
         description="Open the state page that matches where your arrangements will take place."
         primary={{ path: '/funeralplanning', label: 'When You Have Time' }}
-        secondary={{ path: '/afterdeathguide', label: 'When Time Has Run Out' }}
+        secondary={{ path: '/funeral-services', label: 'When Time Has Run Out' }}
       />
     </>
   );
@@ -1584,8 +1584,8 @@ function PlanningHubsPage() {
       <CTASection
         title="Already dealing with a loss?"
         description="If someone has died and you need to act now, use the immediate-need path instead."
-        primary={{ path: '/afterdeathguide', label: 'When Time Has Run Out' }}
-        secondary={{ path: '/resources', label: 'Open Resources' }}
+        primary={{ path: '/funeral-services', label: 'When Time Has Run Out' }}
+        secondary={{ path: '/after-death-steps', label: 'Open Resources' }}
       />
     </>
   );
