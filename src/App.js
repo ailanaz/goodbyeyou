@@ -1420,15 +1420,11 @@ function OptionsPage() {
             title="What to do in the first 24 to 48 hours."
             subtitle={<>These are the steps that most people need to work through right away.<br />Your state page will fill in the specifics.</>}
           />
-          <div className="option-detail-list">
+          <div className="features-grid">
             {immediateSteps.map((step) => (
-              <div className="option-detail" key={step.number}>
-                <div className="option-detail-header">
-                  <h2>{step.title}</h2>
-                </div>
-                <div className="option-detail-body">
-                  <p>{step.description}</p>
-                </div>
+              <div className="feature-card" key={step.number}>
+                <h3>{`${step.number} ${step.title}`}</h3>
+                <p>{step.description}</p>
               </div>
             ))}
           </div>
