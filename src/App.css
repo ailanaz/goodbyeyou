@@ -1914,6 +1914,12 @@ ul { list-style: none; }
     margin-right: auto;
 }
 
+.page-hero-title--centered + .page-hero-sub {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .page-hero-sub {
     font-size: 1.0625rem;
     line-height: 1.75;

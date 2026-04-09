@@ -1705,7 +1705,7 @@ function PlanningHubDetailPage() {
       cta={{
         title: 'Already dealing with a loss?',
         description: 'If someone has died and you need to act now, use the immediate-need path instead.',
-        primary: { path: `/immediate/${hub.id}`, label: 'When Time Has Run Out' },
+        primary: { path: `/immediate/${hub.id}`, label: 'Funeral Services' },
         secondary: { path: '/after-death-steps', label: 'Open Resources' },
       }}
     />
@@ -1725,7 +1725,7 @@ function ImmediateStateDetailPage() {
 
   return (
     <StateDetailLayout
-      eyebrow="When Time Has Run Out"
+      eyebrow="Funeral Services"
       title={`Immediate Logistics: ${hub.region}`}
       intro={hub.immediate ? hub.immediate.intro : hub.summary}
       sections={hub.immediate ? hub.immediate.sections : []}
@@ -1741,13 +1741,13 @@ function ImmediateStateDetailPage() {
 }
 
 function ResourcesPage() {
-  useDocumentTitle('Resources - What to Do After a Death - GoodbyeYou');
+  useDocumentTitle('After Death Steps - What to Do After a Death - GoodbyeYou');
   useMetaDescription('After-death resources covering what to do first, who to contact, official steps, documents, and supporting paths for alternative funeral arrangements.');
 
   return (
     <>
       <PageHero
-        eyebrow="Resources"
+        eyebrow="After Death Steps"
         titleClassName="page-hero-title--centered"
         title="What to do when a death occurs."
         subtitle="Use this page for what to do first, who may need to be contacted, documents, official steps, provider pathways, and links back into planning."
@@ -1878,7 +1878,7 @@ function ProvidersPage() {
         title="Start connecting."
         description="Open your state for local providers, or compare options before you choose a path."
         primary={{ path: '/funeralplanning', label: 'Search Your State' }}
-        secondary={{ path: '/funeral-services', label: 'When Time Has Run Out' }}
+        secondary={{ path: '/funeral-services', label: 'Funeral Services' }}
       />
     </>
   );
