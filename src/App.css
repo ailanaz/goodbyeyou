@@ -1416,6 +1416,19 @@ ul { list-style: none; }
     margin-top: 56px;
 }
 
+.editorial-bottom-cta {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.editorial-bottom-cta:hover {
+    opacity: 0.75;
+}
+
 .editorial-section {
     display: grid;
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
