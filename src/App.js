@@ -1234,7 +1234,7 @@ function HomeAboutSection() {
       image: '/no-time-w.png',
       imageLabel: 'Funeral Services',
       imageLink: { path: '/funeral-services', label: 'Get Started Now' },
-      title: 'Resources for uncommon services during a loss.',
+      title: 'Resources for uncommon services when experiencing a recent loss.',
       description: '',
       items: [
         'What to do first',
@@ -1394,7 +1394,7 @@ function OptionsPage() {
       <PageHero
         eyebrow="Funeral Services"
         titleClassName="page-hero-title--centered"
-        title="Resources for uncommon services during a loss."
+        title="Resources for uncommon services when experiencing a recent loss."
         subtitle="Navigate available options, state regulations, and local resources."
       />
 
