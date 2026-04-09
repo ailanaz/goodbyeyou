@@ -1525,10 +1525,11 @@ ul { list-style: none; }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid rgba(26, 26, 26, 0.08);
+    border: none;
     border-radius: 8px;
     padding: 24px;
-    background: rgba(255,255,255,0.95);
+    background: var(--color-primary-dark);
+    color: #fff;
 }
 
 .editorial-art-label {
