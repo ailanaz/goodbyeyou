@@ -1274,21 +1274,21 @@ function HomePage() {
 
   const homeGuidanceItems = [
     {
-      title: 'Open a state page',
+      title: 'Select your state',
       description:
-        'Open the page that matches the state where the planning or arrangements are taking place.',
+        'Access the specific legal and logistical requirements for the state where the service will occur.',
       icon: platformCards[0].icon,
     },
     {
-      title: 'Work through the option and logistics together',
+      title: 'View integrated logistics',
       description:
-        'Keep the service type, provider path, timing, and official steps connected in the same place.',
+        'Review service availability, provider directories, and official filing requirements within a single, unified interface.',
       icon: platformCards[3].icon,
     },
     {
-      title: 'Move into resources and process help when needed',
+      title: 'Access regulatory resources',
       description:
-        'Use resources, legal references, and provider paths when questions around the process come up.',
+        'Refer to state-specific legal codes, transport permits, and official contact data as needed to complete the process.',
       icon: platformCards[1].icon,
     },
   ];
