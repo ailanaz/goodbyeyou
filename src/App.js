@@ -1363,7 +1363,7 @@ function OptionsPage() {
         <div className="container">
           <SectionIntro
             title="What to do in the first 24 to 48 hours."
-            subtitle={<>These are the steps that most people need to work through right away.<br />Your state page will fill in the specifics.</>}
+            subtitle={<>These are the steps to be aware of that most people need to take after a death occurs.<br />Your state page will fill in the specifics.</>}
           />
           <div className="features-grid">
             {immediateSteps.map((step) => (
@@ -1509,7 +1509,7 @@ function PlanningHubsPage() {
         <div className="container">
           <SectionIntro
             title="What your state page covers."
-            subtitle="Everything is organized so you can focus on what matters to you without jumping between sites."
+            subtitle="Your state page will show available options, providers, required documents, and the steps that to take when planning an alternative after death service."
           />
           <div className="features-grid">
             {planningHubFeatures.map((feature) => (
