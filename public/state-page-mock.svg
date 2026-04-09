@@ -1,78 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 400" fill="none">
-  <!-- Background -->
-  <rect width="580" height="400" rx="12" fill="#f5f5fa"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 420" fill="none">
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    .heading { font-weight: 600; fill: #383B5B; }
+    .body { fill: #7a7a8e; }
+    .light { fill: #a0a0b4; }
+    .nav-text { fill: #7a7a8e; font-size: 7.5px; }
+    .nav-active { fill: #383B5B; font-weight: 600; font-size: 7.5px; }
+    .tag-text { fill: #383B5B; font-size: 6.5px; font-weight: 500; }
+    .card-title { fill: #383B5B; font-weight: 600; font-size: 8px; }
+    .card-body { fill: #8a8a9e; font-size: 7px; }
+    .small-tag { fill: #7a7a8e; font-size: 6px; }
+  </style>
 
-  <!-- Top bar -->
-  <rect x="16" y="16" width="548" height="40" rx="8" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
-  <rect x="28" y="28" width="80" height="14" rx="4" fill="#383B5B"/>
-  <rect x="440" y="30" width="56" height="10" rx="3" fill="#c8c8d8"/>
-  <rect x="508" y="30" width="44" height="10" rx="3" fill="#c8c8d8"/>
+  <!-- Background -->
+  <rect width="580" height="420" rx="12" fill="#f5f5fa"/>
+
+  <!-- Top nav bar -->
+  <rect x="16" y="12" width="548" height="36" rx="8" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
+  <text x="30" y="35" class="heading" font-size="11">GoodbyeYou</text>
+  <text x="410" y="34" class="light" font-size="7.5">When You Have Time</text>
+  <text x="496" y="34" class="light" font-size="7.5">When Time Has Run Out</text>
 
   <!-- Sidebar -->
-  <rect x="16" y="68" width="156" height="316" rx="8" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
-  <rect x="28" y="84" width="100" height="14" rx="4" fill="#383B5B"/>
-  <rect x="28" y="106" width="120" height="8" rx="3" fill="#d0d0dc"/>
-  <rect x="28" y="120" width="90" height="8" rx="3" fill="#d0d0dc"/>
+  <rect x="16" y="58" width="156" height="346" rx="8" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
 
-  <!-- Sidebar nav items -->
-  <rect x="24" y="144" width="140" height="28" rx="5" fill="#eeeef6"/>
-  <rect x="34" y="153" width="100" height="10" rx="3" fill="#383B5B"/>
+  <!-- Sidebar title -->
+  <text x="30" y="78" class="heading" font-size="11">Illinois</text>
+  <text x="30" y="92" class="body" font-size="6.5">Explore available options, state</text>
+  <text x="30" y="101" class="body" font-size="6.5">regulations, and local providers.</text>
 
-  <rect x="24" y="176" width="140" height="28" rx="5" fill="transparent"/>
-  <rect x="34" y="185" width="88" height="10" rx="3" fill="#b0b0c0"/>
+  <!-- Sidebar nav -->
+  <rect x="24" y="114" width="140" height="24" rx="5" fill="#eeeef6"/>
+  <text x="34" y="130" class="nav-active">Uncommon Service Menu</text>
 
-  <rect x="24" y="208" width="140" height="28" rx="5" fill="transparent"/>
-  <rect x="34" y="217" width="96" height="10" rx="3" fill="#b0b0c0"/>
-
-  <rect x="24" y="240" width="140" height="28" rx="5" fill="transparent"/>
-  <rect x="34" y="249" width="80" height="10" rx="3" fill="#b0b0c0"/>
-
-  <rect x="24" y="272" width="140" height="28" rx="5" fill="transparent"/>
-  <rect x="34" y="281" width="92" height="10" rx="3" fill="#b0b0c0"/>
+  <text x="34" y="152" class="nav-text">Explore Options</text>
+  <text x="34" y="170" class="nav-text">Provider Directory</text>
+  <text x="34" y="188" class="nav-text">Cost Estimates</text>
+  <text x="34" y="206" class="nav-text">Future Logistics</text>
 
   <!-- Sidebar tags -->
-  <rect x="28" y="316" width="132" height="1" fill="#e0e0ea"/>
-  <rect x="28" y="328" width="48" height="18" rx="9" fill="#eeeef6"/>
-  <rect x="82" y="328" width="56" height="18" rx="9" fill="#eeeef6"/>
-  <rect x="28" y="352" width="42" height="18" rx="9" fill="#eeeef6"/>
+  <rect x="28" y="224" width="132" height="1" fill="#e0e0ea"/>
+  <rect x="28" y="234" width="58" height="16" rx="8" fill="#eeeef6"/>
+  <text x="38" y="245" class="small-tag">Home funeral</text>
+  <rect x="92" y="234" width="58" height="16" rx="8" fill="#eeeef6"/>
+  <text x="100" y="245" class="small-tag">Green burial</text>
+  <rect x="28" y="256" width="56" height="16" rx="8" fill="#eeeef6"/>
+  <text x="36" y="267" class="small-tag">Documents</text>
 
-  <!-- Main content area -->
-  <!-- Section 1 header -->
-  <rect x="188" y="68" width="200" height="14" rx="4" fill="#383B5B"/>
+  <!-- Main content -->
+  <!-- Section 1 title -->
+  <text x="190" y="78" class="heading" font-size="11">Availability: Uncommon Service Menu</text>
 
   <!-- Tag bar -->
-  <rect x="188" y="94" width="376" height="38" rx="8" fill="#eeeef6"/>
-  <rect x="200" y="105" width="72" height="16" rx="5" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
-  <rect x="208" y="110" width="56" height="6" rx="2" fill="#383B5B"/>
-  <rect x="284" y="105" width="80" height="16" rx="5" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
-  <rect x="292" y="110" width="64" height="6" rx="2" fill="#383B5B"/>
-  <rect x="376" y="105" width="68" height="16" rx="5" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
-  <rect x="384" y="110" width="52" height="6" rx="2" fill="#383B5B"/>
+  <rect x="188" y="90" width="376" height="32" rx="7" fill="#eeeef6"/>
+  <rect x="198" y="97" width="72" height="18" rx="5" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
+  <text x="213" y="110" class="tag-text">Legal Status</text>
+  <rect x="280" y="97" width="108" height="18" rx="5" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
+  <text x="293" y="110" class="tag-text">Status of Legislation</text>
 
-  <!-- Card row 1 -->
-  <rect x="188" y="146" width="182" height="110" rx="8" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
-  <rect x="202" y="162" width="90" height="12" rx="3" fill="#383B5B"/>
-  <rect x="202" y="182" width="150" height="8" rx="3" fill="#d0d0dc"/>
-  <rect x="202" y="196" width="130" height="8" rx="3" fill="#d0d0dc"/>
-  <rect x="202" y="210" width="110" height="8" rx="3" fill="#d0d0dc"/>
+  <!-- Card 1 -->
+  <rect x="188" y="134" width="182" height="110" rx="8" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
+  <text x="202" y="154" class="card-title">Legal Status</text>
+  <text x="202" y="170" class="card-body">Home funeral, green burial, and</text>
+  <text x="202" y="181" class="card-body">aquamation are authorized in</text>
+  <text x="202" y="192" class="card-body">Illinois. Whole-body donation is</text>
+  <text x="202" y="203" class="card-body">available through approved</text>
+  <text x="202" y="214" class="card-body">facilities.</text>
 
-  <rect x="382" y="146" width="182" height="110" rx="8" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
-  <rect x="396" y="162" width="80" height="12" rx="3" fill="#383B5B"/>
-  <rect x="396" y="182" width="148" height="8" rx="3" fill="#d0d0dc"/>
-  <rect x="396" y="196" width="126" height="8" rx="3" fill="#d0d0dc"/>
-  <rect x="396" y="210" width="100" height="8" rx="3" fill="#d0d0dc"/>
+  <!-- Card 2 -->
+  <rect x="382" y="134" width="182" height="110" rx="8" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
+  <text x="396" y="154" class="card-title">Status of Legislation</text>
+  <text x="396" y="170" class="card-body">No pending legislation restricting</text>
+  <text x="396" y="181" class="card-body">current alternative options. Illinois</text>
+  <text x="396" y="192" class="card-body">permits family-directed disposition</text>
+  <text x="396" y="203" class="card-body">with proper documentation.</text>
 
-  <!-- Section 2 header -->
-  <rect x="188" y="276" width="180" height="14" rx="4" fill="#383B5B"/>
+  <!-- Section 2 title -->
+  <text x="190" y="270" class="heading" font-size="11">Explore Options: How it Works</text>
 
-  <!-- Card row 2 -->
-  <rect x="188" y="302" width="182" height="82" rx="8" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
-  <rect x="202" y="316" width="76" height="12" rx="3" fill="#383B5B"/>
-  <rect x="202" y="336" width="148" height="8" rx="3" fill="#d0d0dc"/>
-  <rect x="202" y="350" width="120" height="8" rx="3" fill="#d0d0dc"/>
+  <!-- Card 3 -->
+  <rect x="188" y="284" width="182" height="100" rx="8" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
+  <text x="202" y="304" class="card-title">Method Deep Dives</text>
+  <text x="202" y="320" class="card-body">Links to technical descriptions of</text>
+  <text x="202" y="331" class="card-body">home funeral care, green burial,</text>
+  <text x="202" y="342" class="card-body">aquamation processing, and</text>
+  <text x="202" y="353" class="card-body">whole-body donation programs.</text>
 
-  <rect x="382" y="302" width="182" height="82" rx="8" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
-  <rect x="396" y="316" width="84" height="12" rx="3" fill="#383B5B"/>
-  <rect x="396" y="336" width="140" height="8" rx="3" fill="#d0d0dc"/>
-  <rect x="396" y="350" width="116" height="8" rx="3" fill="#d0d0dc"/>
+  <!-- Card 4 -->
+  <rect x="382" y="284" width="182" height="100" rx="8" fill="#fff" stroke="#e0e0ea" stroke-width="1"/>
+  <text x="396" y="304" class="card-title">Environmental Impact</text>
+  <text x="396" y="320" class="card-body">Comparative data on footprint,</text>
+  <text x="396" y="331" class="card-body">space requirements, and processing</text>
+  <text x="396" y="342" class="card-body">timelines for each method.</text>
 </svg>
