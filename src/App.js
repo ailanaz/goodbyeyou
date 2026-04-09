@@ -1109,7 +1109,7 @@ function Navigation() {
             ))}
           </ul>
           <Link to="/" className="nav-logo">
-            <img src="/logo full.png" alt="Goodbye You" className="nav-logo-image" />
+            <img src="/logo-full-cropped.png" alt="Goodbye You" className="nav-logo-image" />
             <span className="nav-logo-tagline">Goodbye to you. Goodbye from you. Goodbye for you.</span>
           </Link>
           <ul className="nav-links nav-links-right">
