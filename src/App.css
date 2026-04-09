@@ -2428,40 +2428,167 @@ ul { list-style: none; }
 /* ========================================
    Resource Detail (resources page)
    ======================================== */
-.state-section-title {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: 28px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--color-border-light);
+/* ========================================
+   State Detail Layout (SDL)
+   ======================================== */
+.sdl-body {
+    padding-top: 56px;
+    padding-bottom: 56px;
 }
 
-.state-section-items {
+.sdl-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    align-items: start;
 }
 
-.state-section-item {
+/* Sidebar */
+.sdl-sidebar-inner {
+    position: sticky;
+    top: 100px;
     background: var(--color-surface);
     border: 1px solid var(--color-border-light);
-    border-radius: 8px;
-    padding: 24px 28px;
+    border-radius: 10px;
+    padding: 28px 24px;
 }
 
-.state-section-item h3 {
+.sdl-sidebar-title {
     font-family: var(--font-heading);
-    font-size: 1.05rem;
+    font-size: 1.35rem;
     font-weight: 600;
     color: var(--color-text);
     margin-bottom: 8px;
 }
 
-.state-section-item p {
-    font-size: 0.92rem;
-    line-height: 1.7;
+.sdl-sidebar-sub {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--color-text-mid);
+    margin-bottom: 20px;
+}
+
+.sdl-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 20px;
+}
+
+.sdl-nav-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 14px;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-text-mid);
+    background: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    line-height: 1.4;
+}
+
+.sdl-nav-item:hover {
+    background: rgba(56, 59, 91, 0.06);
+    color: var(--color-text);
+}
+
+.sdl-nav-item--active {
+    background: rgba(56, 59, 91, 0.1);
+    color: var(--color-primary-dark);
+    font-weight: 600;
+}
+
+.sdl-sidebar-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-border-light);
+}
+
+.sdl-tag {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--color-text-mid);
+    background: rgba(56, 59, 91, 0.06);
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+}
+
+/* Main content */
+.sdl-main {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.sdl-section {
+    scroll-margin-top: 100px;
+}
+
+.sdl-section-header {
+    margin-bottom: 24px;
+}
+
+.sdl-section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 14px;
+}
+
+.sdl-section-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 16px 20px;
+    background: rgba(56, 59, 91, 0.05);
+    border-radius: 8px;
+}
+
+.sdl-section-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    background: var(--color-surface);
+    border-radius: 6px;
+    border: 1px solid var(--color-border-light);
+}
+
+.sdl-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.sdl-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: 10px;
+    padding: 24px;
+}
+
+.sdl-card h3 {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.sdl-card p {
+    font-size: 0.85rem;
+    line-height: 1.65;
     color: var(--color-text-mid);
 }
 
@@ -3190,6 +3317,19 @@ ul { list-style: none; }
     .more-list {
         grid-template-columns: 1fr;
         gap: 10px;
+    }
+
+    .sdl-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .sdl-sidebar-inner {
+        position: static;
+    }
+
+    .sdl-cards {
+        grid-template-columns: 1fr;
     }
 }
 

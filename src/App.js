@@ -1593,21 +1593,96 @@ function PlanningHubsPage() {
   );
 }
 
-function StateSectionBlock({ section }) {
+function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta }) {
+  const [activeSection, setActiveSection] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sectionEls = document.querySelectorAll('.sdl-section');
+      let current = 0;
+      sectionEls.forEach((el, i) => {
+        if (el.getBoundingClientRect().top <= 180) {
+          current = i;
+        }
+      });
+      setActiveSection(current);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (index) => {
+    const el = document.querySelectorAll('.sdl-section')[index];
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <section className="section">
-      <div className="container">
-        <h2 className="state-section-title">{section.title}</h2>
-        <div className="state-section-items">
-          {section.items.map((item) => (
-            <div className="state-section-item" key={item.label}>
-              <h3>{item.label}</h3>
-              <p>{item.description}</p>
+    <>
+      <PageHero eyebrow={eyebrow} title={title} subtitle={intro} />
+
+      <section className="section sdl-body">
+        <div className="container">
+          <div className="sdl-grid">
+            <aside className="sdl-sidebar">
+              <div className="sdl-sidebar-inner">
+                <h2 className="sdl-sidebar-title">{hub.region}</h2>
+                <p className="sdl-sidebar-sub">{intro}</p>
+                <nav className="sdl-nav">
+                  {sections.map((s, i) => (
+                    <button
+                      key={s.title}
+                      className={`sdl-nav-item${i === activeSection ? ' sdl-nav-item--active' : ''}`}
+                      onClick={() => scrollToSection(i)}
+                    >
+                      {s.title}
+                    </button>
+                  ))}
+                </nav>
+                {hub.tags && (
+                  <div className="sdl-sidebar-tags">
+                    {hub.tags.map((tag) => (
+                      <span className="sdl-tag" key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </aside>
+
+            <div className="sdl-main">
+              {sections.map((section, idx) => (
+                <div className="sdl-section" key={section.title} id={`section-${idx}`}>
+                  <div className="sdl-section-header">
+                    <h2>{section.title}</h2>
+                    <div className="sdl-section-tags">
+                      {section.items.map((item) => (
+                        <span className="sdl-section-tag" key={item.label}>{item.label}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="sdl-cards">
+                    {section.items.map((item) => (
+                      <div className="sdl-card" key={item.label}>
+                        <h3>{item.label}</h3>
+                        <p>{item.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <CTASection
+        title={cta.title}
+        description={cta.description}
+        primary={cta.primary}
+        secondary={cta.secondary}
+      />
+    </>
   );
 }
 
@@ -1622,78 +1697,20 @@ function PlanningHubDetailPage() {
     return <Navigate to="/funeralplanning" replace />;
   }
 
-  const planData = hub.planning;
-
   return (
-    <>
-      <PageHero
-        eyebrow="When You Have Time"
-        title={`State-Specific Planning: ${hub.region}`}
-        subtitle={planData ? planData.intro : hub.summary}
-      />
-
-      {planData && planData.sections.map((section) => (
-        <StateSectionBlock section={section} key={section.title} />
-      ))}
-
-      {!planData && (
-        <>
-          <section className="section">
-            <div className="container">
-              <SectionIntro
-                eyebrow="Inside Planning"
-                title="What this state page covers."
-                subtitle="Use this page to work through the local side of the arrangement, including options, next steps, providers, and documents."
-              />
-              <div className="features-grid">
-                {hub.modules.map((module) => (
-                  <div className="feature-card" key={module.title}>
-                    <h3>{module.title}</h3>
-                    <p>{module.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <section className="section section-features">
-            <div className="container">
-              <SectionIntro
-                eyebrow="Focus"
-                title="What to work through here."
-                subtitle={hub.note}
-              />
-              <div className="resource-detail-grid">
-                <div className="resource-detail-card">
-                  <h3>Focus areas</h3>
-                  <ul className="resource-list">
-                    {hub.focusAreas.map((area) => (
-                      <li key={area}>{area}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="resource-detail-card">
-                  <h3>Keep moving</h3>
-                  <p>Use this state page alongside Resources, providers, and legal resources as the arrangement takes shape.</p>
-                  <ul className="resource-list">
-                    <li>Use Resources for what to do after a death</li>
-                    <li>Keep provider details and document locations close at hand</li>
-                    <li>Open provider and legal-resource pages when the state plan points there</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-        </>
-      )}
-
-      <CTASection
-        title="Already dealing with a loss?"
-        description="If someone has died and you need to act now, use the immediate-need path instead."
-        primary={{ path: `/immediate/${hub.id}`, label: 'When Time Has Run Out' }}
-        secondary={{ path: '/resources', label: 'Open Resources' }}
-      />
-    </>
+    <StateDetailLayout
+      eyebrow="When You Have Time"
+      title={`State-Specific Planning: ${hub.region}`}
+      intro={hub.planning ? hub.planning.intro : hub.summary}
+      sections={hub.planning ? hub.planning.sections : []}
+      hub={hub}
+      cta={{
+        title: 'Already dealing with a loss?',
+        description: 'If someone has died and you need to act now, use the immediate-need path instead.',
+        primary: { path: `/immediate/${hub.id}`, label: 'When Time Has Run Out' },
+        secondary: { path: '/resources', label: 'Open Resources' },
+      }}
+    />
   );
 }
 
@@ -1708,46 +1725,20 @@ function ImmediateStateDetailPage() {
     return <Navigate to="/afterdeathguide" replace />;
   }
 
-  const immData = hub.immediate;
-
   return (
-    <>
-      <PageHero
-        eyebrow="When Time Has Run Out"
-        title={`Immediate Logistics: ${hub.region}`}
-        subtitle={immData ? immData.intro : hub.summary}
-      />
-
-      {immData && immData.sections.map((section) => (
-        <StateSectionBlock section={section} key={section.title} />
-      ))}
-
-      {!immData && (
-        <section className="section">
-          <div className="container">
-            <SectionIntro
-              title="What your state page covers."
-              subtitle="Once you open your state, everything you need will be in one place."
-            />
-            <div className="features-grid">
-              {hub.modules.map((module) => (
-                <div className="feature-card" key={module.title}>
-                  <h3>{module.title}</h3>
-                  <p>{module.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      <CTASection
-        title="Not dealing with an immediate loss?"
-        description="If you are planning ahead for yourself or someone else, use the pre-planning path instead."
-        primary={{ path: `/states/${hub.id}`, label: 'When You Have Time' }}
-        secondary={{ path: '/resources', label: 'Open Resources' }}
-      />
-    </>
+    <StateDetailLayout
+      eyebrow="When Time Has Run Out"
+      title={`Immediate Logistics: ${hub.region}`}
+      intro={hub.immediate ? hub.immediate.intro : hub.summary}
+      sections={hub.immediate ? hub.immediate.sections : []}
+      hub={hub}
+      cta={{
+        title: 'Not dealing with an immediate loss?',
+        description: 'If you are planning ahead for yourself or someone else, use the pre-planning path instead.',
+        primary: { path: `/states/${hub.id}`, label: 'When You Have Time' },
+        secondary: { path: '/resources', label: 'Open Resources' },
+      }}
+    />
   );
 }
 
