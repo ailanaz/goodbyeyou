@@ -1420,7 +1420,7 @@ function OptionsPage() {
         <div className="container">
           <SectionIntro
             title="What to do in the first 24 to 48 hours."
-            subtitle="These are the steps that most people need to work through right away. Your state page will fill in the specifics."
+            subtitle={<>These are the steps that most people need to work through right away.<br />Your state page will fill in the specifics.</>}
           />
           <div className="option-detail-list">
             {immediateSteps.map((step) => (
