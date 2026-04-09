@@ -1986,9 +1986,9 @@ function AppLayout() {
         <Route path="/funeralplanning" element={<PlanningHubsPage />} />
         <Route path="/states/:hubId" element={<PlanningHubDetailPage />} />
         <Route path="/immediate/:hubId" element={<ImmediateStateDetailPage />} />
-        <Route path="/afterdeathguide" element={<OptionsPage />} />
+        <Route path="/funeral-services" element={<OptionsPage />} />
         <Route path="/exploreoptions" element={<ExploreOptionsPage />} />
-        <Route path="/resources" element={<ResourcesPage />} />
+        <Route path="/after-death-steps" element={<ResourcesPage />} />
         <Route path="/providers" element={<ProvidersPage />} />
         <Route path="/legal-resources" element={<LegalResourcesPage />} />
 
@@ -1996,12 +1996,13 @@ function AppLayout() {
         <Route path="/funeraloptions" element={<Navigate to="/funeralplanning" replace />} />
         <Route path="/planning-hubs" element={<Navigate to="/funeralplanning" replace />} />
         <Route path="/planning-hubs/:hubId" element={<Navigate to="/funeralplanning" replace />} />
-        <Route path="/options" element={<Navigate to="/afterdeathguide" replace />} />
-        <Route path="/options/:optionId" element={<Navigate to="/afterdeathguide" replace />} />
+        <Route path="/afterdeathguide" element={<Navigate to="/funeral-services" replace />} />
+        <Route path="/options" element={<Navigate to="/funeral-services" replace />} />
+        <Route path="/options/:optionId" element={<Navigate to="/funeral-services" replace />} />
         <Route path="/plan-ahead" element={<Navigate to="/funeralplanning#future-planning" replace />} />
         <Route path="/planning-now" element={<Navigate to="/funeralplanning#current-planning" replace />} />
-        <Route path="/after-death-steps" element={<Navigate to="/resources" replace />} />
-        <Route path="/vault" element={<Navigate to="/resources" replace />} />
+        <Route path="/resources" element={<Navigate to="/after-death-steps" replace />} />
+        <Route path="/vault" element={<Navigate to="/after-death-steps" replace />} />
         <Route path="/legal" element={<Navigate to="/legal-resources" replace />} />
         <Route path="/about" element={<Navigate to="/" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
