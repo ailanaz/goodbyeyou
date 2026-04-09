@@ -1466,7 +1466,7 @@ function ExploreOptionsPage() {
     <>
       <PageHero
         eyebrow="Explore Your Options"
-        titleClassName="page-hero-title--centered"
+        titleClassName="page-hero-title--centered page-hero-title--explore"
         title="Alternative funeral service options."
       />
 
