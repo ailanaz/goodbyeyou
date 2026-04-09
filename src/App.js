@@ -1705,7 +1705,7 @@ function PlanningHubDetailPage() {
       cta={{
         title: 'Already dealing with a loss?',
         description: 'If someone has died and you need to act now, use the immediate-need path instead.',
-        primary: { path: `/immediate/${hub.id}`, label: 'Funeral Services' },
+        primary: { path: `/immediate/${hub.id}`, label: 'When Time Has Run Out' },
         secondary: { path: '/after-death-steps', label: 'Open Resources' },
       }}
     />
@@ -1720,12 +1720,12 @@ function ImmediateStateDetailPage() {
   useMetaDescription(hub ? `Immediate after-death logistics in ${hub.region}. Navigate authority, custody, transport, providers, paperwork, and deadlines for alternative funeral services.` : 'Find immediate after-death logistics by state.');
 
   if (!hub) {
-    return <Navigate to="/funeral-services" replace />;
+    return <Navigate to="/when-time-has-run-out" replace />;
   }
 
   return (
     <StateDetailLayout
-      eyebrow="Funeral Services"
+      eyebrow="When Time Has Run Out"
       title={`Immediate Logistics: ${hub.region}`}
       intro={hub.immediate ? hub.immediate.intro : hub.summary}
       sections={hub.immediate ? hub.immediate.sections : []}
@@ -1806,7 +1806,7 @@ function ProvidersPage() {
         providerCategories[2].title,
         providerCategories[6].title,
       ],
-      link: { path: '/funeral-services', label: 'Match Providers to Options ->' },
+      link: { path: '/when-time-has-run-out', label: 'Match Providers to Options ->' },
     },
     {
       eyebrow: 'State fit',
@@ -1878,7 +1878,7 @@ function ProvidersPage() {
         title="Start connecting."
         description="Open your state for local providers, or compare options before you choose a path."
         primary={{ path: '/funeralplanning', label: 'Search Your State' }}
-        secondary={{ path: '/funeral-services', label: 'Funeral Services' }}
+        secondary={{ path: '/when-time-has-run-out', label: 'When Time Has Run Out' }}
       />
     </>
   );
