@@ -1706,7 +1706,7 @@ function PlanningHubDetailPage() {
         title: 'Already dealing with a loss?',
         description: 'If someone has died and you need to act now, use the immediate-need path instead.',
         primary: { path: `/immediate/${hub.id}`, label: 'When Time Has Run Out' },
-        secondary: { path: '/resources', label: 'Open Resources' },
+        secondary: { path: '/after-death-steps', label: 'Open Resources' },
       }}
     />
   );
@@ -1720,7 +1720,7 @@ function ImmediateStateDetailPage() {
   useMetaDescription(hub ? `Immediate after-death logistics in ${hub.region}. Navigate authority, custody, transport, providers, paperwork, and deadlines for alternative funeral services.` : 'Find immediate after-death logistics by state.');
 
   if (!hub) {
-    return <Navigate to="/afterdeathguide" replace />;
+    return <Navigate to="/funeral-services" replace />;
   }
 
   return (
@@ -1734,7 +1734,7 @@ function ImmediateStateDetailPage() {
         title: 'Not dealing with an immediate loss?',
         description: 'If you are planning ahead for yourself or someone else, use the pre-planning path instead.',
         primary: { path: `/states/${hub.id}`, label: 'When You Have Time' },
-        secondary: { path: '/resources', label: 'Open Resources' },
+        secondary: { path: '/after-death-steps', label: 'Open Resources' },
       }}
     />
   );
@@ -1806,7 +1806,7 @@ function ProvidersPage() {
         providerCategories[2].title,
         providerCategories[6].title,
       ],
-      link: { path: '/afterdeathguide', label: 'Match Providers to Options ->' },
+      link: { path: '/funeral-services', label: 'Match Providers to Options ->' },
     },
     {
       eyebrow: 'State fit',
@@ -1832,7 +1832,7 @@ function ProvidersPage() {
         providerCategories[3].title,
         providerCategories[5].title,
       ],
-      link: { path: '/resources', label: 'Use Resource Paths ->' },
+      link: { path: '/after-death-steps', label: 'Use Resource Paths ->' },
     },
     {
       eyebrow: 'Logistics',
@@ -1878,7 +1878,7 @@ function ProvidersPage() {
         title="Start connecting."
         description="Open your state for local providers, or compare options before you choose a path."
         primary={{ path: '/funeralplanning', label: 'Search Your State' }}
-        secondary={{ path: '/afterdeathguide', label: 'When Time Has Run Out' }}
+        secondary={{ path: '/funeral-services', label: 'When Time Has Run Out' }}
       />
     </>
   );
@@ -1913,7 +1913,7 @@ function LegalResourcesPage() {
         legalFeatures[5].title,
         legalWhen[0].title,
       ],
-      link: { path: '/resources', label: 'Browse Resource Paths ->' },
+      link: { path: '/after-death-steps', label: 'Browse Resource Paths ->' },
     },
     {
       eyebrow: 'Access',
@@ -1971,7 +1971,7 @@ function LegalResourcesPage() {
         title="Start with your state."
         description="Open your state to see what applies where you are, then come back here for the document and authority side of the process."
         primary={{ path: '/funeralplanning', label: 'Search Your State' }}
-        secondary={{ path: '/resources', label: 'All Resources' }}
+        secondary={{ path: '/after-death-steps', label: 'All Resources' }}
       />
     </>
   );
