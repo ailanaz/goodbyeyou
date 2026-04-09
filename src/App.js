@@ -1316,7 +1316,7 @@ function HomePage() {
           <p className="section-eyebrow" style={{ textAlign: 'center', marginBottom: '32px' }}>Navigate the Process</p>
           <div className="home-plan-preview-shell">
             <div className="home-plan-preview-art">
-              <img src="/home-plan-scene.svg" alt="" />
+              <img src="/state-page-mock.svg" alt="State page layout preview" />
             </div>
             <div className="home-plan-preview-copy">
               <div className="home-guidance-list">
