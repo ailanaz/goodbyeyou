@@ -604,7 +604,7 @@ const legalWhen = [
 
 const navItems = [
   { path: '/funeralplanning', label: 'When You Have Time' },
-  { path: '/funeral-services', label: 'When Time Has Run Out' },
+  { path: '/when-time-has-run-out', label: 'When Time Has Run Out' },
   { path: '/after-death-steps', label: 'After Death Steps' },
   { path: '/exploreoptions', label: 'Explore Your Options' },
 ];
@@ -616,7 +616,7 @@ const desktopNavLeft = [
 ];
 
 const desktopNavRight = [
-  { path: '/funeral-services', label: 'When Time Has Run Out' },
+  { path: '/when-time-has-run-out', label: 'When Time Has Run Out' },
 ];
 
 function useDocumentTitle(title) {
@@ -1170,7 +1170,7 @@ function Footer() {
                 <Link to="/funeralplanning">When You Have Time</Link>
               </li>
               <li>
-                <Link to="/funeral-services">Funeral Services</Link>
+                <Link to="/when-time-has-run-out">When Time Has Run Out</Link>
               </li>
               <li>
                 <Link to="/after-death-steps">After Death Steps</Link>
@@ -1232,8 +1232,8 @@ function HomeAboutSection() {
       eyebrow: 'Planning now',
       variant: 'state',
       image: '/no-time-w.png',
-      imageLabel: 'Funeral Services',
-      imageLink: { path: '/funeral-services', label: 'Get Started Now' },
+      imageLabel: 'When Time Has Run Out',
+      imageLink: { path: '/when-time-has-run-out', label: 'Get Started Now' },
       title: 'Resources for uncommon services when experiencing a recent loss.',
       description: '',
       items: [
