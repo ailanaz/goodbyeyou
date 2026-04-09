@@ -117,7 +117,7 @@ ul { list-style: none; }
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    height: 112px;
+    height: 124px;
 }
 
 .nav-logo {
@@ -3159,7 +3159,7 @@ ul { list-style: none; }
     .nav-inner {
         display: flex;
         justify-content: center;
-        height: 98px;
+        height: 106px;
         position: relative;
     }
 
