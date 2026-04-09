@@ -1895,6 +1895,7 @@ ul { list-style: none; }
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.5);
+    padding-top: 12px;
     margin-bottom: 16px;
 }
 
