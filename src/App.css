@@ -1566,6 +1566,7 @@ ul { list-style: none; }
     max-height: 172px;
     object-fit: contain;
     border-radius: 8px;
+    background: #fff;
 }
 
 .editorial-art-img-link {
