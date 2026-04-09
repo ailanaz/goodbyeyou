@@ -604,7 +604,7 @@ const legalWhen = [
 
 const navItems = [
   { path: '/funeralplanning', label: 'When You Have Time' },
-  { path: '/funeral-services', label: 'Funeral Services' },
+  { path: '/funeral-services', label: 'When Time Has Run Out' },
   { path: '/after-death-steps', label: 'After Death Steps' },
   { path: '/exploreoptions', label: 'Explore Your Options' },
 ];
@@ -616,7 +616,7 @@ const desktopNavLeft = [
 ];
 
 const desktopNavRight = [
-  { path: '/funeral-services', label: 'Funeral Services' },
+  { path: '/funeral-services', label: 'When Time Has Run Out' },
 ];
 
 function useDocumentTitle(title) {
