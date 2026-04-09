@@ -605,6 +605,8 @@ const legalWhen = [
 const navItems = [
   { path: '/funeralplanning', label: 'When You Have Time' },
   { path: '/afterdeathguide', label: 'When Time Has Run Out' },
+  { path: '/resources', label: 'Know the Steps' },
+  { path: '/exploreoptions', label: 'Explore Your Options' },
 ];
 
 const utilityNavItems = [];
@@ -1142,11 +1144,6 @@ function Navigation() {
               </NavLink>
             </li>
           ))}
-          <li>
-            <Link to="/funeralplanning" className="nav-mobile-cta">
-              Search Your State
-            </Link>
-          </li>
         </ul>
       </div>
     </nav>
