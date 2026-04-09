@@ -1986,7 +1986,7 @@ function AppLayout() {
         <Route path="/funeralplanning" element={<PlanningHubsPage />} />
         <Route path="/states/:hubId" element={<PlanningHubDetailPage />} />
         <Route path="/immediate/:hubId" element={<ImmediateStateDetailPage />} />
-        <Route path="/funeral-services" element={<OptionsPage />} />
+        <Route path="/when-time-has-run-out" element={<OptionsPage />} />
         <Route path="/exploreoptions" element={<ExploreOptionsPage />} />
         <Route path="/after-death-steps" element={<ResourcesPage />} />
         <Route path="/providers" element={<ProvidersPage />} />
@@ -1996,9 +1996,10 @@ function AppLayout() {
         <Route path="/funeraloptions" element={<Navigate to="/funeralplanning" replace />} />
         <Route path="/planning-hubs" element={<Navigate to="/funeralplanning" replace />} />
         <Route path="/planning-hubs/:hubId" element={<Navigate to="/funeralplanning" replace />} />
-        <Route path="/afterdeathguide" element={<Navigate to="/funeral-services" replace />} />
-        <Route path="/options" element={<Navigate to="/funeral-services" replace />} />
-        <Route path="/options/:optionId" element={<Navigate to="/funeral-services" replace />} />
+        <Route path="/funeral-services" element={<Navigate to="/when-time-has-run-out" replace />} />
+        <Route path="/afterdeathguide" element={<Navigate to="/when-time-has-run-out" replace />} />
+        <Route path="/options" element={<Navigate to="/when-time-has-run-out" replace />} />
+        <Route path="/options/:optionId" element={<Navigate to="/when-time-has-run-out" replace />} />
         <Route path="/plan-ahead" element={<Navigate to="/funeralplanning#future-planning" replace />} />
         <Route path="/planning-now" element={<Navigate to="/funeralplanning#current-planning" replace />} />
         <Route path="/resources" element={<Navigate to="/after-death-steps" replace />} />
