@@ -609,7 +609,10 @@ const navItems = [
   { path: '/exploreoptions', label: 'Explore Your Options' },
 ];
 
-const utilityNavItems = [];
+const utilityNavItems = [
+  { path: '/exploreoptions', label: 'Explore Alternative Service Options' },
+  { path: '/after-death-steps', label: 'After Death Steps' },
+];
 
 const desktopNavLeft = [
   { path: '/funeralplanning', label: 'When You Have Time' },

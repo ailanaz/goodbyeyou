@@ -3131,6 +3131,10 @@ ul { list-style: none; }
         padding: 80px 0;
     }
 
+    .nav-utility {
+        display: none;
+    }
+
     .section-intro {
         margin-bottom: 48px;
     }
