@@ -3131,10 +3131,6 @@ ul { list-style: none; }
         padding: 80px 0;
     }
 
-    .nav-utility {
-        display: none;
-    }
-
     .section-intro {
         margin-bottom: 48px;
     }
@@ -3147,6 +3143,11 @@ ul { list-style: none; }
     .nav-utility-inner {
         height: 38px;
         gap: 10px;
+    }
+
+    .nav-utility-link,
+    .nav-utility-divider {
+        display: none;
     }
 
     .nav-utility-link,
