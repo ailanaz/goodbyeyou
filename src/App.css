@@ -131,13 +131,13 @@ ul { list-style: none; }
     text-align: center;
     width: 360px;
     gap: 0;
+    padding-top: 8px;
 }
 
 .nav-logo-image {
     display: block;
     width: 100%;
     height: auto;
-    padding-top: 4px;
 }
 
 .nav-logo-tagline {
@@ -390,7 +390,7 @@ ul { list-style: none; }
     max-width: 1120px;
     margin: 0 auto;
     text-align: center;
-    padding-top: 32px;
+    transform: translateY(44px);
 }
 
 .home-hero-eyebrow {
@@ -3160,12 +3160,12 @@ ul { list-style: none; }
     .nav-logo {
         margin: 0 auto;
         width: 250px;
+        padding-top: 6px;
     }
 
     .nav-logo-image {
         width: 100%;
         height: auto;
-        padding-top: 3px;
     }
 
     .nav-logo-tagline {
@@ -3176,7 +3176,7 @@ ul { list-style: none; }
     }
 
     .home-hero-content {
-        padding-top: 24px;
+        transform: translateY(28px);
     }
 
     .nav-links {
