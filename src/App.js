@@ -1425,7 +1425,6 @@ function OptionsPage() {
             {immediateSteps.map((step) => (
               <div className="option-detail" key={step.number}>
                 <div className="option-detail-header">
-                  <div className="option-number">{step.number}</div>
                   <h2>{step.title}</h2>
                 </div>
                 <div className="option-detail-body">
