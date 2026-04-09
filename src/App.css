@@ -137,6 +137,7 @@ ul { list-style: none; }
     display: block;
     width: 100%;
     height: auto;
+    padding-top: 4px;
 }
 
 .nav-logo-tagline {
@@ -389,6 +390,7 @@ ul { list-style: none; }
     max-width: 1120px;
     margin: 0 auto;
     text-align: center;
+    padding-top: 32px;
 }
 
 .home-hero-eyebrow {
@@ -3163,6 +3165,7 @@ ul { list-style: none; }
     .nav-logo-image {
         width: 100%;
         height: auto;
+        padding-top: 3px;
     }
 
     .nav-logo-tagline {
@@ -3170,6 +3173,10 @@ ul { list-style: none; }
         font-size: 0.64rem;
         line-height: 1;
         white-space: nowrap;
+    }
+
+    .home-hero-content {
+        padding-top: 24px;
     }
 
     .nav-links {
