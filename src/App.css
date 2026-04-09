@@ -1914,6 +1914,12 @@ ul { list-style: none; }
     text-wrap: balance;
 }
 
+.page-hero-title--explore {
+    max-width: none;
+    font-size: clamp(2rem, 4vw, 3rem);
+    white-space: nowrap;
+}
+
 .page-hero-title--centered {
     text-align: center;
     margin-left: auto;
@@ -3373,6 +3379,10 @@ ul { list-style: none; }
 
     .page-hero-title {
         font-size: 1.875rem;
+    }
+
+    .page-hero-title--explore {
+        white-space: normal;
     }
 
     .topic-hero-title {
