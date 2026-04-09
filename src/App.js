@@ -817,8 +817,8 @@ function EditorialSections({ sections }) {
           ))}
         </div>
         <div className="editorial-bottom-link">
-          <Link to="/exploreoptions" className="home-hero-link">
-            Explore Your Options &rarr;
+          <Link to="/exploreoptions" className="editorial-bottom-cta">
+            Explore Alternative Service Options &rarr;
           </Link>
         </div>
       </div>
