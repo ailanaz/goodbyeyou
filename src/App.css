@@ -364,7 +364,7 @@ ul { list-style: none; }
 .home-hero {
     position: relative;
     min-height: calc(78vh - 50px);
-    padding: 156px 0;
+    padding: 144px 0 156px;
     display: flex;
     align-items: center;
     background-color: var(--color-primary-dark);
@@ -3277,7 +3277,7 @@ ul { list-style: none; }
 
     .home-hero {
         min-height: auto;
-        padding: 132px 0 108px;
+        padding: 124px 0 108px;
     }
 
     .hero-content {

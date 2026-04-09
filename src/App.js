@@ -1201,7 +1201,7 @@ function HomeAboutSection() {
         'Legal and official resources',
         'Provider paths when needed',
       ],
-      link: { path: '/after-death-steps', label: 'Know what to do when a death occurs' },
+      link: { path: '/after-death-steps', label: 'Steps to take when a death occurs' },
     },
   ];
 
