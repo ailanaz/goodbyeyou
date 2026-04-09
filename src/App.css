@@ -1563,7 +1563,7 @@ ul { list-style: none; }
 .editorial-art-image {
     width: 100%;
     height: auto;
-    max-height: 172px;
+    max-height: 260px;
     object-fit: contain;
     border-radius: 8px;
     background: #fff;

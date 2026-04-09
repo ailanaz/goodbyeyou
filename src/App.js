@@ -1218,7 +1218,7 @@ function HomeAboutSection() {
     {
       eyebrow: 'Planning ahead',
       variant: 'education',
-      image: '/time.png',
+      image: '/time-w.png',
       imageLabel: 'When You Have Time',
       imageLink: { path: '/funeralplanning', label: 'Start Pre-Planning' },
       title: 'State-specific resources for planning uncommon after-death services.',
@@ -1233,7 +1233,7 @@ function HomeAboutSection() {
     {
       eyebrow: 'Planning now',
       variant: 'state',
-      image: '/no-time.png',
+      image: '/no-time-w.png',
       imageLabel: 'When Time Has Run Out',
       imageLink: { path: '/afterdeathguide', label: 'Get Started Now' },
       title: 'State-specific logistics for uncommon services during a loss.',
@@ -1248,7 +1248,7 @@ function HomeAboutSection() {
     {
       eyebrow: 'Support',
       variant: 'providers',
-      image: '/questions.png',
+      image: '/questions-w.png',
       imageLabel: 'Know the Steps',
       imageLink: { path: '/resources', label: 'Navigate the Steps' },
       title: 'Know what to do when a loss occurs.',
