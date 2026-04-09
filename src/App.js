@@ -1411,6 +1411,7 @@ function OptionsPage() {
             placeholder="Enter the state where the death occurred"
             buttonLabel="Open State Page"
             basePath="/immediate"
+            variant="inline-search"
           />
         </div>
       </section>
