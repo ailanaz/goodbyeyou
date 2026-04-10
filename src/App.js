@@ -2935,9 +2935,6 @@ function ResourcesPage() {
 
       <section className="section">
         <div className="container">
-          <p className="section-lead checklist-page-intro">
-            Alternative and uncommon options can require more coordination than standard arrangements. The planning and immediate-need lists are specific to those service paths, while the general complete list is the only one intended to support the broader process regardless of service type.
-          </p>
           <div className="checklist-page-stack">
             {checklistPageSections.map((entry) => (
               <div className="checklist-page-section" id={entry.id} key={entry.id}>
