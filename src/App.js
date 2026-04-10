@@ -1211,7 +1211,7 @@ function HomeAboutSection() {
       image: '/no-time-w.png',
       imageLabel: 'When Time Has Run Out',
       imageLink: { path: '/when-time-has-run-out', label: 'Get Started Now' },
-      title: 'Resources for uncommon services when experiencing a recent loss.',
+      title: 'Resources for arranging uncommon services for a recent loss.',
       description: '',
       items: [
         'What to do first',
@@ -1371,7 +1371,7 @@ function OptionsPage() {
       <PageHero
         eyebrow="When Time Has Run Out"
         titleClassName="page-hero-title--centered"
-        title="Resources for uncommon services when experiencing a recent loss."
+        title="Resources for arranging uncommon services for a recent loss."
         subtitle="Navigate available options, state regulations, and local resources."
       />
 
