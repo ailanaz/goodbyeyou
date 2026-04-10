@@ -420,7 +420,7 @@ const planningHubFeatures = [
       'Find the forms, offices, and official resources that may need to be part of the process.',
   },
   {
-    title: 'When legal or authority questions matter',
+    title: 'Legal or authority resources',
     description:
       'Know when documentation, authority, or legal support may need attention and where to start looking.',
   },
