@@ -2276,7 +2276,7 @@ function HomeAboutSection() {
       image: '/no-time-w.png',
       imageLabel: 'When Time Has Run Out',
       imageLink: { path: '/when-time-has-run-out', label: 'Get Started Now' },
-      title: 'Resources for arranging uncommon services for a recent loss',
+      title: <>Resources for arranging uncommon services<br />for<br />a recent loss</>,
       description: '',
       items: [
         'What to do first',
@@ -2294,8 +2294,8 @@ function HomeAboutSection() {
       title: <>Know what to do<br />when a loss occurs</>,
       description: '',
       items: [
-        'What to do when a death occurs',
-        'Legal and official resources',
+        'Get organized with the checklist',
+        'Who to communicate with',
         'Provider paths when needed',
       ],
       link: { path: '/after-death-steps', label: 'Steps to take when a death occurs' },
