@@ -674,7 +674,7 @@ function CTASection({ title, description, primary, secondary, note, textLinks })
       <div className="container">
         <div className="cta-box">
           <h2>{title}</h2>
-          <p>{description}</p>
+          {description ? <p>{description}</p> : null}
           {actionLinks.length ? (
             <div className="cta-actions cta-actions-text">
               {actionLinks.map((item, index) => (
@@ -1243,7 +1243,7 @@ function OptionsPage() {
         <div className="container">
           <SectionIntro
             title="What your state page covers."
-            subtitle={<>A pathway through the process.<br />Once you open your state, everything you need will be in one place.</>}
+            subtitle="A pathway through the process."
           />
           <div className="features-grid">
             {immediateSteps.map((step) => (
@@ -1258,6 +1258,9 @@ function OptionsPage() {
 
       <section className="section">
         <div className="container">
+          <SectionIntro
+            subtitle="Once you open your state, everything you need will be in one place."
+          />
           <div className="features-grid">
             {planningHubFeatures.map((feature) => (
               <div className="feature-card" key={feature.title}>
@@ -1270,8 +1273,7 @@ function OptionsPage() {
       </section>
 
       <CTASection
-        title="Not dealing with an immediate loss?"
-        description="If you are planning ahead for yourself or someone else, use the pre-planning path instead."
+        title="Not dealing with a recent loss?"
         primary={{ path: '/funeralplanning', label: 'When You Have Time' }}
         secondary={{ path: '/after-death-steps', label: 'Open Resources' }}
       />
@@ -1400,7 +1402,6 @@ function PlanningHubsPage() {
 
       <CTASection
         title="Already dealing with a loss?"
-        description="If someone has died and you need to act now, use the immediate-need path instead."
         primary={{ path: '/when-time-has-run-out', label: 'When Time Has Run Out' }}
         secondary={{ path: '/after-death-steps', label: 'Open Resources' }}
       />
@@ -1521,7 +1522,6 @@ function PlanningHubDetailPage() {
       hub={hub}
       cta={{
         title: 'Already dealing with a loss?',
-        description: 'If someone has died and you need to act now, use the immediate-need path instead.',
         primary: { path: `/immediate/${hub.id}`, label: 'When Time Has Run Out' },
         secondary: { path: '/after-death-steps', label: 'Open Resources' },
       }}
@@ -1548,8 +1548,7 @@ function ImmediateStateDetailPage() {
       sections={hub.immediate ? hub.immediate.sections : []}
       hub={hub}
       cta={{
-        title: 'Not dealing with an immediate loss?',
-        description: 'If you are planning ahead for yourself or someone else, use the pre-planning path instead.',
+        title: 'Not dealing with a recent loss?',
         primary: { path: `/states/${hub.id}`, label: 'When You Have Time' },
         secondary: { path: '/after-death-steps', label: 'Open Resources' },
       }}
