@@ -3,322 +3,680 @@ import { BrowserRouter as Router, Link, NavLink, Navigate, Route, Routes, useLoc
 import './App.css';
 import { hubDirectory } from './siteContent';
 
-const optionDetails = [
+
+const optionCategories = [
   {
-    id: 'home-funeral',
-    number: '01',
-    title: 'Home Funeral',
-    description:
-      'Caring for the deceased at home with family-directed preparation, visitation, and vigil before final disposition. The family takes responsibility for the body, often with the support of a home funeral guide.',
-    involves: [
-      'Family-directed body care and preparation',
-      'Home vigil or viewing period',
-      'Dry ice or cooling for preservation',
-      'Transport arrangements for final disposition',
-      'Filing of death certificate and permits',
-    ],
-    considerations: [
-      'Legal in most states with varying requirements',
-      'Some states require funeral director involvement',
-      'Time-sensitive preparation and preservation',
-      'Home funeral guides available in many areas',
-      'Can be combined with green burial or cremation',
+    category: 'Direct Disposition Methods',
+    description: 'Primary methods for handling the body after death, each with distinct legal, logistical, and environmental considerations.',
+    options: [
+      {
+        id: 'direct-cremation',
+        title: 'Direct Cremation',
+        description:
+          'Cremation without a prior funeral service, viewing, or visitation. The body goes directly from the place of death to the cremation facility. Remains are returned to the family for private handling.',
+        involves: [
+          'No viewing, visitation, or funeral service before cremation',
+          'Body transported directly to cremation facility',
+          'Cremation performed within the timeframe set by the provider',
+          'Ashes returned to family in a basic container or chosen urn',
+          'Family arranges a memorial separately if desired',
+        ],
+        considerations: [
+          'One of the lowest-cost disposition options',
+          'Legal in all states',
+          'Some families feel the absence of a viewing or service',
+          'Cremation is irreversible - no option for burial later',
+          'Can be combined with a memorial service at any time afterward',
+        ],
+      },
+      {
+        id: 'immediate-burial',
+        title: 'Immediate Burial',
+        description:
+          'Burial shortly after death without embalming, viewing, or a formal funeral service beforehand. The body is placed in a simple container and buried directly.',
+        involves: [
+          'No embalming, viewing, or visitation',
+          'Body transported to cemetery for prompt burial',
+          'Simple casket or alternative container used',
+          'Cemetery plot and grave opening arranged in advance or at need',
+          'Memorial service may be held separately',
+        ],
+        considerations: [
+          'Lower cost than traditional burial with services',
+          'Time-sensitive - burial must happen relatively quickly without embalming',
+          'Cemetery availability and scheduling can affect timing',
+          'Some families prefer the simplicity and directness',
+          'Religious traditions may align well with this approach',
+        ],
+      },
+      {
+        id: 'home-funeral',
+        title: 'Home Funeral',
+        description:
+          'Caring for the deceased at home with family-directed preparation, visitation, and vigil before final disposition. The family takes responsibility for the body, often with the support of a home funeral guide.',
+        involves: [
+          'Family-directed body care and preparation',
+          'Home vigil or viewing period',
+          'Dry ice or cooling for preservation',
+          'Transport arrangements for final disposition',
+          'Filing of death certificate and permits',
+        ],
+        considerations: [
+          'Legal in most states with varying requirements',
+          'Some states require funeral director involvement',
+          'Time-sensitive preparation and preservation',
+          'Home funeral guides available in many areas',
+          'Can be combined with green burial or cremation',
+        ],
+      },
+      {
+        id: 'green-burial',
+        title: 'Green Burial',
+        description:
+          'Burial without embalming, using biodegradable containers in natural settings that allow the body to return to the earth. No concrete vaults, metal caskets, or chemical preservation.',
+        involves: [
+          'No embalming or chemical preservation',
+          'Biodegradable casket, shroud, or container',
+          'Natural burial ground or approved cemetery section',
+          'Grave markers using natural materials if any',
+          'Minimal environmental impact by design',
+        ],
+        considerations: [
+          'Availability varies by location and state',
+          'Green Burial Council certifies burial grounds',
+          'Cost often lower than conventional burial',
+          'Religious and cultural compatibility varies',
+          'Transport and timing logistics differ from conventional',
+        ],
+      },
+      {
+        id: 'conservation-burial',
+        title: 'Conservation Burial',
+        description:
+          'Green burial within a protected conservation area, where burial fees directly fund land preservation and habitat restoration. The burial itself helps protect the land permanently.',
+        involves: [
+          'Green burial practices on conservation land',
+          'Burial fees fund land trust and habitat restoration',
+          'Permanent conservation easement on the property',
+          'Natural landscape maintained, not manicured',
+          'GPS-marked grave locations',
+        ],
+        considerations: [
+          'Limited number of conservation burial grounds',
+          'May require travel depending on location',
+          'Higher cost than standard green burial in some cases',
+          'Environmental legacy as part of the arrangement',
+          'Green Burial Council conservation certification',
+        ],
+      },
+      {
+        id: 'home-burial',
+        title: 'Home Burial on Private Land',
+        description:
+          'Burial of the body on private property owned by the family, where local zoning and state law permit it. This is distinct from green burial in a cemetery and involves navigating property, county, and state requirements.',
+        involves: [
+          'Verification that state law and local zoning allow private land burial',
+          'Compliance with setback distances from wells, waterways, and property lines',
+          'Grave depth and preparation meeting local specifications',
+          'Filing of required permits and recording of the burial location',
+          'Long-term documentation tied to the property deed or plat',
+        ],
+        considerations: [
+          'Not permitted in every state or county',
+          'Zoning and HOA restrictions can prevent it even where state law allows',
+          'Future property sale may be affected by the presence of a burial',
+          'Families must handle or arrange transport, preparation, and burial logistics',
+          'No perpetual care or maintenance guarantee unless arranged privately',
+        ],
+      },
+      {
+        id: 'aquamation',
+        title: 'Aquamation',
+        description:
+          'Water-based cremation using alkaline hydrolysis. A gentler process that uses water flow, temperature, and alkalinity instead of flame. The result is similar to cremation but with significantly lower environmental impact.',
+        involves: [
+          'Alkaline hydrolysis process using water and heat',
+          'Body placed in a pressurized vessel',
+          'Process takes several hours',
+          'Bone fragments returned to family as with cremation',
+          'Sterile liquid byproduct is safely discharged',
+        ],
+        considerations: [
+          'Legal in approximately 28 states and growing',
+          'Not available everywhere - facility access varies',
+          'Lower carbon footprint than flame cremation',
+          'No mercury emissions from dental fillings',
+          'Cost comparable to traditional cremation',
+        ],
+      },
+      {
+        id: 'natural-organic-reduction',
+        title: 'Natural Organic Reduction',
+        description:
+          'The body is placed in a vessel where controlled natural processes transform it into nutrient-rich soil over several weeks. Sometimes called human composting or terramation.',
+        involves: [
+          'Body placed in a vessel with organic materials',
+          'Controlled decomposition over 30-60 days',
+          'Results in approximately one cubic yard of soil',
+          'Soil returned to family or donated to conservation',
+          'Facility-based process with professional oversight',
+        ],
+        considerations: [
+          'Legal in a growing number of states',
+          'Very limited facility availability currently',
+          'Longer timeline than cremation or burial',
+          'Lowest environmental impact of all disposition options',
+          'May not align with some religious or cultural practices',
+        ],
+      },
+      {
+        id: 'burial-at-sea',
+        title: 'Burial at Sea',
+        description:
+          'Full-body burial or ash scattering in open water, following EPA and Coast Guard requirements for location, depth, and materials used.',
+        involves: [
+          'Full-body burial requires minimum 600 feet depth',
+          'Ash scattering permitted at 3+ nautical miles',
+          'EPA notification required within 30 days',
+          'Biodegradable or weighted containers for full body',
+          'Charter services available in coastal areas',
+        ],
+        considerations: [
+          'Federal regulations apply regardless of state',
+          'Full-body burial at sea is rare and logistically complex',
+          'Ash scattering at sea is more common and accessible',
+          'Military veterans may qualify for Navy burial at sea',
+          'Weather and scheduling can affect timing',
+        ],
+      },
+      {
+        id: 'witness-cremation',
+        title: 'Witness Cremation',
+        description:
+          'A cremation where family members or close friends are present to observe the beginning of the cremation process. Some facilities allow a brief ceremony or moment of reflection before the cremation begins.',
+        involves: [
+          'Cremation facility that permits family presence',
+          'Brief viewing, ceremony, or moment of reflection before cremation',
+          'Family observes the start of the cremation process',
+          'Cremation completed and ashes returned as with standard cremation',
+          'Coordinated scheduling with the cremation provider',
+        ],
+        considerations: [
+          'Not all crematories offer this option',
+          'Facility policies vary on how many people can attend',
+          'Some families find it meaningful for closure and peace of mind',
+          'May involve additional scheduling or fees',
+          'Can be combined with a home funeral or direct cremation arrangement',
+        ],
+      },
     ],
   },
   {
-    id: 'green-burial',
-    number: '02',
-    title: 'Green Burial',
-    description:
-      'Burial without embalming, using biodegradable containers in natural settings that allow the body to return to the earth. No concrete vaults, metal caskets, or chemical preservation.',
-    involves: [
-      'No embalming or chemical preservation',
-      'Biodegradable casket, shroud, or container',
-      'Natural burial ground or approved cemetery section',
-      'Grave markers using natural materials if any',
-      'Minimal environmental impact by design',
-    ],
-    considerations: [
-      'Availability varies by location and state',
-      'Green Burial Council certifies burial grounds',
-      'Cost often lower than conventional burial',
-      'Religious and cultural compatibility varies',
-      'Transport and timing logistics differ from conventional',
-    ],
-  },
-  {
-    id: 'conservation-burial',
-    number: '03',
-    title: 'Conservation Burial',
-    description:
-      'Green burial within a protected conservation area, where burial fees directly fund land preservation and habitat restoration. The burial itself helps protect the land permanently.',
-    involves: [
-      'Green burial practices on conservation land',
-      'Burial fees fund land trust and habitat restoration',
-      'Permanent conservation easement on the property',
-      'Natural landscape maintained, not manicured',
-      'GPS-marked grave locations',
-    ],
-    considerations: [
-      'Limited number of conservation burial grounds',
-      'May require travel depending on location',
-      'Higher cost than standard green burial in some cases',
-      'Environmental legacy as part of the arrangement',
-      'Green Burial Council conservation certification',
-    ],
-  },
-  {
-    id: 'aquamation',
-    number: '04',
-    title: 'Aquamation',
-    description:
-      'Water-based cremation using alkaline hydrolysis. A gentler process that uses water flow, temperature, and alkalinity instead of flame. The result is similar to cremation but with significantly lower environmental impact.',
-    involves: [
-      'Alkaline hydrolysis process using water and heat',
-      'Body placed in a pressurized vessel',
-      'Process takes several hours',
-      'Bone fragments returned to family as with cremation',
-      'Sterile liquid byproduct is safely discharged',
-    ],
-    considerations: [
-      'Legal in approximately 28 states and growing',
-      'Not available everywhere - facility access varies',
-      'Lower carbon footprint than flame cremation',
-      'No mercury emissions from dental fillings',
-      'Cost comparable to traditional cremation',
-    ],
-  },
-  {
-    id: 'natural-organic-reduction',
-    number: '05',
-    title: 'Natural Organic Reduction',
-    description:
-      'The body is placed in a vessel where controlled natural processes transform it into nutrient-rich soil over several weeks. Sometimes called human composting or terramation.',
-    involves: [
-      'Body placed in a vessel with organic materials',
-      'Controlled decomposition over 30-60 days',
-      'Results in approximately one cubic yard of soil',
-      'Soil returned to family or donated to conservation',
-      'Facility-based process with professional oversight',
-    ],
-    considerations: [
-      'Legal in a growing number of states',
-      'Very limited facility availability currently',
-      'Longer timeline than cremation or burial',
-      'Lowest environmental impact of all disposition options',
-      'May not align with some religious or cultural practices',
+    category: 'Alternative Donation and Research Pathways',
+    description: 'Options for contributing the body or organs to science, education, or medical advancement after death.',
+    options: [
+      {
+        id: 'whole-body-donation',
+        title: 'Whole-Body Donation Programs',
+        description:
+          'Donating the body to a medical school, university, anatomical program, research institution, or other approved whole-body donation program for education, research, or surgical training. Depending on the program, remains are often cremated and returned to family after the donation process concludes.',
+        involves: [
+          'Pre-registration with a medical school, university, anatomical donation program, or other approved whole-body donation program',
+          'Acceptance reviewed again at the time of death',
+          'Body transport to the receiving school, program, or partner facility',
+          'Used for medical education, surgical training, or research',
+          'Cremated remains may be returned to family when the program is complete',
+        ],
+        considerations: [
+          'Not every donor is accepted at the time of death - health and timing criteria apply',
+          'Pre-registration strongly recommended',
+          'Costs, transport coverage, and return of remains vary by program',
+          'Medical schools, universities, nonprofits, and research programs have different service areas and requirements',
+          'Backup plan needed in case of non-acceptance',
+        ],
+      },
+      {
+        id: 'organ-and-tissue-donation',
+        title: 'Organ and Tissue Donation',
+        description:
+          'Donation of organs and tissues for transplantation at the time of death. This is handled through organ procurement organizations and is separate from whole-body donation or funeral arrangements.',
+        involves: [
+          'Registration as an organ donor through state registry or driver license',
+          'Organ procurement organization notified at the time of death',
+          'Medical evaluation to determine which organs and tissues are viable',
+          'Surgical recovery of organs and tissues in a hospital setting',
+          'Body returned to the family for funeral or disposition arrangements',
+        ],
+        considerations: [
+          'Does not prevent a funeral, viewing, or any other disposition choice',
+          'Not every registered donor will be eligible at the time of death',
+          'Family may still be consulted even with a registered designation',
+          'Timing and hospital setting are critical factors',
+          'Separate from and not a replacement for whole-body donation',
+        ],
+      },
+      {
+        id: 'forensic-donation',
+        title: 'Forensic Research Donation',
+        description:
+          'Donation of the body to a forensic research facility, sometimes known as a body farm, where remains are studied to advance knowledge of decomposition, forensic identification, and criminal investigation methods.',
+        involves: [
+          'Pre-registration with an accredited forensic research facility',
+          'Body placed in a controlled outdoor environment for study',
+          'Research focused on decomposition, forensic science, and related fields',
+          'Study periods vary depending on research needs',
+          'Cremated remains may be returned to family depending on the program',
+        ],
+        considerations: [
+          'Very limited number of facilities in the United States',
+          'Acceptance is not guaranteed at the time of death',
+          'The nature of the research may not be comfortable for all families',
+          'No cost to the family in most cases',
+          'Backup plan needed in case of non-acceptance',
+        ],
+      },
     ],
   },
   {
-    id: 'whole-body-donation',
-    number: '06',
-    title: 'Whole-Body Donation Programs',
-    description:
-      'Donating the body to a medical school, university, anatomical program, research institution, or other approved whole-body donation program for education, research, or surgical training. Depending on the program, remains are often cremated and returned to family after the donation process concludes.',
-    involves: [
-      'Pre-registration with a medical school, university, anatomical donation program, or other approved whole-body donation program',
-      'Acceptance reviewed again at the time of death',
-      'Body transport to the receiving school, program, or partner facility',
-      'Used for medical education, surgical training, or research',
-      'Cremated remains may be returned to family when the program is complete',
-    ],
-    considerations: [
-      'Not every donor is accepted at the time of death - health and timing criteria apply',
-      'Pre-registration strongly recommended',
-      'Costs, transport coverage, and return of remains vary by program',
-      'Medical schools, universities, nonprofits, and research programs have different service areas and requirements',
-      'Backup plan needed in case of non-acceptance',
-    ],
-  },
-  {
-    id: 'burial-at-sea',
-    number: '07',
-    title: 'Burial at Sea',
-    description:
-      'Full-body burial or ash scattering in open water, following EPA and Coast Guard requirements for location, depth, and materials used.',
-    involves: [
-      'Full-body burial requires minimum 600 feet depth',
-      'Ash scattering permitted at 3+ nautical miles',
-      'EPA notification required within 30 days',
-      'Biodegradable or weighted containers for full body',
-      'Charter services available in coastal areas',
-    ],
-    considerations: [
-      'Federal regulations apply regardless of state',
-      'Full-body burial at sea is rare and logistically complex',
-      'Ash scattering at sea is more common and accessible',
-      'Military veterans may qualify for Navy burial at sea',
-      'Weather and scheduling can affect timing',
-    ],
-  },
-  {
-    id: 'ash-scattering',
-    number: '08',
-    title: 'Ash Scattering',
-    description:
-      'Scattering ashes after cremation in a place that mattered to the person, such as the ocean, private land, or another meaningful location. For many families, it feels more personal than placing remains in a cemetery, and it can include alternatives such as aerial scattering or space-related memorial release services.',
-    involves: [
-      'Cremation completed before scattering takes place',
-      'Location chosen based on personal meaning and access',
-      'Scattering method chosen such as hand scattering, sea scattering, or aerial release',
-      'Permissions confirmed for private land or restricted areas',
-      'Family gathering, private moment, or guided ceremony',
-      'Possible specialty services such as aerial ash scattering or memorial space release',
-    ],
-    considerations: [
-      'Rules vary by location, property type, and water access',
-      'EPA rules apply when scattering at sea',
-      'Public parks or protected land may have restrictions',
-      'Aerial ash scattering and space burials are specialty variations with added cost',
-      'Families may still want a separate memorial gathering',
-    ],
-  },
-  {
-    id: 'tree-and-nature-based-memorials',
-    number: '09',
-    title: 'Tree and Nature-Based Memorials',
-    description:
-      'Tree memorials and other nature-based memorial products are often used after cremation. These can include biodegradable urns, tree-planting products, coral reef memorial structures, or other living memorials tied to the person’s memory.',
-    involves: [
-      'Cremated remains or biodegradable memorial materials used',
-      'Tree planting, seed pod urn, biodegradable urn, coral reef memorial, or other living memorial product selected',
-      'Placement on private land, approved memorial grounds, or another chosen setting',
-      'Coordination of planting timing, care, or long-term stewardship',
-      'Memorial activity often paired with a separate gathering or tribute',
-    ],
-    considerations: [
-      'Usually a memorial choice after cremation, not a full funeral method by itself',
-      'Product quality and long-term viability vary by company',
-      'Land access, reef program rules, and environmental requirements may shape what is possible',
-      'Climate, soil, and maintenance affect the long-term result',
-      'Families may want to connect it with another service or ceremony',
-    ],
-  },
-  {
-    id: 'memorial-diamonds-and-gemstones',
-    number: '10',
-    title: 'Memorial Diamonds and Gemstones',
-    description:
-      'Some companies create diamonds or gemstones from carbon taken from ashes or hair. This is a memorial option rather than a full funeral service, but it is one of the more unusual choices some people explore.',
-    involves: [
-      'Ashes or hair provided to a specialty memorial company',
-      'Diamond or gemstone type, color, cut, size, or setting selected where available',
-      'Production period that can take weeks or months',
-      'Finished gemstone returned as a keepsake item',
-      'Often paired with cremation and a separate service or tribute',
-    ],
-    considerations: [
-      'This is a memorial keepsake option, not a primary disposition method',
-      'Pricing can be significantly higher than other keepsake choices',
-      'Production timelines vary by company and stone type',
-      'Families may want careful review of vendor credibility and guarantees',
-      'Some people prefer it because it creates a lasting physical object tied to the person',
-    ],
-  },
-  {
-    id: 'ashes-in-art-or-keepsakes',
-    number: '11',
-    title: 'Ashes in Art or Keepsakes',
-    description:
-      'Ashes can be incorporated into jewelry, glass art, pottery, and other keepsake items. Like memorial diamonds, this is not a primary funeral method but a memorial option for people who want something tangible to keep.',
-    involves: [
-      'Cremated remains set aside for keepsake use',
-      'Artist, jeweler, or memorial maker selected',
-      'Type of item chosen such as jewelry, glass, pottery, or custom art',
-      'Ash portion prepared and transferred according to vendor instructions',
-      'Finished keepsake returned for private use or family distribution',
-    ],
-    considerations: [
-      'This is a memorial choice after cremation, not a full funeral service',
-      'Different vendors use different amounts of ashes and production methods',
-      'Costs vary widely depending on material and customization',
-      'Families may want multiple keepsakes if remains are being shared',
-      'Quality and handling standards vary, so vendor review matters',
-    ],
-  },
-  {
-    id: 'celebration-of-life',
-    number: '12',
-    title: 'Celebration of Life',
-    description:
-      'A celebration of life moves away from the structure of a traditional funeral and focuses more on the person, their story, and the way they lived. It can be simple or elaborate as long as it reflects the person.',
-    involves: [
-      'Service format built around the person rather than funeral convention',
-      'Flexible timing before or after burial, cremation, or another disposition',
-      'Personal stories, music, photos, video, or tribute material used',
-      'Venue chosen based on meaning, scale, or accessibility, such as a home, outdoor setting, restaurant, or event space',
-      'Can be combined with alternative disposition choices already selected',
-    ],
-    considerations: [
-      'This is a service style rather than a disposition method on its own',
-      'It can be paired with cremation, green burial, home funeral, or other options',
-      'Venue, guest count, and personalization can change cost significantly',
-      'Some families want more structure even within a celebration format',
-      'It often works well when the goal is a less formal and more personal gathering',
-    ],
-  },
-  {
-    id: 'space-burials',
-    number: '13',
-    title: 'Space Burials',
-    description:
-      'Space burial sends a symbolic portion of cremated remains into space through a memorial launch service. It is one of the most unusual memorial options and often appeals to people with a strong connection to astronomy, exploration, or the idea of a celestial tribute.',
-    involves: [
-      'Cremation completed before the memorial launch takes place',
-      'A symbolic portion of ashes provided to a specialty launch company',
-      'Type of flight chosen such as suborbital, orbital, lunar, or deep-space memorial mission',
-      'Launch timing coordinated around the provider’s scheduled missions',
-      'Families may gather for a launch viewing or create a separate tribute around it',
-    ],
-    considerations: [
-      'This is a memorial option after cremation, not a complete funeral service on its own',
-      'Only a small symbolic portion of ashes is usually sent',
-      'Launch timing depends on aerospace schedules and can shift',
-      'Costs vary significantly depending on the type of flight selected',
-      'Families often pair this option with another memorial, keepsake, or ash placement choice',
+    category: 'Post-Disposition and Ashes-Based Alternatives',
+    description: 'Options for what to do with cremated remains or ashes after cremation, aquamation, or another process has been completed.',
+    options: [
+      {
+        id: 'ash-scattering',
+        title: 'Ash Scattering',
+        description:
+          'Scattering ashes after cremation in a place that mattered to the person, such as the ocean, private land, or another meaningful location. For many families, it feels more personal than placing remains in a cemetery.',
+        involves: [
+          'Cremation completed before scattering takes place',
+          'Location chosen based on personal meaning and access',
+          'Scattering method chosen such as hand scattering, sea scattering, or aerial release',
+          'Permissions confirmed for private land or restricted areas',
+          'Family gathering, private moment, or guided ceremony',
+        ],
+        considerations: [
+          'Rules vary by location, property type, and water access',
+          'EPA rules apply when scattering at sea',
+          'Public parks or protected land may have restrictions',
+          'Aerial ash scattering is a specialty variation with added cost',
+          'Families may still want a separate memorial gathering',
+        ],
+      },
+      {
+        id: 'tree-and-nature-memorials',
+        title: 'Tree and Nature-Based Memorials',
+        description:
+          'Tree memorials and other nature-based memorial products are often used after cremation. These can include biodegradable urns, tree-planting products, coral reef memorial structures, or other living memorials.',
+        involves: [
+          'Cremated remains or biodegradable memorial materials used',
+          'Tree planting, seed pod urn, biodegradable urn, coral reef memorial, or other living memorial product selected',
+          'Placement on private land, approved memorial grounds, or another chosen setting',
+          'Coordination of planting timing, care, or long-term stewardship',
+          'Memorial activity often paired with a separate gathering or tribute',
+        ],
+        considerations: [
+          'Usually a memorial choice after cremation, not a full funeral method by itself',
+          'Product quality and long-term viability vary by company',
+          'Land access, reef program rules, and environmental requirements may shape what is possible',
+          'Climate, soil, and maintenance affect the long-term result',
+          'Families may want to connect it with another service or ceremony',
+        ],
+      },
+      {
+        id: 'reef-memorials',
+        title: 'Reef Memorials',
+        description:
+          'Cremated remains are mixed into a reef-safe concrete structure and placed on the ocean floor to become part of a living reef system. This is a nature-based memorial option offered through specialty providers.',
+        involves: [
+          'Cremated remains mixed into a reef ball or reef structure',
+          'Structure deployed at an approved ocean site',
+          'GPS coordinates provided for the memorial location',
+          'Families may attend a placement ceremony or boat trip',
+          'Reef structure becomes part of the marine ecosystem over time',
+        ],
+        considerations: [
+          'Offered through a small number of specialty providers',
+          'Coastal access and deployment logistics apply',
+          'Cost varies by provider, structure type, and ceremony options',
+          'Long-term memorial tied to a living marine environment',
+          'Not a primary disposition method - requires prior cremation',
+        ],
+      },
+      {
+        id: 'memorial-diamonds',
+        title: 'Memorial Diamonds and Gemstones',
+        description:
+          'Some companies create diamonds or gemstones from carbon taken from ashes or hair. This is a memorial option rather than a full funeral service, but it is one of the more unusual choices some people explore.',
+        involves: [
+          'Ashes or hair provided to a specialty memorial company',
+          'Diamond or gemstone type, color, cut, size, or setting selected where available',
+          'Production period that can take weeks or months',
+          'Finished gemstone returned as a keepsake item',
+          'Often paired with cremation and a separate service or tribute',
+        ],
+        considerations: [
+          'This is a memorial keepsake option, not a primary disposition method',
+          'Pricing can be significantly higher than other keepsake choices',
+          'Production timelines vary by company and stone type',
+          'Families may want careful review of vendor credibility and guarantees',
+          'Some people prefer it because it creates a lasting physical object tied to the person',
+        ],
+      },
+      {
+        id: 'ashes-in-art',
+        title: 'Ashes in Art or Keepsakes',
+        description:
+          'Ashes can be incorporated into jewelry, glass art, pottery, and other keepsake items. This is not a primary funeral method but a memorial option for people who want something tangible to keep.',
+        involves: [
+          'Cremated remains set aside for keepsake use',
+          'Artist, jeweler, or memorial maker selected',
+          'Type of item chosen such as jewelry, glass, pottery, or custom art',
+          'Ash portion prepared and transferred according to vendor instructions',
+          'Finished keepsake returned for private use or family distribution',
+        ],
+        considerations: [
+          'This is a memorial choice after cremation, not a full funeral service',
+          'Different vendors use different amounts of ashes and production methods',
+          'Costs vary widely depending on material and customization',
+          'Families may want multiple keepsakes if remains are being shared',
+          'Quality and handling standards vary, so vendor review matters',
+        ],
+      },
+      {
+        id: 'space-burials',
+        title: 'Space Burials',
+        description:
+          'A symbolic portion of cremated remains is sent into space through a memorial launch service. It is one of the most unusual memorial options and often appeals to people with a strong connection to astronomy or exploration.',
+        involves: [
+          'Cremation completed before the memorial launch takes place',
+          'A symbolic portion of ashes provided to a specialty launch company',
+          'Type of flight chosen such as suborbital, orbital, lunar, or deep-space memorial mission',
+          'Launch timing coordinated around the provider\'s scheduled missions',
+          'Families may gather for a launch viewing or create a separate tribute around it',
+        ],
+        considerations: [
+          'This is a memorial option after cremation, not a complete funeral service on its own',
+          'Only a small symbolic portion of ashes is usually sent',
+          'Launch timing depends on aerospace schedules and can shift',
+          'Costs vary significantly depending on the type of flight selected',
+          'Families often pair this option with another memorial, keepsake, or ash placement choice',
+        ],
+      },
+      {
+        id: 'aerial-ash-scattering',
+        title: 'Aerial Ash Scattering',
+        description:
+          'Scattering of cremated remains from an aircraft over a chosen landscape, coastline, or other meaningful location. This is a specialty service offered by charter or memorial flight providers.',
+        involves: [
+          'Cremated remains provided to an aerial scattering service',
+          'Flight location and route chosen by the family',
+          'Scattering performed by the pilot or with family present during the flight',
+          'GPS coordinates and flight documentation may be provided',
+          'Certificate or memorial record issued by some providers',
+        ],
+        considerations: [
+          'FAA and local airspace rules apply',
+          'Weather and scheduling can affect timing',
+          'Cost varies by flight type, location, and whether family is on board',
+          'Not available in all areas',
+          'Some families combine this with a ground-based memorial gathering',
+        ],
+      },
+      {
+        id: 'keepsake-urns',
+        title: 'Keepsake Urns and Divided Remains',
+        description:
+          'Cremated remains can be divided among multiple small urns or keepsake containers, allowing different family members to each keep a portion. This is a common option when ashes are being shared.',
+        involves: [
+          'Cremated remains divided into smaller containers by the family or provider',
+          'Keepsake urns, mini urns, or specialty containers selected',
+          'Portions distributed among family members or kept together',
+          'Some families combine keepsake urns with scattering or burial of the remaining ashes',
+          'No legal restriction on dividing cremated remains in most states',
+        ],
+        considerations: [
+          'Families should discuss division preferences in advance when possible',
+          'Container quality and material vary widely',
+          'Some families find comfort in each person having their own portion',
+          'Can be combined with other memorial options like jewelry, art, or scattering',
+          'Provider or funeral home can assist with the division process',
+        ],
+      },
     ],
   },
   {
-    id: 'digital-memorials',
-    number: '14',
-    title: 'Digital Memorials',
-    description:
-      'Digital memorials are online spaces where friends and family can gather photos, videos, stories, messages, and tribute material in one place. They are not a funeral method by themselves, but they are increasingly part of how remembrance continues over time.',
-    involves: [
-      'Memorial website, tribute page, or private digital platform selected',
-      'Photos, videos, stories, written memories, and messages uploaded',
-      'Privacy settings or sharing access chosen for family and friends',
-      'Page used before, during, or after a service as part of the memorial process',
-      'Digital space kept available for long-term remembrance or anniversary use',
+    category: 'Memorial, Digital Legacy, and Service Options',
+    description: 'Ways to honor, remember, and celebrate the person through services, gatherings, and digital platforms.',
+    options: [
+      {
+        id: 'celebration-of-life',
+        title: 'Celebration of Life',
+        description:
+          'A celebration of life moves away from the structure of a traditional funeral and focuses more on the person, their story, and the way they lived. It can be simple or elaborate as long as it reflects the person.',
+        involves: [
+          'Service format built around the person rather than funeral convention',
+          'Flexible timing before or after burial, cremation, or another disposition',
+          'Personal stories, music, photos, video, or tribute material used',
+          'Venue chosen based on meaning, scale, or accessibility',
+          'Can be combined with alternative disposition choices already selected',
+        ],
+        considerations: [
+          'This is a service style rather than a disposition method on its own',
+          'It can be paired with cremation, green burial, home funeral, or other options',
+          'Venue, guest count, and personalization can change cost significantly',
+          'Some families want more structure even within a celebration format',
+          'It often works well when the goal is a less formal and more personal gathering',
+        ],
+      },
+      {
+        id: 'home-vigil',
+        title: 'Home Vigil',
+        description:
+          'A period of time where the body remains at home for family visitation, reflection, and farewell before the body is moved for final disposition. This can be part of a home funeral or arranged independently.',
+        involves: [
+          'Body kept at home for a defined period, usually one to three days',
+          'Dry ice or cooling methods used for preservation',
+          'Family and close friends visit in a private home setting',
+          'Rituals, readings, or quiet time arranged as the family chooses',
+          'Body transferred to a funeral home, crematory, or burial site afterward',
+        ],
+        considerations: [
+          'State laws on home custody of the body vary',
+          'Preservation and hygiene are time-sensitive responsibilities',
+          'Some families find it deeply meaningful for processing grief',
+          'A home funeral guide can assist with logistics and body care',
+          'Can be combined with green burial, cremation, or other disposition methods',
+        ],
+      },
+      {
+        id: 'memorial-without-body',
+        title: 'Memorial Service Without the Body Present',
+        description:
+          'A memorial service held after the body has already been cremated, buried, or otherwise handled. There is no viewing or casket present, and the focus is entirely on remembrance and tribute.',
+        involves: [
+          'Service held after disposition is already complete',
+          'No body, casket, or urn required to be present',
+          'Photos, videos, stories, and personal items used as focal points',
+          'Timing is flexible - can be days, weeks, or months after the death',
+          'Venue chosen based on the gathering size and personal preference',
+        ],
+        considerations: [
+          'Allows more time for planning and travel arrangements',
+          'Lower cost than a service with the body present',
+          'Some families prefer the flexibility of separating the service from the logistics',
+          'Can feel less formal, which may or may not suit the family',
+          'Works well when family members are spread across different locations',
+        ],
+      },
+      {
+        id: 'celebrant-led-services',
+        title: 'Nonreligious or Celebrant-Led Services',
+        description:
+          'A funeral or memorial service led by a certified celebrant or secular officiant rather than a religious leader. The service is personalized and does not follow a religious format unless the family requests it.',
+        involves: [
+          'Certified celebrant or secular officiant selected',
+          'Service written and designed around the person and family preferences',
+          'No required religious readings, prayers, or structure',
+          'Can be held at any venue, indoors or outdoors',
+          'Often includes personal stories, music, and tribute material chosen by the family',
+        ],
+        considerations: [
+          'Celebrant availability varies by region',
+          'Cost depends on the celebrant and level of customization',
+          'Can be combined with any disposition method',
+          'Some families blend secular and religious elements',
+          'Works well when the person did not identify with a specific faith tradition',
+        ],
+      },
+      {
+        id: 'digital-memorials',
+        title: 'Digital Memorials',
+        description:
+          'Digital memorials are online spaces where friends and family can gather photos, videos, stories, messages, and tribute material in one place. They are not a funeral method by themselves, but they are increasingly part of how remembrance continues over time.',
+        involves: [
+          'Memorial website, tribute page, or private digital platform selected',
+          'Photos, videos, stories, written memories, and messages uploaded',
+          'Privacy settings or sharing access chosen for family and friends',
+          'Page used before, during, or after a service as part of the memorial process',
+          'Digital space kept available for long-term remembrance or anniversary use',
+        ],
+        considerations: [
+          'This is a memorial support option rather than a primary disposition or funeral method',
+          'Platform quality, longevity, and privacy controls vary',
+          'Families may want a plan for who manages the memorial over time',
+          'Digital memorials work especially well when friends and family are geographically spread out',
+          'They can pair naturally with tribute material and a separate memorial gathering',
+        ],
+      },
+      {
+        id: 'video-tribute',
+        title: 'Video Tribute Services',
+        description:
+          'A professionally produced or family-assembled video tribute that tells the story of the person through photos, video clips, music, and narration. Often shown during a service or shared digitally afterward.',
+        involves: [
+          'Photos, video clips, and audio gathered from family and friends',
+          'Video assembled by a professional service or created by the family',
+          'Music, narration, or captions added to personalize the tribute',
+          'Shown during a funeral, memorial, or celebration of life',
+          'Digital copy shared with family for long-term keeping',
+        ],
+        considerations: [
+          'Quality and cost depend on whether a professional service is used',
+          'Gathering materials can take time, especially from multiple sources',
+          'Works well as a centerpiece for services without the body present',
+          'Can be updated or extended over time for anniversaries or remembrance',
+          'Digital distribution makes it easy to share with people who could not attend',
+        ],
+      },
+      {
+        id: 'legacy-planning',
+        title: 'Digital Legacy and Account Planning',
+        description:
+          'Planning for what happens to online accounts, social media profiles, digital files, and subscriptions after death. This is not a funeral service but an increasingly relevant part of after-death planning.',
+        involves: [
+          'Inventory of online accounts, subscriptions, and digital assets',
+          'Legacy contact or digital executor designated where platforms allow',
+          'Instructions for account closure, memorialization, or data transfer',
+          'Password management or secure access documentation prepared',
+          'Integration with broader estate or end-of-life planning documents',
+        ],
+        considerations: [
+          'Platform policies for deceased users vary widely',
+          'Some accounts cannot be transferred or accessed without prior setup',
+          'Digital assets may have financial value that needs to be addressed',
+          'Privacy preferences should be documented clearly',
+          'This is best handled as part of advance planning, not after the fact',
+        ],
+      },
     ],
-    considerations: [
-      'This is a memorial support option rather than a primary disposition or funeral method',
-      'Platform quality, longevity, and privacy controls vary',
-      'Families may want a plan for who manages the memorial over time',
-      'Digital memorials work especially well when friends and family are geographically spread out',
-      'They can pair naturally with tribute material and a separate memorial gathering',
+  },
+  {
+    category: 'Support and Guidance Services',
+    description: 'Professional support and guidance resources that help families navigate alternative funeral planning and after-death logistics.',
+    options: [
+      {
+        id: 'home-funeral-guide',
+        title: 'Home Funeral Guide',
+        description:
+          'A trained professional who helps families care for the body at home, navigate legal requirements, and coordinate logistics for a family-directed funeral. They do not replace a funeral director but support the family through the process.',
+        involves: [
+          'Consultation on body care, cooling, and preparation at home',
+          'Guidance on legal requirements, permits, and paperwork for the state',
+          'Support with transport logistics and coordination with final disposition providers',
+          'Emotional and practical support for the family during the vigil period',
+          'Referrals to other providers as needed',
+        ],
+        considerations: [
+          'Not licensed or regulated in most states - credentials vary',
+          'Availability depends on location',
+          'Costs vary by guide and level of involvement',
+          'Can make a home funeral much more manageable for families doing it for the first time',
+          'Some guides also serve as death doulas or end-of-life planners',
+        ],
+      },
+      {
+        id: 'death-doula',
+        title: 'Death Doula',
+        description:
+          'A nonmedical professional who supports individuals and families through the end-of-life process, including planning, vigil, and after-death logistics. Also known as an end-of-life doula.',
+        involves: [
+          'Emotional, spiritual, and practical support before and after death',
+          'Help with advance planning, legacy work, and final wishes documentation',
+          'Vigil support and guidance during the dying process',
+          'After-death body care guidance and family support',
+          'Coordination with funeral providers, hospice, and other services',
+        ],
+        considerations: [
+          'Not a licensed medical or legal professional',
+          'Training and certification programs vary in scope and recognition',
+          'Costs range widely depending on services and duration of involvement',
+          'Can be especially helpful for families choosing a home-based or alternative path',
+          'Some death doulas specialize in specific cultural or spiritual traditions',
+        ],
+      },
+      {
+        id: 'funeral-consumer-advocacy',
+        title: 'Funeral Consumer Advocacy Organizations',
+        description:
+          'Nonprofit organizations that provide information, pricing transparency, and consumer protection resources related to funeral planning. They help families understand their rights and options.',
+        involves: [
+          'Access to funeral pricing surveys and cost comparisons',
+          'Information on consumer rights under the FTC Funeral Rule',
+          'Guidance on alternative options and provider types',
+          'Complaint filing resources for funeral-related issues',
+          'Educational materials on funeral planning and decision-making',
+        ],
+        considerations: [
+          'These are informational and advocacy resources, not service providers',
+          'Membership or donation may be requested by some organizations',
+          'Local funeral consumer alliances may exist in some states',
+          'Helpful for families who want to verify pricing or understand their rights',
+          'Can be a useful starting point before contacting providers directly',
+        ],
+      },
+      {
+        id: 'green-burial-council',
+        title: 'Green Burial Council Certification',
+        description:
+          'The Green Burial Council certifies burial grounds, funeral homes, and products that meet specific environmental standards. Their certification helps families identify providers committed to green practices.',
+        involves: [
+          'Certification of burial grounds at different conservation levels',
+          'Certification of funeral homes that offer green burial services',
+          'Product certification for biodegradable caskets, shrouds, and urns',
+          'Public directory of certified providers and burial grounds',
+          'Standards for environmental sustainability in funeral practices',
+        ],
+        considerations: [
+          'Certification is voluntary, not required by law',
+          'Not all green burial providers are GBC-certified',
+          'Different certification levels indicate different levels of environmental commitment',
+          'The directory is a useful tool for finding verified green options',
+          'Certification standards are updated periodically',
+        ],
+      },
     ],
   },
 ];
 
-const relatedOptionItems = [
-  'Conservation burial',
-  'Home burial on private land where allowed',
-  'Whole-body donation',
-  'Direct cremation',
-  'Immediate burial',
-  'Home vigils',
-  'Family-led body care',
-  'Witness cremation',
-  'Memorial services without the body present',
-  'Nonreligious or celebrant-led services',
-  'Reef memorials',
-  'Keepsake urns',
-  'Ash jewelry',
-  'Tree memorial products',
-  'Video tribute services',
-  'Personal memorial websites',
-];
 
 const resourceCategories = [
   {
@@ -1283,7 +1641,7 @@ function OptionsPage() {
 
 function ExploreOptionsPage() {
   useDocumentTitle('Explore Alternative Funeral Options - GoodbyeYou');
-  useMetaDescription('Browse alternative funeral services including home funeral, green burial, aquamation, natural organic reduction, and whole-body donation.');
+  useMetaDescription('Browse alternative funeral services including home funeral, green burial, aquamation, natural organic reduction, whole-body donation, and more.');
 
   return (
     <>
@@ -1295,53 +1653,48 @@ function ExploreOptionsPage() {
 
       <section className="section section-state-search-followup">
         <div className="container">
-          <div className="option-detail-list">
-            {optionDetails.map((option) => (
-              <div className="option-detail" id={option.id} key={option.id}>
-                <div className="option-detail-header">
-                  <h2>{option.title}</h2>
-                </div>
-                <div className="option-detail-body">
-                  <p>{option.description}</p>
-                  <div className="option-detail-grid">
-                    <div>
-                      <h4>What it involves</h4>
-                      <ul>
-                        {option.involves.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
+          <p className="section-lead">
+            The following is a comprehensive list of legally available after-death options and pathways that are actually offered somewhere in the United States. Not every option is available in every state, and availability, cost, and logistics vary by location and provider.
+          </p>
+
+          {optionCategories.map((cat) => (
+            <div className="option-category" key={cat.category}>
+              <div className="option-category-header">
+                <h2 className="option-category-title">{cat.category}</h2>
+                <p className="option-category-description">{cat.description}</p>
+              </div>
+              <div className="option-detail-list">
+                {cat.options.map((option) => (
+                  <div className="option-detail" id={option.id} key={option.id}>
+                    <div className="option-detail-header">
+                      <h3>{option.title}</h3>
                     </div>
-                    <div>
-                      <h4>Key considerations</h4>
-                      <ul>
-                        {option.considerations.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
+                    <div className="option-detail-body">
+                      <p>{option.description}</p>
+                      <div className="option-detail-grid">
+                        <div>
+                          <h4>What it involves</h4>
+                          <ul>
+                            {option.involves.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h4>Key considerations</h4>
+                          <ul>
+                            {option.considerations.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-more">
-        <div className="container">
-          <div className="more-box">
-            <h2 className="section-title">People also look into</h2>
-            <p>
-              Some of these are full service paths, and some are memorial or carry-out choices
-              that come up alongside alternative funeral planning.
-            </p>
-            <ul className="more-list">
-              {relatedOptionItems.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 

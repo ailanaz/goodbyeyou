@@ -2278,6 +2278,33 @@ ul { list-style: none; }
 /* ========================================
    Option Detail (options page)
    ======================================== */
+.option-category {
+    margin-bottom: 56px;
+}
+
+.option-category:last-child {
+    margin-bottom: 0;
+}
+
+.option-category-header {
+    margin-bottom: 28px;
+}
+
+.option-category-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.option-category-description {
+    font-size: 1rem;
+    color: var(--color-text-mid);
+    line-height: 1.7;
+    max-width: 720px;
+}
+
 .option-detail-list {
     display: flex;
     flex-direction: column;
@@ -2304,7 +2331,8 @@ ul { list-style: none; }
     font-size: 1.5rem;
 }
 
-.option-detail-header h2 {
+.option-detail-header h2,
+.option-detail-header h3 {
     font-family: var(--font-heading);
     font-size: 1.75rem;
     font-weight: 600;
