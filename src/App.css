@@ -1949,6 +1949,12 @@ ul { list-style: none; }
     white-space: nowrap;
 }
 
+.page-hero-title--recent-loss {
+    max-width: none;
+    font-size: clamp(2rem, 4.1vw, 3.05rem);
+    white-space: nowrap;
+}
+
 .page-hero-title--centered {
     text-align: center;
     margin-left: auto;
@@ -3433,6 +3439,10 @@ ul { list-style: none; }
     }
 
     .page-hero-title--explore {
+        white-space: normal;
+    }
+
+    .page-hero-title--recent-loss {
         white-space: normal;
     }
 
