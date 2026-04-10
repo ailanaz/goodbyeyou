@@ -1652,10 +1652,90 @@ function SectionIntro({ eyebrow, title, subtitle }) {
   );
 }
 
+function getChecklistFileName(title) {
+  const slug = title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+
+  return `${slug || 'checklist'}.txt`;
+}
+
+function formatChecklistItemForDownload(item) {
+  if (typeof item === 'string') {
+    return [`[ ] ${item}`];
+  }
+
+  const mainLine = [item.label, item.text].filter(Boolean).join(' - ');
+  const lines = [mainLine ? `[ ] ${mainLine}` : '[ ]'];
+
+  if (item.note) {
+    lines.push(`    Note: ${item.note}`);
+  }
+
+  if (item.details?.length) {
+    item.details.forEach((detail) => {
+      lines.push(`    - ${detail}`);
+    });
+  }
+
+  return lines;
+}
+
+function buildChecklistDownloadText(checklist) {
+  const lines = [checklist.title, '', checklist.purpose, ''];
+
+  checklist.sections.forEach((section) => {
+    lines.push(section.title);
+
+    if (section.description) {
+      lines.push(section.description);
+    }
+
+    lines.push('');
+    section.items.forEach((item) => {
+      lines.push(...formatChecklistItemForDownload(item));
+    });
+    lines.push('');
+  });
+
+  if (checklist.tipTitle && checklist.tipText) {
+    lines.push(checklist.tipTitle);
+    lines.push(checklist.tipText);
+    lines.push('');
+  }
+
+  return `${lines.join('\n').trim()}\n`;
+}
+
+function downloadChecklist(checklist) {
+  const blob = new Blob([buildChecklistDownloadText(checklist)], {
+    type: 'text/plain;charset=utf-8',
+  });
+  const url = window.URL.createObjectURL(blob);
+  const link = document.createElement('a');
+
+  link.href = url;
+  link.download = getChecklistFileName(checklist.title);
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  window.URL.revokeObjectURL(url);
+}
+
 function ChecklistCard({ checklist, className = '' }) {
   return (
     <div className={`checklist-card ${className}`.trim()}>
-      <h3 className="checklist-title">{checklist.title}</h3>
+      <div className="checklist-header">
+        <h3 className="checklist-title">{checklist.title}</h3>
+        <button
+          type="button"
+          className="checklist-download"
+          onClick={() => downloadChecklist(checklist)}
+        >
+          Download Checklist
+        </button>
+      </div>
       <div className="checklist-purpose">
         <p className="checklist-label">Purpose</p>
         <p className="checklist-purpose-text">{checklist.purpose}</p>
