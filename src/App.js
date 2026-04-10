@@ -1060,80 +1060,6 @@ const optionCategories = [
 ];
 
 
-const resourceCategories = [
-  {
-    title: 'What to do first',
-    description:
-      'Start with the first things that often need to happen after a death, before funeral choices are fully in motion.',
-    items: [
-      'Confirm what has happened in the setting you are in',
-      'Identify who is acting as the main decision-maker',
-      'Pause before jumping too far into service choices',
-      'Start gathering the information already known',
-    ],
-  },
-  {
-    title: 'Who may need to be contacted',
-    description:
-      'The first stretch after a death often involves family, care settings, providers, and official contacts depending on the circumstances.',
-    items: [
-      'Immediate family or the main planner',
-      'Hospital, hospice, care facility, or relevant staff',
-      'Existing providers or guides already involved',
-      'Obituary or newspaper notice if the family chooses to publish one',
-      'Other contacts that may matter early',
-    ],
-  },
-  {
-    title: 'Documents and official steps',
-    description:
-      'Early forms, authorizations, and official records can shape what happens next, especially in alternative funeral planning.',
-    items: [
-      'Death-related records and forms',
-      'Disposition or authority documents',
-      'Transport or permit-related paperwork',
-      'Where originals or instructions may be stored',
-    ],
-    link: { path: '/funeralplanning', label: 'State Search ->' },
-  },
-  {
-    title: 'State-specific planning resources',
-    description:
-      'Alternative funeral services still depend on state-specific logistics, provider availability, and real-world limits before the final choice is made.',
-    items: [
-      'What alternative options may be available in your state',
-      'Questions to ask before committing to a path',
-      'What logistics may shape the decision',
-      'What resources or providers may be needed next',
-    ],
-    link: { path: '/funeralplanning', label: 'State Search ->' },
-  },
-  {
-    title: 'Provider and service resources',
-    description:
-      'Once the path becomes clearer, providers and supporting services help move the plan from idea to execution.',
-    items: [
-      'Alternative service providers by type',
-      'Specialized operators and guides',
-      'Provider coordination tied to the chosen path',
-      'Support for logistics and follow-through',
-    ],
-    link: { path: '/funeralplanning', label: 'State Search ->' },
-  },
-  {
-    title: 'Planning records and originals',
-    description:
-      'Private files do not need to live on the site to stay useful. What matters is knowing what exists, where originals are kept, and who needs to access them.',
-    items: [
-      'Where wet-ink originals are kept',
-      'Who has copies, keys, or access',
-      'Plain lists of providers, contacts, and account locations',
-      'Outside storage you control for private files',
-    ],
-    link: { path: '/funeralplanning', label: 'State Search ->' },
-  },
-];
-
 const planningHubFeatures = [
   {
     title: 'Alternative options in that state',
@@ -2949,29 +2875,6 @@ function ResourcesPage() {
                   subtitle={entry.description}
                 />
                 <ChecklistCard checklist={entry.checklist} />
-                {entry.id === 'general-complete-checklist' ? (
-                  <div className="resource-main checklist-page-resource-block">
-                    <p className="section-lead">Access logistical sequences, legal requirements, and provider pathways to clarify the process following a death. Use these resources to identify the official steps and documentation required for making arrangements.</p>
-                    <div className="resource-detail-grid">
-                      {resourceCategories.map((category) => (
-                        <div className="resource-detail-card" key={category.title}>
-                          <h3>{category.title}</h3>
-                          <p>{category.description}</p>
-                          <ul className="resource-list">
-                            {category.items.map((item) => (
-                              <li key={item}>{item}</li>
-                            ))}
-                          </ul>
-                          {category.link ? (
-                            <Link to={category.link.path} className="resource-link">
-                              {category.link.label}
-                            </Link>
-                          ) : null}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ) : null}
               </div>
             ))}
           </div>
