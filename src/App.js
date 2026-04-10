@@ -1621,13 +1621,13 @@ const checklistLinks = {
 const navItems = [
   { path: '/funeralplanning', label: 'When You Have Time' },
   { path: '/when-time-has-run-out', label: 'When Time Has Run Out' },
-  { path: '/after-death-steps', label: 'After Death Steps' },
+  { path: '/after-death-steps', label: 'After Death Checklists' },
   { path: '/exploreoptions', label: 'Explore Your Options' },
 ];
 
 const utilityNavItems = [
   { path: '/exploreoptions', label: 'Explore Alternative Service Options' },
-  { path: '/after-death-steps', label: 'After Death Steps' },
+  { path: '/after-death-steps', label: 'After Death Checklists' },
 ];
 
 const desktopNavLeft = [
@@ -1871,7 +1871,7 @@ function normalizeCtaLabel(label) {
   }
 
   if (label === 'Open Resources' || label === 'All Resources') {
-    return 'After Death Steps';
+    return 'After Death Checklists';
   }
 
   return label;
@@ -2382,7 +2382,7 @@ function Footer() {
                 <Link to="/when-time-has-run-out">When Time Has Run Out</Link>
               </li>
               <li>
-                <Link to="/after-death-steps">After Death Steps</Link>
+                <Link to="/after-death-steps">After Death Checklists</Link>
               </li>
               <li>
                 <Link to="/exploreoptions">Explore Your Options</Link>
@@ -2440,7 +2440,7 @@ function HomeAboutSection() {
       eyebrow: 'Support',
       variant: 'providers',
       image: '/questions-w.png',
-      imageLabel: 'After Death Steps',
+      imageLabel: 'After Death Checklists',
       imageLink: { path: '/after-death-steps', label: 'Navigate the Steps' },
       title: <>Know what to do<br />when a loss occurs</>,
       description: '',
@@ -2922,15 +2922,15 @@ function ImmediateStateDetailPage() {
 }
 
 function ResourcesPage() {
-  useDocumentTitle('After Death Steps - Checklists - GoodbyeYou');
+  useDocumentTitle('After Death Checklists - GoodbyeYou');
   useMetaDescription('Download planning, immediate-need, and general after-death checklists, plus follow-up resources covering what to do first, who to contact, documents, and provider pathways.');
 
   return (
     <>
       <PageHero
-        eyebrow="After Death Steps"
+        eyebrow="After Death"
         titleClassName="page-hero-title--centered"
-        title="Downloadable checklists for every stage"
+        title="After Death Checklists"
         subtitle="The planning and recent-loss lists are only for alternative or uncommon services. The general checklist is broader and can apply across service types, though exact steps may still vary by location and individual circumstances."
       />
 
