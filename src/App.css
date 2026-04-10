@@ -879,7 +879,8 @@ ul { list-style: none; }
     color: var(--color-text-mid);
     font-weight: 300;
     max-width: 720px;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
+    text-align: center;
 }
 
 .section-state-search-followup {
