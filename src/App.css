@@ -1772,13 +1772,32 @@ ul { list-style: none; }
     margin-bottom: 28px;
 }
 
+.cta-actions-text {
+    gap: 0;
+    align-items: center;
+    row-gap: 12px;
+}
+
 .cta-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     font-size: 1.05rem;
     font-weight: 500;
     letter-spacing: 0.02em;
     transition: color 0.2s ease;
+}
+
+.cta-text-link-arrow {
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+.cta-text-separator {
+    margin: 0 18px;
+    color: rgba(255,255,255,0.45);
 }
 
 .cta-text-link:hover {
@@ -3330,6 +3349,11 @@ ul { list-style: none; }
     .cta-actions {
         flex-direction: column;
         align-items: center;
+    }
+
+    .cta-actions.cta-actions-text {
+        flex-direction: row;
+        justify-content: center;
     }
 
     .cta-actions .btn {

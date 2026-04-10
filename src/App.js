@@ -771,21 +771,36 @@ function EditorialSections({ sections, className = '' }) {
   );
 }
 
-function CTASection({ title, description, primary, secondary, note }) {
+function CTASection({ title, description, primary, secondary, note, textLinks }) {
   return (
     <section className="section section-cta">
       <div className="container">
         <div className="cta-box">
           <h2>{title}</h2>
           <p>{description}</p>
-          <div className="cta-actions">
-            <Link to={primary.path} className="btn btn-primary btn-lg">
-              {primary.label}
-            </Link>
-            <Link to={secondary.path} className="btn btn-outline btn-lg">
-              {secondary.label}
-            </Link>
-          </div>
+          {textLinks?.length ? (
+            <div className="cta-actions cta-actions-text">
+              {textLinks.map((item, index) => (
+                <React.Fragment key={item.path}>
+                  <Link to={item.path} className="cta-text-link">
+                    {item.arrow === 'left' ? <span className="cta-text-link-arrow" aria-hidden="true">&larr;</span> : null}
+                    <span>{item.label}</span>
+                    {item.arrow === 'right' ? <span className="cta-text-link-arrow" aria-hidden="true">&rarr;</span> : null}
+                  </Link>
+                  {index < textLinks.length - 1 ? <span className="cta-text-separator" aria-hidden="true">|</span> : null}
+                </React.Fragment>
+              ))}
+            </div>
+          ) : (
+            <div className="cta-actions">
+              <Link to={primary.path} className="btn btn-primary btn-lg">
+                {primary.label}
+              </Link>
+              <Link to={secondary.path} className="btn btn-outline btn-lg">
+                {secondary.label}
+              </Link>
+            </div>
+          )}
           {note ? <p className="cta-note">{note}</p> : null}
         </div>
       </div>
@@ -1719,9 +1734,11 @@ function ResourcesPage() {
 
       <CTASection
         title="Find what you need."
-        description="Open the state you need for local planning, or use legal resources when forms, authority, or document access become part of the work."
-        primary={{ path: '/funeralplanning', label: 'Search Your State' }}
-        secondary={{ path: '/legal-resources', label: 'Legal Resources' }}
+        description="Choose the path that suits your situation."
+        textLinks={[
+          { path: '/funeralplanning', label: 'Planning for the future', arrow: 'left' },
+          { path: '/when-time-has-run-out', label: 'Planning for a recent death', arrow: 'right' },
+        ]}
       />
     </>
   );
