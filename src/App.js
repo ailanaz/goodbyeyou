@@ -1566,11 +1566,11 @@ function ResourcesPage() {
         eyebrow="After Death Steps"
         titleClassName="page-hero-title--centered"
         title="What to do when a death occurs"
-        subtitle="Access logistical sequences, legal requirements, and provider pathways to clarify the process following a death. Use these resources to identify the official steps and documentation required for making arrangements."
       />
 
       <section className="section">
         <div className="container">
+          <p className="section-lead">Access logistical sequences, legal requirements, and provider pathways to clarify the process following a death. Use these resources to identify the official steps and documentation required for making arrangements.</p>
           <div className="resource-detail-grid">
             {resourceCategories.map((category) => (
               <div className="resource-detail-card" key={category.title}>
