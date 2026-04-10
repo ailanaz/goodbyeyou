@@ -1242,7 +1242,8 @@ function OptionsPage() {
       <section className="section">
         <div className="container">
           <SectionIntro
-            title="A pathway through the process."
+            title="What your state page covers."
+            subtitle="A pathway through the process."
           />
           <div className="features-grid">
             {immediateSteps.map((step) => (
@@ -1257,10 +1258,6 @@ function OptionsPage() {
 
       <section className="section">
         <div className="container">
-          <SectionIntro
-            title="What your state page covers."
-            subtitle="Once you open your state, everything you need will be in one place."
-          />
           <div className="features-grid">
             {planningHubFeatures.map((feature) => (
               <div className="feature-card" key={feature.title}>
