@@ -5,12 +5,10 @@ Alternative funeral planning resources with state-specific options, providers, a
 ## Pages
 
 - `/` - Home
-- `/funeraloptions` - When You Have Time (pre-planning with state search)
+- `/funeralplanning` - When You Have Time (pre-planning with state search)
 - `/when-time-has-run-out` - When Time Has Run Out (immediate-need steps with state search)
 - `/states/[state]` - State-specific planning pages
 - `/after-death-steps` - After Death Steps
-- `/providers` - Provider directory
-- `/legal-resources` - Legal and official resources
 
 ## Development
 

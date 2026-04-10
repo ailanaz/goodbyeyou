@@ -353,7 +353,7 @@ const resourceCategories = [
       'Transport or permit-related paperwork',
       'Where originals or instructions may be stored',
     ],
-    link: { path: '/legal-resources', label: 'View Legal Resources ->' },
+    link: { path: '/funeralplanning', label: 'Search Your State ->' },
   },
   {
     title: 'State-specific planning resources',
@@ -377,7 +377,7 @@ const resourceCategories = [
       'Provider coordination tied to the chosen path',
       'Support for logistics and follow-through',
     ],
-    link: { path: '/providers', label: 'Find Providers ->' },
+    link: { path: '/funeralplanning', label: 'Search Your State ->' },
   },
   {
     title: 'Planning records and originals',
@@ -389,7 +389,7 @@ const resourceCategories = [
       'Plain lists of providers, contacts, and account locations',
       'Outside storage you control for private files',
     ],
-    link: { path: '/legal-resources', label: 'View Legal Resources ->' },
+    link: { path: '/funeralplanning', label: 'Search Your State ->' },
   },
 ];
 
@@ -423,123 +423,6 @@ const planningHubFeatures = [
     title: 'When legal or authority questions matter',
     description:
       'Know when documentation, authority, or legal support may need attention and where to start looking.',
-  },
-];
-
-const providerCategories = [
-  {
-    title: 'Green Burial Grounds',
-    description:
-      'Natural burial sites that allow biodegradable containers, no embalming, and minimal environmental impact. Certified and non-certified locations.',
-    tags: ['Green Burial', 'Conservation Burial'],
-  },
-  {
-    title: 'Aquamation Facilities',
-    description:
-      'Facilities offering alkaline hydrolysis as an alternative to flame cremation. Availability varies by state legality and facility location.',
-    tags: ['Aquamation'],
-  },
-  {
-    title: 'Home Funeral Guides',
-    description:
-      'Trained professionals who support families through home funeral care - body preparation, legal paperwork, and vigil coordination.',
-    tags: ['Home Funeral'],
-  },
-  {
-    title: 'Natural Organic Reduction Facilities',
-    description:
-      'Facilities offering human composting or terramation services. Currently available in a limited but growing number of states.',
-    tags: ['Natural Organic Reduction'],
-  },
-  {
-    title: 'Whole-Body Donation Programs',
-    description:
-      'Medical schools, research institutions, and anatomical programs that accept whole-body donations for science and education.',
-    tags: ['Whole-Body Donation'],
-  },
-  {
-    title: 'Burial at Sea Services',
-    description:
-      'Charter services and organizations that handle full-body burial at sea or ash scattering in line with EPA and Coast Guard requirements.',
-    tags: ['Burial at Sea'],
-  },
-  {
-    title: 'Alternative-Friendly Funeral Homes',
-    description:
-      'Licensed funeral homes that support alternative arrangements - green burial, home funeral support, non-traditional services, and hybrid approaches.',
-    tags: ['Multiple Options'],
-  },
-  {
-    title: 'Transport and Logistics',
-    description:
-      'Services for body transport, including interstate transfer, airport coordination, and direct-to-facility delivery for alternative arrangements.',
-    tags: ['Logistics'],
-  },
-];
-
-const legalFeatures = [
-  {
-    title: 'Official Forms',
-    description:
-      'Locate state-specific forms for death certificates, disposition permits, transport authorization, and other official documentation required for your arrangements.',
-  },
-  {
-    title: 'Disposition Authority',
-    description:
-      'Understand who has legal authority to make disposition decisions in your state, how that authority is established, and what documentation may be needed.',
-  },
-  {
-    title: 'Document Access',
-    description:
-      'How to get to important documents - advance directives, wills, insurance policies, and other materials that may be held by attorneys, institutions, or individuals.',
-  },
-  {
-    title: 'State-Specific Requirements',
-    description:
-      'Legal requirements vary by state - funeral director involvement, waiting periods, transport rules, and disposition-specific regulations. Know what applies where you are.',
-  },
-  {
-    title: 'Attorney and Notary Resources',
-    description:
-      'When professional legal support is needed, find attorneys, notaries, and legal-adjacent professionals with relevant experience in your state.',
-  },
-  {
-    title: 'Authority Clarification',
-    description:
-      "When it's unclear who has authority or what documentation is needed, GoodbyeYou helps identify the right questions and the right resources to answer them.",
-  },
-];
-
-const legalWhen = [
-  {
-    title: 'Disposition decisions',
-    description:
-      'Who has authority to decide what happens to the body, especially when no advance directive exists or family members disagree.',
-  },
-  {
-    title: 'Interstate transport',
-    description:
-      'Moving remains across state lines involves different regulations, permits, and documentation requirements in each state.',
-  },
-  {
-    title: 'Home funeral legality',
-    description:
-      "Some states require funeral director involvement for certain steps. Knowing your state's specific requirements before proceeding.",
-  },
-  {
-    title: 'Advance directives',
-    description:
-      'Creating or locating advance directives, ensuring they meet state requirements, and understanding their legal standing.',
-  },
-  {
-    title: 'Document access',
-    description:
-      'Accessing documents held by attorneys, safe deposit boxes, or institutions when the original holder has died.',
-  },
-  {
-    title: 'Contested decisions',
-    description:
-      'When family members disagree on arrangements, understanding legal priority and what options exist for resolution.',
   },
 ];
 
@@ -614,18 +497,6 @@ function SectionIntro({ eyebrow, title, subtitle }) {
       <h2 className="section-title">{title}</h2>
       {subtitle ? <p className="section-subtitle">{subtitle}</p> : null}
     </div>
-  );
-}
-
-function TopicHero({ eyebrow, title, subtitle }) {
-  return (
-    <section className="topic-hero">
-      <div className="container">
-        <p className="topic-hero-eyebrow">{eyebrow}</p>
-        <h1 className="topic-hero-title">{title}</h1>
-        <p className="topic-hero-sub">{subtitle}</p>
-      </div>
-    </section>
   );
 }
 
@@ -1141,7 +1012,7 @@ function Footer() {
             </p>
           </div>
           <div className="footer-col">
-            <h4>Start Here</h4>
+            <h4>GoodbyeYou</h4>
             <ul>
               <li>
                 <Link to="/funeralplanning">When You Have Time</Link>
@@ -1155,22 +1026,6 @@ function Footer() {
               <li>
                 <Link to="/exploreoptions">Explore Your Options</Link>
               </li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>More</h4>
-            <ul>
-              <li>
-                <Link to="/providers">Providers</Link>
-              </li>
-              <li>
-                <Link to="/legal-resources">Legal Resources</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>GoodbyeYou</h4>
-            <ul>
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -1761,193 +1616,6 @@ function ResourcesPage() {
   );
 }
 
-function ProvidersPage() {
-  useDocumentTitle('Alternative Funeral Providers - GoodbyeYou');
-  useMetaDescription('Find alternative funeral providers including home funeral directors, green burial cemeteries, aquamation facilities, and non-traditional service providers.');
-
-  const sections = [
-    {
-      eyebrow: 'Burial providers',
-      variant: 'providers',
-      title: 'Find providers by the kind of arrangement they support.',
-      description:
-        'Provider search works better when it starts from service type instead of generic funeral-home categories. Different arrangements need different provider pathways.',
-      items: [
-        providerCategories[0].title,
-        providerCategories[2].title,
-        providerCategories[6].title,
-      ],
-      link: { path: '/when-time-has-run-out', label: 'Match Providers to Options ->' },
-    },
-    {
-      eyebrow: 'State fit',
-      variant: 'state',
-      title: 'Provider availability still depends on planning.',
-      description:
-        'This page narrows the field, but local legality, facility access, and next steps still depend on the state you are planning in.',
-      items: [
-        'Search local provider pathways',
-        'See which services are active where you are',
-        'Connect provider choices back to logistics',
-      ],
-      link: { path: '/funeralplanning', label: 'Search Your State ->' },
-    },
-    {
-      eyebrow: 'Specialized services',
-      variant: 'organizations',
-      title: 'Some arrangements need specialized operators and guides.',
-      description:
-        'Aquamation, natural organic reduction, whole-body donation, and burial at sea often require narrower provider sets and more specific route planning than conventional arrangements.',
-      items: [
-        providerCategories[1].title,
-        providerCategories[3].title,
-        providerCategories[5].title,
-      ],
-      link: { path: '/after-death-steps', label: 'Use Resource Paths ->' },
-    },
-    {
-      eyebrow: 'Logistics',
-      variant: 'legal',
-      title: 'Transport, authority, and coordination still matter.',
-      description:
-        'The right provider network is not only about the ceremony or disposition itself. It also includes transport, documentation, and authority-sensitive coordination behind the scenes.',
-      items: [
-        providerCategories[7].title,
-        'Official forms and transport needs',
-        'Questions to settle before transport is booked',
-      ],
-      link: { path: '/legal-resources', label: 'See Legal + Official Resources ->' },
-    },
-  ];
-
-  return (
-    <>
-      <TopicHero
-        eyebrow="Providers"
-        title="Find the right providers."
-        subtitle="Browse the provider types that support alternative arrangements, then narrow the field by state and next step."
-      />
-
-      <EditorialSections sections={sections} />
-
-      <section className="section section-more">
-        <div className="container">
-          <div className="more-box">
-            <h2 className="section-title">Provider availability changes by state.</h2>
-            <p>
-              Availability, legality, and service mix vary by state. Search your state to narrow
-              the provider list to what is actually possible where you are.
-            </p>
-            <Link to="/funeralplanning" className="btn btn-outline-dark more-link-button">
-              Search Your State
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <CTASection
-        title="Start connecting."
-        description="Open your state for local providers, or compare options before you choose a path."
-        primary={{ path: '/funeralplanning', label: 'Search Your State' }}
-        secondary={{ path: '/when-time-has-run-out', label: 'When Time Has Run Out' }}
-      />
-    </>
-  );
-}
-
-function LegalResourcesPage() {
-  useDocumentTitle('Legal and Official Resources - Funeral Planning - GoodbyeYou');
-  useMetaDescription('Legal resources for alternative funeral planning including advance directives, disposition authorizations, and state-specific official documents.');
-
-  const sections = [
-    {
-      eyebrow: 'Forms',
-      variant: 'forms',
-      title: 'Start with the official documents that may be required.',
-      description:
-        'Legal resources start with identifying the forms, authorizations, and records that often control whether the next step can happen.',
-      items: [
-        legalFeatures[0].title,
-        legalFeatures[3].title,
-        legalWhen[1].title,
-      ],
-      link: { path: '/funeralplanning', label: 'Search Your State ->' },
-    },
-    {
-      eyebrow: 'Authority',
-      variant: 'legal',
-      title: 'Clarify who can make decisions and why.',
-      description:
-        'Authority can shape everything from disposition to document access. It is easier to deal with early than after the process has already started moving.',
-      items: [
-        legalFeatures[1].title,
-        legalFeatures[5].title,
-        legalWhen[0].title,
-      ],
-      link: { path: '/after-death-steps', label: 'Browse Resource Paths ->' },
-    },
-    {
-      eyebrow: 'Access',
-      variant: 'state',
-      title: 'Document access is often a state-specific problem.',
-      description:
-        'Whether the issue is home funeral legality, interstate transport, or locating advance directives, the right answer usually depends on the jurisdiction and the document trail involved.',
-      items: [
-        legalFeatures[2].title,
-        legalWhen[2].title,
-        legalWhen[4].title,
-      ],
-      link: { path: '/when-time-has-run-out', label: 'Go to Planning Now ->' },
-    },
-    {
-      eyebrow: 'Professional support',
-      variant: 'organizations',
-      title: 'Know when to bring in outside legal or official help.',
-      description:
-        'Some situations need more than organization. This page helps you see when attorneys, notaries, or official agencies need to be part of the next step.',
-      items: [
-        legalFeatures[4].title,
-        legalWhen[3].title,
-        legalWhen[5].title,
-      ],
-      link: { path: '/providers', label: 'See Connected Provider Paths ->' },
-    },
-  ];
-
-  return (
-    <>
-      <TopicHero
-        eyebrow="Legal and Official Resources"
-        title="Forms, authority, and document support."
-        subtitle="Use this page when paperwork, document access, authority questions, or official requirements start shaping what can happen next."
-      />
-
-      <section className="section section-notice">
-        <div className="container">
-          <div className="notice-box">
-            <p>
-              <strong>Important:</strong> GoodbyeYou provides legal-resource support - it
-              helps with access, organization, and connection to resources. It does not act as a law
-              firm, provide legal advice, or replace a qualified attorney. When
-              professional legal support is needed, GoodbyeYou helps you recognize that and find
-              the right resources.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <EditorialSections sections={sections} />
-
-      <CTASection
-        title="Start with your state."
-        description="Open your state to see what applies where you are, then come back here for the document and authority side of the process."
-        primary={{ path: '/funeralplanning', label: 'Search Your State' }}
-        secondary={{ path: '/after-death-steps', label: 'All Resources' }}
-      />
-    </>
-  );
-}
-
 function AppLayout() {
   return (
     <>
@@ -1960,9 +1628,6 @@ function AppLayout() {
         <Route path="/when-time-has-run-out" element={<OptionsPage />} />
         <Route path="/exploreoptions" element={<ExploreOptionsPage />} />
         <Route path="/after-death-steps" element={<ResourcesPage />} />
-        <Route path="/providers" element={<ProvidersPage />} />
-        <Route path="/legal-resources" element={<LegalResourcesPage />} />
-
         {/* Redirects from old URLs */}
         <Route path="/funeraloptions" element={<Navigate to="/funeralplanning" replace />} />
         <Route path="/planning-hubs" element={<Navigate to="/funeralplanning" replace />} />
@@ -1975,7 +1640,9 @@ function AppLayout() {
         <Route path="/planning-now" element={<Navigate to="/when-time-has-run-out" replace />} />
         <Route path="/resources" element={<Navigate to="/after-death-steps" replace />} />
         <Route path="/vault" element={<Navigate to="/after-death-steps" replace />} />
-        <Route path="/legal" element={<Navigate to="/legal-resources" replace />} />
+        <Route path="/providers" element={<Navigate to="/funeralplanning" replace />} />
+        <Route path="/legal-resources" element={<Navigate to="/funeralplanning" replace />} />
+        <Route path="/legal" element={<Navigate to="/funeralplanning" replace />} />
         <Route path="/about" element={<Navigate to="/" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

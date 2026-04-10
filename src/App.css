@@ -1832,7 +1832,7 @@ ul { list-style: none; }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
     gap: 48px;
     margin-bottom: 60px;
 }
