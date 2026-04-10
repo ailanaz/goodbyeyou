@@ -1274,7 +1274,7 @@ function OptionsPage() {
 
       <CTASection
         className="section-cta-tight-top"
-        title="Not dealing with a recent loss?"
+        title="Choose the path that fits your situation."
         primary={{ path: '/funeralplanning', label: 'When You Have Time' }}
         secondary={{ path: '/after-death-steps', label: 'Open Resources' }}
       />
@@ -1347,8 +1347,7 @@ function ExploreOptionsPage() {
       </section>
 
       <CTASection
-        title="Ready to search your state?"
-        description="Open the state page that matches where your arrangements will take place."
+        title="Search your state for resources"
         primary={{ path: '/funeralplanning', label: 'When You Have Time' }}
         secondary={{ path: '/when-time-has-run-out', label: 'When Time Has Run Out' }}
       />
@@ -1402,7 +1401,7 @@ function PlanningHubsPage() {
       </section>
 
       <CTASection
-        title="Already dealing with a loss?"
+        title="Dealing with a recent loss?"
         primary={{ path: '/when-time-has-run-out', label: 'When Time Has Run Out' }}
         secondary={{ path: '/after-death-steps', label: 'Open Resources' }}
       />
@@ -1522,7 +1521,7 @@ function PlanningHubDetailPage() {
       sections={hub.planning ? hub.planning.sections : []}
       hub={hub}
       cta={{
-        title: 'Already dealing with a loss?',
+        title: 'Dealing with a recent loss?',
         primary: { path: `/immediate/${hub.id}`, label: 'When Time Has Run Out' },
         secondary: { path: '/after-death-steps', label: 'Open Resources' },
       }}
@@ -1549,7 +1548,7 @@ function ImmediateStateDetailPage() {
       sections={hub.immediate ? hub.immediate.sections : []}
       hub={hub}
       cta={{
-        title: 'Not dealing with a recent loss?',
+        title: 'Choose the path that fits your situation.',
         primary: { path: `/states/${hub.id}`, label: 'When You Have Time' },
         secondary: { path: '/after-death-steps', label: 'Open Resources' },
       }}
