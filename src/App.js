@@ -1219,7 +1219,7 @@ function OptionsPage() {
       <PageHero
         eyebrow="When Time Has Run Out"
         titleClassName="page-hero-title--centered page-hero-title--recent-loss"
-        title={<>Resources for arranging uncommon services<br />for a recent loss.</>}
+        title={<>Resources for arranging uncommon services<br />for a recent loss</>}
         subtitle="Navigate available options, state regulations, and local resources."
       />
 
@@ -1291,7 +1291,7 @@ function ExploreOptionsPage() {
       <PageHero
         eyebrow="Explore Your Options"
         titleClassName="page-hero-title--centered page-hero-title--explore"
-        title="Alternative funeral service options."
+        title="Alternative funeral service options"
       />
 
       <section className="section section-state-search-followup">
@@ -1364,7 +1364,7 @@ function PlanningHubsPage() {
       <PageHero
         eyebrow="When You Have Time"
         titleClassName="page-hero-title--planning page-hero-title--centered"
-        title={<>Resources for planning<br />uncommon after-death services.</>}
+        title={<>Resources for planning<br />uncommon after-death services</>}
         subtitle="Explore available options, state regulations, and local providers."
       />
 
@@ -1565,7 +1565,7 @@ function ResourcesPage() {
       <PageHero
         eyebrow="After Death Steps"
         titleClassName="page-hero-title--centered"
-        title="What to do when a death occurs."
+        title="What to do when a death occurs"
         subtitle="Access logistical sequences, legal requirements, and provider pathways to clarify the process following a death. Use these resources to identify the official steps and documentation required for making arrangements."
       />
 
