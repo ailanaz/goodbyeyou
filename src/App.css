@@ -897,6 +897,10 @@ ul { list-style: none; }
     padding-top: 52px;
 }
 
+.section-state-search-covers {
+    padding-top: 28px;
+}
+
 /* ========================================
    What This Is
    ======================================== */
@@ -3485,6 +3489,10 @@ ul { list-style: none; }
 
     .section-state-search-followup {
         padding-top: 40px;
+    }
+
+    .section-state-search-covers {
+        padding-top: 24px;
     }
 
     .section-intro {

@@ -2600,7 +2600,7 @@ function OptionsPage() {
         </div>
       </section>
 
-      <section className="section section-state-search-followup">
+      <section className="section section-state-search-followup section-state-search-covers">
         <div className="container">
           <SectionIntro
             title="What your state page covers."
@@ -2738,7 +2738,7 @@ function PlanningHubsPage() {
         </div>
       </section>
 
-      <section className="section section-state-search-followup">
+      <section className="section section-state-search-followup section-state-search-covers">
         <div className="container">
           <SectionIntro
             title="What your state page covers."
@@ -2931,7 +2931,6 @@ function ResourcesPage() {
         eyebrow="After Death"
         titleClassName="page-hero-title--centered"
         title="After Death Checklists"
-        subtitle="The planning and recent-loss lists are only for alternative or uncommon services. The general checklist is broader and can apply across service types, though exact steps may still vary by location and individual circumstances."
       />
 
       <section className="section">
