@@ -1617,81 +1617,182 @@ function SectionIntro({ eyebrow, title, subtitle }) {
   );
 }
 
-function getChecklistFileName(title) {
-  const slug = title
+function getChecklistSlug(title) {
+  return title
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
-
-  return `${slug || 'checklist'}.txt`;
 }
 
-function formatChecklistItemForDownload(item) {
+function getChecklistFileName(title, extension = 'doc') {
+  return `${getChecklistSlug(title) || 'checklist'}.${extension}`;
+}
+
+function getChecklistStorageKey(title) {
+  return `goodbyeyou-checklist-progress:${getChecklistSlug(title) || 'checklist'}`;
+}
+
+function getChecklistItemKey(sectionTitle, index) {
+  return `${sectionTitle}::${index}`;
+}
+
+function getChecklistItemText(item) {
   if (typeof item === 'string') {
-    return [`[ ] ${item}`, '    ________________________________'];
+    return item;
   }
 
-  const mainLine = [item.label, item.text].filter(Boolean).join(' - ');
-  const lines = [mainLine ? `[ ] ${mainLine}` : '[ ]'];
-
-  if (item.note) {
-    lines.push(`    Note: ${item.note}`);
-  }
-
-  if (item.details?.length) {
-    item.details.forEach((detail) => {
-      lines.push(`    - ${detail}`);
-    });
-  }
-
-  lines.push('    ________________________________');
-
-  return lines;
+  return [item.label, item.text].filter(Boolean).join(' - ');
 }
 
-function buildChecklistDownloadText(checklist) {
-  const lines = [checklist.title, '', checklist.purpose, ''];
-
-  checklist.sections.forEach((section) => {
-    lines.push(section.title);
-
-    if (section.description) {
-      lines.push(section.description);
-    }
-
-    lines.push('');
-    section.items.forEach((item) => {
-      lines.push(...formatChecklistItemForDownload(item));
-    });
-    lines.push('');
-  });
-
-  if (checklist.tipTitle && checklist.tipText) {
-    lines.push(checklist.tipTitle);
-    lines.push(checklist.tipText);
-    lines.push('');
+function readChecklistProgress(title) {
+  if (typeof window === 'undefined') {
+    return {};
   }
 
+  try {
+    const raw = window.localStorage.getItem(getChecklistStorageKey(title));
+    return raw ? JSON.parse(raw) : {};
+  } catch (error) {
+    return {};
+  }
+}
+
+function writeChecklistProgress(title, progress) {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  try {
+    window.localStorage.setItem(getChecklistStorageKey(title), JSON.stringify(progress));
+  } catch (error) {
+    // Ignore storage failures so the checklist still works in-memory.
+  }
+}
+
+function escapeHtml(value = '') {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function buildChecklistDocumentHtml(checklist, checkedItems, { autoPrint = false } = {}) {
   const notesTitle = checklist.notesTitle || 'Notes';
   const notesLines = checklist.notesLines || 4;
-  lines.push(notesTitle);
-  Array.from({ length: notesLines }, () => '________________________________________').forEach((line) => {
-    lines.push(line);
-  });
-  lines.push('');
+  const sectionsHtml = checklist.sections.map((section) => {
+    const itemsHtml = section.items.map((item, index) => {
+      const itemKey = getChecklistItemKey(section.title, index);
+      const isChecked = Boolean(checkedItems[itemKey]);
+      const noteHtml = typeof item === 'object' && item.note
+        ? `<p class="item-note">${escapeHtml(item.note)}</p>`
+        : '';
+      const detailsHtml = typeof item === 'object' && item.details?.length
+        ? `<ul class="item-details">${item.details.map((detail) => `<li>${escapeHtml(detail)}</li>`).join('')}</ul>`
+        : '';
 
-  return `${lines.join('\n').trim()}\n`;
+      return `
+        <li class="item">
+          <div class="item-row">
+            <span class="item-check">${isChecked ? '[x]' : '[ ]'}</span>
+            <div class="item-copy">
+              <p class="item-text">${escapeHtml(getChecklistItemText(item))}</p>
+              ${noteHtml}
+              ${detailsHtml}
+              <div class="item-writein-line"></div>
+            </div>
+          </div>
+        </li>
+      `;
+    }).join('');
+
+    return `
+      <section class="section">
+        <h2>${escapeHtml(section.title)}</h2>
+        ${section.description ? `<p class="section-description">${escapeHtml(section.description)}</p>` : ''}
+        <ul class="item-list">${itemsHtml}</ul>
+      </section>
+    `;
+  }).join('');
+
+  const tipHtml = checklist.tipTitle && checklist.tipText
+    ? `
+      <section class="tip">
+        <p class="eyebrow">${escapeHtml(checklist.tipTitle)}</p>
+        <p>${escapeHtml(checklist.tipText)}</p>
+      </section>
+    `
+    : '';
+
+  const notesHtml = Array.from({ length: notesLines }, () => '<div class="notes-line"></div>').join('');
+  const printScript = autoPrint
+    ? `<script>window.onload=function(){setTimeout(function(){window.focus();window.print();},250)};window.onafterprint=function(){window.close();};</script>`
+    : '';
+
+  return `<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+  <meta charset="utf-8" />
+  <title>${escapeHtml(checklist.title)}</title>
+  <style>
+    body { font-family: Georgia, 'Times New Roman', serif; color: #1f2230; margin: 36px; line-height: 1.45; }
+    h1 { font-size: 22px; margin: 0 0 10px; }
+    h2 { font-size: 15px; margin: 0 0 8px; }
+    p { margin: 0; }
+    .purpose { margin-bottom: 24px; font-size: 12.5px; color: #52586d; }
+    .section { margin-top: 26px; }
+    .section-description { margin-bottom: 12px; font-size: 11.5px; color: #667085; }
+    .item-list { list-style: none; padding: 0; margin: 0; }
+    .item { margin-bottom: 12px; }
+    .item-row { display: table; width: 100%; }
+    .item-check, .item-copy { display: table-cell; vertical-align: top; }
+    .item-check { width: 36px; font-size: 13px; }
+    .item-text { font-size: 12.5px; }
+    .item-note { margin-top: 5px; font-size: 11px; color: #667085; }
+    .item-details { margin: 7px 0 0 18px; padding: 0; }
+    .item-details li { margin: 2px 0; font-size: 11px; }
+    .item-writein-line { margin-top: 8px; border-bottom: 1px solid #c9cfdb; height: 10px; }
+    .eyebrow { margin-bottom: 6px; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4b4f75; }
+    .tip { margin-top: 28px; padding-top: 18px; border-top: 1px solid #d9deea; }
+    .notes { margin-top: 28px; padding-top: 18px; border-top: 1px solid #d9deea; }
+    .notes-line { height: 20px; border-bottom: 1px solid #c9cfdb; }
+  </style>
+  ${printScript}
+</head>
+<body>
+  <h1>${escapeHtml(checklist.title)}</h1>
+  <p class="purpose">${escapeHtml(checklist.purpose)}</p>
+  ${sectionsHtml}
+  ${tipHtml}
+  <section class="notes">
+    <p class="eyebrow">${escapeHtml(notesTitle)}</p>
+    ${notesHtml}
+  </section>
+</body>
+</html>`;
 }
 
-function downloadChecklist(checklist) {
-  const blob = new Blob([buildChecklistDownloadText(checklist)], {
-    type: 'text/plain;charset=utf-8',
+function saveChecklistPdf(checklist, checkedItems) {
+  const printWindow = window.open('', '_blank', 'noopener,noreferrer');
+  if (!printWindow) {
+    return;
+  }
+
+  printWindow.document.open();
+  printWindow.document.write(buildChecklistDocumentHtml(checklist, checkedItems, { autoPrint: true }));
+  printWindow.document.close();
+}
+
+function downloadChecklistWord(checklist, checkedItems) {
+  const blob = new Blob([`\ufeff${buildChecklistDocumentHtml(checklist, checkedItems)}`], {
+    type: 'application/msword;charset=utf-8',
   });
   const url = window.URL.createObjectURL(blob);
   const link = document.createElement('a');
 
   link.href = url;
-  link.download = getChecklistFileName(checklist.title);
+  link.download = getChecklistFileName(checklist.title, 'doc');
   document.body.appendChild(link);
   link.click();
   link.remove();
@@ -1701,18 +1802,52 @@ function downloadChecklist(checklist) {
 function ChecklistCard({ checklist, className = '' }) {
   const notesTitle = checklist.notesTitle || 'Notes';
   const notesLines = checklist.notesLines || 4;
+  const [checkedItems, setCheckedItems] = useState(() => readChecklistProgress(checklist.title));
+
+  useEffect(() => {
+    setCheckedItems(readChecklistProgress(checklist.title));
+  }, [checklist.title]);
+
+  useEffect(() => {
+    writeChecklistProgress(checklist.title, checkedItems);
+  }, [checklist.title, checkedItems]);
+
+  const toggleChecklistItem = (sectionTitle, index) => {
+    const itemKey = getChecklistItemKey(sectionTitle, index);
+
+    setCheckedItems((current) => {
+      const next = { ...current };
+
+      if (next[itemKey]) {
+        delete next[itemKey];
+      } else {
+        next[itemKey] = true;
+      }
+
+      return next;
+    });
+  };
 
   return (
     <div className={`checklist-card ${className}`.trim()}>
       <div className="checklist-header">
         <h3 className="checklist-title">{checklist.title}</h3>
-        <button
-          type="button"
-          className="checklist-download"
-          onClick={() => downloadChecklist(checklist)}
-        >
-          Download Checklist
-        </button>
+        <div className="checklist-actions">
+          <button
+            type="button"
+            className="checklist-download"
+            onClick={() => saveChecklistPdf(checklist, checkedItems)}
+          >
+            Save PDF
+          </button>
+          <button
+            type="button"
+            className="checklist-download"
+            onClick={() => downloadChecklistWord(checklist, checkedItems)}
+          >
+            Download Word
+          </button>
+        </div>
       </div>
       <div className="checklist-purpose">
         <p className="checklist-label">Purpose</p>
@@ -1727,7 +1862,12 @@ function ChecklistCard({ checklist, className = '' }) {
               <li key={`${section.title}-${index}`}>
                 <div className="checklist-item-row">
                   <label className="checklist-item">
-                    <input type="checkbox" className="checklist-checkbox" />
+                    <input
+                      type="checkbox"
+                      className="checklist-checkbox"
+                      checked={Boolean(checkedItems[getChecklistItemKey(section.title, index)])}
+                      onChange={() => toggleChecklistItem(section.title, index)}
+                    />
                     <span className="checklist-item-copy">
                       {typeof item === 'string' ? (
                         item

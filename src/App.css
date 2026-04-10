@@ -2671,6 +2671,13 @@ ul { list-style: none; }
     margin-bottom: 18px;
 }
 
+.checklist-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
 .checklist-title {
     font-family: var(--font-heading);
     font-size: 1.2rem;
@@ -2901,6 +2908,10 @@ ul { list-style: none; }
     .checklist-header {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    .checklist-actions {
+        justify-content: flex-start;
     }
 
     .checklist-download {
