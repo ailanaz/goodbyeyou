@@ -1219,7 +1219,7 @@ function OptionsPage() {
       <PageHero
         eyebrow="When Time Has Run Out"
         titleClassName="page-hero-title--centered"
-        title="Resources for arranging uncommon services for a recent loss."
+        title={<>Resources for arranging uncommon services<br />for a recent loss.</>}
         subtitle="Navigate available options, state regulations, and local resources."
       />
 
