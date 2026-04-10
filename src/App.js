@@ -629,6 +629,22 @@ function TopicHero({ eyebrow, title, subtitle }) {
   );
 }
 
+function normalizeCtaLabel(label) {
+  if (label === 'When You Have Time') {
+    return 'Planning for the future';
+  }
+
+  if (label === 'When Time Has Run Out') {
+    return 'Planning for a recent death';
+  }
+
+  if (label === 'Open Resources' || label === 'All Resources') {
+    return 'After Death Steps';
+  }
+
+  return label;
+}
+
 function ResourceArtwork({ story }) {
   const commonTags = story.items.slice(0, 3);
 
@@ -772,35 +788,36 @@ function EditorialSections({ sections, className = '' }) {
 }
 
 function CTASection({ title, description, primary, secondary, note, textLinks }) {
+  const actionLinks = textLinks?.length
+    ? textLinks
+    : [primary, secondary]
+        .filter(Boolean)
+        .map((item, index) => ({
+          path: item.path,
+          label: normalizeCtaLabel(item.label),
+          arrow: index === 0 ? 'left' : 'right',
+        }));
+
   return (
     <section className="section section-cta">
       <div className="container">
         <div className="cta-box">
           <h2>{title}</h2>
           <p>{description}</p>
-          {textLinks?.length ? (
+          {actionLinks.length ? (
             <div className="cta-actions cta-actions-text">
-              {textLinks.map((item, index) => (
+              {actionLinks.map((item, index) => (
                 <React.Fragment key={item.path}>
                   <Link to={item.path} className="cta-text-link">
                     {item.arrow === 'left' ? <span className="cta-text-link-arrow" aria-hidden="true">&larr;</span> : null}
                     <span>{item.label}</span>
                     {item.arrow === 'right' ? <span className="cta-text-link-arrow" aria-hidden="true">&rarr;</span> : null}
                   </Link>
-                  {index < textLinks.length - 1 ? <span className="cta-text-separator" aria-hidden="true">|</span> : null}
+                  {index < actionLinks.length - 1 ? <span className="cta-text-separator" aria-hidden="true">|</span> : null}
                 </React.Fragment>
               ))}
             </div>
-          ) : (
-            <div className="cta-actions">
-              <Link to={primary.path} className="btn btn-primary btn-lg">
-                {primary.label}
-              </Link>
-              <Link to={secondary.path} className="btn btn-outline btn-lg">
-                {secondary.label}
-              </Link>
-            </div>
-          )}
+          ) : null}
           {note ? <p className="cta-note">{note}</p> : null}
         </div>
       </div>
