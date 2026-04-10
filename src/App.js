@@ -1242,8 +1242,7 @@ function OptionsPage() {
       <section className="section">
         <div className="container">
           <SectionIntro
-            title="What to do in the first 24 to 48 hours."
-            subtitle="A pathway through the process."
+            title="A pathway through the process."
           />
           <div className="features-grid">
             {immediateSteps.map((step) => (
