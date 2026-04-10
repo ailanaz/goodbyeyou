@@ -2321,13 +2321,13 @@ function HomePage() {
     {
       title: 'View integrated logistics',
       description:
-        'Review service availability, provider directories, and official filing requirements within a single, unified interface.',
+        'Review state-specific availability, service provider information and regulatory resources in one unified interface as needed throughout the process.',
       icon: <img src="/View%20integrated%20logistics.png" alt="" className="home-guidance-icon-image" />,
     },
     {
-      title: 'Access regulatory resources',
+      title: 'Get Organized',
       description:
-        'Refer to state-specific legal codes, transport permits, and official contact data as needed to complete the process.',
+        'Navigate essential tasks and requirements with comprehensive checklists. Designed for clarity, to walk you through every step, from immediate logistics to final arrangements.',
       icon: <img src="/Access%20regulatory%20resources.png" alt="" className="home-guidance-icon-image" />,
     },
   ];
