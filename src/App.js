@@ -1243,7 +1243,7 @@ function OptionsPage() {
         <div className="container">
           <SectionIntro
             title="What your state page covers."
-            subtitle="A pathway through the process."
+            subtitle={<>A pathway through the process.<br />Once you open your state, everything you need will be in one place.</>}
           />
           <div className="features-grid">
             {immediateSteps.map((step) => (
