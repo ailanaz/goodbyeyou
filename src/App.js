@@ -1572,7 +1572,7 @@ const checklistPageSections = [
     eyebrow: 'Planning Ahead',
     title: 'Alternative planning checklist',
     description:
-      'Use this checklist only when planning an alternative or uncommon after-death service before a death occurs. It combines option-specific logistics, legal conditions, and timing needs with the standard steps that help others carry out the plan.',
+      'Alternative and uncommon services can require more planning before a death because availability, timing, legal conditions, and provider logistics may affect what is possible. This checklist focuses on those service-specific needs while also covering the standard planning steps that help others carry the plan out.',
     checklist: planningChecklist,
   },
   {
@@ -1580,7 +1580,7 @@ const checklistPageSections = [
     eyebrow: 'Recent Loss',
     title: 'Immediate need checklist',
     description:
-      'Use this checklist only when a death has already occurred and an alternative or uncommon service is being considered or carried out. It combines urgent service-specific logistics, laws, and conditions with the standard actions most people still need to handle.',
+      'Alternative and uncommon services can be harder to navigate after a death because transport, timing, provider access, and legal conditions can quickly shape what remains possible. This checklist focuses on protecting those options while also covering the standard actions that still need immediate attention.',
     checklist: currentLossChecklist,
   },
   {
@@ -1588,7 +1588,7 @@ const checklistPageSections = [
     eyebrow: 'Final Affairs',
     title: 'General complete checklist',
     description:
-      'Use this broader checklist for the overall process after a death. It is not tied to a specific service type and is meant to bring clarity from the first urgent steps through estate and final affairs work.',
+      'This broader checklist is not tied to a specific service type. It is meant to help bring more clarity to the process after a death, from the first urgent steps through final affairs, while recognizing that exact needs can still vary by location and individual circumstance.',
     checklist: generalChecklist,
   },
 ];
