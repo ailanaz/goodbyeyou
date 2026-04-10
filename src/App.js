@@ -755,7 +755,7 @@ function EditorialSections({ sections, className = '' }) {
       <div className="container">
         <div className="editorial-stack">
           {sections.map((story, index) => (
-            <article className={`editorial-section${index % 2 === 1 ? ' reverse' : ''}`} key={story.title}>
+            <article className={`editorial-section${index % 2 === 1 ? ' reverse' : ''}`} key={story.imageLabel || story.eyebrow || index}>
               <div className="editorial-copy">
                 <p className="editorial-kicker">{story.eyebrow}</p>
                 <h2 className="editorial-title">{story.title}</h2>
@@ -1226,7 +1226,7 @@ function HomeAboutSection() {
       image: '/questions-w.png',
       imageLabel: 'After Death Steps',
       imageLink: { path: '/after-death-steps', label: 'Navigate the Steps' },
-      title: 'Know what to do when a loss occurs.',
+      title: <>Know what to do<br />when a loss occurs.</>,
       description: '',
       items: [
         'What to do when a death occurs',
