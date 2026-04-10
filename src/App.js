@@ -209,6 +209,166 @@ const optionCategories = [
           'Can be combined with a home funeral or direct cremation arrangement',
         ],
       },
+      {
+        id: 'cryonics',
+        title: 'Cryonics',
+        description:
+          'Vitrification and ultra-low temperature storage of the body or head in liquid nitrogen, with the intent of potential future revival. Offered by a small number of organizations such as Alcor and the Cryonics Institute, this is one of the most unconventional after-death options available.',
+        involves: [
+          'Pre-registration and membership with a cryonics organization',
+          'Rapid response team dispatched at the time of legal death',
+          'Blood replaced with cryoprotectant solution to prevent ice crystal damage',
+          'Body or head cooled to approximately -196 degrees Celsius in liquid nitrogen',
+          'Long-term storage in a vacuum-insulated vessel at the cryonics facility',
+        ],
+        considerations: [
+          'No scientific evidence that revival will ever be possible',
+          'Significant cost - whole-body preservation can exceed $200,000',
+          'Ongoing storage fees and organizational stability are long-term factors',
+          'Legal death must be declared before the process can begin',
+          'Requires advance planning, funding arrangements, and coordination with the provider',
+        ],
+      },
+      {
+        id: 'mushroom-suits',
+        title: 'Mushroom Suits (Infinite Burial)',
+        description:
+          'Burial in a shroud or suit infused with mushroom mycelium designed to neutralize toxins in the body and facilitate natural decomposition. The mycelium acts as a biological filter as the body breaks down in the soil.',
+        involves: [
+          'Body dressed in a mycelium-infused shroud or burial suit',
+          'Burial in the ground without embalming or a traditional casket',
+          'Mycelium activates after burial and aids decomposition',
+          'Compatible with green burial and conservation burial grounds',
+          'No vault, concrete liner, or chemical preservation used',
+        ],
+        considerations: [
+          'This is a commercially available product but still relatively new',
+          'Long-term scientific data on the effectiveness of toxin neutralization is limited',
+          'Cost is higher than a standard burial shroud',
+          'Requires a burial ground that permits green burial practices',
+          'Not all green burial providers are familiar with or accept this product',
+        ],
+      },
+      {
+        id: 'tree-pods',
+        title: 'Tree Pods (Capsula Mundi)',
+        description:
+          'A biodegradable pod designed to hold the body in a fetal position and serve as the organic base for a tree planted above it. The concept envisions burial grounds becoming memorial forests over time.',
+        involves: [
+          'Body placed inside a biodegradable egg-shaped pod',
+          'Pod buried in the ground with a tree planted directly above',
+          'Decomposition provides nutrients to the growing tree',
+          'Intended to replace traditional headstones with living trees',
+          'The urn version for cremated ashes is currently available for purchase',
+        ],
+        considerations: [
+          'The full-body pod version is a concept and prototype only - it is not commercially available',
+          'Only the ashes urn version is currently sold',
+          'Whether the full-body version becomes a commercial product may depend on funding and demand',
+          'No burial grounds currently accept or support the full-body pod format',
+          'The concept has generated significant public interest but remains unproven at scale',
+        ],
+      },
+      {
+        id: 'direct-nourishment-tree-burial',
+        title: 'Direct-Nourishment Tree Burial',
+        description:
+          'A shrouded burial combined with a specific nutrient mix designed to directly feed a newly planted sapling. The goal is to create a more direct biological connection between the burial and the growth of the tree than standard green burial.',
+        involves: [
+          'Body buried in a biodegradable shroud without embalming',
+          'Specialized nutrient mix placed with the body to support tree growth',
+          'Tree or sapling planted directly above the burial site',
+          'Burial depth and nutrient placement follow the provider\'s protocol',
+          'Compatible with green burial and conservation burial grounds where accepted',
+        ],
+        considerations: [
+          'This is an emerging concept with very limited commercial availability',
+          'Scientific evidence on how much the burial directly feeds the tree is still developing',
+          'Not all green burial grounds offer or support this specific method',
+          'Soil conditions, climate, and tree species all affect the outcome',
+          'Cost and provider availability vary significantly by region',
+        ],
+      },
+      {
+        id: 'promession',
+        title: 'Promession',
+        description:
+          'An experimental method that uses liquid nitrogen to freeze the body, followed by vibration to reduce it to a fine powder. The powder is then freeze-dried and can be buried in a biodegradable container. The process was developed in Sweden but has not reached commercial availability.',
+        involves: [
+          'Body frozen to approximately -196 degrees Celsius using liquid nitrogen',
+          'Frozen body subjected to vibration, breaking it into fine particles',
+          'Particles freeze-dried to remove remaining moisture',
+          'Resulting powder placed in a biodegradable container for shallow burial',
+          'Intended to be an environmentally low-impact alternative to cremation',
+        ],
+        considerations: [
+          'This method is not commercially available anywhere in the world as of now',
+          'The concept has been promoted since the early 2000s but no functioning facility has opened',
+          'Whether it becomes available may depend on funding, regulation, and technical development',
+          'No regulatory framework exists for this process in the United States',
+          'Should not be considered a current option - included here for awareness only',
+        ],
+      },
+      {
+        id: 'open-air-funeral-pyre',
+        title: 'Open-Air Funeral Pyre',
+        description:
+          'Outdoor cremation on a wood-fueled fire, conducted in the open air rather than in a closed cremation chamber. This ancient practice is legally permitted in only a very small number of locations in the United States.',
+        involves: [
+          'Body placed on a constructed wood pyre in an open-air setting',
+          'Fire lit and maintained until cremation is complete',
+          'Ceremony or gathering may accompany the burning',
+          'Remaining bone fragments collected after the fire',
+          'Process conducted at a permitted outdoor cremation site',
+        ],
+        considerations: [
+          'Legal only in Crestone, Colorado and through specific nonprofit organizations in Maine',
+          'Extremely limited access - not available in the vast majority of the country',
+          'May require travel and advance coordination with the site operator',
+          'Environmental regulations, air quality rules, and local permits apply',
+          'Deeply meaningful for some cultural and spiritual traditions',
+        ],
+      },
+      {
+        id: 'modern-mummification',
+        title: 'Modern Mummification',
+        description:
+          'Permanent preservation of the body through chemical baths, specialized wrapping, and sealing techniques inspired by ancient practices but using modern materials and methods. Summum, based in Utah, is the most well-known provider of this service.',
+        involves: [
+          'Body preserved through a multi-step chemical immersion and treatment process',
+          'Organs may be preserved separately or treated in place depending on the provider',
+          'Body wrapped in specialized materials and sealed in a custom-made encasement',
+          'Process takes several months to complete',
+          'Preserved body returned to the family or placed in a chosen location',
+        ],
+        considerations: [
+          'Extremely limited availability - Summum in Salt Lake City, Utah is the primary known provider',
+          'Cost is significantly higher than most other disposition methods',
+          'The process is irreversible and the body is permanently preserved',
+          'Cemetery or storage arrangements for the preserved body must be planned separately',
+          'May appeal to individuals with specific spiritual, philosophical, or personal motivations',
+        ],
+      },
+      {
+        id: 'sky-burial',
+        title: 'Sky Burial (International)',
+        description:
+          'A ritual practice in which the body is placed on an elevated site and exposed to the elements and scavenging birds, allowing it to return to nature through consumption rather than burial or cremation. This practice is rooted in Tibetan Buddhist tradition and is performed in parts of Tibet, Mongolia, and other regions.',
+        involves: [
+          'Body transported to a designated sky burial site, typically at high elevation',
+          'Body prepared and placed according to the cultural and ritual protocol of the tradition',
+          'Vultures and other birds consume the remains over a period of hours or days',
+          'A rogyapa (body breaker) may prepare the body to facilitate the process',
+          'Ritual prayers and ceremonies typically accompany the process',
+        ],
+        considerations: [
+          'Not legal or practiced in the United States',
+          'Requires international travel to Tibet, Mongolia, or another region where the practice exists',
+          'Deeply tied to Tibetan Buddhist beliefs about impermanence and the cycle of life',
+          'Access for non-residents or non-practitioners may be restricted or culturally inappropriate',
+          'Included here for awareness - this is not a domestically available option',
+        ],
+      },
     ],
   },
   {
@@ -236,6 +396,46 @@ const optionCategories = [
         ],
       },
       {
+        id: 'state-anatomical-boards',
+        title: 'State Anatomical Boards',
+        description:
+          'Donation of the body through a state-run anatomical board that distributes remains to medical schools and universities within its jurisdiction for physician training and student education. These programs are distinct from private donation companies and are administered by state government or designated institutions.',
+        involves: [
+          'Pre-registration or at-need donation through the state anatomical board',
+          'Body transported to the board or a designated medical school',
+          'Remains used for anatomy courses, surgical training, and medical education',
+          'Study period typically lasts one to two years',
+          'Cremated remains usually returned to family after the program is complete',
+        ],
+        considerations: [
+          'Not every state operates an anatomical board - availability varies',
+          'Acceptance criteria and logistics differ by state',
+          'Transport and cremation costs may or may not be covered by the program',
+          'Separate from private non-transplant anatomical donation organizations',
+          'Backup plan needed in case of non-acceptance at the time of death',
+        ],
+      },
+      {
+        id: 'nado-non-transplant-anatomical-donation',
+        title: 'Non-Transplant Anatomical Donation (NADO)',
+        description:
+          'Donation of the body to a private, non-transplant anatomical donation organization that provides tissues and remains to surgical training programs, medical device companies, and research facilities. Companies such as Science Care operate in this space and function differently from state anatomical boards or university programs.',
+        involves: [
+          'Pre-registration with a private anatomical donation organization',
+          'Body transported to the organization\'s facility at the time of death',
+          'Tissues and remains distributed to medical device companies, surgical training programs, or research partners',
+          'Donor body may be used across multiple programs or purposes',
+          'Cremated remains may be returned to family after the process is complete',
+        ],
+        considerations: [
+          'These are private, often for-profit companies - not state or university programs',
+          'The range of uses for donated remains is broader and may include commercial purposes',
+          'Families should review the organization\'s disclosure and consent documents carefully',
+          'Industry oversight and regulation vary - not all organizations operate under the same standards',
+          'Transport and cremation costs are typically covered by the organization',
+        ],
+      },
+      {
         id: 'organ-and-tissue-donation',
         title: 'Organ and Tissue Donation',
         description:
@@ -256,15 +456,15 @@ const optionCategories = [
         ],
       },
       {
-        id: 'forensic-donation',
-        title: 'Forensic Research Donation',
+        id: 'forensic-body-farms',
+        title: 'Forensic Body Farms',
         description:
-          'Donation of the body to a forensic research facility, sometimes known as a body farm, where remains are studied to advance knowledge of decomposition, forensic identification, and criminal investigation methods.',
+          'Donation of the body to a forensic anthropology research facility for the study of human decomposition in various outdoor environments. These facilities, operated by universities such as Texas State and UT Knoxville, advance forensic science, criminal investigation methods, and victim identification techniques.',
         involves: [
-          'Pre-registration with an accredited forensic research facility',
-          'Body placed in a controlled outdoor environment for study',
-          'Research focused on decomposition, forensic science, and related fields',
-          'Study periods vary depending on research needs',
+          'Pre-registration with an accredited forensic anthropology facility',
+          'Body placed in a controlled outdoor environment under research conditions',
+          'Decomposition studied across variables such as climate, terrain, and exposure',
+          'Research contributes to forensic identification, law enforcement training, and criminal case methods',
           'Cremated remains may be returned to family depending on the program',
         ],
         considerations: [
@@ -273,6 +473,88 @@ const optionCategories = [
           'The nature of the research may not be comfortable for all families',
           'No cost to the family in most cases',
           'Backup plan needed in case of non-acceptance',
+        ],
+      },
+      {
+        id: 'k9-public-safety-training',
+        title: 'K9 and Public Safety Training Donation',
+        description:
+          'Donation of the body or remains for training cadaver dogs, search-and-rescue teams, and other public safety personnel. These programs help train detection teams that are used in missing persons cases, disaster response, and criminal investigations.',
+        involves: [
+          'Donation coordinated through a program affiliated with law enforcement, military, or university research',
+          'Remains used in controlled training exercises for cadaver dogs or search teams',
+          'Training environments may include outdoor, indoor, or water-based scenarios',
+          'Program duration and use of remains vary by organization',
+          'Cremated remains may be returned to family depending on the program',
+        ],
+        considerations: [
+          'Very few programs accept donations specifically for this purpose',
+          'Some forensic research facilities include K9 training as part of their broader program',
+          'Families should verify the program is affiliated with an accredited institution',
+          'The nature of the training may not be comfortable for all families',
+          'Backup plan needed in case of non-acceptance',
+        ],
+      },
+      {
+        id: 'specialized-disease-research',
+        title: 'Specialized Disease Research Donation',
+        description:
+          'Targeted donation of the body or specific organs to research programs focused on particular diseases or conditions. This includes brain banks studying Alzheimer\'s disease, CTE, Parkinson\'s, and other neurological conditions, as well as programs focused on rare genetic diseases.',
+        involves: [
+          'Pre-registration with a disease-specific research program or brain bank',
+          'Medical history and diagnosis documentation shared with the program',
+          'Tissue, organ, or whole-body donation coordinated at the time of death',
+          'Specimens used for targeted research on specific conditions',
+          'Remaining remains may be returned to family depending on the program',
+        ],
+        considerations: [
+          'Programs are often tied to specific institutions or research networks',
+          'Eligibility may depend on the donor\'s medical history or diagnosis',
+          'Brain banks and organ-specific programs have their own intake criteria',
+          'Timing at death is critical for tissue viability in some programs',
+          'Families should confirm logistics, costs, and return of remains in advance',
+        ],
+      },
+      {
+        id: 'product-testing-impact-research',
+        title: 'Product Testing and Impact Research Donation',
+        description:
+          'Donation of the body for use in automotive safety testing, military equipment evaluation, ballistics research, or other impact studies. These programs use cadavers to improve protective equipment, vehicle safety systems, and body armor performance.',
+        involves: [
+          'Donation arranged through a university, research institution, or government-affiliated program',
+          'Body used in controlled crash testing, blast studies, or protective equipment evaluation',
+          'Research contributes to vehicle safety ratings, military gear standards, and injury prevention',
+          'Programs may be operated by automotive manufacturers, defense agencies, or academic labs',
+          'Cremated remains may be returned to family depending on the program',
+        ],
+        considerations: [
+          'This type of donation is not widely known and may surprise some families',
+          'Programs are limited and not available through standard donation registries',
+          'The nature of the testing may not be comfortable for all families',
+          'Families should verify the program and its institutional affiliation',
+          'Backup plan needed in case of non-acceptance',
+        ],
+      },
+      {
+        id: 'museum-plastination-donation',
+        title: 'Museum and Plastination Donation',
+        description:
+          'Donation of the body for permanent anatomical display through plastination or similar preservation techniques. Programs like Body Worlds use donated bodies to create educational exhibits that show human anatomy in detail for public viewing. Some plastination programs are based internationally and may require transport coordination to facilities in Germany or other countries.',
+        involves: [
+          'Pre-registration and consent through a plastination or anatomical exhibit program',
+          'Body preserved through plastination, replacing water and fat with durable polymers',
+          'Preserved specimen used in traveling or permanent public exhibitions',
+          'Donor identity is typically kept anonymous in the exhibit',
+          'Body is not returned to family - the donation is permanent',
+          'International programs may require coordination for transport to facilities outside the United States',
+        ],
+        considerations: [
+          'This is a permanent and irreversible donation - there is no return of remains',
+          'Very few programs accept donations for this purpose',
+          'The public display aspect may not be comfortable for all families',
+          'Donor consent and legal documentation requirements are specific to each program',
+          'International transport logistics and costs may apply for programs based outside the U.S.',
+          'Families should understand the full scope of the display before committing',
         ],
       },
     ],
@@ -439,6 +721,106 @@ const optionCategories = [
           'Some families find comfort in each person having their own portion',
           'Can be combined with other memorial options like jewelry, art, or scattering',
           'Provider or funeral home can assist with the division process',
+        ],
+      },
+      {
+        id: 'high-altitude-balloon-scattering',
+        title: 'High-Altitude Balloon Scattering',
+        description:
+          'Cremated remains are carried to the upper atmosphere or stratosphere via a helium balloon, where the ashes are released at high altitude and dispersed by wind currents. This is a specialty memorial service offered by a small number of providers.',
+        involves: [
+          'Cremated remains placed in a biodegradable container attached to a helium balloon',
+          'Balloon launched from a designated site and tracked during ascent',
+          'Ashes released at high altitude, typically in the stratosphere',
+          'Some providers include GPS tracking, video footage, or a flight certificate',
+          'Families may attend the launch or receive documentation afterward',
+        ],
+        considerations: [
+          'Very limited number of providers offer this service',
+          'FAA regulations and weather conditions can affect launch timing',
+          'Cost varies by provider, location, and documentation included',
+          'Only a portion of ashes is typically sent per launch',
+          'This is a memorial option after cremation, not a primary disposition method',
+        ],
+      },
+      {
+        id: 'solidified-remains',
+        title: 'Solidified Remains',
+        description:
+          'A process that transforms 100% of cremated remains into smooth, ceramic-like stones. Companies such as Parting Stone use a proprietary process to convert loose ashes into solid, handleable objects that can be held, displayed, or distributed among family members.',
+        involves: [
+          'All cremated remains sent to the processing company',
+          'Ashes transformed into solid stones through a proprietary solidification process',
+          'Stones returned to the family in a range of natural shapes and sizes',
+          'Number of stones depends on the volume of remains',
+          'Stones can be kept, displayed, shared among family, or placed in a memorial setting',
+        ],
+        considerations: [
+          'This is a relatively new commercial product with limited long-term track record',
+          'All ashes are used in the process - none are discarded',
+          'Cost is in addition to cremation and may vary by provider',
+          'The result is a permanent, solid object rather than loose ashes',
+          'Families should review the provider and process before committing',
+        ],
+      },
+      {
+        id: 'vinyl-records',
+        title: 'Vinyl Records',
+        description:
+          'A portion of cremated ashes is pressed into a playable 12-inch vinyl record. The record can include music, spoken words, or other audio chosen by the family. This is a niche memorial product offered by specialty companies.',
+        involves: [
+          'A small portion of cremated ashes provided to the pressing company',
+          'Audio content selected by the family - music, voice recordings, or messages',
+          'Ashes incorporated into the vinyl during the pressing process',
+          'Finished record returned to the family as a playable memorial item',
+          'Remaining ashes kept by the family for other use',
+        ],
+        considerations: [
+          'This is a novelty memorial product, not a primary disposition method',
+          'Very limited number of companies offer this service',
+          'Audio quality may differ from standard vinyl pressings',
+          'Only a small amount of ash is used per record',
+          'Cost and turnaround time vary by provider',
+        ],
+      },
+      {
+        id: 'tattoo-ink',
+        title: 'Tattoo Ink',
+        description:
+          'A small amount of sterilized cremated ash is infused into professional tattoo ink, which is then used to create a memorial tattoo. This is a deeply personal option chosen by some family members or close friends as a permanent physical tribute.',
+        involves: [
+          'A small portion of cremated ashes sterilized and prepared for use',
+          'Ash mixed into professional-grade tattoo ink by a specialty provider or tattoo artist',
+          'Tattoo designed and applied by a licensed tattoo artist',
+          'The memorial tattoo becomes a permanent part of the person receiving it',
+          'Remaining ashes kept by the family for other use',
+        ],
+        considerations: [
+          'Not all tattoo artists are willing or experienced with ash-infused ink',
+          'Sterilization and preparation methods vary - families should verify the process',
+          'Health and safety standards for ash-infused ink are not formally regulated',
+          'Only a very small amount of ash is needed',
+          'This is a personal memorial choice, not a primary disposition method',
+        ],
+      },
+      {
+        id: 'cremation-jewelry',
+        title: 'Cremation Jewelry',
+        description:
+          'Jewelry designed to hold or incorporate a small amount of cremated ashes, typically in a sealed pendant, locket, ring, or bracelet. This is one of the more common memorial keepsake options and is widely available from specialty and mainstream jewelry providers.',
+        involves: [
+          'A small portion of cremated ashes placed inside or sealed into a piece of jewelry',
+          'Jewelry type selected - pendants, rings, bracelets, lockets, or custom designs',
+          'Ash sealed using resin, glass, or a threaded compartment depending on the design',
+          'Finished piece worn or kept as a personal memorial item',
+          'Remaining ashes kept by the family for other use or disposition',
+        ],
+        considerations: [
+          'Widely available from online and local providers at a range of price points',
+          'Quality, materials, and craftsmanship vary significantly across vendors',
+          'Some families purchase multiple pieces for different family members',
+          'Not a primary disposition method - used alongside cremation or another process',
+          'Families may want to verify the seal quality to ensure ashes are secure',
         ],
       },
     ],
