@@ -1051,7 +1051,7 @@ function HomeAboutSection() {
       image: '/time-w.png',
       imageLabel: 'When You Have Time',
       imageLink: { path: '/funeralplanning', label: 'Start Pre-Planning' },
-      title: 'Resources for planning uncommon after-death services.',
+      title: 'Resources for planning uncommon after-death services',
       description: '',
       items: [
         'Alternative options tied to the state',
@@ -1066,7 +1066,7 @@ function HomeAboutSection() {
       image: '/no-time-w.png',
       imageLabel: 'When Time Has Run Out',
       imageLink: { path: '/when-time-has-run-out', label: 'Get Started Now' },
-      title: 'Resources for arranging uncommon services for a recent loss.',
+      title: 'Resources for arranging uncommon services for a recent loss',
       description: '',
       items: [
         'What to do first',
@@ -1081,7 +1081,7 @@ function HomeAboutSection() {
       image: '/questions-w.png',
       imageLabel: 'After Death Steps',
       imageLink: { path: '/after-death-steps', label: 'Navigate the Steps' },
-      title: <>Know what to do<br />when a loss occurs.</>,
+      title: <>Know what to do<br />when a loss occurs</>,
       description: '',
       items: [
         'What to do when a death occurs',
@@ -1274,7 +1274,7 @@ function OptionsPage() {
 
       <CTASection
         className="section-cta-tight-top"
-        title="Choose the path that fits your situation."
+        title="Choose the path for your situation"
         primary={{ path: '/funeralplanning', label: 'When You Have Time' }}
         secondary={{ path: '/after-death-steps', label: 'Open Resources' }}
       />
@@ -1548,7 +1548,7 @@ function ImmediateStateDetailPage() {
       sections={hub.immediate ? hub.immediate.sections : []}
       hub={hub}
       cta={{
-        title: 'Choose the path that fits your situation.',
+        title: 'Choose the path for your situation',
         primary: { path: `/states/${hub.id}`, label: 'When You Have Time' },
         secondary: { path: '/after-death-steps', label: 'Open Resources' },
       }}
@@ -1593,8 +1593,8 @@ function ResourcesPage() {
       </section>
 
       <CTASection
-        title="Find what you need."
-        description="Choose the path that suits your situation."
+        title="Find what you need"
+        description="Choose the path for your situation"
         textLinks={[
           { path: '/funeralplanning', label: 'Planning for the future', arrow: 'left' },
           { path: '/when-time-has-run-out', label: 'Planning for a recent death', arrow: 'right' },
