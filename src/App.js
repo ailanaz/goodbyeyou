@@ -1178,43 +1178,36 @@ function OptionsPage() {
 
   const immediateSteps = [
     {
-      number: '01',
       title: 'Do not rush into a decision',
       description:
         'You are not required to call a funeral home immediately. In most states, you have time. Take a moment before committing to any service.',
     },
     {
-      number: '02',
       title: 'Confirm the death has been pronounced',
       description:
         'A physician, hospice nurse, or coroner will need to officially pronounce the death. If the person died at home under hospice care, call the hospice team first.',
     },
     {
-      number: '03',
       title: 'Search for your state',
       description:
         'Open your state page below to see what alternative services are allowed, what providers are available, and what documents you may need in the next 24 to 48 hours.',
     },
     {
-      number: '04',
       title: 'Check if the person left any documented wishes',
       description:
         'Look for advance directives, disposition authorizations, or written instructions about the type of service they wanted. This shapes what happens next.',
     },
     {
-      number: '05',
       title: 'Identify who has legal authority',
       description:
         'The next-of-kin or designated agent usually has authority over disposition. Confirm this early to avoid delays or disagreements.',
     },
     {
-      number: '06',
       title: 'Contact providers that match the service path',
       description:
         'If the person wanted a home funeral, green burial, aquamation, or another alternative service, your state page will point you toward the right providers.',
     },
     {
-      number: '07',
       title: 'Handle required paperwork',
       description:
         'Death certificates, burial or transit permits, and disposition authorizations may all need attention within specific timeframes. Your state page covers what applies there.',
@@ -1250,12 +1243,12 @@ function OptionsPage() {
         <div className="container">
           <SectionIntro
             title="What to do in the first 24 to 48 hours."
-            subtitle={<>These are the steps to be aware of that most people need to take after a death occurs.<br />Your state page will fill in the specifics.</>}
+            subtitle="A pathway through the process."
           />
           <div className="features-grid">
             {immediateSteps.map((step) => (
-              <div className="feature-card" key={step.number}>
-                <h3>{`${step.number} ${step.title}`}</h3>
+              <div className="feature-card" key={step.title}>
+                <h3>{step.title}</h3>
                 <p>{step.description}</p>
               </div>
             ))}
