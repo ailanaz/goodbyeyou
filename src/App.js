@@ -353,7 +353,7 @@ const resourceCategories = [
       'Transport or permit-related paperwork',
       'Where originals or instructions may be stored',
     ],
-    link: { path: '/funeralplanning', label: 'Search Your State ->' },
+    link: { path: '/funeralplanning', label: 'State Search ->' },
   },
   {
     title: 'State-specific planning resources',
@@ -365,7 +365,7 @@ const resourceCategories = [
       'What logistics may shape the decision',
       'What resources or providers may be needed next',
     ],
-    link: { path: '/funeralplanning', label: 'Search Your State ->' },
+    link: { path: '/funeralplanning', label: 'State Search ->' },
   },
   {
     title: 'Provider and service resources',
@@ -377,7 +377,7 @@ const resourceCategories = [
       'Provider coordination tied to the chosen path',
       'Support for logistics and follow-through',
     ],
-    link: { path: '/funeralplanning', label: 'Search Your State ->' },
+    link: { path: '/funeralplanning', label: 'State Search ->' },
   },
   {
     title: 'Planning records and originals',
@@ -389,7 +389,7 @@ const resourceCategories = [
       'Plain lists of providers, contacts, and account locations',
       'Outside storage you control for private files',
     ],
-    link: { path: '/funeralplanning', label: 'Search Your State ->' },
+    link: { path: '/funeralplanning', label: 'State Search ->' },
   },
 ];
 
@@ -1188,7 +1188,7 @@ function OptionsPage() {
         'A physician, hospice nurse, or coroner will need to officially pronounce the death. If the person died at home under hospice care, call the hospice team first.',
     },
     {
-      title: 'Search for your state',
+      title: 'State Search',
       description:
         'Open your state page below to see what alternative services are allowed, what providers are available, and what documents you may need in the next 24 to 48 hours.',
     },
@@ -1225,7 +1225,7 @@ function OptionsPage() {
       <section className="section section-state-search-followup">
         <div className="container">
           <SectionIntro
-            title="Search for your state."
+            title="State Search"
             subtitle="Your state page will show available alternative services, providers, required documents, and the steps that apply where you are."
           />
           <USMapInteractive variant="immediate" />
@@ -1366,10 +1366,10 @@ function PlanningHubsPage() {
         title={<>Resources for planning<br />uncommon after-death services</>}
       />
 
-      <section className="section">
+      <section className="section section-state-search-followup">
         <div className="container">
           <SectionIntro
-            title="Search Your State"
+            title="State Search"
             subtitle={<>Search or select a state to view uncommon service logistics and resources.<br />Explore available options, state regulations, and local providers.</>}
           />
           <USMapInteractive />
