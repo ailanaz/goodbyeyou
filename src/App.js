@@ -2799,7 +2799,7 @@ function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta, checklis
       <section className="section sdl-body">
         <div className="container">
           <div className="sdl-grid">
-            <aside className="sdl-sidebar">
+            <aside className={`sdl-sidebar${checklistLink ? ' sdl-sidebar--with-checklist' : ''}`}>
               <div className="sdl-sidebar-inner">
                 <h2 className="sdl-sidebar-title">{hub.region}</h2>
                 <p className="sdl-sidebar-sub">{intro}</p>
@@ -2821,17 +2821,15 @@ function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta, checklis
                     ))}
                   </div>
                 )}
-                {checklistLink ? (
-                  <div className="sdl-checklist-link-wrap">
-                    <ChecklistLinkCard
-                      title={checklistLink.title}
-                      description={checklistLink.description}
-                      path={checklistLink.path}
-                      linkLabel={checklistLink.linkLabel}
-                    />
-                  </div>
-                ) : null}
               </div>
+              {checklistLink ? (
+                <ChecklistLinkCard
+                  title={checklistLink.title}
+                  description={checklistLink.description}
+                  path={checklistLink.path}
+                  linkLabel={checklistLink.linkLabel}
+                />
+              ) : null}
             </aside>
 
             <div className="sdl-main">
