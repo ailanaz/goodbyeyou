@@ -2702,22 +2702,29 @@ ul { list-style: none; }
 }
 
 .checklist-list li {
+    padding: 4px 0;
+}
+
+.checklist-item {
+    display: grid;
+    grid-template-columns: 16px 1fr;
+    gap: 12px;
+    align-items: start;
+    cursor: pointer;
     font-size: 0.82rem;
     color: var(--color-text-mid);
     line-height: 1.55;
-    padding: 4px 0 4px 16px;
-    position: relative;
 }
 
-.checklist-list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 11px;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--color-primary);
+.checklist-checkbox {
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    accent-color: var(--color-primary);
+}
+
+.checklist-checkbox:checked + span {
+    color: var(--color-text);
 }
 
 /* Main content */

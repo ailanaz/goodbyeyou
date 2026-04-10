@@ -1401,8 +1401,13 @@ function ChecklistCard({ checklist, className = '' }) {
         <div className="checklist-group" key={section.title}>
           <h4>{section.title}</h4>
           <ul className="checklist-list">
-            {section.items.map((item) => (
-              <li key={item}>{item}</li>
+            {section.items.map((item, index) => (
+              <li key={`${section.title}-${index}`}>
+                <label className="checklist-item">
+                  <input type="checkbox" className="checklist-checkbox" />
+                  <span>{item}</span>
+                </label>
+              </li>
             ))}
           </ul>
         </div>
