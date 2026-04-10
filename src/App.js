@@ -1168,50 +1168,51 @@ const planningHubFeatures = [
 ];
 
 const planningChecklist = {
-  title: 'Planning Checklist (Before Death)',
+  title: 'Planning Checklist for Alternative Services',
   purpose:
-    'Define decisions and lay out the full process so others can carry it out without confusion.',
+    'Prepare an alternative after-death service plan that accounts for service-specific logistics, legal conditions, and the standard information others will need to carry it out.',
   sections: [
     {
-      title: 'Decisions',
+      title: 'Service Decisions',
       items: [
-        'Choose preferred disposition (alternative burial, aquamation, donation, etc.)',
-        'Select a backup option if the first is not available',
-        'Decide location (local, out-of-state, or international)',
-        'Decide if there will be a service, and what type',
+        'Choose the preferred alternative disposition or service path',
+        'Choose a backup option in case the first choice is not available',
+        'Decide where the disposition and any service will take place',
+        'Decide whether there will be a vigil, memorial, witness event, or no ceremony',
         'Identify the person responsible for carrying out the plan',
+        'Note any religious, cultural, or family instructions that should shape the plan',
       ],
     },
     {
-      title: 'Logistics',
+      title: 'Alternative-Service Logistics',
       items: [
-        'Identify providers for each option (primary and backup)',
-        'Confirm availability and requirements',
+        'Confirm whether the option is allowed in the relevant state and under what conditions',
+        'Identify the providers, guides, cemeteries, facilities, or donation programs needed for the chosen path',
+        'Ask what must happen immediately after death to preserve the option',
+        'Record refrigeration, holding, transfer, or body-care requirements if applicable',
         'Document who to contact first, second, third',
-        'Note timing requirements after death',
-        'Outline body transfer steps (where the body goes first)',
-        'Include transport plan if the provider is not local',
+        'Include a transport plan if the provider or place of disposition is not local',
       ],
     },
     {
-      title: 'Legal Steps',
+      title: 'Legal and Documentation',
       items: [
-        'Create or update will',
-        'Document disposition wishes clearly',
+        'Document disposition wishes clearly in the right forms',
         'Assign executor or decision authority',
-        'Record full legal identity details',
-        'List required documents and where they are stored',
-        'Note who will start the death certificate process',
+        'Create or update will, advance directive, and any authorization forms',
+        'Record full legal identity details and where key documents are stored',
+        'Note whether permits, medical approvals, or funeral director involvement may be required',
+        'Identify who will begin the death certificate process',
       ],
     },
     {
-      title: 'What Needs to Be Done',
+      title: 'Standard Planning Steps',
       items: [
-        'Write clear, step-by-step instructions for others',
-        'Provide provider contact information',
-        'Make sure responsible person understands the plan',
-        'Note Social Security and benefit notifications will be required',
-        'Ensure documents are accessible and known',
+        'Write clear, step-by-step instructions others can follow',
+        'Provide provider contact information and any prepaid account details',
+        'Make sure the responsible person understands both the primary and backup plan',
+        'Note that Social Security, benefit notifications, and account follow-up will still be required later',
+        'Keep all documents accessible and known',
         'Review and update the plan periodically',
       ],
     },
@@ -1219,59 +1220,59 @@ const planningChecklist = {
 };
 
 const currentLossChecklist = {
-  title: 'Current Loss Checklist (After a Death Occurs)',
+  title: 'Immediate Need Checklist for Alternative Services',
   purpose:
-    'Handle immediate actions, confirm options, and move through required steps without losing access to choices.',
+    'Protect the ability to carry out an alternative after-death service while also covering the standard actions that still need attention after a death occurs.',
   sections: [
     {
-      title: 'Decisions',
+      title: 'Immediate Decisions',
       items: [
-        'Determine if a plan exists and follow it',
-        'Confirm chosen disposition option',
-        'Decide if transport is required',
-        'Decide on timing and type of service (if any)',
-        'Assign one person to manage decisions and communication',
+        'Determine whether the person left a plan or written wishes and follow them',
+        'Confirm the preferred service path and a backup option if needed',
+        'Decide who will manage decisions and communication',
+        'Decide whether local, out-of-state, or facility transfer will be required',
+        'Confirm whether a vigil, witness event, service, or memorial needs immediate planning',
       ],
     },
     {
-      title: 'Logistics',
+      title: 'Alternative-Service Logistics',
       items: [
-        'Confirm death through proper authority',
-        'Contact provider or identify one immediately',
-        'Arrange body transfer to the correct location',
-        'Verify availability of the chosen option before committing',
-        'Coordinate timing for any time-sensitive options',
-        'Manage communication with family and key contacts',
+        'Confirm the death through the proper authority and identify who has custody of the body',
+        'Verify that the chosen option is allowed in the state and currently available',
+        'Contact the specific provider, guide, facility, cemetery, or donation program that can handle the chosen path',
+        'Arrange transfer to the correct location without authorizing services you do not want',
+        'Coordinate timing, refrigeration, or preservation requirements that could affect the option',
+        'Keep costs, commitments, and instructions in writing',
       ],
     },
     {
-      title: 'Legal Steps',
+      title: 'Legal and Documentation',
       items: [
-        'Begin death certificate process',
-        'Confirm who is responsible for filing',
-        'Gather identification and required documents',
+        'Confirm who has legal authority to direct disposition',
+        'Begin the death certificate and permit process',
+        'Gather identification, written wishes, and any required authorizations',
+        'Confirm whether additional approvals are needed for transport, donation, home care, or the chosen service',
         'Notify Social Security or confirm provider will',
         'Identify any benefits, accounts, or obligations to address',
       ],
     },
     {
-      title: 'What Needs to Be Done',
+      title: 'Standard Process Steps',
       items: [
-        'Follow the correct sequence (confirmation → provider → transfer → verification)',
-        'Do not commit to services before confirming options',
-        'Track all costs and decisions',
-        'Secure home, property, and immediate responsibilities',
+        'Secure home, property, dependents, and immediate responsibilities',
         'Communicate clearly with those involved',
-        'Proceed with arrangements once everything is confirmed',
+        'Do not commit before confirming legality, timing, and provider availability',
+        'Track costs, conversations, and documents as you go',
+        'Proceed once the path is verified and the needed logistics are in place',
       ],
     },
   ],
 };
 
 const generalChecklist = {
-  title: 'Final Affairs Checklist',
+  title: 'General After Death Checklist',
   purpose:
-    'This checklist provides a framework for the common tasks that follow a death. While specific steps may vary based on location, personal desires, or circumstances, this list covers the standard procedures that apply to most situations.',
+    'Use this checklist for the broader process after a death, regardless of service type. It focuses on common tasks, notifications, documentation, and follow-through from the first urgent steps through final affairs.',
   sections: [
     {
       title: 'First 24 Hours',
@@ -1282,7 +1283,7 @@ const generalChecklist = {
         },
         {
           label: 'Arrange transportation',
-          text: 'Contact a funeral home, cremation provider, or disposition service.',
+          text: 'Contact the funeral home, cremation provider, cemetery, or other disposition service handling the body.',
         },
         {
           label: 'Notify close family and friends',
@@ -1328,40 +1329,27 @@ const generalChecklist = {
       ],
     },
     {
-      title: 'Final Arrangements (Any Type)',
+      title: 'Final Arrangements',
       items: [
         {
           label: 'Review any prepaid plans',
-          text: 'Check for written wishes about final disposition.',
+          text: 'Check for written wishes or prepaid arrangements related to final disposition or services.',
         },
         {
           label: 'Locate any documentation',
-          text: 'Prepaid contracts, burial society membership, and donor registrations.',
+          text: 'Prepaid contracts, cemetery paperwork, military eligibility papers, or service instructions.',
         },
         {
-          label: 'Decide on final disposition type',
-          text: 'Consider what your loved one wanted:',
-          details: [
-            'Traditional funeral home services',
-            'Direct disposition (cremation or burial without service)',
-            'Green or natural burial',
-            'Body donation to science',
-            'Home funeral (family-directed)',
-            'Memorial forest or coral reef burial',
-            'Outdoor scattering',
-          ],
+          label: 'Decide on final disposition and service preferences',
+          text: 'Use known wishes, family needs, timing, and availability to determine the path forward.',
         },
         {
-          label: 'Research providers',
-          text: 'Request general price lists and compare options.',
-        },
-        {
-          label: 'Choose a provider',
-          text: 'Whether funeral home, cremation service, or alternative provider.',
+          label: 'Choose provider or providers',
+          text: 'Ask for price lists, next steps, and required paperwork before moving forward.',
         },
         {
           label: 'Choose location and date',
-          text: 'Funeral home, house of worship, outdoors, or virtual.',
+          text: 'Funeral home, house of worship, cemetery, home, outdoors, or virtual.',
         },
         {
           label: 'Select an officiant',
@@ -1584,7 +1572,7 @@ const checklistPageSections = [
     eyebrow: 'Planning Ahead',
     title: 'Alternative planning checklist',
     description:
-      'Use this checklist when you are planning an alternative after-death service before a death occurs.',
+      'Use this checklist when planning an alternative after-death service before a death occurs. It combines option-specific logistics, legal conditions, and timing needs with the standard steps that help others carry out the plan.',
     checklist: planningChecklist,
   },
   {
@@ -1592,7 +1580,7 @@ const checklistPageSections = [
     eyebrow: 'Recent Loss',
     title: 'Immediate need checklist',
     description:
-      'Use this checklist when a death has already occurred and immediate choices, timing, and logistics need attention.',
+      'Use this checklist when a death has already occurred and an alternative service is being considered or carried out. It combines urgent service-specific logistics, laws, and conditions with the standard actions most people still need to handle.',
     checklist: currentLossChecklist,
   },
   {
@@ -1600,7 +1588,7 @@ const checklistPageSections = [
     eyebrow: 'Final Affairs',
     title: 'General complete checklist',
     description:
-      'Use this broader checklist for the full after-death process, from the first urgent steps through estate and final affairs work.',
+      'Use this broader checklist for the overall process after a death. It is not tied to a specific service type and is meant to bring clarity from the first urgent steps through estate and final affairs work.',
     checklist: generalChecklist,
   },
 ];
@@ -1610,21 +1598,21 @@ const checklistLinks = {
     path: '/checklists#alternative-planning-checklist',
     title: 'Alternative planning checklist',
     description:
-      'Open the dedicated checklist page for the planning-ahead list connected to this state page.',
+      'Open the planning checklist for alternative services, including option-specific logistics and the standard preparation steps.',
     linkLabel: 'Open the planning checklist',
   },
   immediate: {
     path: '/checklists#immediate-need-checklist',
     title: 'Immediate need checklist',
     description:
-      'Open the dedicated checklist page for the recent-loss list connected to this state page.',
+      'Open the recent-loss checklist for alternative services, including immediate logistics and the standard actions that still need attention.',
     linkLabel: 'Open the immediate need checklist',
   },
   general: {
     path: '/checklists#general-complete-checklist',
     title: 'General complete checklist',
     description:
-      'Open the dedicated checklist page for the full after-death and final affairs list.',
+      'Open the broader checklist for the overall process after a death, from urgent steps through final affairs.',
     linkLabel: 'Open the complete checklist',
   },
 };
@@ -1756,6 +1744,14 @@ function buildChecklistDownloadText(checklist) {
     lines.push('');
   }
 
+  const notesTitle = checklist.notesTitle || 'Notes';
+  const notesLines = checklist.notesLines || 4;
+  lines.push(notesTitle);
+  Array.from({ length: notesLines }, () => '________________________________________').forEach((line) => {
+    lines.push(line);
+  });
+  lines.push('');
+
   return `${lines.join('\n').trim()}\n`;
 }
 
@@ -1775,6 +1771,9 @@ function downloadChecklist(checklist) {
 }
 
 function ChecklistCard({ checklist, className = '' }) {
+  const notesTitle = checklist.notesTitle || 'Notes';
+  const notesLines = checklist.notesLines || 4;
+
   return (
     <div className={`checklist-card ${className}`.trim()}>
       <div className="checklist-header">
@@ -1837,6 +1836,14 @@ function ChecklistCard({ checklist, className = '' }) {
           <p className="checklist-purpose-text">{checklist.tipText}</p>
         </div>
       ) : null}
+      <div className="checklist-notes">
+        <p className="checklist-label">{notesTitle}</p>
+        <div className="checklist-notes-lines" aria-hidden="true">
+          {Array.from({ length: notesLines }, (_, index) => (
+            <span className="checklist-notes-line" key={`${notesTitle}-${index}`} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -2989,13 +2996,13 @@ function ChecklistsPage() {
         eyebrow="Checklists"
         titleClassName="page-hero-title--centered"
         title="Downloadable checklists for every stage"
-        subtitle="Open the checklist that matches your situation. Each list can be downloaded from its section."
+        subtitle="The planning and recent-loss lists are tailored to alternative service logistics, laws, conditions, and timing, while the general checklist supports the broader process from death through final affairs."
       />
 
       <section className="section">
         <div className="container">
           <p className="section-lead checklist-page-intro">
-            Use these checklists for planning ahead, responding to a recent loss, or working through the broader final affairs process.
+            Alternative options can require more coordination than standard arrangements. The planning and immediate-need lists pair those option-specific needs with the standard steps most people still need to handle, while the general complete list is broader and meant to help people move through the overall process with more clarity.
           </p>
           <div className="checklist-page-stack">
             {checklistPageSections.map((entry) => (
