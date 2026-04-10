@@ -1080,6 +1080,7 @@ const resourceCategories = [
       'Immediate family or the main planner',
       'Hospital, hospice, care facility, or relevant staff',
       'Existing providers or guides already involved',
+      'Obituary or newspaper notice if the family chooses to publish one',
       'Other contacts that may matter early',
     ],
   },
