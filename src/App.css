@@ -616,6 +616,16 @@ ul { list-style: none; }
     background: var(--color-surface-alt);
 }
 
+.home-plan-preview-intro {
+    max-width: 760px;
+    margin: 0 auto 40px;
+    text-align: center;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--color-text-mid);
+    font-weight: 300;
+}
+
 .home-plan-preview-shell {
     display: grid;
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
@@ -2553,6 +2563,12 @@ ul { list-style: none; }
     align-items: start;
 }
 
+.sdl-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 /* Sidebar */
 .sdl-sidebar-inner {
     position: sticky;
@@ -2632,6 +2648,78 @@ ul { list-style: none; }
     letter-spacing: 0.02em;
 }
 
+.checklist-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: 10px;
+    padding: 28px 24px;
+}
+
+.checklist-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+.checklist-purpose {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.checklist-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.checklist-purpose-text {
+    font-size: 0.84rem;
+    line-height: 1.65;
+    color: var(--color-text-mid);
+}
+
+.checklist-group + .checklist-group {
+    margin-top: 20px;
+}
+
+.checklist-group h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 10px;
+}
+
+.checklist-list {
+    list-style: none;
+}
+
+.checklist-list li {
+    font-size: 0.82rem;
+    color: var(--color-text-mid);
+    line-height: 1.55;
+    padding: 4px 0 4px 16px;
+    position: relative;
+}
+
+.checklist-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color-primary);
+}
+
 /* Main content */
 .sdl-main {
     display: flex;
@@ -2700,6 +2788,24 @@ ul { list-style: none; }
     font-size: 0.85rem;
     line-height: 1.65;
     color: var(--color-text-mid);
+}
+
+.resource-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.resource-sidebar-inner {
+    position: sticky;
+    top: 100px;
+}
+
+.resource-main .section-lead {
+    max-width: none;
+    margin: 0 0 40px;
+    text-align: left;
 }
 
 .resource-detail-grid {
@@ -3454,7 +3560,16 @@ ul { list-style: none; }
         gap: 32px;
     }
 
+    .resource-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
     .sdl-sidebar-inner {
+        position: static;
+    }
+
+    .resource-sidebar-inner {
         position: static;
     }
 

@@ -1167,6 +1167,154 @@ const planningHubFeatures = [
   },
 ];
 
+const planningChecklist = {
+  title: 'Planning Checklist (Before Death)',
+  purpose:
+    'Define decisions and lay out the full process so others can carry it out without confusion.',
+  sections: [
+    {
+      title: 'Decisions',
+      items: [
+        'Choose preferred disposition (alternative burial, aquamation, donation, etc.)',
+        'Select a backup option if the first is not available',
+        'Decide location (local, out-of-state, or international)',
+        'Decide if there will be a service, and what type',
+        'Identify the person responsible for carrying out the plan',
+      ],
+    },
+    {
+      title: 'Logistics',
+      items: [
+        'Identify providers for each option (primary and backup)',
+        'Confirm availability and requirements',
+        'Document who to contact first, second, third',
+        'Note timing requirements after death',
+        'Outline body transfer steps (where the body goes first)',
+        'Include transport plan if the provider is not local',
+      ],
+    },
+    {
+      title: 'Legal Steps',
+      items: [
+        'Create or update will',
+        'Document disposition wishes clearly',
+        'Assign executor or decision authority',
+        'Record full legal identity details',
+        'List required documents and where they are stored',
+        'Note who will start the death certificate process',
+      ],
+    },
+    {
+      title: 'What Needs to Be Done',
+      items: [
+        'Write clear, step-by-step instructions for others',
+        'Provide provider contact information',
+        'Make sure responsible person understands the plan',
+        'Note Social Security and benefit notifications will be required',
+        'Ensure documents are accessible and known',
+        'Review and update the plan periodically',
+      ],
+    },
+  ],
+};
+
+const currentLossChecklist = {
+  title: 'Current Loss Checklist (After a Death Occurs)',
+  purpose:
+    'Handle immediate actions, confirm options, and move through required steps without losing access to choices.',
+  sections: [
+    {
+      title: 'Decisions',
+      items: [
+        'Determine if a plan exists and follow it',
+        'Confirm chosen disposition option',
+        'Decide if transport is required',
+        'Decide on timing and type of service (if any)',
+        'Assign one person to manage decisions and communication',
+      ],
+    },
+    {
+      title: 'Logistics',
+      items: [
+        'Confirm death through proper authority',
+        'Contact provider or identify one immediately',
+        'Arrange body transfer to the correct location',
+        'Verify availability of the chosen option before committing',
+        'Coordinate timing for any time-sensitive options',
+        'Manage communication with family and key contacts',
+      ],
+    },
+    {
+      title: 'Legal Steps',
+      items: [
+        'Begin death certificate process',
+        'Confirm who is responsible for filing',
+        'Gather identification and required documents',
+        'Notify Social Security or confirm provider will',
+        'Identify any benefits, accounts, or obligations to address',
+      ],
+    },
+    {
+      title: 'What Needs to Be Done',
+      items: [
+        'Follow the correct sequence (confirmation → provider → transfer → verification)',
+        'Do not commit to services before confirming options',
+        'Track all costs and decisions',
+        'Secure home, property, and immediate responsibilities',
+        'Communicate clearly with those involved',
+        'Proceed with arrangements once everything is confirmed',
+      ],
+    },
+  ],
+};
+
+const generalChecklist = {
+  title: 'General Checklist (What to Know When a Death Occurs)',
+  purpose:
+    'Understand how the process works so decisions are informed and options are not lost.',
+  sections: [
+    {
+      title: 'Decisions',
+      items: [
+        'Options depend on location, timing, and provider availability',
+        'Without a plan, default options are often used',
+        'Decisions are often made quickly after death',
+        'Having clear instructions changes outcomes',
+      ],
+    },
+    {
+      title: 'Logistics',
+      items: [
+        'One provider may not handle everything',
+        'Transport between states or countries is possible but regulated',
+        'Timing affects which options remain available',
+        'Availability of providers determines what can be done',
+      ],
+    },
+    {
+      title: 'Legal Steps',
+      items: [
+        'Laws vary by state and country',
+        'Death certificates are required for most next steps',
+        'Multiple copies are usually needed',
+        'Social Security and other agencies must be notified',
+        'Permits or documentation may be required for transport and disposition',
+      ],
+    },
+    {
+      title: 'What Needs to Be Done',
+      items: [
+        'Confirm options before making decisions',
+        'Ask providers what is actually possible in your situation',
+        'Understand costs before agreeing to services',
+        'Make sure required documents are completed',
+        'Coordinate actions between providers, family, and authorities',
+        'Move step-by-step to avoid delays or mistakes',
+      ],
+    },
+  ],
+};
+
 
 const navItems = [
   { path: '/funeralplanning', label: 'When You Have Time' },
@@ -1237,6 +1385,28 @@ function SectionIntro({ eyebrow, title, subtitle }) {
       {eyebrow ? <p className="section-eyebrow">{eyebrow}</p> : null}
       <h2 className="section-title">{title}</h2>
       {subtitle ? <p className="section-subtitle">{subtitle}</p> : null}
+    </div>
+  );
+}
+
+function ChecklistCard({ checklist, className = '' }) {
+  return (
+    <div className={`checklist-card ${className}`.trim()}>
+      <h3 className="checklist-title">{checklist.title}</h3>
+      <div className="checklist-purpose">
+        <p className="checklist-label">Purpose</p>
+        <p className="checklist-purpose-text">{checklist.purpose}</p>
+      </div>
+      {checklist.sections.map((section) => (
+        <div className="checklist-group" key={section.title}>
+          <h4>{section.title}</h4>
+          <ul className="checklist-list">
+            {section.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   );
 }
@@ -1875,11 +2045,7 @@ function HomePage() {
         <div className="container">
           <div className="home-hero-content">
             <h1 className="home-hero-title">Alternative Funeral Planning Resources</h1>
-            <p className="home-hero-sub">
-              Navigate uncommon after-death services with state-specific regulations<br />
-              and clear steps for both pre-planning and immediate-need scenarios,<br />
-              from the first call to final arrangements.
-            </p>
+            <p className="home-hero-sub">Checklists, state-specific resources, and provider information for alternative funeral options and next steps after a death, so you can move forward with clarity.</p>
           </div>
         </div>
       </section>
@@ -1887,6 +2053,11 @@ function HomePage() {
       <section className="section home-plan-preview" id="support">
         <div className="container">
           <p className="section-eyebrow" style={{ textAlign: 'center', marginBottom: '32px' }}>Navigate the Process</p>
+          <p className="home-plan-preview-intro">
+            Navigate uncommon after-death services with state-specific regulations
+            and clear steps for both pre-planning and immediate-need scenarios,
+            from the first call to final arrangements.
+          </p>
           <div className="home-plan-preview-shell">
             <div className="home-plan-preview-art">
               <img src="/state-page-mock.svg" alt="State page layout preview" />
@@ -2143,7 +2314,7 @@ function PlanningHubsPage() {
   );
 }
 
-function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta }) {
+function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta, checklist }) {
   const [activeSection, setActiveSection] = useState(0);
 
   useEffect(() => {
@@ -2198,6 +2369,7 @@ function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta }) {
                   </div>
                 )}
               </div>
+              {checklist ? <ChecklistCard checklist={checklist} className="sdl-checklist-card" /> : null}
             </aside>
 
             <div className="sdl-main">
@@ -2254,6 +2426,7 @@ function PlanningHubDetailPage() {
       intro={hub.planning ? hub.planning.intro : hub.summary}
       sections={hub.planning ? hub.planning.sections : []}
       hub={hub}
+      checklist={planningChecklist}
       cta={{
         title: 'Dealing with a recent loss?',
         primary: { path: `/immediate/${hub.id}`, label: 'When Time Has Run Out' },
@@ -2281,6 +2454,7 @@ function ImmediateStateDetailPage() {
       intro={hub.immediate ? hub.immediate.intro : hub.summary}
       sections={hub.immediate ? hub.immediate.sections : []}
       hub={hub}
+      checklist={currentLossChecklist}
       cta={{
         title: 'Choose the path for your situation',
         primary: { path: `/states/${hub.id}`, label: 'When You Have Time' },
@@ -2304,24 +2478,33 @@ function ResourcesPage() {
 
       <section className="section">
         <div className="container">
-          <p className="section-lead">Access logistical sequences, legal requirements, and provider pathways to clarify the process following a death. Use these resources to identify the official steps and documentation required for making arrangements.</p>
-          <div className="resource-detail-grid">
-            {resourceCategories.map((category) => (
-              <div className="resource-detail-card" key={category.title}>
-                <h3>{category.title}</h3>
-                <p>{category.description}</p>
-                <ul className="resource-list">
-                  {category.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                {category.link ? (
-                  <Link to={category.link.path} className="resource-link">
-                    {category.link.label}
-                  </Link>
-                ) : null}
+          <div className="resource-layout">
+            <aside className="resource-sidebar">
+              <div className="resource-sidebar-inner">
+                <ChecklistCard checklist={generalChecklist} />
               </div>
-            ))}
+            </aside>
+            <div className="resource-main">
+              <p className="section-lead">Access logistical sequences, legal requirements, and provider pathways to clarify the process following a death. Use these resources to identify the official steps and documentation required for making arrangements.</p>
+              <div className="resource-detail-grid">
+                {resourceCategories.map((category) => (
+                  <div className="resource-detail-card" key={category.title}>
+                    <h3>{category.title}</h3>
+                    <p>{category.description}</p>
+                    <ul className="resource-list">
+                      {category.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                    {category.link ? (
+                      <Link to={category.link.path} className="resource-link">
+                        {category.link.label}
+                      </Link>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
