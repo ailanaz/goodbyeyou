@@ -873,6 +873,10 @@ ul { list-style: none; }
     font-weight: 300;
 }
 
+.section-state-search-followup {
+    padding-top: 72px;
+}
+
 /* ========================================
    What This Is
    ======================================== */
@@ -1739,6 +1743,10 @@ ul { list-style: none; }
 .section-cta {
     background: var(--color-primary-dark);
     padding: 120px 0;
+}
+
+.section-cta-tight-top {
+    padding-top: 84px;
 }
 
 .cta-box {
@@ -3152,6 +3160,10 @@ ul { list-style: none; }
         padding: 80px 0;
     }
 
+    .section-state-search-followup {
+        padding-top: 56px;
+    }
+
     .section-intro {
         margin-bottom: 48px;
     }
@@ -3289,6 +3301,10 @@ ul { list-style: none; }
 
     .page-hero {
         padding: 136px 0 60px;
+    }
+
+    .section-cta-tight-top {
+        padding-top: 64px;
     }
 
     .topic-hero {

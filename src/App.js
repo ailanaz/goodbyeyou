@@ -658,7 +658,7 @@ function EditorialSections({ sections, className = '' }) {
   );
 }
 
-function CTASection({ title, description, primary, secondary, note, textLinks }) {
+function CTASection({ title, description, primary, secondary, note, textLinks, className = '' }) {
   const actionLinks = textLinks?.length
     ? textLinks
     : [primary, secondary]
@@ -670,7 +670,7 @@ function CTASection({ title, description, primary, secondary, note, textLinks })
         }));
 
   return (
-    <section className="section section-cta">
+    <section className={`section section-cta ${className}`.trim()}>
       <div className="container">
         <div className="cta-box">
           <h2>{title}</h2>
@@ -1223,7 +1223,7 @@ function OptionsPage() {
         subtitle="Navigate available options, state regulations, and local resources."
       />
 
-      <section className="section">
+      <section className="section section-state-search-followup">
         <div className="container">
           <SectionIntro
             title="Search for your state."
@@ -1239,7 +1239,7 @@ function OptionsPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section-state-search-followup">
         <div className="container">
           <SectionIntro
             title="What your state page covers."
@@ -1256,7 +1256,7 @@ function OptionsPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section-state-search-followup">
         <div className="container">
           <SectionIntro
             subtitle="Once you open your state, everything you need will be in one place."
@@ -1273,6 +1273,7 @@ function OptionsPage() {
       </section>
 
       <CTASection
+        className="section-cta-tight-top"
         title="Not dealing with a recent loss?"
         primary={{ path: '/funeralplanning', label: 'When You Have Time' }}
         secondary={{ path: '/after-death-steps', label: 'Open Resources' }}
@@ -1293,7 +1294,7 @@ function ExploreOptionsPage() {
         title="Alternative funeral service options."
       />
 
-      <section className="section">
+      <section className="section section-state-search-followup">
         <div className="container">
           <div className="option-detail-list">
             {optionDetails.map((option) => (
@@ -1383,7 +1384,7 @@ function PlanningHubsPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section-state-search-followup">
         <div className="container">
           <SectionIntro
             title="What your state page covers."
