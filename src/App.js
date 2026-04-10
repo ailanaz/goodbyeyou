@@ -1269,72 +1269,313 @@ const currentLossChecklist = {
 };
 
 const generalChecklist = {
-  title: 'After Death Steps Checklist',
+  title: 'Final Affairs Checklist',
   purpose:
-    'Move through the process in order so urgent decisions, legal requirements, and account notifications are handled without losing access to choices.',
+    'This checklist provides a framework for the common tasks that follow a death. While specific steps may vary based on location, personal desires, or circumstances, this list covers the standard procedures that apply to most situations.',
   sections: [
     {
-      title: 'Phase 1: The First 24–48 Hours',
-      description: 'Focus on safety, security, and notification.',
+      title: 'First 24 Hours',
       items: [
-        'Secure the property: lock the home and vehicles. Ensure perishables are tossed and mail is collected.',
-        'Care for dependents: arrange immediate care for minor children, dependent adults, and pets.',
-        'Notify immediate circle: call family, close friends, and the employer/co-workers.',
-        'Locate estate documents: search for a will, trust, or "letter of instruction" to identify the executor and final wishes.',
         {
-          text: 'Initial body arrangements: contact a funeral home, crematorium, or donation program.',
-          note: 'If transport between states or countries is needed, confirm regulations before signing.',
+          label: 'Get a legal pronouncement of death',
+          text: 'Call 911 if at home. Hospital or hospice staff will handle this.',
+        },
+        {
+          label: 'Arrange transportation',
+          text: 'Contact a funeral home, cremation provider, or disposition service.',
+        },
+        {
+          label: 'Notify close family and friends',
+          text: 'Start with immediate family. Split calls if needed.',
+        },
+        {
+          label: 'Arrange care for dependents',
+          text: 'Children, pets, or adults who cannot care for themselves.',
+        },
+        {
+          label: 'Secure the property',
+          text: 'Lock home and vehicles. Bring in deliveries. Clean out refrigerator.',
+        },
+        {
+          label: 'Check for organ donation wishes',
+          text: "Check driver's license or advance directive. Act quickly.",
         },
       ],
     },
     {
-      title: 'Phase 2: The First Week (Logistics & Legalities)',
-      description: 'Focus on official documentation and service planning.',
+      title: 'First Week',
       items: [
-        'Order death certificates: request 10+ certified copies.',
-        'Plan the service: coordinate the funeral, memorial, or alternative gathering.',
-        'Select a venue or funeral home.',
-        'Write and submit an obituary.',
-        'Arrange flowers or designate a charity for "in lieu of flowers" donations.',
-        'Notify Social Security: report the death to the SSA to stop benefit payments and check for survivor benefits.',
+        {
+          label: 'Obtain death certificates',
+          text: 'Request 6 to 10 copies. You will need many.',
+        },
+        {
+          label: 'Find the will and identify the executor',
+          text: 'Search desk, safe deposit box, or important papers.',
+        },
+        {
+          label: 'Notify the deceased employer',
+          text: 'Ask about owed pay, benefits, and life insurance.',
+        },
+        {
+          label: 'Notify extended family and friends',
+          text: 'Personal calls, emails, or social media.',
+        },
+        {
+          label: 'Start mail forwarding',
+          text: 'Visit your local post office.',
+        },
       ],
     },
     {
-      title: 'Phase 3: The First Month (Inventory & Administration)',
-      description: 'Focus on identifying assets and starting the formal process.',
+      title: 'Final Arrangements (Any Type)',
       items: [
-        'Initiate probate or trust administration.',
-        'If there is a will, have the executor file it with the probate court.',
-        'If there is no will, apply to the court to be appointed as the estate administrator.',
-        'Inventory assets: locate deeds, titles, bank statements, and tax returns to create a master list of what is owned.',
-        'Secure financial records: gather credit card statements and utility bills.',
+        {
+          label: 'Review any prepaid plans',
+          text: 'Check for written wishes about final disposition.',
+        },
+        {
+          label: 'Locate any documentation',
+          text: 'Prepaid contracts, burial society membership, and donor registrations.',
+        },
+        {
+          label: 'Decide on final disposition type',
+          text: 'Consider what your loved one wanted:',
+          details: [
+            'Traditional funeral home services',
+            'Direct disposition (cremation or burial without service)',
+            'Green or natural burial',
+            'Body donation to science',
+            'Home funeral (family-directed)',
+            'Memorial forest or coral reef burial',
+            'Outdoor scattering',
+          ],
+        },
+        {
+          label: 'Research providers',
+          text: 'Request general price lists and compare options.',
+        },
+        {
+          label: 'Choose a provider',
+          text: 'Whether funeral home, cremation service, or alternative provider.',
+        },
+        {
+          label: 'Choose location and date',
+          text: 'Funeral home, house of worship, outdoors, or virtual.',
+        },
+        {
+          label: 'Select an officiant',
+          text: 'Clergy, celebrant, family member, or self-led.',
+        },
+        {
+          label: 'Plan the program',
+          text: 'Music, readings, eulogy, photos, and video tribute.',
+        },
+        {
+          label: 'Write the obituary',
+          text: 'Post online, in newspapers, or both.',
+        },
+        {
+          label: 'Handle logistics',
+          text: 'Transportation, flowers, food, venue, and seating.',
+        },
       ],
     },
     {
-      title: 'Phase 4: Notifications & Accounts',
-      description: 'Systematically close or transfer accounts using your death certificates.',
+      title: 'Government and Benefits',
       items: [
-        'Financial institutions: banks, credit unions, and investment brokers.',
-        'Insurance companies: life, health, auto, and homeowners insurance.',
-        'Creditors: mortgage companies, credit card issuers, and personal loans.',
-        'Government agencies: DMV (to cancel driver’s license) and the Board of Elections.',
-        'Credit bureaus: notify Equifax, Experian, and TransUnion to prevent identity theft.',
+        {
+          label: 'Social Security',
+          text: 'Call 1-800-772-1213. Funeral homes often handle this.',
+        },
+        {
+          label: 'Veterans Affairs',
+          text: 'Apply for benefits if the deceased was a veteran.',
+        },
+        {
+          label: 'DMV',
+          text: "Cancel driver's license to help prevent identity theft.",
+        },
+        {
+          label: 'Passport Office',
+          text: 'Return or cancel the passport.',
+        },
+        {
+          label: 'Unemployment office',
+          text: 'Notify them if applicable.',
+        },
       ],
     },
     {
-      title: 'The "Do Not" List (Critical Guardrails)',
-      description: 'To protect the estate and the survivors, keep these rules in mind.',
+      title: 'Financial and Accounts',
       items: [
-        'Do not give away or sell belongings, property, or valuables yet.',
-        'Do not allow anyone to move into the home or drive the deceased’s vehicle.',
-        'Do not pay debts out of your own pocket. Debts should be paid by the estate in a specific legal order.',
-        'Do not rush major life changes or financial decisions while in active grief.',
+        {
+          label: 'Banks and credit unions',
+          text: 'Notify them and handle joint accounts or payable-on-death accounts.',
+        },
+        {
+          label: 'Life insurance',
+          text: 'File claims with policy numbers and a death certificate.',
+        },
+        {
+          label: 'Financial advisors and brokers',
+          text: 'Determine beneficiaries and next steps.',
+        },
+        {
+          label: 'Mortgage provider',
+          text: 'Notify them of the death.',
+        },
+        {
+          label: 'Credit card companies',
+          text: 'Close accounts or remove the deceased name.',
+        },
+        {
+          label: 'Credit bureaus',
+          text: 'Notify one so they can alert the others.',
+        },
+        {
+          label: 'Pension providers',
+          text: 'Claim survivor benefits if applicable.',
+        },
+      ],
+    },
+    {
+      title: 'Insurance and Subscriptions',
+      items: [
+        {
+          label: 'Health, home, and auto insurance',
+          text: 'Terminate or update policies as needed.',
+        },
+        {
+          label: 'Cancel subscriptions',
+          text: 'Streaming, magazines, gyms, and clubs.',
+        },
+        {
+          label: 'Cancel utilities',
+          text: 'If they are in the deceased name.',
+        },
+        {
+          label: 'Memberships',
+          text: 'Churches, unions, and associations.',
+        },
+      ],
+    },
+    {
+      title: 'Digital and Online',
+      items: [
+        {
+          label: 'Social media',
+          text: 'Close or memorialize accounts as needed.',
+        },
+        {
+          label: 'Email accounts',
+          text: 'Close them to help prevent identity theft.',
+        },
+        {
+          label: 'Loyalty programs',
+          text: 'Transfer or cancel frequent flyer or buyer points.',
+        },
+        {
+          label: 'Online accounts',
+          text: 'Delete or memorialize them as needed.',
+        },
+      ],
+    },
+    {
+      title: 'Estate Settlement (Weeks to Months)',
+      items: [
+        {
+          label: 'File the will at probate court',
+          text: 'Start the probate process.',
+        },
+        {
+          label: 'Identify the executor',
+          text: 'If named in the will, they manage the estate.',
+        },
+        {
+          label: 'Inventory all assets',
+          text: 'Bank accounts, property, vehicles, investments, and belongings.',
+        },
+        {
+          label: 'Track down all assets',
+          text: 'Search tax returns, mail, and safe deposit boxes.',
+        },
+        {
+          label: 'List all bills and debts',
+          text: 'Mortgage, taxes, utilities, and credit cards.',
+        },
+        {
+          label: 'Open an estate bank account',
+          text: 'Use it for incoming funds and payments.',
+        },
+        {
+          label: 'Pay debts in proper order',
+          text: 'Follow legal priority and do not pay them alone.',
+        },
+        {
+          label: 'File final tax returns',
+          text: 'For the deceased and the estate.',
+        },
+        {
+          label: 'Distribute assets',
+          text: 'To beneficiaries according to the will or trust.',
+        },
+        {
+          label: 'Settle any trusts',
+          text: 'Work with legal or financial advisors.',
+        },
+      ],
+    },
+    {
+      title: 'What NOT to Do',
+      items: [
+        {
+          label: 'Do not give away items before probate',
+          text: 'They may belong to the estate.',
+        },
+        {
+          label: 'Do not sell property',
+          text: 'Wait until the will is reviewed.',
+        },
+        {
+          label: 'Do not let someone move in',
+          text: 'Wait until probate is settled.',
+        },
+        {
+          label: 'Do not pay creditors alone',
+          text: 'Follow the proper legal order.',
+        },
+        {
+          label: 'Do not rush decisions',
+          text: 'Estate settlement takes time, and it is okay to pause.',
+        },
+      ],
+    },
+    {
+      title: 'Take Care of Yourself',
+      items: [
+        {
+          label: 'Ask for help',
+          text: 'Lean on friends, family, and professionals.',
+        },
+        {
+          label: 'Take breaks',
+          text: 'Grief is exhausting.',
+        },
+        {
+          label: 'Go slow',
+          text: 'You do not have to do everything at once.',
+        },
+        {
+          label: 'Seek support',
+          text: 'Reach out to grief counselors, support groups, or hotlines.',
+        },
       ],
     },
   ],
-  tipTitle: 'Tip for the Executor',
+  tipTitle: 'Keep in Mind',
   tipText:
-    'Keep a communication log. Every time you call a bank or agency, write down the date, the name of the person you spoke to, and what they told you. This prevents "he-said-she-said" issues with creditors later.',
+    'Executor duties in the weeks-to-months phase can run up to a year to fully close out, but initiating contact with an attorney early helps keep that process on track.',
 };
 
 
@@ -1426,13 +1667,34 @@ function ChecklistCard({ checklist, className = '' }) {
           <ul className="checklist-list">
             {section.items.map((item, index) => (
               <li key={`${section.title}-${index}`}>
-                <label className="checklist-item">
-                  <input type="checkbox" className="checklist-checkbox" />
-                  <span>
-                    {typeof item === 'string' ? item : item.text}
-                    {typeof item === 'object' && item.note ? <span className="checklist-item-note">{item.note}</span> : null}
-                  </span>
-                </label>
+                <div className="checklist-item-row">
+                  <label className="checklist-item">
+                    <input type="checkbox" className="checklist-checkbox" />
+                    <span className="checklist-item-copy">
+                      {typeof item === 'string' ? (
+                        item
+                      ) : (
+                        <>
+                          {item.label ? <strong>{item.label}</strong> : null}
+                          {item.text ? (
+                            <>
+                              {item.label ? ' - ' : null}
+                              {item.text}
+                            </>
+                          ) : null}
+                          {item.note ? <span className="checklist-item-note">{item.note}</span> : null}
+                        </>
+                      )}
+                    </span>
+                  </label>
+                  {typeof item === 'object' && item.details?.length ? (
+                    <ul className="checklist-item-sublist">
+                      {item.details.map((detail, detailIndex) => (
+                        <li key={`${section.title}-${index}-${detailIndex}`}>{detail}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
               </li>
             ))}
           </ul>

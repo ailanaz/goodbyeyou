@@ -2727,6 +2727,19 @@ ul { list-style: none; }
     line-height: 1.55;
 }
 
+.checklist-item-copy {
+    display: block;
+}
+
+.checklist-item-copy strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.checklist-item-row {
+    display: block;
+}
+
 .checklist-checkbox {
     width: 16px;
     height: 16px;
@@ -2744,6 +2757,16 @@ ul { list-style: none; }
     font-size: 0.76rem;
     line-height: 1.5;
     color: var(--color-text-light);
+}
+
+.checklist-item-sublist {
+    margin: 8px 0 0 28px;
+    padding: 0;
+    list-style: disc;
+}
+
+.checklist-item-sublist li {
+    padding: 2px 0;
 }
 
 .checklist-tip {
