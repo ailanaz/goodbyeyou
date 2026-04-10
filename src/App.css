@@ -2641,6 +2641,12 @@ ul { list-style: none; }
     border-top: 1px solid var(--color-border-light);
 }
 
+.sdl-checklist-link-wrap {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--color-border-light);
+}
+
 .sdl-tag {
     display: inline-block;
     padding: 5px 10px;
@@ -2829,10 +2835,10 @@ ul { list-style: none; }
 }
 
 .checklist-link-card {
-    background: var(--color-surface);
+    background: rgba(56, 59, 91, 0.03);
     border: 1px solid var(--color-border-light);
     border-radius: 10px;
-    padding: 24px;
+    padding: 20px;
 }
 
 .checklist-link-title {

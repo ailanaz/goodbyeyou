@@ -1170,7 +1170,7 @@ const planningHubFeatures = [
 const planningChecklist = {
   title: 'Planning Checklist for Alternative Services',
   purpose:
-    'Prepare an alternative after-death service plan that accounts for service-specific logistics, legal conditions, and the standard information others will need to carry it out.',
+    'Prepare an alternative or uncommon after-death service plan that accounts for service-specific logistics, legal conditions, and the standard information others will need to carry it out.',
   sections: [
     {
       title: 'Service Decisions',
@@ -1572,7 +1572,7 @@ const checklistPageSections = [
     eyebrow: 'Planning Ahead',
     title: 'Alternative planning checklist',
     description:
-      'Use this checklist when planning an alternative after-death service before a death occurs. It combines option-specific logistics, legal conditions, and timing needs with the standard steps that help others carry out the plan.',
+      'Use this checklist only when planning an alternative or uncommon after-death service before a death occurs. It combines option-specific logistics, legal conditions, and timing needs with the standard steps that help others carry out the plan.',
     checklist: planningChecklist,
   },
   {
@@ -1580,7 +1580,7 @@ const checklistPageSections = [
     eyebrow: 'Recent Loss',
     title: 'Immediate need checklist',
     description:
-      'Use this checklist when a death has already occurred and an alternative service is being considered or carried out. It combines urgent service-specific logistics, laws, and conditions with the standard actions most people still need to handle.',
+      'Use this checklist only when a death has already occurred and an alternative or uncommon service is being considered or carried out. It combines urgent service-specific logistics, laws, and conditions with the standard actions most people still need to handle.',
     checklist: currentLossChecklist,
   },
   {
@@ -1598,14 +1598,14 @@ const checklistLinks = {
     path: '/checklists#alternative-planning-checklist',
     title: 'Alternative planning checklist',
     description:
-      'Open the planning checklist for alternative services, including option-specific logistics and the standard preparation steps.',
+      'Open the planning checklist for alternative or uncommon services, including option-specific logistics and the standard preparation steps.',
     linkLabel: 'Open the planning checklist',
   },
   immediate: {
     path: '/checklists#immediate-need-checklist',
     title: 'Immediate need checklist',
     description:
-      'Open the recent-loss checklist for alternative services, including immediate logistics and the standard actions that still need attention.',
+      'Open the recent-loss checklist for alternative or uncommon services, including immediate logistics and the standard actions that still need attention.',
     linkLabel: 'Open the immediate need checklist',
   },
   general: {
@@ -2821,15 +2821,17 @@ function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta, checklis
                     ))}
                   </div>
                 )}
+                {checklistLink ? (
+                  <div className="sdl-checklist-link-wrap">
+                    <ChecklistLinkCard
+                      title={checklistLink.title}
+                      description={checklistLink.description}
+                      path={checklistLink.path}
+                      linkLabel={checklistLink.linkLabel}
+                    />
+                  </div>
+                ) : null}
               </div>
-              {checklistLink ? (
-                <ChecklistLinkCard
-                  title={checklistLink.title}
-                  description={checklistLink.description}
-                  path={checklistLink.path}
-                  linkLabel={checklistLink.linkLabel}
-                />
-              ) : null}
             </aside>
 
             <div className="sdl-main">
@@ -2996,13 +2998,13 @@ function ChecklistsPage() {
         eyebrow="Checklists"
         titleClassName="page-hero-title--centered"
         title="Downloadable checklists for every stage"
-        subtitle="The planning and recent-loss lists are tailored to alternative service logistics, laws, conditions, and timing, while the general checklist supports the broader process from death through final affairs."
+        subtitle="The planning and recent-loss lists are only for alternative or uncommon services. The general checklist is the broader list that can apply across service types."
       />
 
       <section className="section">
         <div className="container">
           <p className="section-lead checklist-page-intro">
-            Alternative options can require more coordination than standard arrangements. The planning and immediate-need lists pair those option-specific needs with the standard steps most people still need to handle, while the general complete list is broader and meant to help people move through the overall process with more clarity.
+            Alternative and uncommon options can require more coordination than standard arrangements. The planning and immediate-need lists are specific to those service paths, while the general complete list is the only one intended to support the broader process regardless of service type.
           </p>
           <div className="checklist-page-stack">
             {checklistPageSections.map((entry) => (
