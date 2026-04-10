@@ -1588,7 +1588,7 @@ const checklistPageSections = [
     eyebrow: 'Final Affairs',
     title: 'General complete checklist',
     description:
-      'This broader checklist is not tied to a specific service type. It is meant to help bring more clarity to the process after a death, from the first urgent steps through final affairs, while recognizing that exact needs can still vary by location and individual circumstance.',
+      <>This broader checklist is not tied to a specific service type. It is meant to<br />help bring more clarity to the process after a death, from the first<br />urgent steps through final affairs, while recognizing that exact needs can still vary by location and individual circumstance.</>,
     checklist: generalChecklist,
   },
 ];
