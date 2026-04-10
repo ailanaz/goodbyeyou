@@ -1269,50 +1269,72 @@ const currentLossChecklist = {
 };
 
 const generalChecklist = {
-  title: 'General Checklist (What to Know When a Death Occurs)',
+  title: 'After Death Steps Checklist',
   purpose:
-    'Understand how the process works so decisions are informed and options are not lost.',
+    'Move through the process in order so urgent decisions, legal requirements, and account notifications are handled without losing access to choices.',
   sections: [
     {
-      title: 'Decisions',
+      title: 'Phase 1: The First 24–48 Hours',
+      description: 'Focus on safety, security, and notification.',
       items: [
-        'Options depend on location, timing, and provider availability',
-        'Without a plan, default options are often used',
-        'Decisions are often made quickly after death',
-        'Having clear instructions changes outcomes',
+        'Secure the property: lock the home and vehicles. Ensure perishables are tossed and mail is collected.',
+        'Care for dependents: arrange immediate care for minor children, dependent adults, and pets.',
+        'Notify immediate circle: call family, close friends, and the employer/co-workers.',
+        'Locate estate documents: search for a will, trust, or "letter of instruction" to identify the executor and final wishes.',
+        {
+          text: 'Initial body arrangements: contact a funeral home, crematorium, or donation program.',
+          note: 'If transport between states or countries is needed, confirm regulations before signing.',
+        },
       ],
     },
     {
-      title: 'Logistics',
+      title: 'Phase 2: The First Week (Logistics & Legalities)',
+      description: 'Focus on official documentation and service planning.',
       items: [
-        'One provider may not handle everything',
-        'Transport between states or countries is possible but regulated',
-        'Timing affects which options remain available',
-        'Availability of providers determines what can be done',
+        'Order death certificates: request 10+ certified copies.',
+        'Plan the service: coordinate the funeral, memorial, or alternative gathering.',
+        'Select a venue or funeral home.',
+        'Write and submit an obituary.',
+        'Arrange flowers or designate a charity for "in lieu of flowers" donations.',
+        'Notify Social Security: report the death to the SSA to stop benefit payments and check for survivor benefits.',
       ],
     },
     {
-      title: 'Legal Steps',
+      title: 'Phase 3: The First Month (Inventory & Administration)',
+      description: 'Focus on identifying assets and starting the formal process.',
       items: [
-        'Laws vary by state and country',
-        'Death certificates are required for most next steps',
-        'Multiple copies are usually needed',
-        'Social Security and other agencies must be notified',
-        'Permits or documentation may be required for transport and disposition',
+        'Initiate probate or trust administration.',
+        'If there is a will, have the executor file it with the probate court.',
+        'If there is no will, apply to the court to be appointed as the estate administrator.',
+        'Inventory assets: locate deeds, titles, bank statements, and tax returns to create a master list of what is owned.',
+        'Secure financial records: gather credit card statements and utility bills.',
       ],
     },
     {
-      title: 'What Needs to Be Done',
+      title: 'Phase 4: Notifications & Accounts',
+      description: 'Systematically close or transfer accounts using your death certificates.',
       items: [
-        'Confirm options before making decisions',
-        'Ask providers what is actually possible in your situation',
-        'Understand costs before agreeing to services',
-        'Make sure required documents are completed',
-        'Coordinate actions between providers, family, and authorities',
-        'Move step-by-step to avoid delays or mistakes',
+        'Financial institutions: banks, credit unions, and investment brokers.',
+        'Insurance companies: life, health, auto, and homeowners insurance.',
+        'Creditors: mortgage companies, credit card issuers, and personal loans.',
+        'Government agencies: DMV (to cancel driver’s license) and the Board of Elections.',
+        'Credit bureaus: notify Equifax, Experian, and TransUnion to prevent identity theft.',
+      ],
+    },
+    {
+      title: 'The "Do Not" List (Critical Guardrails)',
+      description: 'To protect the estate and the survivors, keep these rules in mind.',
+      items: [
+        'Do not give away or sell belongings, property, or valuables yet.',
+        'Do not allow anyone to move into the home or drive the deceased’s vehicle.',
+        'Do not pay debts out of your own pocket. Debts should be paid by the estate in a specific legal order.',
+        'Do not rush major life changes or financial decisions while in active grief.',
       ],
     },
   ],
+  tipTitle: 'Tip for the Executor',
+  tipText:
+    'Keep a communication log. Every time you call a bank or agency, write down the date, the name of the person you spoke to, and what they told you. This prevents "he-said-she-said" issues with creditors later.',
 };
 
 
@@ -1400,18 +1422,28 @@ function ChecklistCard({ checklist, className = '' }) {
       {checklist.sections.map((section) => (
         <div className="checklist-group" key={section.title}>
           <h4>{section.title}</h4>
+          {section.description ? <p className="checklist-group-description">{section.description}</p> : null}
           <ul className="checklist-list">
             {section.items.map((item, index) => (
               <li key={`${section.title}-${index}`}>
                 <label className="checklist-item">
                   <input type="checkbox" className="checklist-checkbox" />
-                  <span>{item}</span>
+                  <span>
+                    {typeof item === 'string' ? item : item.text}
+                    {typeof item === 'object' && item.note ? <span className="checklist-item-note">{item.note}</span> : null}
+                  </span>
                 </label>
               </li>
             ))}
           </ul>
         </div>
       ))}
+      {checklist.tipTitle && checklist.tipText ? (
+        <div className="checklist-tip">
+          <p className="checklist-label">{checklist.tipTitle}</p>
+          <p className="checklist-purpose-text">{checklist.tipText}</p>
+        </div>
+      ) : null}
     </div>
   );
 }

@@ -2701,6 +2701,13 @@ ul { list-style: none; }
     margin-bottom: 10px;
 }
 
+.checklist-group-description {
+    font-size: 0.8rem;
+    line-height: 1.55;
+    color: var(--color-text-mid);
+    margin-bottom: 10px;
+}
+
 .checklist-list {
     list-style: none;
 }
@@ -2729,6 +2736,20 @@ ul { list-style: none; }
 
 .checklist-checkbox:checked + span {
     color: var(--color-text);
+}
+
+.checklist-item-note {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.76rem;
+    line-height: 1.5;
+    color: var(--color-text-light);
+}
+
+.checklist-tip {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border-light);
 }
 
 /* Main content */
