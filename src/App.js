@@ -2351,7 +2351,7 @@ function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta, checklis
       <section className="section sdl-body">
         <div className="container">
           <div className="sdl-grid">
-            <aside className="sdl-sidebar">
+            <aside className={`sdl-sidebar${checklist ? ' sdl-sidebar--with-checklist' : ''}`}>
               <div className="sdl-sidebar-inner">
                 <h2 className="sdl-sidebar-title">{hub.region}</h2>
                 <p className="sdl-sidebar-sub">{intro}</p>
