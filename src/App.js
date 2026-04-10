@@ -1702,7 +1702,7 @@ function getChecklistFileName(title) {
 
 function formatChecklistItemForDownload(item) {
   if (typeof item === 'string') {
-    return [`[ ] ${item}`];
+    return [`[ ] ${item}`, '    ________________________________'];
   }
 
   const mainLine = [item.label, item.text].filter(Boolean).join(' - ');
@@ -1717,6 +1717,8 @@ function formatChecklistItemForDownload(item) {
       lines.push(`    - ${detail}`);
     });
   }
+
+  lines.push('    ________________________________');
 
   return lines;
 }
@@ -1824,6 +1826,9 @@ function ChecklistCard({ checklist, className = '' }) {
                       ))}
                     </ul>
                   ) : null}
+                  <div className="checklist-item-writein" aria-hidden="true">
+                    <span className="checklist-item-writein-line" />
+                  </div>
                 </div>
               </li>
             ))}

@@ -2807,6 +2807,17 @@ ul { list-style: none; }
     padding: 2px 0;
 }
 
+.checklist-item-writein {
+    margin: 10px 0 6px 28px;
+}
+
+.checklist-item-writein-line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(56, 59, 91, 0.18);
+}
+
 .checklist-tip {
     margin-top: 22px;
     padding-top: 20px;
