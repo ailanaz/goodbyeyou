@@ -373,7 +373,7 @@ const optionCategories = [
   },
   {
     category: 'Alternative Donation and Research Pathways',
-    description: 'Options for contributing the body or organs to science, education, or medical advancement after death.',
+    description: 'Options for contributing the body or organs to science, education, or medical advancement.',
     options: [
       {
         id: 'whole-body-donation',
@@ -827,7 +827,7 @@ const optionCategories = [
   },
   {
     category: 'Memorial, Digital Legacy, and Service Options',
-    description: 'Ways to honor, remember, and celebrate the person through services, gatherings, and digital platforms.',
+    description: 'Ways to honor, remember, and celebrate the deceased.',
     options: [
       {
         id: 'celebration-of-life',
