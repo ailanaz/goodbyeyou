@@ -1578,6 +1578,57 @@ const generalChecklist = {
     'Executor duties in the weeks-to-months phase can run up to a year to fully close out, but initiating contact with an attorney early helps keep that process on track.',
 };
 
+const checklistPageSections = [
+  {
+    id: 'alternative-planning-checklist',
+    eyebrow: 'Planning Ahead',
+    title: 'Alternative planning checklist',
+    description:
+      'Use this checklist when you are planning an alternative after-death service before a death occurs.',
+    checklist: planningChecklist,
+  },
+  {
+    id: 'immediate-need-checklist',
+    eyebrow: 'Recent Loss',
+    title: 'Immediate need checklist',
+    description:
+      'Use this checklist when a death has already occurred and immediate choices, timing, and logistics need attention.',
+    checklist: currentLossChecklist,
+  },
+  {
+    id: 'general-complete-checklist',
+    eyebrow: 'Final Affairs',
+    title: 'General complete checklist',
+    description:
+      'Use this broader checklist for the full after-death process, from the first urgent steps through estate and final affairs work.',
+    checklist: generalChecklist,
+  },
+];
+
+const checklistLinks = {
+  planning: {
+    path: '/checklists#alternative-planning-checklist',
+    title: 'Alternative planning checklist',
+    description:
+      'Open the dedicated checklist page for the planning-ahead list connected to this state page.',
+    linkLabel: 'Open the planning checklist',
+  },
+  immediate: {
+    path: '/checklists#immediate-need-checklist',
+    title: 'Immediate need checklist',
+    description:
+      'Open the dedicated checklist page for the recent-loss list connected to this state page.',
+    linkLabel: 'Open the immediate need checklist',
+  },
+  general: {
+    path: '/checklists#general-complete-checklist',
+    title: 'General complete checklist',
+    description:
+      'Open the dedicated checklist page for the full after-death and final affairs list.',
+    linkLabel: 'Open the complete checklist',
+  },
+};
+
 
 const navItems = [
   { path: '/funeralplanning', label: 'When You Have Time' },
@@ -1786,6 +1837,19 @@ function ChecklistCard({ checklist, className = '' }) {
           <p className="checklist-purpose-text">{checklist.tipText}</p>
         </div>
       ) : null}
+    </div>
+  );
+}
+
+function ChecklistLinkCard({ title, description, path, linkLabel }) {
+  return (
+    <div className="checklist-link-card">
+      <p className="checklist-label">Checklist</p>
+      <h3 className="checklist-link-title">{title}</h3>
+      <p className="checklist-purpose-text">{description}</p>
+      <Link to={path} className="checklist-link-action">
+        {linkLabel} &rarr;
+      </Link>
     </div>
   );
 }
@@ -2314,6 +2378,9 @@ function Footer() {
                 <Link to="/after-death-steps">After Death Steps</Link>
               </li>
               <li>
+                <Link to="/checklists">Checklists</Link>
+              </li>
+              <li>
                 <Link to="/exploreoptions">Explore Your Options</Link>
               </li>
               <li>
@@ -2693,7 +2760,7 @@ function PlanningHubsPage() {
   );
 }
 
-function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta, checklist }) {
+function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta, checklistLink }) {
   const [activeSection, setActiveSection] = useState(0);
 
   useEffect(() => {
@@ -2725,7 +2792,7 @@ function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta, checklis
       <section className="section sdl-body">
         <div className="container">
           <div className="sdl-grid">
-            <aside className={`sdl-sidebar${checklist ? ' sdl-sidebar--with-checklist' : ''}`}>
+            <aside className="sdl-sidebar">
               <div className="sdl-sidebar-inner">
                 <h2 className="sdl-sidebar-title">{hub.region}</h2>
                 <p className="sdl-sidebar-sub">{intro}</p>
@@ -2748,7 +2815,14 @@ function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta, checklis
                   </div>
                 )}
               </div>
-              {checklist ? <ChecklistCard checklist={checklist} className="sdl-checklist-card" /> : null}
+              {checklistLink ? (
+                <ChecklistLinkCard
+                  title={checklistLink.title}
+                  description={checklistLink.description}
+                  path={checklistLink.path}
+                  linkLabel={checklistLink.linkLabel}
+                />
+              ) : null}
             </aside>
 
             <div className="sdl-main">
@@ -2805,7 +2879,7 @@ function PlanningHubDetailPage() {
       intro={hub.planning ? hub.planning.intro : hub.summary}
       sections={hub.planning ? hub.planning.sections : []}
       hub={hub}
-      checklist={planningChecklist}
+      checklistLink={checklistLinks.planning}
       cta={{
         title: 'Dealing with a recent loss?',
         primary: { path: `/immediate/${hub.id}`, label: 'When Time Has Run Out' },
@@ -2833,7 +2907,7 @@ function ImmediateStateDetailPage() {
       intro={hub.immediate ? hub.immediate.intro : hub.summary}
       sections={hub.immediate ? hub.immediate.sections : []}
       hub={hub}
-      checklist={currentLossChecklist}
+      checklistLink={checklistLinks.immediate}
       cta={{
         title: 'Choose the path for your situation',
         primary: { path: `/states/${hub.id}`, label: 'When You Have Time' },
@@ -2860,7 +2934,12 @@ function ResourcesPage() {
           <div className="resource-layout">
             <aside className="resource-sidebar">
               <div className="resource-sidebar-inner">
-                <ChecklistCard checklist={generalChecklist} />
+                <ChecklistLinkCard
+                  title={checklistLinks.general.title}
+                  description={checklistLinks.general.description}
+                  path={checklistLinks.general.path}
+                  linkLabel={checklistLinks.general.linkLabel}
+                />
               </div>
             </aside>
             <div className="resource-main">
@@ -2900,6 +2979,50 @@ function ResourcesPage() {
   );
 }
 
+function ChecklistsPage() {
+  useDocumentTitle('Checklists - GoodbyeYou');
+  useMetaDescription('Download planning, immediate-need, and final affairs checklists for alternative funeral planning and after-death steps.');
+
+  return (
+    <>
+      <PageHero
+        eyebrow="Checklists"
+        titleClassName="page-hero-title--centered"
+        title="Downloadable checklists for every stage"
+        subtitle="Open the checklist that matches your situation. Each list can be downloaded from its section."
+      />
+
+      <section className="section">
+        <div className="container">
+          <p className="section-lead checklist-page-intro">
+            Use these checklists for planning ahead, responding to a recent loss, or working through the broader final affairs process.
+          </p>
+          <div className="checklist-page-stack">
+            {checklistPageSections.map((entry) => (
+              <div className="checklist-page-section" id={entry.id} key={entry.id}>
+                <SectionIntro
+                  eyebrow={entry.eyebrow}
+                  title={entry.title}
+                  subtitle={entry.description}
+                />
+                <ChecklistCard checklist={entry.checklist} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTASection
+        title="Choose the path for your situation"
+        textLinks={[
+          { path: '/funeralplanning', label: 'Planning for the future', arrow: 'left' },
+          { path: '/when-time-has-run-out', label: 'Planning for a recent death', arrow: 'right' },
+        ]}
+      />
+    </>
+  );
+}
+
 function AppLayout() {
   return (
     <>
@@ -2912,6 +3035,7 @@ function AppLayout() {
         <Route path="/when-time-has-run-out" element={<OptionsPage />} />
         <Route path="/exploreoptions" element={<ExploreOptionsPage />} />
         <Route path="/after-death-steps" element={<ResourcesPage />} />
+        <Route path="/checklists" element={<ChecklistsPage />} />
         {/* Redirects from old URLs */}
         <Route path="/funeraloptions" element={<Navigate to="/funeralplanning" replace />} />
         <Route path="/planning-hubs" element={<Navigate to="/funeralplanning" replace />} />
