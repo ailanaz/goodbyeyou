@@ -1595,21 +1595,21 @@ const checklistPageSections = [
 
 const checklistLinks = {
   planning: {
-    path: '/checklists#alternative-planning-checklist',
+    path: '/after-death-steps#alternative-planning-checklist',
     title: 'Alternative planning checklist',
     description:
       'Open the planning checklist for alternative or uncommon services, including option-specific logistics and the standard preparation steps.',
     linkLabel: 'Open the planning checklist',
   },
   immediate: {
-    path: '/checklists#immediate-need-checklist',
+    path: '/after-death-steps#immediate-need-checklist',
     title: 'Immediate need checklist',
     description:
       'Open the recent-loss checklist for alternative or uncommon services, including immediate logistics and the standard actions that still need attention.',
     linkLabel: 'Open the immediate need checklist',
   },
   general: {
-    path: '/checklists#general-complete-checklist',
+    path: '/after-death-steps#general-complete-checklist',
     title: 'General complete checklist',
     description:
       'Open the broader checklist for the overall process after a death, from urgent steps through final affairs.',
@@ -2385,9 +2385,6 @@ function Footer() {
                 <Link to="/after-death-steps">After Death Steps</Link>
               </li>
               <li>
-                <Link to="/checklists">Checklists</Link>
-              </li>
-              <li>
                 <Link to="/exploreoptions">Explore Your Options</Link>
               </li>
               <li>
@@ -2481,7 +2478,7 @@ function HomePage() {
     {
       title: 'Get Organized',
       description:
-        'Navigate essential tasks and requirements with comprehensive checklists. Designed for clarity, to walk you through every step, from immediate logistics to final arrangements.',
+        'Navigate comprehensive checklists, designed for clarity, to walk you through every step, from immediate essential tasks to final arrangements.',
       icon: <img src="/Access%20regulatory%20resources.png" alt="" className="home-guidance-icon-image" />,
     },
   ];
@@ -2584,7 +2581,7 @@ function OptionsPage() {
       <PageHero
         eyebrow="When Time Has Run Out"
         titleClassName="page-hero-title--centered page-hero-title--recent-loss"
-        title={<>Resources for arranging uncommon services<br />for a recent loss</>}
+        title={<>Resources for arranging<br />uncommon services<br />for a recent loss</>}
       />
 
       <section className="section section-state-search-followup">
@@ -2925,78 +2922,16 @@ function ImmediateStateDetailPage() {
 }
 
 function ResourcesPage() {
-  useDocumentTitle('After Death Steps - What to Do After a Death - GoodbyeYou');
-  useMetaDescription('After-death resources covering what to do first, who to contact, official steps, documents, and supporting paths for alternative funeral arrangements.');
+  useDocumentTitle('After Death Steps - Checklists - GoodbyeYou');
+  useMetaDescription('Download planning, immediate-need, and general after-death checklists, plus follow-up resources covering what to do first, who to contact, documents, and provider pathways.');
 
   return (
     <>
       <PageHero
         eyebrow="After Death Steps"
         titleClassName="page-hero-title--centered"
-        title="What to do when a death occurs"
-      />
-
-      <section className="section">
-        <div className="container">
-          <div className="resource-layout">
-            <aside className="resource-sidebar">
-              <div className="resource-sidebar-inner">
-                <ChecklistLinkCard
-                  title={checklistLinks.general.title}
-                  description={checklistLinks.general.description}
-                  path={checklistLinks.general.path}
-                  linkLabel={checklistLinks.general.linkLabel}
-                />
-              </div>
-            </aside>
-            <div className="resource-main">
-              <p className="section-lead">Access logistical sequences, legal requirements, and provider pathways to clarify the process following a death. Use these resources to identify the official steps and documentation required for making arrangements.</p>
-              <div className="resource-detail-grid">
-                {resourceCategories.map((category) => (
-                  <div className="resource-detail-card" key={category.title}>
-                    <h3>{category.title}</h3>
-                    <p>{category.description}</p>
-                    <ul className="resource-list">
-                      {category.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                    {category.link ? (
-                      <Link to={category.link.path} className="resource-link">
-                        {category.link.label}
-                      </Link>
-                    ) : null}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <CTASection
-        title="Find what you need"
-        description="Choose the path for your situation"
-        textLinks={[
-          { path: '/funeralplanning', label: 'Planning for the future', arrow: 'left' },
-          { path: '/when-time-has-run-out', label: 'Planning for a recent death', arrow: 'right' },
-        ]}
-      />
-    </>
-  );
-}
-
-function ChecklistsPage() {
-  useDocumentTitle('Checklists - GoodbyeYou');
-  useMetaDescription('Download planning, immediate-need, and final affairs checklists for alternative funeral planning and after-death steps.');
-
-  return (
-    <>
-      <PageHero
-        eyebrow="Checklists"
-        titleClassName="page-hero-title--centered"
         title="Downloadable checklists for every stage"
-        subtitle="The planning and recent-loss lists are only for alternative or uncommon services. The general checklist is the broader list that can apply across service types."
+        subtitle="The planning and recent-loss lists are only for alternative or uncommon services. The general checklist is broader and can apply across service types, though exact steps may still vary by location and individual circumstances."
       />
 
       <section className="section">
@@ -3013,6 +2948,29 @@ function ChecklistsPage() {
                   subtitle={entry.description}
                 />
                 <ChecklistCard checklist={entry.checklist} />
+                {entry.id === 'general-complete-checklist' ? (
+                  <div className="resource-main checklist-page-resource-block">
+                    <p className="section-lead">Access logistical sequences, legal requirements, and provider pathways to clarify the process following a death. Use these resources to identify the official steps and documentation required for making arrangements.</p>
+                    <div className="resource-detail-grid">
+                      {resourceCategories.map((category) => (
+                        <div className="resource-detail-card" key={category.title}>
+                          <h3>{category.title}</h3>
+                          <p>{category.description}</p>
+                          <ul className="resource-list">
+                            {category.items.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                          {category.link ? (
+                            <Link to={category.link.path} className="resource-link">
+                              {category.link.label}
+                            </Link>
+                          ) : null}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
               </div>
             ))}
           </div>
@@ -3020,7 +2978,8 @@ function ChecklistsPage() {
       </section>
 
       <CTASection
-        title="Choose the path for your situation"
+        title="Find what you need"
+        description="Choose the path for your situation"
         textLinks={[
           { path: '/funeralplanning', label: 'Planning for the future', arrow: 'left' },
           { path: '/when-time-has-run-out', label: 'Planning for a recent death', arrow: 'right' },
@@ -3042,7 +3001,7 @@ function AppLayout() {
         <Route path="/when-time-has-run-out" element={<OptionsPage />} />
         <Route path="/exploreoptions" element={<ExploreOptionsPage />} />
         <Route path="/after-death-steps" element={<ResourcesPage />} />
-        <Route path="/checklists" element={<ChecklistsPage />} />
+        <Route path="/checklists" element={<Navigate to="/after-death-steps" replace />} />
         {/* Redirects from old URLs */}
         <Route path="/funeraloptions" element={<Navigate to="/funeralplanning" replace />} />
         <Route path="/planning-hubs" element={<Navigate to="/funeralplanning" replace />} />
