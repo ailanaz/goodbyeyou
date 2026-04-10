@@ -1220,7 +1220,6 @@ function OptionsPage() {
         eyebrow="When Time Has Run Out"
         titleClassName="page-hero-title--centered page-hero-title--recent-loss"
         title={<>Resources for arranging uncommon services<br />for a recent loss</>}
-        subtitle="Navigate available options, state regulations, and local resources."
       />
 
       <section className="section section-state-search-followup">
@@ -1259,7 +1258,7 @@ function OptionsPage() {
       <section className="section section-state-search-followup">
         <div className="container">
           <SectionIntro
-            subtitle="Once you open your state, everything you need will be in one place."
+            subtitle={<>Navigate available options, state regulations, and local resources.<br />Once you open your state, everything you need will be in one place.</>}
           />
           <div className="features-grid">
             {planningHubFeatures.map((feature) => (
@@ -1365,14 +1364,13 @@ function PlanningHubsPage() {
         eyebrow="When You Have Time"
         titleClassName="page-hero-title--planning page-hero-title--centered"
         title={<>Resources for planning<br />uncommon after-death services</>}
-        subtitle="Explore available options, state regulations, and local providers."
       />
 
       <section className="section">
         <div className="container">
           <SectionIntro
             title="Search Your State"
-            subtitle="Search or select a state to view uncommon service logistics and resources."
+            subtitle={<>Search or select a state to view uncommon service logistics and resources.<br />Explore available options, state regulations, and local providers.</>}
           />
           <USMapInteractive />
           <StateSearchBlock
