@@ -2788,7 +2788,7 @@ function CombinedStateDetailPage() {
   const scrollToSection = (index) => {
     const el = document.getElementById(`section-${index}`);
     if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 120;
+      const top = el.getBoundingClientRect().top + window.scrollY - 190;
       window.scrollTo({ top, behavior: 'smooth' });
     }
   };
