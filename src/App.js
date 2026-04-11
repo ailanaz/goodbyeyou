@@ -2667,7 +2667,7 @@ function ExploreOptionsPage() {
       </section>
 
       <CTASection
-        title="Search your state for resources"
+        title="Search Options or Get Organized"
         primary={{ path: '/alternative-funeral-options', label: 'Alternative Funeral Options' }}
         secondary={{ path: '/after-death-steps', label: 'Arrangements Checklist' }}
       />
