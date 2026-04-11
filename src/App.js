@@ -1512,7 +1512,7 @@ const checklistLinks = {
 
 
 const navItems = [
-  { path: '/alternative-funeral-options', label: 'Alternative Funeral Options' },
+  { path: '/alternative-funeral-options', label: 'State Search' },
   { path: '/exploreoptions', label: 'Explore Alternative Options' },
   { path: '/after-death-steps', label: 'After Death Checklist' },
 ];
@@ -2550,7 +2550,7 @@ function HomePage() {
     {
       title: 'View integrated logistics',
       description:
-        'Review state-specific availability, service provider information and regulatory resources in one unified interface as needed throughout the process.',
+        'Review state-specific availability, service provider information and regulatory resources.',
       icon: <img src="/View%20integrated%20logistics.png" alt="" className="home-guidance-icon-image" />,
     },
     {
@@ -2865,7 +2865,7 @@ function CombinedStateDetailPage() {
                               <h4>{option.title}</h4>
                               <p>{option.description}</p>
                             </div>
-                            <span className="option-detail-toggle" aria-hidden="true">{isExpanded ? '\u2212' : '+'}</span>
+                            <span className="option-detail-toggle" aria-hidden="true">{isExpanded ? '\u2212' : '\u2304'}</span>
                           </button>
                           {isExpanded && (
                           <div className="option-detail-body">
