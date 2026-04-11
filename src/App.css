@@ -3104,6 +3104,7 @@ ul { list-style: none; }
 
 .sdl-section-header {
     margin-bottom: 24px;
+    scroll-margin-top: 100px;
 }
 
 .sdl-section-header h2 {

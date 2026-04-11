@@ -2833,8 +2833,8 @@ function CombinedStateDetailPage() {
             </aside>
 
             <div className="sdl-main">
-              <div className="sdl-section sdl-section--options" id="section-0">
-                <div className="sdl-section-header">
+              <div className="sdl-section sdl-section--options">
+                <div className="sdl-section-header" id="section-0">
                   <h2>Alternative Arrangements Options Available in {hub.region}</h2>
                 </div>
                 {stateOptions.map((cat) => (
@@ -2893,8 +2893,8 @@ function CombinedStateDetailPage() {
               {topSections.map((section, idx) => {
                 const sectionColor = section.title.includes('Provider') ? 'sdl-section--provider' : 'sdl-section--cost';
                 return (
-                <div className={`sdl-section ${sectionColor}`} key={section.title} id={`section-${idx + 1}`}>
-                  <div className="sdl-section-header">
+                <div className={`sdl-section ${sectionColor}`} key={section.title}>
+                  <div className="sdl-section-header" id={`section-${idx + 1}`}>
                     <h2>{section.title}</h2>
                   </div>
                   <div className="option-detail-list">
@@ -2913,8 +2913,8 @@ function CombinedStateDetailPage() {
                 );
               })}
 
-              <div className="sdl-section sdl-section--planning-ahead" id={`section-${topSections.length + 1}`}>
-                <div className="sdl-section-header">
+              <div className="sdl-section sdl-section--planning-ahead">
+                <div className="sdl-section-header" id={`section-${topSections.length + 1}`}>
                   <h2>Planning Ahead</h2>
                 </div>
                 {planningRest.map((section) => (
@@ -2938,8 +2938,8 @@ function CombinedStateDetailPage() {
                 ))}
               </div>
 
-              <div className="sdl-section sdl-section--planning-now" id={`section-${topSections.length + 2}`}>
-                <div className="sdl-section-header">
+              <div className="sdl-section sdl-section--planning-now">
+                <div className="sdl-section-header" id={`section-${topSections.length + 2}`}>
                   <h2>Planning Now</h2>
                 </div>
                 {immediate.sections.map((section) => (
