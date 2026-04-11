@@ -56,10 +56,7 @@ export const hubDirectory = [
         },
         {
           title: 'Provider Directory',
-          items: [
-            { label: 'Specialized Providers', description: 'Facilities and practitioners in Illinois that directly perform or support home funeral, green burial, aquamation, and other alternative services.' },
-            { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
-          ],
+          items: [],
         },
         {
           title: 'Cost Estimates',
@@ -177,10 +174,7 @@ export const hubDirectory = [
         },
         {
           title: 'Provider Directory',
-          items: [
-            { label: 'Specialized Providers', description: 'Facilities and practitioners in California that directly perform or support green burial, aquamation, home funeral, and other alternative services.' },
-            { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
-          ],
+          items: [],
         },
         {
           title: 'Cost Estimates',
@@ -298,10 +292,7 @@ export const hubDirectory = [
         },
         {
           title: 'Provider Directory',
-          items: [
-            { label: 'Specialized Providers', description: 'Facilities and practitioners in Washington that directly perform or support natural organic reduction, green burial, aquamation, and other alternative services.' },
-            { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
-          ],
+          items: [],
         },
         {
           title: 'Cost Estimates',
@@ -420,10 +411,7 @@ export const hubDirectory = [
         {
           title: 'Provider Directory',
           intro: 'Colorado has some of the most established "alternative-first" providers in the country. Below are the names and contact details for the primary organizations specializing in Natural Organic Reduction (NOR), Aquamation, and Green Burial.',
-          items: [
-            { label: 'Specialized Providers', description: 'Facilities and practitioners in Colorado that directly perform or support natural organic reduction, aquamation, green burial, and other alternative services.' },
-            { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
-          ],
+          items: [],
           providers: [
             {
               name: 'The Natural Funeral',
@@ -599,10 +587,7 @@ export const hubDirectory = [
         },
         {
           title: 'Provider Directory',
-          items: [
-            { label: 'Specialized Providers', description: 'Facilities and practitioners in Oregon that directly perform or support natural organic reduction, aquamation, green burial, conservation burial, and other alternative services.' },
-            { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
-          ],
+          items: [],
         },
         {
           title: 'Cost Estimates',
@@ -720,10 +705,7 @@ export const hubDirectory = [
         },
         {
           title: 'Provider Directory',
-          items: [
-            { label: 'Specialized Providers', description: 'Facilities and practitioners in Vermont that directly perform or support green burial, natural organic reduction, home funeral, and other alternative services.' },
-            { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
-          ],
+          items: [],
         },
         {
           title: 'Cost Estimates',
@@ -841,10 +823,7 @@ export const hubDirectory = [
         },
         {
           title: 'Provider Directory',
-          items: [
-            { label: 'Specialized Providers', description: 'Facilities and practitioners in Minnesota that directly perform or support green burial, home funeral, and other alternative services.' },
-            { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
-          ],
+          items: [],
         },
         {
           title: 'Cost Estimates',
@@ -962,10 +941,7 @@ export const hubDirectory = [
         },
         {
           title: 'Provider Directory',
-          items: [
-            { label: 'Specialized Providers', description: 'Facilities and practitioners in Georgia that directly perform or support green burial, home funeral, and other alternative services.' },
-            { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
-          ],
+          items: [],
         },
         {
           title: 'Cost Estimates',
@@ -1083,10 +1059,7 @@ export const hubDirectory = [
         },
         {
           title: 'Provider Directory',
-          items: [
-            { label: 'Specialized Providers', description: 'Facilities and practitioners in New York that directly perform or support natural organic reduction, green burial, aquamation, and other alternative services.' },
-            { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
-          ],
+          items: [],
         },
         {
           title: 'Cost Estimates',
