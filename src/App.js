@@ -1741,14 +1741,38 @@ function buildChecklistDocumentHtml(checklist, checkedItems, { autoPrint = false
 }
 
 function saveChecklistPdf(checklist, checkedItems) {
-  const printWindow = window.open('', '_blank', 'noopener,noreferrer');
-  if (!printWindow) {
-    return;
-  }
+  const html = buildChecklistDocumentHtml(checklist, checkedItems, { autoPrint: true });
+  const iframe = document.createElement('iframe');
+  iframe.style.position = 'fixed';
+  iframe.style.right = '0';
+  iframe.style.bottom = '0';
+  iframe.style.width = '0';
+  iframe.style.height = '0';
+  iframe.style.border = 'none';
+  document.body.appendChild(iframe);
 
-  printWindow.document.open();
-  printWindow.document.write(buildChecklistDocumentHtml(checklist, checkedItems, { autoPrint: true }));
-  printWindow.document.close();
+  iframe.contentDocument.open();
+  iframe.contentDocument.write(html);
+  iframe.contentDocument.close();
+
+  iframe.onload = () => {
+    setTimeout(() => {
+      iframe.contentWindow.focus();
+      iframe.contentWindow.print();
+    }, 300);
+  };
+
+  const cleanup = () => {
+    setTimeout(() => {
+      if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
+    }, 1000);
+  };
+
+  try {
+    iframe.contentWindow.onafterprint = cleanup;
+  } catch (e) {
+    setTimeout(cleanup, 10000);
+  }
 }
 
 function downloadChecklistWord(checklist, checkedItems) {
@@ -1770,6 +1794,8 @@ function ChecklistCard({ checklist, className = '' }) {
   const notesTitle = checklist.notesTitle || 'Notes';
   const notesLines = checklist.notesLines || 4;
   const [checkedItems, setCheckedItems] = useState(() => readChecklistProgress(checklist.title));
+  const [downloadOpen, setDownloadOpen] = useState(false);
+  const downloadRef = React.useRef(null);
 
   useEffect(() => {
     setCheckedItems(readChecklistProgress(checklist.title));
@@ -1778,6 +1804,17 @@ function ChecklistCard({ checklist, className = '' }) {
   useEffect(() => {
     writeChecklistProgress(checklist.title, checkedItems);
   }, [checklist.title, checkedItems]);
+
+  useEffect(() => {
+    if (!downloadOpen) return;
+    const handleClickOutside = (e) => {
+      if (downloadRef.current && !downloadRef.current.contains(e.target)) {
+        setDownloadOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [downloadOpen]);
 
   const toggleChecklistItem = (sectionTitle, index) => {
     const itemKey = getChecklistItemKey(sectionTitle, index);
@@ -1799,21 +1836,30 @@ function ChecklistCard({ checklist, className = '' }) {
     <div className={`checklist-card ${className}`.trim()}>
       <div className="checklist-header">
         <h3 className="checklist-title">{checklist.title}</h3>
-        <div className="checklist-actions">
+        <div className="checklist-download-wrap" ref={downloadRef}>
           <button
             type="button"
             className="checklist-download"
-            onClick={() => saveChecklistPdf(checklist, checkedItems)}
+            onClick={() => setDownloadOpen(!downloadOpen)}
           >
-            Save PDF
+            Download
           </button>
-          <button
-            type="button"
-            className="checklist-download"
-            onClick={() => downloadChecklistWord(checklist, checkedItems)}
-          >
-            Download Word
-          </button>
+          {downloadOpen && (
+            <div className="checklist-download-menu">
+              <button
+                type="button"
+                onClick={() => { saveChecklistPdf(checklist, checkedItems); setDownloadOpen(false); }}
+              >
+                Save as PDF
+              </button>
+              <button
+                type="button"
+                onClick={() => { downloadChecklistWord(checklist, checkedItems); setDownloadOpen(false); }}
+              >
+                Download as Word
+              </button>
+            </div>
+          )}
         </div>
       </div>
       <div className="checklist-purpose">

@@ -2713,6 +2713,46 @@ ul { list-style: none; }
     outline-offset: 2px;
 }
 
+.checklist-download-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.checklist-download-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    min-width: 170px;
+    overflow: hidden;
+}
+
+.checklist-download-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    border: none;
+    background: none;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: var(--color-text);
+    text-align: left;
+    cursor: pointer;
+    transition: background 120ms ease;
+}
+
+.checklist-download-menu button:hover {
+    background: var(--color-surface-alt);
+}
+
+.checklist-download-menu button + button {
+    border-top: 1px solid var(--color-border-light);
+}
+
 .checklist-purpose {
     margin-bottom: 20px;
     padding-bottom: 20px;
