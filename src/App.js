@@ -2747,6 +2747,7 @@ function CombinedStateDetailPage() {
   const { hubId } = useParams();
   const hub = hubDirectory.find((entry) => entry.id === hubId);
   const [activeSection, setActiveSection] = useState(0);
+  const [expandedOptions, setExpandedOptions] = useState({});
 
   useDocumentTitle(hub ? `Alternative Funeral Options: ${hub.region} - GoodbyeYou` : 'Alternative Funeral Options - GoodbyeYou');
   useMetaDescription(hub ? `Alternative funeral options in ${hub.region}. Explore available services, providers, costs, logistics, and legal documentation for home funeral, green burial, aquamation, and more.` : 'Find alternative funeral options by state.');
@@ -2850,13 +2851,24 @@ function CombinedStateDetailPage() {
                       <p className="option-category-description">{cat.description}</p>
                     </div>
                     <div className="option-detail-list">
-                      {cat.options.map((option) => (
-                        <div className="option-detail" id={option.id} key={option.id}>
-                          <div className="option-detail-header">
-                            <h4>{option.title}</h4>
-                          </div>
+                      {cat.options.map((option) => {
+                        const isExpanded = !!expandedOptions[option.id];
+                        return (
+                        <div className={`option-detail${isExpanded ? ' option-detail--expanded' : ''}`} id={option.id} key={option.id}>
+                          <button
+                            className="option-detail-header"
+                            type="button"
+                            aria-expanded={isExpanded}
+                            onClick={() => setExpandedOptions((prev) => ({ ...prev, [option.id]: !prev[option.id] }))}
+                          >
+                            <div className="option-detail-header-text">
+                              <h4>{option.title}</h4>
+                              <p>{option.description}</p>
+                            </div>
+                            <span className="option-detail-toggle" aria-hidden="true">{isExpanded ? '\u2212' : '+'}</span>
+                          </button>
+                          {isExpanded && (
                           <div className="option-detail-body">
-                            <p>{option.description}</p>
                             <div className="option-detail-grid">
                               <div>
                                 <h4>What it involves</h4>
@@ -2876,8 +2888,10 @@ function CombinedStateDetailPage() {
                               </div>
                             </div>
                           </div>
+                          )}
                         </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 ))}

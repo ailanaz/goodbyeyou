@@ -2334,10 +2334,43 @@ ul { list-style: none; }
 
 .option-detail-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
     gap: 20px;
     padding: 32px 36px;
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: none;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+}
+
+.option-detail--expanded .option-detail-header {
     border-bottom: 1px solid var(--color-border-light);
+}
+
+.option-detail-header-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.option-detail-header-text p {
+    font-size: 0.95rem;
+    color: var(--color-text-mid);
+    line-height: 1.65;
+    margin-top: 8px;
+    max-width: 720px;
+}
+
+.option-detail-toggle {
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--color-text-mid);
+    flex-shrink: 0;
+    padding-top: 4px;
 }
 
 .option-detail-header .option-number {
@@ -2346,7 +2379,8 @@ ul { list-style: none; }
 }
 
 .option-detail-header h2,
-.option-detail-header h3 {
+.option-detail-header h3,
+.option-detail-header h4 {
     font-family: var(--font-heading);
     font-size: 1.75rem;
     font-weight: 600;
