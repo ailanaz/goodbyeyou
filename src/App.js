@@ -1171,7 +1171,7 @@ const currentLossChecklist = {
 };
 
 const generalChecklist = {
-  title: 'General After Death Checklist',
+  title: 'General Arrangements Checklist',
   purpose:
     'Use this checklist for the broader process after a death, regardless of service type. It focuses on common tasks, notifications, documentation, and follow-through from the first urgent steps through final affairs.',
   sections: [
@@ -1522,13 +1522,13 @@ const checklistLinks = {
 const navItems = [
   { path: '/alternative-funeral-options', label: 'State Search' },
   { path: '/exploreoptions', label: 'Explore Alternative Options' },
-  { path: '/after-death-steps', label: 'After Death Checklist' },
+  { path: '/after-death-steps', label: 'Arrangements Checklist' },
 ];
 
 const utilityNavItems = [
   { path: '/alternative-funeral-options', label: 'State Search' },
   { path: '/exploreoptions', label: 'Explore Alternative Options' },
-  { path: '/after-death-steps', label: 'After Death Checklist' },
+  { path: '/after-death-steps', label: 'Arrangements Checklist' },
 ];
 
 const desktopNavLeft = [];
@@ -1958,8 +1958,8 @@ function normalizeCtaLabel(label) {
     return 'Explore Alternative Options';
   }
 
-  if (label === 'Open Resources' || label === 'All Resources' || label === 'After Death Checklist') {
-    return 'After Death Checklist';
+  if (label === 'Open Resources' || label === 'All Resources' || label === 'Arrangements Checklist') {
+    return 'Arrangements Checklist';
   }
 
   return label;
@@ -2471,7 +2471,7 @@ function Footer() {
                 <Link to="/exploreoptions">Explore Alternative Options</Link>
               </li>
               <li>
-                <Link to="/after-death-steps">After Death Checklist</Link>
+                <Link to="/after-death-steps">Arrangements Checklist</Link>
               </li>
               <li>
                 <Link to="/">Home</Link>
@@ -2526,7 +2526,7 @@ function HomeAboutSection() {
       eyebrow: 'Support',
       variant: 'providers',
       image: '/questions-w.png',
-      imageLabel: 'After Death Checklist',
+      imageLabel: 'Arrangements Checklist',
       imageLink: { path: '/after-death-steps', label: 'Navigate the Steps' },
       title: <>Know what to do<br />when a loss occurs</>,
       description: '',
@@ -2682,7 +2682,7 @@ function ExploreOptionsPage() {
       <CTASection
         title="Search your state for resources"
         primary={{ path: '/alternative-funeral-options', label: 'Alternative Funeral Options' }}
-        secondary={{ path: '/after-death-steps', label: 'After Death Checklist' }}
+        secondary={{ path: '/after-death-steps', label: 'Arrangements Checklist' }}
       />
     </>
   );
@@ -2723,7 +2723,7 @@ function AlternativeFuneralOptionsPage() {
       <CTASection
         title="Explore all alternative options"
         primary={{ path: '/exploreoptions', label: 'Explore Alternative Options' }}
-        secondary={{ path: '/after-death-steps', label: 'After Death Checklist' }}
+        secondary={{ path: '/after-death-steps', label: 'Arrangements Checklist' }}
       />
     </>
   );
@@ -2847,7 +2847,7 @@ function CombinedStateDetailPage() {
             <div className="sdl-main">
               <div className="sdl-section" id="section-0">
                 <div className="sdl-section-header">
-                  <h2>Available Options in {hub.region}</h2>
+                  <h2>Available Alternative Arrangements Options in {hub.region}</h2>
                 </div>
                 {stateOptions.map((cat) => (
                   <div className="option-category" key={cat.category}>
@@ -2974,14 +2974,14 @@ function CombinedStateDetailPage() {
       <CTASection
         title="Explore all alternative options"
         primary={{ path: '/exploreoptions', label: 'Explore Alternative Options' }}
-        secondary={{ path: '/after-death-steps', label: 'After Death Checklist' }}
+        secondary={{ path: '/after-death-steps', label: 'Arrangements Checklist' }}
       />
     </>
   );
 }
 
 function ResourcesPage() {
-  useDocumentTitle('After Death Checklist - GoodbyeYou');
+  useDocumentTitle('Arrangements Checklist - GoodbyeYou');
   useMetaDescription('Download planning, immediate-need, and general after-death checklists, plus follow-up resources covering what to do first, who to contact, documents, and provider pathways.');
 
   return (
@@ -2989,7 +2989,7 @@ function ResourcesPage() {
       <PageHero
         eyebrow="After Death"
         titleClassName="page-hero-title--centered"
-        title="After Death Checklist"
+        title="Arrangements Checklist"
       />
 
       <section className="section">
