@@ -2800,7 +2800,7 @@ function CombinedStateDetailPage() {
     <>
       <PageHero
         eyebrow={hub.region}
-        title={`Alternative Funeral Options: ${hub.region}`}
+        title={<>Alternative Funeral Options:<br />{hub.region}</>}
         subtitle={planning.intro}
       />
 
