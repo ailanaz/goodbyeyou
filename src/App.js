@@ -2198,6 +2198,8 @@ const statePathData = {
 
 const stateIdToAbbr = {
   illinois: 'IL', california: 'CA', washington: 'WA',
+  colorado: 'CO', oregon: 'OR', vermont: 'VT',
+  minnesota: 'MN', georgia: 'GA', 'new-york': 'NY',
 };
 
 function USMapInteractive({ variant = 'planning' }) {
