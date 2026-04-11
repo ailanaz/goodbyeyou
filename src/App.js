@@ -2895,7 +2895,7 @@ function CombinedStateDetailPage() {
                 return (
                 <div className={`sdl-section ${sectionColor}`} key={section.title}>
                   <div className="sdl-section-header" id={`section-${idx + 1}`}>
-                    <h2>{section.title}</h2>
+                    <h2>{section.title.includes('Provider') ? `Provider Directory in ${hub.region}` : section.title}</h2>
                   </div>
                   <div className="option-detail-list">
                     {section.items.map((item) => (
