@@ -2490,7 +2490,7 @@ function HomeAboutSection() {
       image: '/time-w.png',
       imageLabel: 'Alternative Funeral Options',
       imageLink: { path: '/alternative-funeral-options', label: 'Search Your State' },
-      title: <>Resources for arranging<br />uncommon services for<br />a recent loss</>,
+      title: <>Resources for arranging<br />uncommon funeral services</>,
       description: '',
       items: [
         'Alternative options tied to the state',
@@ -2721,6 +2721,28 @@ function AlternativeFuneralOptionsPage() {
   );
 }
 
+const stateAvailableOptions = {
+  illinois: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'aquamation', 'whole-body-donation', 'state-anatomical-boards'],
+  california: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'conservation-burial', 'aquamation', 'natural-organic-reduction', 'direct-nourishment-tree-burial', 'whole-body-donation', 'state-anatomical-boards'],
+  washington: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'conservation-burial', 'aquamation', 'natural-organic-reduction', 'whole-body-donation', 'state-anatomical-boards'],
+  colorado: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'aquamation', 'natural-organic-reduction', 'open-air-funeral-pyre', 'whole-body-donation', 'state-anatomical-boards'],
+  oregon: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'conservation-burial', 'aquamation', 'natural-organic-reduction', 'whole-body-donation', 'state-anatomical-boards'],
+  vermont: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'conservation-burial', 'natural-organic-reduction', 'whole-body-donation', 'state-anatomical-boards'],
+  minnesota: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'aquamation', 'natural-organic-reduction', 'whole-body-donation', 'state-anatomical-boards'],
+  georgia: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'conservation-burial', 'natural-organic-reduction', 'whole-body-donation', 'state-anatomical-boards'],
+  'new-york': ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'aquamation', 'natural-organic-reduction', 'whole-body-donation', 'state-anatomical-boards'],
+};
+
+function getStateOptionCategories(hubId) {
+  const available = stateAvailableOptions[hubId] || [];
+  return optionCategories
+    .map((cat) => ({
+      ...cat,
+      options: cat.options.filter((opt) => available.includes(opt.id)),
+    }))
+    .filter((cat) => cat.options.length > 0);
+}
+
 function CombinedStateDetailPage() {
   const { hubId } = useParams();
   const hub = hubDirectory.find((entry) => entry.id === hubId);
@@ -2750,6 +2772,7 @@ function CombinedStateDetailPage() {
 
   const planning = hub.planning || { intro: '', sections: [] };
   const immediate = hub.immediate || { intro: '', sections: [] };
+  const stateOptions = getStateOptionCategories(hubId);
 
   const topSections = planning.sections.filter((s) =>
     s.title.includes('Availability') || s.title.includes('Provider Directory') || s.title.includes('Cost Estimates')
@@ -2760,6 +2783,7 @@ function CombinedStateDetailPage() {
   );
 
   const allNavSections = [
+    'Available Options',
     ...topSections.map((s) => s.title),
     'Planning Ahead',
     'Planning Now',
@@ -2815,8 +2839,52 @@ function CombinedStateDetailPage() {
             </aside>
 
             <div className="sdl-main">
+              <div className="sdl-section" id="section-0">
+                <div className="sdl-section-header">
+                  <h2>Available Options in {hub.region}</h2>
+                </div>
+                {stateOptions.map((cat) => (
+                  <div className="option-category" key={cat.category}>
+                    <div className="option-category-header">
+                      <h3 className="option-category-title">{cat.category}</h3>
+                      <p className="option-category-description">{cat.description}</p>
+                    </div>
+                    <div className="option-detail-list">
+                      {cat.options.map((option) => (
+                        <div className="option-detail" id={option.id} key={option.id}>
+                          <div className="option-detail-header">
+                            <h4>{option.title}</h4>
+                          </div>
+                          <div className="option-detail-body">
+                            <p>{option.description}</p>
+                            <div className="option-detail-grid">
+                              <div>
+                                <h4>What it involves</h4>
+                                <ul>
+                                  {option.involves.map((item) => (
+                                    <li key={item}>{item}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                              <div>
+                                <h4>Key considerations</h4>
+                                <ul>
+                                  {option.considerations.map((item) => (
+                                    <li key={item}>{item}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               {topSections.map((section, idx) => (
-                <div className="sdl-section" key={section.title} id={`section-${idx}`}>
+                <div className="sdl-section" key={section.title} id={`section-${idx + 1}`}>
                   <div className="sdl-section-header">
                     <h2>{section.title}</h2>
                     <div className="sdl-section-tags">
@@ -2836,7 +2904,7 @@ function CombinedStateDetailPage() {
                 </div>
               ))}
 
-              <div className="sdl-section sdl-section--split" id={`section-${topSections.length}`}>
+              <div className="sdl-section sdl-section--split" id={`section-${topSections.length + 1}`}>
                 <div className="sdl-split-block">
                   <div className="sdl-split-header">
                     <h2>Planning Ahead</h2>
@@ -2858,7 +2926,7 @@ function CombinedStateDetailPage() {
                 </div>
               </div>
 
-              <div className="sdl-section sdl-section--split" id={`section-${topSections.length + 1}`}>
+              <div className="sdl-section sdl-section--split" id={`section-${topSections.length + 2}`}>
                 <div className="sdl-split-block">
                   <div className="sdl-split-header">
                     <h2>Planning Now</h2>
