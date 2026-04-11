@@ -2832,7 +2832,7 @@ function CombinedStateDetailPage() {
             </aside>
 
             <div className="sdl-main">
-              <div className="sdl-section" id="section-0">
+              <div className="sdl-section sdl-section--options" id="section-0">
                 <div className="sdl-section-header">
                   <h2>Alternative Arrangements Options Available in {hub.region}</h2>
                 </div>
@@ -2889,69 +2889,79 @@ function CombinedStateDetailPage() {
                 ))}
               </div>
 
-              {topSections.map((section, idx) => (
-                <div className="sdl-section" key={section.title} id={`section-${idx + 1}`}>
+              {topSections.map((section, idx) => {
+                const sectionColor = section.title.includes('Provider') ? 'sdl-section--provider' : 'sdl-section--cost';
+                return (
+                <div className={`sdl-section ${sectionColor}`} key={section.title} id={`section-${idx + 1}`}>
                   <div className="sdl-section-header">
                     <h2>{section.title}</h2>
-                    <div className="sdl-section-tags">
-                      {section.items.map((item) => (
-                        <span className="sdl-section-tag" key={item.label}>{item.label}</span>
-                      ))}
-                    </div>
                   </div>
-                  <div className="sdl-cards">
+                  <div className="option-detail-list">
                     {section.items.map((item) => (
-                      <div className="sdl-card" key={item.label}>
-                        <h3>{item.label}</h3>
-                        <p>{item.description}</p>
+                      <div className="option-detail" key={item.label}>
+                        <div className="option-detail-header option-detail-header--static">
+                          <div className="option-detail-header-text">
+                            <h4>{item.label}</h4>
+                            <p>{item.description}</p>
+                          </div>
+                        </div>
                       </div>
                     ))}
                   </div>
                 </div>
-              ))}
+                );
+              })}
 
-              <div className="sdl-section sdl-section--split" id={`section-${topSections.length + 1}`}>
-                <div className="sdl-split-block">
-                  <div className="sdl-split-header">
-                    <h2>Planning Ahead</h2>
-                    <p>What to research, compare, and document before a death occurs.</p>
-                  </div>
-                  {planningRest.map((section) => (
-                    <div className="sdl-split-group" key={section.title}>
-                      <h3>{section.title}</h3>
-                      <div className="sdl-cards">
-                        {section.items.map((item) => (
-                          <div className="sdl-card" key={item.label}>
-                            <h4>{item.label}</h4>
-                            <p>{item.description}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
+              <div className="sdl-section sdl-section--planning-ahead" id={`section-${topSections.length + 1}`}>
+                <div className="sdl-section-header">
+                  <h2>Planning Ahead</h2>
+                  <p className="sdl-section-sub">What to research, compare, and document before a death occurs.</p>
                 </div>
+                {planningRest.map((section) => (
+                  <div className="option-category" key={section.title}>
+                    <div className="option-category-header">
+                      <h3 className="option-category-title">{section.title}</h3>
+                    </div>
+                    <div className="option-detail-list">
+                      {section.items.map((item) => (
+                        <div className="option-detail" key={item.label}>
+                          <div className="option-detail-header option-detail-header--static">
+                            <div className="option-detail-header-text">
+                              <h4>{item.label}</h4>
+                              <p>{item.description}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
 
-              <div className="sdl-section sdl-section--split" id={`section-${topSections.length + 2}`}>
-                <div className="sdl-split-block">
-                  <div className="sdl-split-header">
-                    <h2>Planning Now</h2>
-                    <p>What may affect timing, access, transport, and immediate decisions after a death.</p>
-                  </div>
-                  {immediate.sections.map((section) => (
-                    <div className="sdl-split-group" key={section.title}>
-                      <h3>{section.title}</h3>
-                      <div className="sdl-cards">
-                        {section.items.map((item) => (
-                          <div className="sdl-card" key={item.label}>
-                            <h4>{item.label}</h4>
-                            <p>{item.description}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
+              <div className="sdl-section sdl-section--planning-now" id={`section-${topSections.length + 2}`}>
+                <div className="sdl-section-header">
+                  <h2>Planning Now</h2>
+                  <p className="sdl-section-sub">What may affect timing, access, transport, and immediate decisions after a death.</p>
                 </div>
+                {immediate.sections.map((section) => (
+                  <div className="option-category" key={section.title}>
+                    <div className="option-category-header">
+                      <h3 className="option-category-title">{section.title}</h3>
+                    </div>
+                    <div className="option-detail-list">
+                      {section.items.map((item) => (
+                        <div className="option-detail" key={item.label}>
+                          <div className="option-detail-header option-detail-header--static">
+                            <div className="option-detail-header-text">
+                              <h4>{item.label}</h4>
+                              <p>{item.description}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
