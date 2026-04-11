@@ -1512,23 +1512,22 @@ const checklistLinks = {
 
 
 const navItems = [
-  { path: '/funeralplanning', label: 'When You Have Time' },
-  { path: '/when-time-has-run-out', label: 'When Time Has Run Out' },
+  { path: '/alternative-funeral-options', label: 'Alternative Funeral Options' },
+  { path: '/exploreoptions', label: 'Explore Alternative Options' },
   { path: '/after-death-steps', label: 'After Death Checklist' },
-  { path: '/exploreoptions', label: 'Explore Your Options' },
 ];
 
 const utilityNavItems = [
-  { path: '/exploreoptions', label: 'Explore Alternative Service Options' },
+  { path: '/exploreoptions', label: 'Explore Alternative Options' },
   { path: '/after-death-steps', label: 'After Death Checklist' },
 ];
 
 const desktopNavLeft = [
-  { path: '/funeralplanning', label: 'When You Have Time' },
+  { path: '/alternative-funeral-options', label: 'Alternative Funeral Options' },
 ];
 
 const desktopNavRight = [
-  { path: '/when-time-has-run-out', label: 'When Time Has Run Out' },
+  { path: '/after-death-steps', label: 'After Death Checklist' },
 ];
 
 function useDocumentTitle(title) {
@@ -1946,15 +1945,15 @@ function ChecklistLinkCard({ title, description, path, linkLabel }) {
 }
 
 function normalizeCtaLabel(label) {
-  if (label === 'When You Have Time') {
-    return 'Planning for the future';
+  if (label === 'Alternative Funeral Options') {
+    return 'Alternative Funeral Options';
   }
 
-  if (label === 'When Time Has Run Out') {
-    return 'Planning for a recent death';
+  if (label === 'Explore Alternative Options') {
+    return 'Explore Alternative Options';
   }
 
-  if (label === 'Open Resources' || label === 'All Resources') {
+  if (label === 'Open Resources' || label === 'All Resources' || label === 'After Death Checklist') {
     return 'After Death Checklist';
   }
 
@@ -2095,7 +2094,7 @@ function EditorialSections({ sections, className = '' }) {
         </div>
         <div className="editorial-bottom-link">
           <Link to="/exploreoptions" className="editorial-bottom-cta">
-            Explore Alternative Service Options &rarr;
+            Explore Alternative Options &rarr;
           </Link>
         </div>
       </div>
@@ -2202,7 +2201,7 @@ const stateIdToAbbr = {
   minnesota: 'MN', georgia: 'GA', 'new-york': 'NY',
 };
 
-function USMapInteractive({ variant = 'planning' }) {
+function USMapInteractive() {
   const navigate = useNavigate();
   const [hoveredState, setHoveredState] = useState(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
@@ -2216,8 +2215,7 @@ function USMapInteractive({ variant = 'planning' }) {
   const handleStateClick = (abbr) => {
     const hub = availableStates[abbr];
     if (hub) {
-      const basePath = variant === 'immediate' ? '/immediate' : '/states';
-      navigate(`${basePath}/${hub.id}`);
+      navigate(`/states/${hub.id}`);
     }
   };
 
@@ -2262,7 +2260,7 @@ function USMapInteractive({ variant = 'planning' }) {
           })}
         </svg>
       </div>
-      <p className="us-map-hint">Click a highlighted state to open its {variant === 'immediate' ? 'logistics' : 'planning'} page.</p>
+      <p className="us-map-hint">Click a highlighted state to open its resource page.</p>
     </div>
   );
 }
@@ -2462,16 +2460,13 @@ function Footer() {
             <h4>GoodbyeYou</h4>
             <ul>
               <li>
-                <Link to="/funeralplanning">When You Have Time</Link>
+                <Link to="/alternative-funeral-options">Alternative Funeral Options</Link>
               </li>
               <li>
-                <Link to="/when-time-has-run-out">When Time Has Run Out</Link>
+                <Link to="/exploreoptions">Explore Alternative Options</Link>
               </li>
               <li>
                 <Link to="/after-death-steps">After Death Checklist</Link>
-              </li>
-              <li>
-                <Link to="/exploreoptions">Explore Your Options</Link>
               </li>
               <li>
                 <Link to="/">Home</Link>
@@ -2493,11 +2488,11 @@ function Footer() {
 function HomeAboutSection() {
   const sections = [
     {
-      eyebrow: 'Planning ahead',
+      eyebrow: 'State resources',
       variant: 'education',
       image: '/time-w.png',
-      imageLabel: 'When You Have Time',
-      imageLink: { path: '/funeralplanning', label: 'Start Pre-Planning' },
+      imageLabel: 'Alternative Funeral Options',
+      imageLink: { path: '/alternative-funeral-options', label: 'Search Your State' },
       title: 'Resources for planning uncommon after-death services',
       description: '',
       items: [
@@ -2505,22 +2500,22 @@ function HomeAboutSection() {
         'Questions, timing, and next steps',
         'Provider and document pathways',
       ],
-      link: { path: '/funeralplanning#future-planning', label: 'Options for when you have time to plan' },
+      link: { path: '/alternative-funeral-options', label: 'Search your state for alternative options' },
     },
     {
-      eyebrow: 'Planning now',
+      eyebrow: 'Explore options',
       variant: 'state',
       image: '/no-time-w.png',
-      imageLabel: 'When Time Has Run Out',
-      imageLink: { path: '/when-time-has-run-out', label: 'Get Started Now' },
-      title: <>Resources for arranging uncommon services<br />for<br />a recent loss</>,
+      imageLabel: 'Explore Alternative Options',
+      imageLink: { path: '/exploreoptions', label: 'View All Options' },
+      title: <>A comprehensive list of<br />alternative after-death options</>,
       description: '',
       items: [
-        'What to do first',
-        'State-specific options and logistics',
-        'Provider and document pathways',
+        'Disposition methods and pathways',
+        'Memorial and ash-based alternatives',
+        'Donation and research options',
       ],
-      link: { path: '/when-time-has-run-out', label: 'Direction when you are experiencing a loss' },
+      link: { path: '/exploreoptions', label: 'Browse all alternative service options' },
     },
     {
       eyebrow: 'Support',
@@ -2620,44 +2615,6 @@ function HomePage() {
   );
 }
 
-function OptionsPage() {
-  useDocumentTitle('When Time Has Run Out - Immediate After-Death Steps - GoodbyeYou');
-  useMetaDescription('Immediate steps after a death for alternative funeral arrangements. Search your state for checklists, providers, and documents for uncommon services.');
-
-  return (
-    <>
-      <PageHero
-        eyebrow="When Time Has Run Out"
-        titleClassName="page-hero-title--centered page-hero-title--recent-loss"
-        title={<>Resources for arranging<br />uncommon services<br />for a recent loss</>}
-      />
-
-      <section className="section section-state-search-followup">
-        <div className="container">
-          <SectionIntro
-            title="State Search"
-            subtitle="Your state page will show available alternative services, providers, required documents, and the steps that apply where you are."
-          />
-          <USMapInteractive variant="immediate" />
-          <StateSearchBlock
-            placeholder="Enter the state where the death occurred"
-            buttonLabel="Open State Page"
-            basePath="/immediate"
-            variant="inline-search"
-          />
-        </div>
-      </section>
-
-      <CTASection
-        className="section-cta-tight-top"
-        title="Choose the path for your situation"
-        primary={{ path: '/funeralplanning', label: 'When You Have Time' }}
-        secondary={{ path: '/after-death-steps', label: 'Open Resources' }}
-      />
-    </>
-  );
-}
-
 function ExploreOptionsPage() {
   useDocumentTitle('Explore Alternative Funeral Options - GoodbyeYou');
   useMetaDescription('Browse alternative funeral services including home funeral, green burial, aquamation, natural organic reduction, whole-body donation, and more.');
@@ -2719,34 +2676,39 @@ function ExploreOptionsPage() {
 
       <CTASection
         title="Search your state for resources"
-        primary={{ path: '/funeralplanning', label: 'When You Have Time' }}
-        secondary={{ path: '/when-time-has-run-out', label: 'When Time Has Run Out' }}
+        primary={{ path: '/alternative-funeral-options', label: 'Alternative Funeral Options' }}
+        secondary={{ path: '/after-death-steps', label: 'After Death Checklist' }}
       />
     </>
   );
 }
 
-function PlanningHubsPage() {
-  useDocumentTitle('When You Have Time - Pre-Plan Funeral Options - GoodbyeYou');
-  useMetaDescription('Pre-plan alternative funeral options by state. Search your state for available services, providers, and resources for uncommon after-death services.');
+function ImmediateRedirect() {
+  const { hubId } = useParams();
+  return <Navigate to={`/states/${hubId}`} replace />;
+}
+
+function AlternativeFuneralOptionsPage() {
+  useDocumentTitle('Alternative Funeral Options by State - GoodbyeYou');
+  useMetaDescription('Search your state for alternative funeral options including green burial, aquamation, human composting, home funeral, and more. Find providers, logistics, and resources.');
 
   return (
     <>
       <PageHero
-        eyebrow="When You Have Time"
+        eyebrow="Alternative Funeral Options"
         titleClassName="page-hero-title--planning page-hero-title--centered"
-        title={<>Resources for planning<br />uncommon after-death services</>}
+        title={<>Alternative after-death options<br />and resources by state</>}
       />
 
       <section className="section section-state-search-followup">
         <div className="container">
           <SectionIntro
             title="State Search"
-            subtitle={<>Search or select a state to view uncommon service logistics and resources.<br />Explore available options, state regulations, and local providers.</>}
+            subtitle={<>Search or select a state to view alternative options, providers, and resources.<br />Each state page covers what is available whether you are planning ahead or handling a recent loss.</>}
           />
           <USMapInteractive />
           <StateSearchBlock
-            placeholder="Enter the state you want to plan in"
+            placeholder="Enter a state"
             buttonLabel="Open State Page"
             variant="inline-search"
           />
@@ -2754,16 +2716,21 @@ function PlanningHubsPage() {
       </section>
 
       <CTASection
-        title="Dealing with a recent loss?"
-        primary={{ path: '/when-time-has-run-out', label: 'When Time Has Run Out' }}
-        secondary={{ path: '/after-death-steps', label: 'Open Resources' }}
+        title="Explore all alternative options"
+        primary={{ path: '/exploreoptions', label: 'Explore Alternative Options' }}
+        secondary={{ path: '/after-death-steps', label: 'After Death Checklist' }}
       />
     </>
   );
 }
 
-function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta, checklistLink }) {
+function CombinedStateDetailPage() {
+  const { hubId } = useParams();
+  const hub = hubDirectory.find((entry) => entry.id === hubId);
   const [activeSection, setActiveSection] = useState(0);
+
+  useDocumentTitle(hub ? `Alternative Funeral Options: ${hub.region} - GoodbyeYou` : 'Alternative Funeral Options - GoodbyeYou');
+  useMetaDescription(hub ? `Alternative funeral options in ${hub.region}. Explore available services, providers, costs, logistics, and legal documentation for home funeral, green burial, aquamation, and more.` : 'Find alternative funeral options by state.');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -2780,6 +2747,27 @@ function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta, checklis
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  if (!hub) {
+    return <Navigate to="/alternative-funeral-options" replace />;
+  }
+
+  const planning = hub.planning || { intro: '', sections: [] };
+  const immediate = hub.immediate || { intro: '', sections: [] };
+
+  const topSections = planning.sections.filter((s) =>
+    s.title.includes('Availability') || s.title.includes('Provider Directory') || s.title.includes('Cost Estimates')
+  );
+
+  const planningRest = planning.sections.filter((s) =>
+    !s.title.includes('Availability') && !s.title.includes('Provider Directory') && !s.title.includes('Cost Estimates')
+  );
+
+  const allNavSections = [
+    ...topSections.map((s) => s.title),
+    'Planning Ahead',
+    'Planning Now',
+  ];
+
   const scrollToSection = (index) => {
     const el = document.querySelectorAll('.sdl-section')[index];
     if (el) {
@@ -2789,23 +2777,27 @@ function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta, checklis
 
   return (
     <>
-      <PageHero eyebrow={eyebrow} title={title} subtitle={intro} />
+      <PageHero
+        eyebrow={hub.region}
+        title={`Alternative Funeral Options: ${hub.region}`}
+        subtitle={planning.intro}
+      />
 
       <section className="section sdl-body">
         <div className="container">
           <div className="sdl-grid">
-            <aside className={`sdl-sidebar${checklistLink ? ' sdl-sidebar--with-checklist' : ''}`}>
+            <aside className="sdl-sidebar sdl-sidebar--with-checklist">
               <div className="sdl-sidebar-inner">
                 <h2 className="sdl-sidebar-title">{hub.region}</h2>
-                <p className="sdl-sidebar-sub">{intro}</p>
+                <p className="sdl-sidebar-sub">{planning.intro}</p>
                 <nav className="sdl-nav">
-                  {sections.map((s, i) => (
+                  {allNavSections.map((label, i) => (
                     <button
-                      key={s.title}
+                      key={label}
                       className={`sdl-nav-item${i === activeSection ? ' sdl-nav-item--active' : ''}`}
                       onClick={() => scrollToSection(i)}
                     >
-                      {s.title}
+                      {label}
                     </button>
                   ))}
                 </nav>
@@ -2817,18 +2809,16 @@ function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta, checklis
                   </div>
                 )}
               </div>
-              {checklistLink ? (
-                <ChecklistLinkCard
-                  title={checklistLink.title}
-                  description={checklistLink.description}
-                  path={checklistLink.path}
-                  linkLabel={checklistLink.linkLabel}
-                />
-              ) : null}
+              <ChecklistLinkCard
+                title={checklistLinks.planning.title}
+                description={checklistLinks.planning.description}
+                path={checklistLinks.planning.path}
+                linkLabel={checklistLinks.planning.linkLabel}
+              />
             </aside>
 
             <div className="sdl-main">
-              {sections.map((section, idx) => (
+              {topSections.map((section, idx) => (
                 <div className="sdl-section" key={section.title} id={`section-${idx}`}>
                   <div className="sdl-section-header">
                     <h2>{section.title}</h2>
@@ -2848,74 +2838,61 @@ function StateDetailLayout({ eyebrow, title, intro, sections, hub, cta, checklis
                   </div>
                 </div>
               ))}
+
+              <div className="sdl-section sdl-section--split" id={`section-${topSections.length}`}>
+                <div className="sdl-split-block">
+                  <div className="sdl-split-header">
+                    <h2>Planning Ahead</h2>
+                    <p>What to research, compare, and document before a death occurs.</p>
+                  </div>
+                  {planningRest.map((section) => (
+                    <div className="sdl-split-group" key={section.title}>
+                      <h3>{section.title}</h3>
+                      <div className="sdl-cards">
+                        {section.items.map((item) => (
+                          <div className="sdl-card" key={item.label}>
+                            <h4>{item.label}</h4>
+                            <p>{item.description}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="sdl-section sdl-section--split" id={`section-${topSections.length + 1}`}>
+                <div className="sdl-split-block">
+                  <div className="sdl-split-header">
+                    <h2>Planning Now</h2>
+                    <p>What may affect timing, access, transport, and immediate decisions after a death.</p>
+                  </div>
+                  {immediate.sections.map((section) => (
+                    <div className="sdl-split-group" key={section.title}>
+                      <h3>{section.title}</h3>
+                      <div className="sdl-cards">
+                        {section.items.map((item) => (
+                          <div className="sdl-card" key={item.label}>
+                            <h4>{item.label}</h4>
+                            <p>{item.description}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <CTASection
-        title={cta.title}
-        description={cta.description}
-        primary={cta.primary}
-        secondary={cta.secondary}
+        title="Explore all alternative options"
+        primary={{ path: '/exploreoptions', label: 'Explore Alternative Options' }}
+        secondary={{ path: '/after-death-steps', label: 'After Death Checklist' }}
       />
     </>
-  );
-}
-
-function PlanningHubDetailPage() {
-  const { hubId } = useParams();
-  const hub = hubDirectory.find((entry) => entry.id === hubId);
-
-  useDocumentTitle(hub ? `State-Specific Planning: ${hub.region} - GoodbyeYou` : 'Funeral Options - GoodbyeYou');
-  useMetaDescription(hub ? `Pre-plan alternative funeral options in ${hub.region}. Explore ${hub.region} service availability, providers, costs, and legal documentation for home funeral, green burial, aquamation, and more.` : 'Find alternative funeral options by state.');
-
-  if (!hub) {
-    return <Navigate to="/funeralplanning" replace />;
-  }
-
-  return (
-    <StateDetailLayout
-      eyebrow="When You Have Time"
-      title={`State-Specific Planning: ${hub.region}`}
-      intro={hub.planning ? hub.planning.intro : hub.summary}
-      sections={hub.planning ? hub.planning.sections : []}
-      hub={hub}
-      checklistLink={checklistLinks.planning}
-      cta={{
-        title: 'Dealing with a recent loss?',
-        primary: { path: `/immediate/${hub.id}`, label: 'When Time Has Run Out' },
-        secondary: { path: '/after-death-steps', label: 'Open Resources' },
-      }}
-    />
-  );
-}
-
-function ImmediateStateDetailPage() {
-  const { hubId } = useParams();
-  const hub = hubDirectory.find((entry) => entry.id === hubId);
-
-  useDocumentTitle(hub ? `Immediate Logistics: ${hub.region} - GoodbyeYou` : 'Immediate Logistics - GoodbyeYou');
-  useMetaDescription(hub ? `Immediate after-death logistics in ${hub.region}. Navigate authority, custody, transport, providers, paperwork, and deadlines for alternative funeral services.` : 'Find immediate after-death logistics by state.');
-
-  if (!hub) {
-    return <Navigate to="/when-time-has-run-out" replace />;
-  }
-
-  return (
-    <StateDetailLayout
-      eyebrow="When Time Has Run Out"
-      title={`Immediate Logistics: ${hub.region}`}
-      intro={hub.immediate ? hub.immediate.intro : hub.summary}
-      sections={hub.immediate ? hub.immediate.sections : []}
-      hub={hub}
-      checklistLink={checklistLinks.immediate}
-      cta={{
-        title: 'Choose the path for your situation',
-        primary: { path: `/states/${hub.id}`, label: 'When You Have Time' },
-        secondary: { path: '/after-death-steps', label: 'Open Resources' },
-      }}
-    />
   );
 }
 
@@ -2952,8 +2929,8 @@ function ResourcesPage() {
         title="Find what you need"
         description="Choose the path for your situation"
         textLinks={[
-          { path: '/funeralplanning', label: 'Planning for the future', arrow: 'left' },
-          { path: '/when-time-has-run-out', label: 'Planning for a recent death', arrow: 'right' },
+          { path: '/alternative-funeral-options', label: 'Alternative Funeral Options', arrow: 'left' },
+          { path: '/exploreoptions', label: 'Explore Alternative Options', arrow: 'right' },
         ]}
       />
     </>
@@ -2966,28 +2943,29 @@ function AppLayout() {
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/funeralplanning" element={<PlanningHubsPage />} />
-        <Route path="/states/:hubId" element={<PlanningHubDetailPage />} />
-        <Route path="/immediate/:hubId" element={<ImmediateStateDetailPage />} />
-        <Route path="/when-time-has-run-out" element={<OptionsPage />} />
+        <Route path="/alternative-funeral-options" element={<AlternativeFuneralOptionsPage />} />
+        <Route path="/states/:hubId" element={<CombinedStateDetailPage />} />
         <Route path="/exploreoptions" element={<ExploreOptionsPage />} />
         <Route path="/after-death-steps" element={<ResourcesPage />} />
-        <Route path="/checklists" element={<Navigate to="/after-death-steps" replace />} />
         {/* Redirects from old URLs */}
-        <Route path="/funeraloptions" element={<Navigate to="/funeralplanning" replace />} />
-        <Route path="/planning-hubs" element={<Navigate to="/funeralplanning" replace />} />
-        <Route path="/planning-hubs/:hubId" element={<Navigate to="/funeralplanning" replace />} />
-        <Route path="/funeral-services" element={<Navigate to="/when-time-has-run-out" replace />} />
-        <Route path="/afterdeathguide" element={<Navigate to="/when-time-has-run-out" replace />} />
-        <Route path="/options" element={<Navigate to="/when-time-has-run-out" replace />} />
-        <Route path="/options/:optionId" element={<Navigate to="/when-time-has-run-out" replace />} />
-        <Route path="/plan-ahead" element={<Navigate to="/funeralplanning#future-planning" replace />} />
-        <Route path="/planning-now" element={<Navigate to="/when-time-has-run-out" replace />} />
+        <Route path="/funeralplanning" element={<Navigate to="/alternative-funeral-options" replace />} />
+        <Route path="/when-time-has-run-out" element={<Navigate to="/alternative-funeral-options" replace />} />
+        <Route path="/immediate/:hubId" element={<ImmediateRedirect />} />
+        <Route path="/checklists" element={<Navigate to="/after-death-steps" replace />} />
+        <Route path="/funeraloptions" element={<Navigate to="/alternative-funeral-options" replace />} />
+        <Route path="/planning-hubs" element={<Navigate to="/alternative-funeral-options" replace />} />
+        <Route path="/planning-hubs/:hubId" element={<Navigate to="/alternative-funeral-options" replace />} />
+        <Route path="/funeral-services" element={<Navigate to="/alternative-funeral-options" replace />} />
+        <Route path="/afterdeathguide" element={<Navigate to="/alternative-funeral-options" replace />} />
+        <Route path="/options" element={<Navigate to="/alternative-funeral-options" replace />} />
+        <Route path="/options/:optionId" element={<Navigate to="/alternative-funeral-options" replace />} />
+        <Route path="/plan-ahead" element={<Navigate to="/alternative-funeral-options" replace />} />
+        <Route path="/planning-now" element={<Navigate to="/alternative-funeral-options" replace />} />
         <Route path="/resources" element={<Navigate to="/after-death-steps" replace />} />
         <Route path="/vault" element={<Navigate to="/after-death-steps" replace />} />
-        <Route path="/providers" element={<Navigate to="/funeralplanning" replace />} />
-        <Route path="/legal-resources" element={<Navigate to="/funeralplanning" replace />} />
-        <Route path="/legal" element={<Navigate to="/funeralplanning" replace />} />
+        <Route path="/providers" element={<Navigate to="/alternative-funeral-options" replace />} />
+        <Route path="/legal-resources" element={<Navigate to="/alternative-funeral-options" replace />} />
+        <Route path="/legal" element={<Navigate to="/alternative-funeral-options" replace />} />
         <Route path="/about" element={<Navigate to="/" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
