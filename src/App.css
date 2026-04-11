@@ -3024,29 +3024,26 @@ ul { list-style: none; }
 
 .sdl-section {
     scroll-margin-top: 100px;
-    border-radius: var(--radius-lg);
-    padding: 28px;
-    border: 2px solid transparent;
 }
 
-.sdl-section--options {
-    border-color: var(--color-primary);
+.sdl-section--options .option-detail {
+    border-left: 4px solid var(--color-primary);
 }
 
-.sdl-section--provider {
-    border-color: var(--color-primary-light);
+.sdl-section--provider .option-detail {
+    border-left: 4px solid var(--color-primary-light);
 }
 
-.sdl-section--cost {
-    border-color: var(--color-accent-light);
+.sdl-section--cost .option-detail {
+    border-left: 4px solid var(--color-accent-light);
 }
 
-.sdl-section--planning-ahead {
-    border-color: var(--color-primary-dark);
+.sdl-section--planning-ahead .option-detail {
+    border-left: 4px solid var(--color-primary-dark);
 }
 
-.sdl-section--planning-now {
-    border-color: var(--color-text-mid);
+.sdl-section--planning-now .option-detail {
+    border-left: 4px solid var(--color-text-mid);
 }
 
 .sdl-section-sub {
