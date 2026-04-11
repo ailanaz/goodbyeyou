@@ -1936,19 +1936,6 @@ function ChecklistCard({ checklist, className = '' }) {
   );
 }
 
-function ChecklistLinkCard({ title, description, path, linkLabel }) {
-  return (
-    <div className="checklist-link-card">
-      <p className="checklist-label">Checklist</p>
-      <h3 className="checklist-link-title">{title}</h3>
-      <p className="checklist-purpose-text">{description}</p>
-      <Link to={path} className="checklist-link-action">
-        {linkLabel} &rarr;
-      </Link>
-    </div>
-  );
-}
-
 function normalizeCtaLabel(label) {
   if (label === 'Alternative Funeral Options') {
     return 'Alternative Funeral Options';
