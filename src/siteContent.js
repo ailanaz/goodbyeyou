@@ -48,7 +48,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Explore Options: How it Works',
+          title: 'Explore Options',
           items: [
             { label: 'Method Deep Dives', description: 'Links to technical descriptions of home funeral care, green burial preparation, aquamation processing, and whole-body donation programs available in Illinois.' },
             { label: 'Environmental & Practical Impact', description: 'Comparative data on environmental footprint, space requirements, and processing timelines for each method.' },
@@ -69,7 +69,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Future Logistics: Making it Binding',
+          title: 'Future Logistics',
           items: [
             { label: 'Legal Authority', description: 'Information on Illinois disposition authorization forms and appointment of agent documentation.' },
             { label: 'Form Downloads', description: 'Direct links to required documentation to ensure uncommon wishes are honored by law in Illinois.' },
@@ -169,7 +169,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Explore Options: How it Works',
+          title: 'Explore Options',
           items: [
             { label: 'Method Deep Dives', description: 'Links to technical descriptions of green burial preparation, aquamation processing, home funeral care, and whole-body donation programs available in California.' },
             { label: 'Environmental & Practical Impact', description: 'Comparative data on environmental footprint, space requirements, and processing timelines for each method.' },
@@ -190,7 +190,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Future Logistics: Making it Binding',
+          title: 'Future Logistics',
           items: [
             { label: 'Legal Authority', description: 'Information on California disposition authorization forms and appointment of agent documentation.' },
             { label: 'Form Downloads', description: 'Direct links to required documentation to ensure uncommon wishes are honored by law in California.' },
@@ -290,7 +290,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Explore Options: How it Works',
+          title: 'Explore Options',
           items: [
             { label: 'Method Deep Dives', description: 'Links to technical descriptions of natural organic reduction, green burial preparation, aquamation processing, and home funeral care available in Washington.' },
             { label: 'Environmental & Practical Impact', description: 'Comparative data on environmental footprint, space requirements, and processing timelines for each method.' },
@@ -311,7 +311,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Future Logistics: Making it Binding',
+          title: 'Future Logistics',
           items: [
             { label: 'Legal Authority', description: 'Information on Washington disposition authorization forms and appointment of agent documentation.' },
             { label: 'Form Downloads', description: 'Direct links to required documentation to ensure uncommon wishes are honored by law in Washington.' },
@@ -411,7 +411,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Explore Options: How it Works',
+          title: 'Explore Options',
           items: [
             { label: 'Method Deep Dives', description: 'Links to technical descriptions of natural organic reduction, aquamation processing, green burial preparation, open-air cremation, and home funeral care available in Colorado.' },
             { label: 'Environmental & Practical Impact', description: 'Comparative data on environmental footprint, space requirements, and processing timelines for each method.' },
@@ -432,7 +432,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Future Logistics: Making it Binding',
+          title: 'Future Logistics',
           items: [
             { label: 'Legal Authority', description: 'Information on Colorado disposition authorization forms and appointment of agent documentation.' },
             { label: 'Form Downloads', description: 'Direct links to required documentation to ensure uncommon wishes are honored by law in Colorado.' },
@@ -532,7 +532,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Explore Options: How it Works',
+          title: 'Explore Options',
           items: [
             { label: 'Method Deep Dives', description: 'Links to technical descriptions of natural organic reduction, aquamation processing, green burial preparation, conservation burial, and home funeral care available in Oregon.' },
             { label: 'Environmental & Practical Impact', description: 'Comparative data on environmental footprint, space requirements, and processing timelines for each method.' },
@@ -553,7 +553,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Future Logistics: Making it Binding',
+          title: 'Future Logistics',
           items: [
             { label: 'Legal Authority', description: 'Information on Oregon disposition authorization forms and appointment of agent documentation.' },
             { label: 'Form Downloads', description: 'Direct links to required documentation to ensure uncommon wishes are honored by law in Oregon.' },
@@ -653,7 +653,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Explore Options: How it Works',
+          title: 'Explore Options',
           items: [
             { label: 'Method Deep Dives', description: 'Links to technical descriptions of natural organic reduction, green burial preparation, home funeral care, and other alternative services available in Vermont.' },
             { label: 'Environmental & Practical Impact', description: 'Comparative data on environmental footprint, space requirements, and processing timelines for each method.' },
@@ -674,7 +674,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Future Logistics: Making it Binding',
+          title: 'Future Logistics',
           items: [
             { label: 'Legal Authority', description: 'Information on Vermont disposition authorization forms and appointment of agent documentation.' },
             { label: 'Form Downloads', description: 'Direct links to required documentation to ensure uncommon wishes are honored by law in Vermont.' },
@@ -774,7 +774,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Explore Options: How it Works',
+          title: 'Explore Options',
           items: [
             { label: 'Method Deep Dives', description: 'Links to technical descriptions of natural organic reduction, green burial preparation, home funeral care, and other alternative services available or becoming available in Minnesota.' },
             { label: 'Environmental & Practical Impact', description: 'Comparative data on environmental footprint, space requirements, and processing timelines for each method.' },
@@ -795,7 +795,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Future Logistics: Making it Binding',
+          title: 'Future Logistics',
           items: [
             { label: 'Legal Authority', description: 'Information on Minnesota disposition authorization forms and appointment of agent documentation.' },
             { label: 'Form Downloads', description: 'Direct links to required documentation to ensure uncommon wishes are honored by law in Minnesota.' },
@@ -895,7 +895,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Explore Options: How it Works',
+          title: 'Explore Options',
           items: [
             { label: 'Method Deep Dives', description: 'Links to technical descriptions of natural organic reduction, green burial preparation, home funeral care, and other alternative services available or becoming available in Georgia.' },
             { label: 'Environmental & Practical Impact', description: 'Comparative data on environmental footprint, space requirements, and processing timelines for each method.' },
@@ -916,7 +916,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Future Logistics: Making it Binding',
+          title: 'Future Logistics',
           items: [
             { label: 'Legal Authority', description: 'Information on Georgia disposition authorization forms and appointment of agent documentation.' },
             { label: 'Form Downloads', description: 'Direct links to required documentation to ensure uncommon wishes are honored by law in Georgia.' },
@@ -1016,7 +1016,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Explore Options: How it Works',
+          title: 'Explore Options',
           items: [
             { label: 'Method Deep Dives', description: 'Links to technical descriptions of natural organic reduction, green burial preparation, aquamation processing, and other alternative services available in New York.' },
             { label: 'Environmental & Practical Impact', description: 'Comparative data on environmental footprint, space requirements, and processing timelines for each method.' },
@@ -1037,7 +1037,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Future Logistics: Making it Binding',
+          title: 'Future Logistics',
           items: [
             { label: 'Legal Authority', description: 'Information on New York disposition authorization forms and appointment of agent documentation.' },
             { label: 'Form Downloads', description: 'Direct links to required documentation to ensure uncommon wishes are honored by law in New York.' },

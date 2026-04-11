@@ -15,7 +15,7 @@ const categoryTagLabels = {
 const optionCategories = [
   {
     category: 'Direct Disposition Methods',
-    description: 'Primary methods for handling the body after death, each with distinct legal, logistical, and environmental considerations.',
+    description: '',
     options: [
       {
         id: 'direct-cremation',
@@ -381,7 +381,7 @@ const optionCategories = [
   },
   {
     category: 'Alternative Donation and Research Pathways',
-    description: 'Options for contributing the body or organs to science, education, or medical advancement.',
+    description: '',
     options: [
       {
         id: 'whole-body-donation',
@@ -2708,7 +2708,7 @@ function AlternativeFuneralOptionsPage() {
       </section>
 
       <CTASection
-        title="Explore all alternative options"
+        title="Explore Options or Get Organized"
         primary={{ path: '/exploreoptions', label: 'Explore Alternative Options' }}
         secondary={{ path: '/after-death-steps', label: 'Arrangements Checklist' }}
       />
@@ -2916,7 +2916,6 @@ function CombinedStateDetailPage() {
               <div className="sdl-section sdl-section--planning-ahead" id={`section-${topSections.length + 1}`}>
                 <div className="sdl-section-header">
                   <h2>Planning Ahead</h2>
-                  <p className="sdl-section-sub">What to research, compare, and document before a death occurs.</p>
                 </div>
                 {planningRest.map((section) => (
                   <div className="option-category" key={section.title}>
@@ -2942,7 +2941,6 @@ function CombinedStateDetailPage() {
               <div className="sdl-section sdl-section--planning-now" id={`section-${topSections.length + 2}`}>
                 <div className="sdl-section-header">
                   <h2>Planning Now</h2>
-                  <p className="sdl-section-sub">What may affect timing, access, transport, and immediate decisions after a death.</p>
                 </div>
                 {immediate.sections.map((section) => (
                   <div className="option-category" key={section.title}>
@@ -2970,7 +2968,7 @@ function CombinedStateDetailPage() {
       </section>
 
       <CTASection
-        title="Explore all alternative options"
+        title="Explore Options or Get Organized"
         primary={{ path: '/exploreoptions', label: 'Explore Alternative Options' }}
         secondary={{ path: '/after-death-steps', label: 'Arrangements Checklist' }}
       />
