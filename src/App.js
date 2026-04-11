@@ -1518,7 +1518,7 @@ const navItems = [
 ];
 
 const utilityNavItems = [
-  { path: '/alternative-funeral-options', label: 'Alternative Funeral Options' },
+  { path: '/alternative-funeral-options', label: 'State Search' },
   { path: '/exploreoptions', label: 'Explore Alternative Options' },
   { path: '/after-death-steps', label: 'After Death Checklist' },
 ];

@@ -2371,6 +2371,8 @@ ul { list-style: none; }
     color: var(--color-text-mid);
     flex-shrink: 0;
     padding-top: 4px;
+    display: inline-block;
+    transform: scaleX(1.4);
 }
 
 .option-detail-header .option-number {
