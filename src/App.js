@@ -1518,17 +1518,14 @@ const navItems = [
 ];
 
 const utilityNavItems = [
+  { path: '/alternative-funeral-options', label: 'Alternative Funeral Options' },
   { path: '/exploreoptions', label: 'Explore Alternative Options' },
   { path: '/after-death-steps', label: 'After Death Checklist' },
 ];
 
-const desktopNavLeft = [
-  { path: '/alternative-funeral-options', label: 'Alternative Funeral Options' },
-];
+const desktopNavLeft = [];
 
-const desktopNavRight = [
-  { path: '/after-death-steps', label: 'After Death Checklist' },
-];
+const desktopNavRight = [];
 
 function useDocumentTitle(title) {
   useEffect(() => {
@@ -2493,7 +2490,7 @@ function HomeAboutSection() {
       image: '/time-w.png',
       imageLabel: 'Alternative Funeral Options',
       imageLink: { path: '/alternative-funeral-options', label: 'Search Your State' },
-      title: 'Resources for planning uncommon after-death services',
+      title: <>Resources for arranging<br />uncommon services for<br />a recent loss</>,
       description: '',
       items: [
         'Alternative options tied to the state',
@@ -2547,7 +2544,7 @@ function HomePage() {
     {
       title: 'Select your state',
       description:
-        'Access the specific legal and logistical requirements for the state where the service will occur.',
+        'Access the specific logistical resources for the state where the service will occur.',
       icon: <img src="/Select%20your%20state.png" alt="" className="home-guidance-icon-image" />,
     },
     {
