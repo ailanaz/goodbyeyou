@@ -6,7 +6,7 @@ import { hubDirectory } from './siteContent';
 
 const categoryTagLabels = {
   'Direct Disposition Methods': 'Direct Disposition',
-  'Alternative Donation and Research Pathways': 'Body Donation',
+  'Donation Pathways': 'Body Donation',
   'Post-Disposition and Ashes-Based Alternatives': 'Ashes Alternatives',
   'Memorial, Digital Legacy, and Service Options': 'Memorial Services',
   'Support and Guidance Services': 'Support Services',
@@ -380,7 +380,7 @@ const optionCategories = [
     ],
   },
   {
-    category: 'Alternative Donation and Research Pathways',
+    category: 'Donation Pathways',
     description: '',
     options: [
       {
