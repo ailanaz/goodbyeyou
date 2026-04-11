@@ -2701,7 +2701,7 @@ function AlternativeFuneralOptionsPage() {
         <div className="container">
           <SectionIntro
             title="State Search"
-            subtitle={<>Search or select a state to view alternative options, providers, and resources.<br />Each state page covers what is available whether you are planning ahead or handling a recent loss.</>}
+            subtitle={<>Search or select a state to view alternative options, providers, and resources.<br />Each state page covers what is available<br />whether you are planning ahead or handling a recent loss.</>}
           />
           <USMapInteractive />
           <StateSearchBlock
