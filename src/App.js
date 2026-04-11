@@ -2802,7 +2802,7 @@ function CombinedStateDetailPage() {
       <section className="section sdl-body">
         <div className="container">
           <div className="sdl-grid">
-            <aside className="sdl-sidebar sdl-sidebar--with-checklist">
+            <aside className="sdl-sidebar">
               <div className="sdl-sidebar-inner">
                 <h2 className="sdl-sidebar-title">{hub.region}</h2>
                 <p className="sdl-sidebar-sub">{planning.intro}</p>
