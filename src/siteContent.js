@@ -419,9 +419,68 @@ export const hubDirectory = [
         },
         {
           title: 'Provider Directory',
+          intro: 'Colorado has some of the most established "alternative-first" providers in the country. Below are the names and contact details for the primary organizations specializing in Natural Organic Reduction (NOR), Aquamation, and Green Burial.',
           items: [
             { label: 'Specialized Providers', description: 'Facilities and practitioners in Colorado that directly perform or support natural organic reduction, aquamation, green burial, and other alternative services.' },
             { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
+          ],
+          providers: [
+            {
+              name: 'The Natural Funeral',
+              description: 'The primary holistic funeral home in Colorado. They were the first in the state to offer both NOR and Aquamation and emphasize a hands-on, participatory experience for families.',
+              services: 'Natural Organic Reduction (Body Composting), Alkaline Hydrolysis (Water Cremation), and Green Burial.',
+              locations: [
+                'Lafayette: 102 W. Chester St, Lafayette, CO 80026',
+                'Loveland: 1440 N. Boise Ave, Loveland, CO 80538',
+              ],
+              phone: '(720) 515-2344 or (970) 837-7224',
+              email: 'info@thenaturalfuneral.com',
+              website: 'thenaturalfuneral.com',
+            },
+            {
+              name: 'Colorado Burial Preserve',
+              description: 'A dedicated conservation cemetery that focuses entirely on "return-to-earth" burial without the use of vaults, liners, or toxic embalming fluids.',
+              services: 'Natural Burial and Cremated Remains Interment in a protected natural landscape.',
+              locations: [
+                '7997 CO-67, Florence, CO 81226 (By appointment only)',
+              ],
+              phone: '(719) 280-2614',
+              email: 'emily@coloradoburialpreserve.com',
+              website: 'coloradoburialpreserve.com',
+            },
+            {
+              name: 'Crestone End of Life Project (CEOLP)',
+              description: 'A unique community-based organization that facilitates open-air pyre cremations. Note that these services are primarily for residents of the Crestone/Saguache County area.',
+              services: 'Open-air Cremation and End-of-Life education.',
+              locations: [
+                'PO Box 1238, Crestone, CO 81131',
+              ],
+              phone: '(719) 588-7415',
+              email: 'ceolp.info@gmail.com',
+              website: 'crestoneendoflifeproject.org',
+            },
+            {
+              name: 'Alternative Funeral & Cremation Service',
+              description: 'While they offer traditional services, they have a dedicated wing for simpler, more direct arrangements that bypass the standard funeral industry up-selling model.',
+              services: 'Simple Cremation and Natural Burial coordination.',
+              locations: [
+                '2377 North Academy Blvd, Colorado Springs, CO 80907',
+              ],
+              phone: '(719) 633-9999',
+              email: '',
+              website: 'alternativefuneralandcremation.com',
+            },
+            {
+              name: 'Seven Stones Botanical Gardens Cemetery',
+              description: 'A hybrid cemetery that has a strong commitment to natural burial and beautifully landscaped botanical environments, moving away from the traditional row of headstones look.',
+              services: 'Green Burial and Botanical Cremation Gardens.',
+              locations: [
+                '9635 N. Rampart Range Rd, Littleton, CO 80125',
+              ],
+              phone: '(303) 717-7117',
+              email: '',
+              website: 'discoversevenstones.com',
+            },
           ],
         },
         {

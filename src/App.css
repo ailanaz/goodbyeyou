@@ -3054,6 +3054,45 @@ ul { list-style: none; }
     cursor: default;
 }
 
+.provider-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.provider-detail-body {
+    padding: 24px 36px 32px;
+}
+
+.provider-detail-body .provider-services {
+    font-size: 0.9rem;
+    color: var(--color-text-mid);
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.provider-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.provider-contact p {
+    font-size: 0.85rem;
+    color: var(--color-text-mid);
+    line-height: 1.6;
+}
+
+.provider-contact a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.provider-contact a:hover {
+    text-decoration: underline;
+}
+
 .sdl-section--split {
     margin-top: 40px;
     padding-top: 40px;

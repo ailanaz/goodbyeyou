@@ -2896,6 +2896,7 @@ function CombinedStateDetailPage() {
                 <div className={`sdl-section ${sectionColor}`} key={section.title} id={`section-${idx + 1}`}>
                   <div className="sdl-section-header">
                     <h2>{section.title.includes('Provider') ? `Provider Directory in ${hub.region}` : section.title}</h2>
+                    {section.intro && <p className="sdl-section-sub">{section.intro}</p>}
                   </div>
                   <div className="option-detail-list">
                     {section.items.map((item) => (
@@ -2909,6 +2910,48 @@ function CombinedStateDetailPage() {
                       </div>
                     ))}
                   </div>
+                  {section.providers && (
+                    <div className="provider-list">
+                      {section.providers.map((provider) => {
+                        const provKey = provider.name.replace(/\s+/g, '-').toLowerCase();
+                        const isProvExpanded = !!expandedOptions[provKey];
+                        return (
+                        <div className={`option-detail${isProvExpanded ? ' option-detail--expanded' : ''}`} key={provider.name}>
+                          <button
+                            className="option-detail-header"
+                            type="button"
+                            aria-expanded={isProvExpanded}
+                            onClick={() => setExpandedOptions((prev) => ({ ...prev, [provKey]: !prev[provKey] }))}
+                          >
+                            <div className="option-detail-header-text">
+                              <h4>{provider.name}</h4>
+                              <p>{provider.description}</p>
+                            </div>
+                            <span className="option-detail-toggle" aria-hidden="true">{isProvExpanded ? '\u2212' : '\u2304'}</span>
+                          </button>
+                          {isProvExpanded && (
+                          <div className="option-detail-body provider-detail-body">
+                            <p className="provider-services"><strong>Services:</strong> {provider.services}</p>
+                            <div className="provider-contact">
+                              {provider.locations.map((loc) => (
+                                <p key={loc} className="provider-location">{loc}</p>
+                              ))}
+                              {provider.phone && <p className="provider-phone"><strong>Phone:</strong> {provider.phone}</p>}
+                              {provider.email && <p className="provider-email"><strong>Email:</strong> {provider.email}</p>}
+                              {provider.website && (
+                                <p className="provider-website">
+                                  <strong>Website:</strong>{' '}
+                                  <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer">{provider.website}</a>
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                          )}
+                        </div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
                 );
               })}
