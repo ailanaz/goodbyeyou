@@ -2604,9 +2604,7 @@ ul { list-style: none; }
 }
 
 .sdl-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    align-self: stretch;
 }
 
 /* Sidebar */
