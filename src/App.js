@@ -4,6 +4,14 @@ import './App.css';
 import { hubDirectory } from './siteContent';
 
 
+const categoryTagLabels = {
+  'Direct Disposition Methods': 'Direct Disposition',
+  'Alternative Donation and Research Pathways': 'Body Donation',
+  'Post-Disposition and Ashes-Based Alternatives': 'Ashes Alternatives',
+  'Memorial, Digital Legacy, and Service Options': 'Memorial Services',
+  'Support and Guidance Services': 'Support Services',
+};
+
 const optionCategories = [
   {
     category: 'Direct Disposition Methods',
@@ -2776,7 +2784,7 @@ function CombinedStateDetailPage() {
   const stateOptions = getStateOptionCategories(hubId);
 
   const topSections = planning.sections.filter((s) =>
-    s.title.includes('Availability') || s.title.includes('Provider Directory') || s.title.includes('Cost Estimates')
+    s.title.includes('Provider Directory') || s.title.includes('Cost Estimates')
   );
 
   const planningRest = planning.sections.filter((s) =>
@@ -2823,10 +2831,10 @@ function CombinedStateDetailPage() {
                     </button>
                   ))}
                 </nav>
-                {hub.tags && (
+                {stateOptions.length > 0 && (
                   <div className="sdl-sidebar-tags">
-                    {hub.tags.map((tag) => (
-                      <span className="sdl-tag" key={tag}>{tag}</span>
+                    {stateOptions.map((cat) => (
+                      <span className="sdl-tag" key={cat.category}>{categoryTagLabels[cat.category] || cat.category}</span>
                     ))}
                   </div>
                 )}

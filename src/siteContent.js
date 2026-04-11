@@ -38,7 +38,7 @@ export const hubDirectory = [
     note:
       'Start here when the arrangements are happening in Illinois or when your future plans depend on Illinois providers, paperwork, and service availability.',
     planning: {
-      intro: 'Get to know the alternative after-death options, providers, and state-specific considerations.',
+      intro: 'Alternative after-death options, providers, state-specific considerations and more.',
       sections: [
         {
           title: 'Availability: Uncommon Service Menu',
@@ -55,14 +55,14 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Provider Directory: Local Facilities',
+          title: 'Provider Directory',
           items: [
             { label: 'Specialized Providers', description: 'Facilities and practitioners in Illinois that directly perform or support home funeral, green burial, aquamation, and other alternative services.' },
             { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
           ],
         },
         {
-          title: 'Cost Estimates: Budgeting',
+          title: 'Cost Estimates',
           items: [
             { label: 'Pricing Ranges', description: 'General cost comparison between uncommon and standard services within Illinois.' },
             { label: 'Transparent Fees', description: 'Common add-on costs including transport, filing fees, and facility charges.' },
@@ -158,7 +158,7 @@ export const hubDirectory = [
     note:
       'Start here when the arrangements are happening in California or when your future plans depend on California providers, paperwork, and service availability.',
     planning: {
-      intro: 'Get to know the alternative after-death options, providers, and state-specific considerations.',
+      intro: 'Alternative after-death options, providers, state-specific considerations and more.',
       sections: [
         {
           title: 'Availability: Uncommon Service Menu',
@@ -176,14 +176,14 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Provider Directory: Local Facilities',
+          title: 'Provider Directory',
           items: [
             { label: 'Specialized Providers', description: 'Facilities and practitioners in California that directly perform or support green burial, aquamation, home funeral, and other alternative services.' },
             { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
           ],
         },
         {
-          title: 'Cost Estimates: Budgeting',
+          title: 'Cost Estimates',
           items: [
             { label: 'Pricing Ranges', description: 'General cost comparison between uncommon and standard services within California.' },
             { label: 'Transparent Fees', description: 'Common add-on costs including transport, filing fees, and facility charges.' },
@@ -279,7 +279,7 @@ export const hubDirectory = [
     note:
       'Start here when the arrangements are happening in Washington or when your future plans depend on Washington providers, paperwork, and service availability.',
     planning: {
-      intro: 'Get to know the alternative after-death options, providers, and state-specific considerations.',
+      intro: 'Alternative after-death options, providers, state-specific considerations and more.',
       sections: [
         {
           title: 'Availability: Uncommon Service Menu',
@@ -297,14 +297,14 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Provider Directory: Local Facilities',
+          title: 'Provider Directory',
           items: [
             { label: 'Specialized Providers', description: 'Facilities and practitioners in Washington that directly perform or support natural organic reduction, green burial, aquamation, and other alternative services.' },
             { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
           ],
         },
         {
-          title: 'Cost Estimates: Budgeting',
+          title: 'Cost Estimates',
           items: [
             { label: 'Pricing Ranges', description: 'General cost comparison between uncommon and standard services within Washington.' },
             { label: 'Transparent Fees', description: 'Common add-on costs including transport, filing fees, and facility charges.' },
@@ -400,7 +400,7 @@ export const hubDirectory = [
     note:
       'Start here when the arrangements are happening in Colorado or when your future plans depend on Colorado providers, paperwork, and service availability.',
     planning: {
-      intro: 'Get to know the alternative after-death options, providers, and state-specific considerations.',
+      intro: 'Alternative after-death options, providers, state-specific considerations and more.',
       sections: [
         {
           title: 'Availability: Uncommon Service Menu',
@@ -418,14 +418,14 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Provider Directory: Local Facilities',
+          title: 'Provider Directory',
           items: [
             { label: 'Specialized Providers', description: 'Facilities and practitioners in Colorado that directly perform or support natural organic reduction, aquamation, green burial, and other alternative services.' },
             { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
           ],
         },
         {
-          title: 'Cost Estimates: Budgeting',
+          title: 'Cost Estimates',
           items: [
             { label: 'Pricing Ranges', description: 'General cost comparison between uncommon and standard services within Colorado.' },
             { label: 'Transparent Fees', description: 'Common add-on costs including transport, filing fees, and facility charges.' },
@@ -521,7 +521,7 @@ export const hubDirectory = [
     note:
       'Start here when the arrangements are happening in Oregon or when your future plans depend on Oregon providers, paperwork, and service availability.',
     planning: {
-      intro: 'Get to know the alternative after-death options, providers, and state-specific considerations.',
+      intro: 'Alternative after-death options, providers, state-specific considerations and more.',
       sections: [
         {
           title: 'Availability: Uncommon Service Menu',
@@ -539,14 +539,14 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Provider Directory: Local Facilities',
+          title: 'Provider Directory',
           items: [
             { label: 'Specialized Providers', description: 'Facilities and practitioners in Oregon that directly perform or support natural organic reduction, aquamation, green burial, conservation burial, and other alternative services.' },
             { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
           ],
         },
         {
-          title: 'Cost Estimates: Budgeting',
+          title: 'Cost Estimates',
           items: [
             { label: 'Pricing Ranges', description: 'General cost comparison between uncommon and standard services within Oregon.' },
             { label: 'Transparent Fees', description: 'Common add-on costs including transport, filing fees, and facility charges.' },
@@ -642,7 +642,7 @@ export const hubDirectory = [
     note:
       'Start here when the arrangements are happening in Vermont or when your future plans depend on Vermont providers, paperwork, and service availability.',
     planning: {
-      intro: 'Get to know the alternative after-death options, providers, and state-specific considerations.',
+      intro: 'Alternative after-death options, providers, state-specific considerations and more.',
       sections: [
         {
           title: 'Availability: Uncommon Service Menu',
@@ -660,14 +660,14 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Provider Directory: Local Facilities',
+          title: 'Provider Directory',
           items: [
             { label: 'Specialized Providers', description: 'Facilities and practitioners in Vermont that directly perform or support green burial, natural organic reduction, home funeral, and other alternative services.' },
             { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
           ],
         },
         {
-          title: 'Cost Estimates: Budgeting',
+          title: 'Cost Estimates',
           items: [
             { label: 'Pricing Ranges', description: 'General cost comparison between uncommon and standard services within Vermont.' },
             { label: 'Transparent Fees', description: 'Common add-on costs including transport, filing fees, and facility charges.' },
@@ -763,7 +763,7 @@ export const hubDirectory = [
     note:
       'Start here when the arrangements are happening in Minnesota or when your future plans depend on Minnesota providers, paperwork, and service availability.',
     planning: {
-      intro: 'Get to know the alternative after-death options, providers, and state-specific considerations.',
+      intro: 'Alternative after-death options, providers, state-specific considerations and more.',
       sections: [
         {
           title: 'Availability: Uncommon Service Menu',
@@ -781,14 +781,14 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Provider Directory: Local Facilities',
+          title: 'Provider Directory',
           items: [
             { label: 'Specialized Providers', description: 'Facilities and practitioners in Minnesota that directly perform or support green burial, home funeral, and other alternative services.' },
             { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
           ],
         },
         {
-          title: 'Cost Estimates: Budgeting',
+          title: 'Cost Estimates',
           items: [
             { label: 'Pricing Ranges', description: 'General cost comparison between uncommon and standard services within Minnesota.' },
             { label: 'Transparent Fees', description: 'Common add-on costs including transport, filing fees, and facility charges.' },
@@ -884,7 +884,7 @@ export const hubDirectory = [
     note:
       'Start here when the arrangements are happening in Georgia or when your future plans depend on Georgia providers, paperwork, and service availability.',
     planning: {
-      intro: 'Get to know the alternative after-death options, providers, and state-specific considerations.',
+      intro: 'Alternative after-death options, providers, state-specific considerations and more.',
       sections: [
         {
           title: 'Availability: Uncommon Service Menu',
@@ -902,14 +902,14 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Provider Directory: Local Facilities',
+          title: 'Provider Directory',
           items: [
             { label: 'Specialized Providers', description: 'Facilities and practitioners in Georgia that directly perform or support green burial, home funeral, and other alternative services.' },
             { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
           ],
         },
         {
-          title: 'Cost Estimates: Budgeting',
+          title: 'Cost Estimates',
           items: [
             { label: 'Pricing Ranges', description: 'General cost comparison between uncommon and standard services within Georgia.' },
             { label: 'Transparent Fees', description: 'Common add-on costs including transport, filing fees, and facility charges.' },
@@ -1005,7 +1005,7 @@ export const hubDirectory = [
     note:
       'Start here when the arrangements are happening in New York or when your future plans depend on New York providers, paperwork, and service availability.',
     planning: {
-      intro: 'Get to know the alternative after-death options, providers, and state-specific considerations.',
+      intro: 'Alternative after-death options, providers, state-specific considerations and more.',
       sections: [
         {
           title: 'Availability: Uncommon Service Menu',
@@ -1023,14 +1023,14 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Provider Directory: Local Facilities',
+          title: 'Provider Directory',
           items: [
             { label: 'Specialized Providers', description: 'Facilities and practitioners in New York that directly perform or support natural organic reduction, green burial, aquamation, and other alternative services.' },
             { label: 'Direct Contact Data', description: 'Phone, address, and service-specific tags for each provider.' },
           ],
         },
         {
-          title: 'Cost Estimates: Budgeting',
+          title: 'Cost Estimates',
           items: [
             { label: 'Pricing Ranges', description: 'General cost comparison between uncommon and standard services within New York.' },
             { label: 'Transparent Fees', description: 'Common add-on costs including transport, filing fees, and facility charges.' },
