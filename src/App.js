@@ -1526,8 +1526,8 @@ const navItems = [
 ];
 
 const utilityNavItems = [
-  { path: '/alternative-funeral-options', label: 'State Search' },
   { path: '/exploreoptions', label: 'Explore Alternative Options' },
+  { path: '/alternative-funeral-options', label: 'State Search' },
   { path: '/after-death-steps', label: 'Arrangements Checklist' },
 ];
 
@@ -2834,7 +2834,7 @@ function CombinedStateDetailPage() {
             <div className="sdl-main">
               <div className="sdl-section" id="section-0">
                 <div className="sdl-section-header">
-                  <h2>Available Alternative Arrangements Options in {hub.region}</h2>
+                  <h2>Alternative Arrangements Options Available in {hub.region}</h2>
                 </div>
                 {stateOptions.map((cat) => (
                   <div className="option-category" key={cat.category}>

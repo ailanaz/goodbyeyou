@@ -2619,9 +2619,6 @@ ul { list-style: none; }
     padding: 28px 24px;
 }
 
-.sdl-sidebar--with-checklist .sdl-sidebar-inner {
-    position: static;
-}
 
 .sdl-sidebar-title {
     font-family: var(--font-heading);
