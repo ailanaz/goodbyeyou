@@ -485,6 +485,54 @@ export const hubDirectory = [
             { label: 'Form Downloads', description: 'Direct links to required documentation to ensure uncommon wishes are honored by law in Colorado.' },
           ],
         },
+        {
+          title: 'Colorado Extras',
+          items: [
+            {
+              label: 'Regenerative Soil Donation Program',
+              description: 'For those choosing Natural Organic Reduction (NOR) but who do not have private land to receive a cubic yard of soil, Colorado offers a unique "giving back" pathway.',
+              involves: [
+                'You can opt to have your resulting soil donated to local land restoration projects, flower farms, or "living memorial" forests.',
+                'It solves the urban logistics problem while ensuring your final act contributes to the local Colorado ecosystem.',
+                'The Natural Funeral in Lafayette is the primary coordinator for these soil donation pathways.',
+              ],
+            },
+            {
+              label: 'Full-Body Shrouded Cremation (Witnessing)',
+              description: 'Colorado providers have expanded "Witness Cremation" into a more participatory ritual.',
+              involves: [
+                'Families can choose to have the body placed in a natural fiber shroud (no casket) and may participate in the "committal" - physically assisting with the placement or starting the sequence.',
+                'Offered by specialized boutique providers who focus on "slow" and "reverent" disposition rather than industrial-speed cremation.',
+              ],
+            },
+            {
+              label: 'Laying-in-Honor (Non-Embalmed Viewing)',
+              description: 'A middle path between a Home Funeral and a Direct Disposition.',
+              involves: [
+                'The body is kept in a natural, unembalmed state using specialized cooling techniques (chilling boards or dry ice) at a funeral facility.',
+                'Families are given a private, sanctuary-like space for a multi-hour or multi-day "vigil" that feels like a home funeral but is managed by professional alternative-first staff.',
+              ],
+            },
+            {
+              label: 'Land-Locked Sea Memorials',
+              description: 'While Colorado is a mountain state, local alternative providers specialize in the logistics of "Mountain to Sea" transitions.',
+              involves: [
+                'They handle the specialized preparation and legal transport of remains to coastal partners for Living Reef construction or Full-Body Burial at Sea.',
+                'You can plan a sea-based ending through a local Colorado guide who understands the specific interstate transport permits required.',
+              ],
+            },
+            {
+              label: 'The Mushroom Suit (2026 Update)',
+              description: 'The original "Infinity Burial Suit" by Coeio (made famous by Luke Perry) is currently in a transition period and can be difficult to source as a standalone retail product. However, the technology has evolved into the Mushroom Coffin and Mycelium Shrouds.',
+              involves: [
+                'A biodegradable burial container or garment grown from mycelium (the root structure of mushrooms) and hemp/sawdust. Unlike the original "suit," these are "living" vessels that actively remediate toxins in the soil and facilitate a faster return to the earth.',
+                'Loop Biotech is currently the leader in "Living Cocoon" mushroom coffins.',
+                'Mycelium Shrouds are often handmade by green burial practitioners or sourced through specialty alternative funeral homes.',
+                'Most green burial grounds in Colorado (like the Colorado Burial Preserve) accept mycelium-based products, but always confirm with the cemetery before purchase, as they must be buried without a concrete vault to function.',
+              ],
+            },
+          ],
+        },
       ],
     },
     immediate: {

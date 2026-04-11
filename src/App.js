@@ -238,23 +238,23 @@ const optionCategories = [
         ],
       },
       {
-        id: 'mushroom-suits',
-        title: 'Mushroom Suits (Infinite Burial)',
+        id: 'mushroom-burial',
+        title: 'Mushroom Burial (Mycelium Vessels & Shrouds)',
         description:
-          'Burial in a shroud or suit infused with mushroom mycelium designed to neutralize toxins in the body and facilitate natural decomposition. The mycelium acts as a biological filter as the body breaks down in the soil.',
+          'A burial method using the root structure of fungi (mycelium) to facilitate a cleaner, faster return to the earth. Originally popularized as a "burial suit," the technology has evolved into "living" coffins and infused shrouds that actively remediate toxins during decomposition.',
         involves: [
-          'Body dressed in a mycelium-infused shroud or burial suit',
-          'Burial in the ground without embalming or a traditional casket',
-          'Mycelium activates after burial and aids decomposition',
+          'Body dressed in a mycelium-infused shroud or placed in a "living" coffin grown from fungi and organic matter',
+          'Burial in the ground without embalming or a traditional metal/finished wood casket',
+          'Mycelium reactivates upon contact with soil moisture to aid the breakdown process',
+          'Fungi release enzymes designed to neutralize toxins and heavy metals in the remains',
           'Compatible with green burial and conservation burial grounds',
-          'No vault, concrete liner, or chemical preservation used',
         ],
         considerations: [
-          'This is a commercially available product but still relatively new',
-          'Long-term scientific data on the effectiveness of toxin neutralization is limited',
-          'Cost is higher than a standard burial shroud',
-          'Requires a burial ground that permits green burial practices',
-          'Not all green burial providers are familiar with or accept this product',
+          'Evolution of Availability: The original "Infinity Burial Suit" has limited retail availability; modern "Living Coffins" (such as those from Loop Biotech) are the current industry standard',
+          'Cemetery Requirements: Must be used in burial grounds that permit green burial and do not require concrete vaults or liners',
+          'Accelerated Timeline: Mycelium vessels can biodegrade in as little as 45-60 days, significantly faster than traditional wood',
+          'Environmental Impact: One of the most proactive "remediation" options for filtering pollutants during the return to the earth',
+          'Cost: Mycelium coffins are typically priced between $1,500 - $4,000, while infused shrouds offer a lower-cost alternative',
         ],
       },
       {
@@ -2966,7 +2966,37 @@ function CombinedStateDetailPage() {
                       <h3 className="option-category-title">{section.title}</h3>
                     </div>
                     <div className="option-detail-list">
-                      {section.items.map((item) => (
+                      {section.items.map((item) => {
+                        if (item.involves) {
+                          const itemKey = item.label.replace(/\s+/g, '-').toLowerCase();
+                          const isItemExpanded = !!expandedOptions[itemKey];
+                          return (
+                          <div className={`option-detail${isItemExpanded ? ' option-detail--expanded' : ''}`} key={item.label}>
+                            <button
+                              className="option-detail-header"
+                              type="button"
+                              aria-expanded={isItemExpanded}
+                              onClick={() => setExpandedOptions((prev) => ({ ...prev, [itemKey]: !prev[itemKey] }))}
+                            >
+                              <div className="option-detail-header-text">
+                                <h4>{item.label}</h4>
+                                <p>{item.description}</p>
+                              </div>
+                              <span className="option-detail-toggle" aria-hidden="true">{isItemExpanded ? '\u2212' : '\u2304'}</span>
+                            </button>
+                            {isItemExpanded && (
+                            <div className="option-detail-body">
+                              <ul className="option-detail-involves">
+                                {item.involves.map((point) => (
+                                  <li key={point}>{point}</li>
+                                ))}
+                              </ul>
+                            </div>
+                            )}
+                          </div>
+                          );
+                        }
+                        return (
                         <div className="option-detail" key={item.label}>
                           <div className="option-detail-header option-detail-header--static">
                             <div className="option-detail-header-text">
@@ -2975,7 +3005,8 @@ function CombinedStateDetailPage() {
                             </div>
                           </div>
                         </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 ))}
