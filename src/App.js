@@ -1500,7 +1500,7 @@ const checklistLinks = {
     title: 'Alternative planning checklist',
     description:
       'Open the planning checklist for alternative or uncommon services, including option-specific logistics and the standard preparation steps.',
-    linkLabel: 'Open the planning checklist',
+    linkLabel: 'Go to checklist',
   },
   immediate: {
     path: '/after-death-steps#immediate-need-checklist',
@@ -2810,7 +2810,6 @@ function CombinedStateDetailPage() {
       <PageHero
         eyebrow={hub.region}
         title={<>Alternative Funeral Options:<br />{hub.region}</>}
-        subtitle={planning.intro}
       />
 
       <section className="section sdl-body">
@@ -2838,13 +2837,11 @@ function CombinedStateDetailPage() {
                     ))}
                   </div>
                 )}
+                <div className="sdl-sidebar-checklist">
+                  <p className="sdl-sidebar-checklist-label">Take a moment to get organized</p>
+                  <Link to={checklistLinks.planning.path} className="sdl-sidebar-checklist-link">Go to checklist &rarr;</Link>
+                </div>
               </div>
-              <ChecklistLinkCard
-                title={checklistLinks.planning.title}
-                description={checklistLinks.planning.description}
-                path={checklistLinks.planning.path}
-                linkLabel={checklistLinks.planning.linkLabel}
-              />
             </aside>
 
             <div className="sdl-main">
