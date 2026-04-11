@@ -39,7 +39,7 @@ const optionCategories = [
       },
       {
         id: 'immediate-burial',
-        title: 'Immediate Burial',
+        title: 'Natural Burial',
         description:
           'Burial shortly after death without embalming, viewing, or a formal funeral service beforehand. The body is placed in a simple container and buried directly.',
         involves: [
