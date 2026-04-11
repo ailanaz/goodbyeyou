@@ -1060,39 +1060,6 @@ const optionCategories = [
 ];
 
 
-const planningHubFeatures = [
-  {
-    title: 'Alternative options in that state',
-    description:
-      'See which alternative service types may be available there, including home funeral, green burial, aquamation, natural organic reduction, and more.',
-  },
-  {
-    title: 'What the state requires',
-    description:
-      'Work through permits, timelines, authority questions, funeral director involvement, and other state-specific requirements.',
-  },
-  {
-    title: 'Logistics and next steps',
-    description:
-      'See what usually needs to happen, in what order, and with which documents or transport needs in mind.',
-  },
-  {
-    title: 'Provider and resource pathways',
-    description:
-      'Find the provider types, facilities, organizations, and support routes tied to the arrangement you are considering.',
-  },
-  {
-    title: 'Official forms and offices',
-    description:
-      'Find the forms, offices, and official resources that may need to be part of the process.',
-  },
-  {
-    title: 'Legal or authority resources',
-    description:
-      'Know when documentation, authority, or legal support may need attention and where to start looking.',
-  },
-];
-
 const planningChecklist = {
   title: 'Planning Checklist for Alternative Services',
   purpose:
@@ -1547,13 +1514,13 @@ const checklistLinks = {
 const navItems = [
   { path: '/funeralplanning', label: 'When You Have Time' },
   { path: '/when-time-has-run-out', label: 'When Time Has Run Out' },
-  { path: '/after-death-steps', label: 'After Death Checklists' },
+  { path: '/after-death-steps', label: 'After Death Checklist' },
   { path: '/exploreoptions', label: 'Explore Your Options' },
 ];
 
 const utilityNavItems = [
   { path: '/exploreoptions', label: 'Explore Alternative Service Options' },
-  { path: '/after-death-steps', label: 'After Death Checklists' },
+  { path: '/after-death-steps', label: 'After Death Checklist' },
 ];
 
 const desktopNavLeft = [
@@ -1942,7 +1909,7 @@ function normalizeCtaLabel(label) {
   }
 
   if (label === 'Open Resources' || label === 'All Resources') {
-    return 'After Death Checklists';
+    return 'After Death Checklist';
   }
 
   return label;
@@ -2453,7 +2420,7 @@ function Footer() {
                 <Link to="/when-time-has-run-out">When Time Has Run Out</Link>
               </li>
               <li>
-                <Link to="/after-death-steps">After Death Checklists</Link>
+                <Link to="/after-death-steps">After Death Checklist</Link>
               </li>
               <li>
                 <Link to="/exploreoptions">Explore Your Options</Link>
@@ -2511,7 +2478,7 @@ function HomeAboutSection() {
       eyebrow: 'Support',
       variant: 'providers',
       image: '/questions-w.png',
-      imageLabel: 'After Death Checklists',
+      imageLabel: 'After Death Checklist',
       imageLink: { path: '/after-death-steps', label: 'Navigate the Steps' },
       title: <>Know what to do<br />when a loss occurs</>,
       description: '',
@@ -2609,44 +2576,6 @@ function OptionsPage() {
   useDocumentTitle('When Time Has Run Out - Immediate After-Death Steps - GoodbyeYou');
   useMetaDescription('Immediate steps after a death for alternative funeral arrangements. Search your state for checklists, providers, and documents for uncommon services.');
 
-  const immediateSteps = [
-    {
-      title: 'Do not rush into a decision',
-      description:
-        'You are not required to call a funeral home immediately. In most states, you have time. Take a moment before committing to any service.',
-    },
-    {
-      title: 'Confirm the death has been pronounced',
-      description:
-        'A physician, hospice nurse, or coroner will need to officially pronounce the death. If the person died at home under hospice care, call the hospice team first.',
-    },
-    {
-      title: 'State Search',
-      description:
-        'Open your state page below to see what alternative services are allowed, what providers are available, and what documents you may need in the next 24 to 48 hours.',
-    },
-    {
-      title: 'Check if the person left any documented wishes',
-      description:
-        'Look for advance directives, disposition authorizations, or written instructions about the type of service they wanted. This shapes what happens next.',
-    },
-    {
-      title: 'Identify who has legal authority',
-      description:
-        'The next-of-kin or designated agent usually has authority over disposition. Confirm this early to avoid delays or disagreements.',
-    },
-    {
-      title: 'Contact providers that match the service path',
-      description:
-        'If the person wanted a home funeral, green burial, aquamation, or another alternative service, your state page will point you toward the right providers.',
-    },
-    {
-      title: 'Handle required paperwork',
-      description:
-        'Death certificates, burial or transit permits, and disposition authorizations may all need attention within specific timeframes. Your state page covers what applies there.',
-    },
-  ];
-
   return (
     <>
       <PageHero
@@ -2668,39 +2597,6 @@ function OptionsPage() {
             basePath="/immediate"
             variant="inline-search"
           />
-        </div>
-      </section>
-
-      <section className="section section-state-search-followup section-state-search-covers">
-        <div className="container">
-          <SectionIntro
-            title="What your state page covers."
-            subtitle="A pathway through the process."
-          />
-          <div className="features-grid">
-            {immediateSteps.map((step) => (
-              <div className="feature-card" key={step.title}>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-state-search-followup">
-        <div className="container">
-          <SectionIntro
-            subtitle={<>Navigate available options, state regulations, and local resources.<br />Once you open your state, everything you need will be in one place.</>}
-          />
-          <div className="features-grid">
-            {planningHubFeatures.map((feature) => (
-              <div className="feature-card" key={feature.title}>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -2806,23 +2702,6 @@ function PlanningHubsPage() {
             buttonLabel="Open State Page"
             variant="inline-search"
           />
-        </div>
-      </section>
-
-      <section className="section section-state-search-followup section-state-search-covers">
-        <div className="container">
-          <SectionIntro
-            title="What your state page covers."
-            subtitle="Your state page will show available options, providers, required documents, and the steps that to take when planning an alternative after death service."
-          />
-          <div className="features-grid">
-            {planningHubFeatures.map((feature) => (
-              <div className="feature-card" key={feature.title}>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -2993,7 +2872,7 @@ function ImmediateStateDetailPage() {
 }
 
 function ResourcesPage() {
-  useDocumentTitle('After Death Checklists - GoodbyeYou');
+  useDocumentTitle('After Death Checklist - GoodbyeYou');
   useMetaDescription('Download planning, immediate-need, and general after-death checklists, plus follow-up resources covering what to do first, who to contact, documents, and provider pathways.');
 
   return (
@@ -3001,7 +2880,7 @@ function ResourcesPage() {
       <PageHero
         eyebrow="After Death"
         titleClassName="page-hero-title--centered"
-        title="After Death Checklists"
+        title="After Death Checklist"
       />
 
       <section className="section">
