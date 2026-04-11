@@ -2786,9 +2786,10 @@ function CombinedStateDetailPage() {
   ];
 
   const scrollToSection = (index) => {
-    const el = document.querySelectorAll('.sdl-section')[index];
+    const el = document.getElementById(`section-${index}`);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const top = el.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   };
 
