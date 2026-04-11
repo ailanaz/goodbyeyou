@@ -2694,7 +2694,7 @@ function AlternativeFuneralOptionsPage() {
       <PageHero
         eyebrow="Alternative Funeral Options"
         titleClassName="page-hero-title--planning page-hero-title--centered"
-        title={<>Alternative after-death options<br />and resources by state</>}
+        title={<>State Specific<br />Alternative Funeral Service Options</>}
       />
 
       <section className="section section-state-search-followup">
