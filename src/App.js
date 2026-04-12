@@ -3048,7 +3048,7 @@ function getStateOptionCategories(hubId) {
 function CombinedStateDetailPage() {
   const { hubId } = useParams();
   const hub = hubDirectory.find((entry) => entry.id === hubId);
-  const [activeSection, setActiveSection] = useState(0);
+  const [activeSection, setActiveSection] = useState(-1);
   const [expandedOptions, setExpandedOptions] = useState({});
 
   useDocumentTitle(hub ? `Alternative Funeral Options: ${hub.region} - GoodbyeYou` : 'Alternative Funeral Options - GoodbyeYou');
@@ -3057,9 +3057,10 @@ function CombinedStateDetailPage() {
   useEffect(() => {
     const handleScroll = () => {
       const sectionEls = document.querySelectorAll('.sdl-section');
-      let current = 0;
+      let current = -1;
       sectionEls.forEach((el, i) => {
-        if (el.getBoundingClientRect().top <= 180) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= 200 && rect.bottom > 200) {
           current = i;
         }
       });
@@ -3350,10 +3351,60 @@ function CombinedStateDetailPage() {
               <div className="sdl-section sdl-section--planning-now" id={`section-${topSections.length + 1}`}>
                 <div className="sdl-section-header">
                   <h2>Other Resources</h2>
-                  {hub.legalResources && hub.legalResources.intro && (
-                    <p className="sdl-section-sub">{hub.legalResources.intro}</p>
-                  )}
                 </div>
+                {(() => {
+                  const doulaKey = 'doula-neda-directory';
+                  const isDoulaExpanded = !!expandedOptions[doulaKey];
+                  return (
+                  <div className="doula-intro-section">
+                    <h3 className="doula-intro-title">End-of-Life Doulas: Compassionate Support for the Final Transition</h3>
+                    <p className="doula-intro-description">An End-of-Life Doula (also known as a death doula or death midwife) is a non-medical professional trained to provide emotional, spiritual, and physical support to individuals and their families during the dying process. While hospice handles the medical clinical care, a doula fills the gap by providing continuous presence, advocacy, and practical planning.</p>
+                    <h4 className="doula-purpose-title">Their Purpose:</h4>
+                    <p className="doula-intro-description">The primary goal of a doula is to "normalize" death and help the dying individual maintain agency over their final days. They assist in creating a "sacred space," helping families navigate the logistics of alternative after-death care, and ensuring that the person's final wishes - whether they involve a home funeral, natural burial, or organic reduction - are honored with dignity.</p>
+                    <div className={`option-detail${isDoulaExpanded ? ' option-detail--expanded' : ''}`}>
+                      <button
+                        className="option-detail-header"
+                        type="button"
+                        aria-expanded={isDoulaExpanded}
+                        onClick={() => setExpandedOptions((prev) => ({ ...prev, [doulaKey]: !prev[doulaKey] }))}
+                      >
+                        <div className="option-detail-header-text">
+                          <h4>NEDA "Find a Doula" Directory</h4>
+                          <p>The National End-of-Life Doula Alliance (NEDA) is the primary non-profit organization that sets the standard for doula education and ethics. Their directory is the most reliable tool for finding practitioners who have earned the "NEDA Proficiency Badge."</p>
+                        </div>
+                        <span className="option-detail-toggle" aria-hidden="true">{isDoulaExpanded ? '\u2212' : '\u2304'}</span>
+                      </button>
+                      {isDoulaExpanded && (
+                      <div className="option-detail-body">
+                        <h5 className="option-detail-subheading">What it involves</h5>
+                        <ul className="option-detail-involves">
+                          <li>Access to a searchable database of practitioners by zip code and state</li>
+                          <li>Identification of doulas who hold specialized proficiency badges in end-of-life care</li>
+                          <li>Links to individual doula websites, services, and specialized training backgrounds</li>
+                          <li>Access to the NEDA Code of Ethics and Scope of Practice for consumer protection</li>
+                        </ul>
+                        <h5 className="option-detail-subheading">Key considerations</h5>
+                        <ul className="option-detail-involves">
+                          <li>NEDA is a member-based organization, not a hiring agency</li>
+                          <li>Practitioners in the directory are independent and set their own rates</li>
+                          <li>Always verify if a doula is comfortable with the specific "Alternative" methods (like NOR or Home Funerals) listed on this site</li>
+                          <li>Most doulas in the directory offer a free 15-30 minute "chemistry call" to see if you are a good fit</li>
+                        </ul>
+                        <p className="doula-cost-note"><strong>Estimated Cost:</strong> Free to Search</p>
+                        <div className="option-detail-links">
+                          <a href="https://www.nedalliance.org/find-a-doula" target="_blank" rel="noopener noreferrer" className="option-detail-link">
+                            Search the NEDA Directory Here <span className="option-detail-link-agency">National End-of-Life Doula Alliance</span>
+                          </a>
+                        </div>
+                      </div>
+                      )}
+                    </div>
+                  </div>
+                  );
+                })()}
+                {hub.legalResources && hub.legalResources.intro && (
+                  <p className="sdl-section-sub">{hub.legalResources.intro}</p>
+                )}
                 {hub.legalResources && (
                   <div className="option-detail-list">
                     {hub.legalResources.items.map((item) => {
@@ -3471,56 +3522,6 @@ function CombinedStateDetailPage() {
                     </div>
                   </div>
                 ))}
-                {(() => {
-                  const doulaKey = 'doula-neda-directory';
-                  const isDoulaExpanded = !!expandedOptions[doulaKey];
-                  return (
-                  <div className="doula-intro-section">
-                    <h3 className="doula-intro-title">End-of-Life Doulas: Compassionate Support for the Final Transition</h3>
-                    <p className="doula-intro-description">An End-of-Life Doula (also known as a death doula or death midwife) is a non-medical professional trained to provide emotional, spiritual, and physical support to individuals and their families during the dying process. While hospice handles the medical clinical care, a doula fills the gap by providing continuous presence, advocacy, and practical planning.</p>
-                    <h4 className="doula-purpose-title">Their Purpose:</h4>
-                    <p className="doula-intro-description">The primary goal of a doula is to "normalize" death and help the dying individual maintain agency over their final days. They assist in creating a "sacred space," helping families navigate the logistics of alternative after-death care, and ensuring that the person's final wishes - whether they involve a home funeral, natural burial, or organic reduction - are honored with dignity.</p>
-                    <div className={`option-detail${isDoulaExpanded ? ' option-detail--expanded' : ''}`}>
-                      <button
-                        className="option-detail-header"
-                        type="button"
-                        aria-expanded={isDoulaExpanded}
-                        onClick={() => setExpandedOptions((prev) => ({ ...prev, [doulaKey]: !prev[doulaKey] }))}
-                      >
-                        <div className="option-detail-header-text">
-                          <h4>NEDA "Find a Doula" Directory</h4>
-                          <p>The National End-of-Life Doula Alliance (NEDA) is the primary non-profit organization that sets the standard for doula education and ethics. Their directory is the most reliable tool for finding practitioners who have earned the "NEDA Proficiency Badge."</p>
-                        </div>
-                        <span className="option-detail-toggle" aria-hidden="true">{isDoulaExpanded ? '\u2212' : '\u2304'}</span>
-                      </button>
-                      {isDoulaExpanded && (
-                      <div className="option-detail-body">
-                        <h5 className="option-detail-subheading">What it involves</h5>
-                        <ul className="option-detail-involves">
-                          <li>Access to a searchable database of practitioners by zip code and state</li>
-                          <li>Identification of doulas who hold specialized proficiency badges in end-of-life care</li>
-                          <li>Links to individual doula websites, services, and specialized training backgrounds</li>
-                          <li>Access to the NEDA Code of Ethics and Scope of Practice for consumer protection</li>
-                        </ul>
-                        <h5 className="option-detail-subheading">Key considerations</h5>
-                        <ul className="option-detail-involves">
-                          <li>NEDA is a member-based organization, not a hiring agency</li>
-                          <li>Practitioners in the directory are independent and set their own rates</li>
-                          <li>Always verify if a doula is comfortable with the specific "Alternative" methods (like NOR or Home Funerals) listed on this site</li>
-                          <li>Most doulas in the directory offer a free 15-30 minute "chemistry call" to see if you are a good fit</li>
-                        </ul>
-                        <p className="doula-cost-note"><strong>Estimated Cost:</strong> Free to Search</p>
-                        <div className="option-detail-links">
-                          <a href="https://www.nedalliance.org/find-a-doula" target="_blank" rel="noopener noreferrer" className="option-detail-link">
-                            Search the NEDA Directory Here <span className="option-detail-link-agency">National End-of-Life Doula Alliance</span>
-                          </a>
-                        </div>
-                      </div>
-                      )}
-                    </div>
-                  </div>
-                  );
-                })()}
               </div>
             </div>
           </div>
