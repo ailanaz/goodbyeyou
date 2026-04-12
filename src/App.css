@@ -3029,23 +3029,23 @@ ul { list-style: none; }
 }
 
 .sdl-section--options .option-detail {
-    border-left: 4px solid var(--color-primary);
+    border-left: 6px solid #5A5C91;
 }
 
 .sdl-section--provider .option-detail {
-    border-left: 4px solid var(--color-primary-light);
+    border-left: 6px solid #6B8F71;
 }
 
 .sdl-section--cost .option-detail {
-    border-left: 4px solid var(--color-accent-light);
+    border-left: 6px solid #B08D57;
 }
 
 .sdl-section--planning-ahead .option-detail {
-    border-left: 4px solid var(--color-primary-dark);
+    border-left: 6px solid #8B5E83;
 }
 
 .sdl-section--planning-now .option-detail {
-    border-left: 4px solid var(--color-text-mid);
+    border-left: 6px solid #5A7FA0;
 }
 
 .sdl-section-sub {
