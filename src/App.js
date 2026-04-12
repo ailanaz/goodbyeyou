@@ -3249,18 +3249,30 @@ function CombinedStateDetailPage() {
                     <h2>{section.title.includes('Provider') ? `Provider Directory in ${hub.region}` : section.title}</h2>
                     {section.intro && <p className="sdl-section-sub">{section.intro}</p>}
                   </div>
+                  {section.items.length > 0 && (
                   <div className="option-detail-list">
-                    {section.items.map((item) => (
-                      <div className="option-detail" key={item.label}>
-                        <div className="option-detail-header option-detail-header--static">
+                    {section.items.map((item) => {
+                      const itemKey = `dir-item-${item.label.replace(/\s+/g, '-').toLowerCase()}`;
+                      const isItemExpanded = !!expandedOptions[itemKey];
+                      return (
+                      <div className={`option-detail${isItemExpanded ? ' option-detail--expanded' : ''}`} key={item.label}>
+                        <button
+                          className="option-detail-header"
+                          type="button"
+                          aria-expanded={isItemExpanded}
+                          onClick={() => setExpandedOptions((prev) => ({ ...prev, [itemKey]: !prev[itemKey] }))}
+                        >
                           <div className="option-detail-header-text">
                             <h4>{item.label}</h4>
                             <p>{item.description}</p>
                           </div>
-                        </div>
+                          <span className="option-detail-toggle" aria-hidden="true">{isItemExpanded ? '\u2212' : '\u2304'}</span>
+                        </button>
                       </div>
-                    ))}
+                      );
+                    })}
                   </div>
+                  )}
                   {section.providers && (
                     <div className="provider-list">
                       {section.providers.map((provider) => {
@@ -3475,11 +3487,58 @@ function CombinedStateDetailPage() {
                 {hub.legalResources && (
                   <div className="option-detail-list">
                     {hub.legalResources.items.map((item) => {
-                      const hasDetails = Boolean(item.involves || item.links);
-                      const isExpandableCard = hasDetails && item.expandable !== false;
-
-                      if (isExpandableCard) {
-                        const itemKey = `legal-${item.label.replace(/\s+/g, '-').toLowerCase()}`;
+                      const itemKey = `legal-${item.label.replace(/\s+/g, '-').toLowerCase()}`;
+                      const isItemExpanded = !!expandedOptions[itemKey];
+                      const hasExpandContent = Boolean(item.involves || item.links);
+                      return (
+                      <div className={`option-detail${isItemExpanded ? ' option-detail--expanded' : ''}`} key={item.label}>
+                        <button
+                          className={`option-detail-header${!hasExpandContent ? ' option-detail-header--static' : ''}`}
+                          type="button"
+                          aria-expanded={hasExpandContent ? isItemExpanded : undefined}
+                          onClick={hasExpandContent ? () => setExpandedOptions((prev) => ({ ...prev, [itemKey]: !prev[itemKey] })) : undefined}
+                        >
+                          <div className="option-detail-header-text">
+                            <h4>{item.label}</h4>
+                            <p>{item.description}</p>
+                          </div>
+                          {hasExpandContent && (
+                            <span className="option-detail-toggle" aria-hidden="true">{isItemExpanded ? '\u2212' : '\u2304'}</span>
+                          )}
+                        </button>
+                        {hasExpandContent && isItemExpanded && (
+                        <div className="option-detail-body">
+                          {item.involves && (
+                            <ul className="option-detail-involves">
+                              {item.involves.map((point) => (
+                                <li key={point}>{point}</li>
+                              ))}
+                            </ul>
+                          )}
+                          {item.links && (
+                            <div className="option-detail-links">
+                              {item.links.map((link) => (
+                                <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="option-detail-link">
+                                  {link.label} <span className="option-detail-link-agency">{link.agency}</span>
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                        )}
+                      </div>
+                      );
+                    })}
+                  </div>
+                )}
+                {planningRest.length > 0 && planningRest.map((section) => (
+                  <div className="option-category" key={section.title}>
+                    <div className="option-category-header">
+                      <h3 className="option-category-title">{section.title}</h3>
+                    </div>
+                    <div className="option-detail-list">
+                      {section.items.map((item) => {
+                        const itemKey = `rest-${item.label.replace(/\s+/g, '-').toLowerCase()}`;
                         const isItemExpanded = !!expandedOptions[itemKey];
                         return (
                         <div className={`option-detail${isItemExpanded ? ' option-detail--expanded' : ''}`} key={item.label}>
@@ -3495,78 +3554,9 @@ function CombinedStateDetailPage() {
                             </div>
                             <span className="option-detail-toggle" aria-hidden="true">{isItemExpanded ? '\u2212' : '\u2304'}</span>
                           </button>
-                          {isItemExpanded && (
-                          <div className="option-detail-body">
-                            {item.involves && (
-                              <ul className="option-detail-involves">
-                                {item.involves.map((point) => (
-                                  <li key={point}>{point}</li>
-                                ))}
-                              </ul>
-                            )}
-                            {item.links && (
-                              <div className="option-detail-links">
-                                {item.links.map((link) => (
-                                  <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="option-detail-link">
-                                    {link.label} <span className="option-detail-link-agency">{link.agency}</span>
-                                  </a>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                          )}
                         </div>
                         );
-                      }
-                      return (
-                      <div className="option-detail" key={item.label}>
-                        <div className="option-detail-header option-detail-header--static">
-                          <div className="option-detail-header-text">
-                            <h4>{item.label}</h4>
-                            <p>{item.description}</p>
-                          </div>
-                        </div>
-                        {hasDetails && (
-                          <div className="option-detail-body option-detail-body--static">
-                            {item.involves && (
-                              <ul className="option-detail-involves">
-                                {item.involves.map((point) => (
-                                  <li key={point}>{point}</li>
-                                ))}
-                              </ul>
-                            )}
-                            {item.links && (
-                              <div className="option-detail-links">
-                                {item.links.map((link) => (
-                                  <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="option-detail-link">
-                                    {link.label} <span className="option-detail-link-agency">{link.agency}</span>
-                                  </a>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                      );
-                    })}
-                  </div>
-                )}
-                {planningRest.length > 0 && planningRest.map((section) => (
-                  <div className="option-category" key={section.title}>
-                    <div className="option-category-header">
-                      <h3 className="option-category-title">{section.title}</h3>
-                    </div>
-                    <div className="option-detail-list">
-                      {section.items.map((item) => (
-                        <div className="option-detail" key={item.label}>
-                          <div className="option-detail-header option-detail-header--static">
-                            <div className="option-detail-header-text">
-                              <h4>{item.label}</h4>
-                              <p>{item.description}</p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
+                      })}
                     </div>
                   </div>
                 ))}
@@ -3576,16 +3566,26 @@ function CombinedStateDetailPage() {
                       <h3 className="option-category-title">{section.title}</h3>
                     </div>
                     <div className="option-detail-list">
-                      {section.items.map((item) => (
-                        <div className="option-detail" key={item.label}>
-                          <div className="option-detail-header option-detail-header--static">
+                      {section.items.map((item) => {
+                        const itemKey = `imm-${item.label.replace(/\s+/g, '-').toLowerCase()}`;
+                        const isItemExpanded = !!expandedOptions[itemKey];
+                        return (
+                        <div className={`option-detail${isItemExpanded ? ' option-detail--expanded' : ''}`} key={item.label}>
+                          <button
+                            className="option-detail-header"
+                            type="button"
+                            aria-expanded={isItemExpanded}
+                            onClick={() => setExpandedOptions((prev) => ({ ...prev, [itemKey]: !prev[itemKey] }))}
+                          >
                             <div className="option-detail-header-text">
                               <h4>{item.label}</h4>
                               <p>{item.description}</p>
                             </div>
-                          </div>
+                            <span className="option-detail-toggle" aria-hidden="true">{isItemExpanded ? '\u2212' : '\u2304'}</span>
+                          </button>
                         </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 ))}
