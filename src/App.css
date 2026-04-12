@@ -3144,6 +3144,47 @@ ul { list-style: none; }
     text-decoration: underline;
 }
 
+/* Legal Resource Links */
+.legal-links {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border-light);
+}
+
+.legal-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.legal-link-item {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+}
+
+.legal-link-item a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.legal-link-item a:hover {
+    text-decoration: underline;
+}
+
+.legal-link-agency {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+}
+
 /* Privacy Policy */
 .privacy-content {
     max-width: 800px;

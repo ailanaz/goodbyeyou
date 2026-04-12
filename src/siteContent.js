@@ -511,6 +511,81 @@ export const hubDirectory = [
         ],
       },
     ],
+    legalResources: {
+      intro: 'Colorado has transitioned from being the least regulated state in the country to one of the most proactive, following several high-profile industry scandals. Here are the key legal protections and tools available.',
+      sections: [
+        {
+          title: 'Your Right of Final Disposition',
+          items: [
+            {
+              label: 'Designated Beneficiary Agreement (DBA)',
+              description: 'In Colorado, you have the legal right to decide who carries out your final wishes. Without a written document, the state follows a priority list (spouse, adult children, parents). The DBA is a powerful, low-cost legal form that allows unmarried partners or close friends to have the same legal standing as a spouse regarding body disposition and medical decisions.',
+              involves: [
+                'Must be notarized and filed with your local County Clerk and Recorder to be valid.',
+                'Grants the same legal standing as a spouse for disposition decisions.',
+                'Covers both body disposition and medical decisions.',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Consumer Protection and the Funeral Rule',
+          items: [
+            {
+              label: 'The FTC Funeral Rule',
+              description: 'Federal and state laws protect your right to price transparency and choice.',
+              involves: [
+                'You have the right to receive a General Price List (GPL) immediately upon asking, even over the phone.',
+                'You are not required to buy a "package" - you can pick and choose specific services (e.g., just the cremation, no viewing).',
+              ],
+            },
+            {
+              label: 'Third-Party Caskets',
+              description: 'Funeral homes in Colorado cannot charge you a fee for using a casket or shroud purchased elsewhere (like online or from a local craftsman).',
+            },
+            {
+              label: 'The No-Embalming Right',
+              description: 'No Colorado law requires routine embalming. Most facilities must offer refrigeration as an alternative for the first 24-72 hours.',
+            },
+          ],
+        },
+        {
+          title: '2026 Licensing and Oversight',
+          items: [
+            {
+              label: 'New Licensing Requirements',
+              description: 'Following legislation passed in 2024 (HB24-1335 and SB24-173), Colorado now requires strict professional standards.',
+              involves: [
+                'As of January 1, 2026, all funeral directors, cremationists, and natural reductionists must be in the process of obtaining state licensure.',
+                'The state now has full-time inspectors authorized to conduct unannounced checks on funeral homes and crematories.',
+                'The regulator is the Colorado Division of Professions and Occupations (DPO). Use their website to verify a provider\'s license status or file a formal complaint.',
+              ],
+            },
+          ],
+        },
+        {
+          title: 'Pre-Need Contract Safety',
+          items: [
+            {
+              label: 'How Your Pre-Paid Funds Are Protected',
+              description: 'If you are paying for services in advance, your money is protected by the Colorado Division of Insurance.',
+              involves: [
+                'Providers must place your funds in a regulated trust or use them to purchase a life insurance policy.',
+                'Always ask for the name of the trustee and a receipt.',
+                'You can verify a "Pre-Need Seller" license through the DORA (Department of Regulatory Agencies) portal.',
+              ],
+            },
+          ],
+        },
+      ],
+      links: [
+        { label: 'File a Complaint', agency: 'CO Division of Professions & Occupations', url: 'https://dpo.colorado.gov/' },
+        { label: 'Verify a License', agency: 'CO Department of Regulatory Agencies', url: 'https://apps.colorado.gov/dora/licensing/Lookup/LicenseLookup.aspx' },
+        { label: 'Pre-Need Consumer Tips', agency: 'CO Division of Insurance', url: 'https://doi.colorado.gov/' },
+        { label: 'DBA Template', agency: 'CO Gerontological Society', url: 'https://www.senioranswers.org/' },
+        { label: 'The Funeral Rule Guide', agency: 'Federal Trade Commission (FTC)', url: 'https://www.ftc.gov/business-guidance/resources/complying-funeral-rule' },
+      ],
+    },
     immediate: {
       intro: 'Navigate alternative options and state specific resources needed for a recent death\'s service plan.',
       sections: [
