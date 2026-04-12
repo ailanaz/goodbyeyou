@@ -2763,7 +2763,7 @@ function CombinedStateDetailPage() {
   );
 
   const planningRest = planning.sections.filter((s) =>
-    !s.title.includes('Availability') && !s.title.includes('Provider Directory') && !s.title.includes('Cost Estimates')
+    !s.title.includes('Availability') && !s.title.includes('Provider Directory') && !s.title.includes('Cost Estimates') && !s.title.includes('Explore Options')
   );
 
   const allNavSections = [
