@@ -563,10 +563,16 @@ export const hubDirectory = [
             'Grants the same legal standing as a spouse for disposition decisions.',
             'Covers both body disposition and medical decisions.',
           ],
+          links: [
+            { label: 'DBA Template', agency: 'CO Gerontological Society', url: 'https://www.senioranswers.org/counseling/legal/advance-directives/financial/designated-beneficiary/' },
+          ],
         },
         {
           label: 'Medical Durable Power of Attorney (MDPOA)',
           description: 'Appoints a representative to make healthcare and end-of-life medical decisions if you are incapacitated.',
+          links: [
+            { label: 'Medical Aid in Dying Info', agency: 'Compassion & Choices Colorado', url: 'https://www.compassionandchoices.org/' },
+          ],
         },
         {
           label: 'Consumer Protection and the Funeral Rule',
@@ -577,38 +583,41 @@ export const hubDirectory = [
             'Funeral homes in Colorado cannot charge you a fee for using a casket or shroud purchased elsewhere (like online or from a local craftsman).',
             'No Colorado law requires routine embalming. Most facilities must offer refrigeration as an alternative for the first 24-72 hours.',
           ],
+          links: [
+            { label: 'The Funeral Rule Guide', agency: 'Federal Trade Commission (FTC)', url: 'https://www.ftc.gov/business-guidance/resources/complying-funeral-rule' },
+          ],
         },
         {
           label: 'Licensing and Oversight (Colorado DPO)',
-          description: 'Following legislation passed in 2024 (HB24-1335 and SB24-173), Colorado now requires strict professional standards. The regulator is the Colorado Division of Professions and Occupations (DPO). You can verify a license or file a complaint through the DPO Portal.',
+          description: 'Following legislation passed in 2024 (HB24-1335 and SB24-173), Colorado now requires strict professional standards. The regulator is the Colorado Division of Professions and Occupations (DPO).',
           involves: [
             'As of January 1, 2026, all funeral directors, cremationists, and natural reductionists must be in the process of obtaining state licensure.',
             'The state now has full-time inspectors authorized to conduct unannounced checks on funeral homes and crematories.',
           ],
-          link: 'https://dpo.colorado.gov/',
+          links: [
+            { label: 'Verify a Provider License', agency: 'DORA License Lookup', url: 'https://dpo.colorado.gov/' },
+            { label: 'File a Complaint', agency: 'CO Division of Professions & Occupations', url: 'https://dpo.colorado.gov/' },
+          ],
         },
         {
           label: 'Pre-Need Contract Safety (Colorado Division of Insurance)',
-          description: 'If you are paying for services in advance, your money is protected by the Colorado Division of Insurance. Use their portal to verify "Pre-Need" funeral contracts and ensure your prepaid funds are being held in a state-regulated trust.',
+          description: 'If you are paying for services in advance, your money is protected by the Colorado Division of Insurance.',
           involves: [
             'Providers must place your funds in a regulated trust or use them to purchase a life insurance policy.',
             'Always ask for the name of the trustee and a receipt.',
             'You can verify a "Pre-Need Seller" license through the DORA (Department of Regulatory Agencies) portal.',
           ],
+          links: [
+            { label: 'Pre-Need Consumer Tips', agency: 'CO Division of Insurance', url: 'https://doi.colorado.gov/' },
+          ],
         },
         {
           label: 'Funeral Consumer\'s Alliance of Colorado (FCAC)',
           description: 'A non-profit dedicated to protecting a consumer\'s right to choose a meaningful, dignified, and affordable final arrangement.',
+          links: [
+            { label: 'Legal Aid for Seniors', agency: 'Colorado Legal Services', url: 'https://www.coloradolegalservices.org/' },
+          ],
         },
-      ],
-      links: [
-        { label: 'Verify a Provider License', agency: 'DORA License Lookup', url: 'https://dpo.colorado.gov/' },
-        { label: 'Legal Aid for Seniors', agency: 'Colorado Legal Services', url: 'https://www.coloradolegalservices.org/' },
-        { label: 'Medical Aid in Dying Info', agency: 'Compassion & Choices Colorado', url: 'https://www.compassionandchoices.org/' },
-        { label: 'File a Complaint', agency: 'CO Division of Professions & Occupations', url: 'https://dpo.colorado.gov/' },
-        { label: 'Pre-Need Consumer Tips', agency: 'CO Division of Insurance', url: 'https://doi.colorado.gov/' },
-        { label: 'DBA Template', agency: 'CO Gerontological Society', url: 'https://www.senioranswers.org/counseling/legal/advance-directives/financial/designated-beneficiary/' },
-        { label: 'The Funeral Rule Guide', agency: 'Federal Trade Commission (FTC)', url: 'https://www.ftc.gov/business-guidance/resources/complying-funeral-rule' },
       ],
     },
     immediate: {
