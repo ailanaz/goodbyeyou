@@ -69,44 +69,7 @@ export const hubDirectory = [
     },
     immediate: {
       intro: 'Navigate alternative options and state specific resources needed for a recent death service plan.',
-      sections: [
-        {
-          title: 'Service Status & Authority',
-          items: [
-            { label: 'Existing Plan', description: 'Instructions for presenting appointment of agent forms to medical facilities in Illinois.' },
-            { label: 'No Existing Plan', description: 'Priority list of legal next-of-kin authorized to choose an uncommon service path in Illinois.' },
-          ],
-        },
-        {
-          title: 'The 24-Hour Sequence',
-          items: [
-            { label: 'Mandatory Actions', description: 'First steps for pronouncement and official release of the body in Illinois.' },
-            { label: 'Initial Contacts', description: 'Who must be notified immediately - hospice, doctor, or medical examiner depending on circumstances.' },
-          ],
-        },
-        {
-          title: 'Custody & Transport Laws',
-          items: [
-            { label: 'Right to Custody', description: 'Illinois regulations on whether the family can maintain custody or if a funeral director is mandatory.' },
-            { label: 'Transit Permits', description: 'Requirements for moving the body from the place of death to an uncommon service facility in Illinois.' },
-            { label: 'Non-Standard Cooling', description: 'Refrigeration or dry ice requirements for non-embalmed bodies in Illinois.' },
-          ],
-        },
-        {
-          title: 'Disposition Logistics: Choosing the Path',
-          items: [
-            { label: 'Immediate Coordination', description: 'Step-by-step for contacting and initiating an uncommon service in Illinois during a crisis.' },
-            { label: 'Provider Pathways', description: 'Fast-access links to facilities equipped for immediate intake in Illinois.' },
-          ],
-        },
-        {
-          title: 'Paperwork & Deadlines',
-          items: [
-            { label: 'Critical Filing', description: 'Mandatory timelines for filing the death certificate and burial-transit permits in Illinois.' },
-            { label: 'Official Resources', description: 'Contact information for the local registrar or coroner to resolve logistical delays.' },
-          ],
-        },
-      ],
+      sections: [],
     },
   },
   {
@@ -180,44 +143,7 @@ export const hubDirectory = [
     },
     immediate: {
       intro: 'Navigate alternative options and state specific resources needed for a recent death service plan.',
-      sections: [
-        {
-          title: 'Service Status & Authority',
-          items: [
-            { label: 'Existing Plan', description: 'Instructions for presenting appointment of agent forms to medical facilities in California.' },
-            { label: 'No Existing Plan', description: 'Priority list of legal next-of-kin authorized to choose an uncommon service path in California.' },
-          ],
-        },
-        {
-          title: 'The 24-Hour Sequence',
-          items: [
-            { label: 'Mandatory Actions', description: 'First steps for pronouncement and official release of the body in California.' },
-            { label: 'Initial Contacts', description: 'Who must be notified immediately - hospice, doctor, or medical examiner depending on circumstances.' },
-          ],
-        },
-        {
-          title: 'Custody & Transport Laws',
-          items: [
-            { label: 'Right to Custody', description: 'California regulations on whether the family can maintain custody or if a funeral director is mandatory.' },
-            { label: 'Transit Permits', description: 'Requirements for moving the body from the place of death to an uncommon service facility in California.' },
-            { label: 'Non-Standard Cooling', description: 'Refrigeration or dry ice requirements for non-embalmed bodies in California.' },
-          ],
-        },
-        {
-          title: 'Disposition Logistics: Choosing the Path',
-          items: [
-            { label: 'Immediate Coordination', description: 'Step-by-step for contacting and initiating an uncommon service in California during a crisis.' },
-            { label: 'Provider Pathways', description: 'Fast-access links to facilities equipped for immediate intake in California.' },
-          ],
-        },
-        {
-          title: 'Paperwork & Deadlines',
-          items: [
-            { label: 'Critical Filing', description: 'Mandatory timelines for filing the death certificate and burial-transit permits in California.' },
-            { label: 'Official Resources', description: 'Contact information for the local registrar or coroner to resolve logistical delays.' },
-          ],
-        },
-      ],
+      sections: [],
     },
   },
   {
@@ -291,44 +217,7 @@ export const hubDirectory = [
     },
     immediate: {
       intro: 'Navigate alternative options and state specific resources needed for a recent death service plan.',
-      sections: [
-        {
-          title: 'Service Status & Authority',
-          items: [
-            { label: 'Existing Plan', description: 'Instructions for presenting appointment of agent forms to medical facilities in Washington.' },
-            { label: 'No Existing Plan', description: 'Priority list of legal next-of-kin authorized to choose an uncommon service path in Washington.' },
-          ],
-        },
-        {
-          title: 'The 24-Hour Sequence',
-          items: [
-            { label: 'Mandatory Actions', description: 'First steps for pronouncement and official release of the body in Washington.' },
-            { label: 'Initial Contacts', description: 'Who must be notified immediately - hospice, doctor, or medical examiner depending on circumstances.' },
-          ],
-        },
-        {
-          title: 'Custody & Transport Laws',
-          items: [
-            { label: 'Right to Custody', description: 'Washington regulations on family custody rights. Washington explicitly permits family-directed care without a funeral director.' },
-            { label: 'Transit Permits', description: 'Requirements for moving the body from the place of death to an uncommon service facility in Washington.' },
-            { label: 'Non-Standard Cooling', description: 'Refrigeration or dry ice requirements for non-embalmed bodies in Washington.' },
-          ],
-        },
-        {
-          title: 'Disposition Logistics: Choosing the Path',
-          items: [
-            { label: 'Immediate Coordination', description: 'Step-by-step for contacting and initiating an uncommon service in Washington during a crisis.' },
-            { label: 'Provider Pathways', description: 'Fast-access links to facilities equipped for immediate intake in Washington.' },
-          ],
-        },
-        {
-          title: 'Paperwork & Deadlines',
-          items: [
-            { label: 'Critical Filing', description: 'Mandatory timelines for filing the death certificate and burial-transit permits in Washington.' },
-            { label: 'Official Resources', description: 'Contact information for the local registrar or coroner to resolve logistical delays.' },
-          ],
-        },
-      ],
+      sections: [],
     },
   },
   {
@@ -702,44 +591,7 @@ export const hubDirectory = [
     },
     immediate: {
       intro: 'Navigate alternative options and state specific resources needed for a recent death\'s service plan.',
-      sections: [
-        {
-          title: 'Service Status & Authority',
-          items: [
-            { label: 'Existing Plan', description: 'Instructions for presenting appointment of agent forms to medical facilities in Oregon.' },
-            { label: 'No Existing Plan', description: 'Priority list of legal next-of-kin authorized to choose an uncommon service path in Oregon.' },
-          ],
-        },
-        {
-          title: 'The 24-Hour Sequence',
-          items: [
-            { label: 'Mandatory Actions', description: 'First steps for pronouncement and official release of the body in Oregon.' },
-            { label: 'Initial Contacts', description: 'Who must be notified immediately - hospice, doctor, or medical examiner depending on circumstances.' },
-          ],
-        },
-        {
-          title: 'Custody & Transport Laws',
-          items: [
-            { label: 'Right to Custody', description: 'Oregon regulations on family custody rights. Oregon permits family-directed care without a funeral director.' },
-            { label: 'Transit Permits', description: 'Requirements for moving the body from the place of death to an uncommon service facility in Oregon.' },
-            { label: 'Non-Standard Cooling', description: 'Refrigeration or dry ice requirements for non-embalmed bodies in Oregon.' },
-          ],
-        },
-        {
-          title: 'Disposition Logistics: Choosing the Path',
-          items: [
-            { label: 'Immediate Coordination', description: 'Step-by-step for contacting and initiating an uncommon service in Oregon during a crisis.' },
-            { label: 'Provider Pathways', description: 'Fast-access links to facilities equipped for immediate intake in Oregon.' },
-          ],
-        },
-        {
-          title: 'Paperwork & Deadlines',
-          items: [
-            { label: 'Critical Filing', description: 'Mandatory timelines for filing the death certificate and burial-transit permits in Oregon.' },
-            { label: 'Official Resources', description: 'Contact information for the local registrar or coroner to resolve logistical delays.' },
-          ],
-        },
-      ],
+      sections: [],
     },
   },
   {
@@ -813,44 +665,7 @@ export const hubDirectory = [
     },
     immediate: {
       intro: 'Navigate alternative options and state specific resources needed for a recent death\'s service plan.',
-      sections: [
-        {
-          title: 'Service Status & Authority',
-          items: [
-            { label: 'Existing Plan', description: 'Instructions for presenting appointment of agent forms to medical facilities in Vermont.' },
-            { label: 'No Existing Plan', description: 'Priority list of legal next-of-kin authorized to choose an uncommon service path in Vermont.' },
-          ],
-        },
-        {
-          title: 'The 24-Hour Sequence',
-          items: [
-            { label: 'Mandatory Actions', description: 'First steps for pronouncement and official release of the body in Vermont.' },
-            { label: 'Initial Contacts', description: 'Who must be notified immediately - hospice, doctor, or medical examiner depending on circumstances.' },
-          ],
-        },
-        {
-          title: 'Custody & Transport Laws',
-          items: [
-            { label: 'Right to Custody', description: 'Vermont regulations on family custody rights. Vermont permits family-directed care without requiring a funeral director.' },
-            { label: 'Transit Permits', description: 'Requirements for moving the body from the place of death to an uncommon service facility in Vermont.' },
-            { label: 'Non-Standard Cooling', description: 'Refrigeration or dry ice requirements for non-embalmed bodies in Vermont.' },
-          ],
-        },
-        {
-          title: 'Disposition Logistics: Choosing the Path',
-          items: [
-            { label: 'Immediate Coordination', description: 'Step-by-step for contacting and initiating an uncommon service in Vermont during a crisis.' },
-            { label: 'Provider Pathways', description: 'Fast-access links to facilities equipped for immediate intake in Vermont.' },
-          ],
-        },
-        {
-          title: 'Paperwork & Deadlines',
-          items: [
-            { label: 'Critical Filing', description: 'Mandatory timelines for filing the death certificate and burial-transit permits in Vermont.' },
-            { label: 'Official Resources', description: 'Contact information for the local registrar or coroner to resolve logistical delays.' },
-          ],
-        },
-      ],
+      sections: [],
     },
   },
   {
@@ -924,44 +739,7 @@ export const hubDirectory = [
     },
     immediate: {
       intro: 'Navigate alternative options and state specific resources needed for a recent death\'s service plan.',
-      sections: [
-        {
-          title: 'Service Status & Authority',
-          items: [
-            { label: 'Existing Plan', description: 'Instructions for presenting appointment of agent forms to medical facilities in Minnesota.' },
-            { label: 'No Existing Plan', description: 'Priority list of legal next-of-kin authorized to choose an uncommon service path in Minnesota.' },
-          ],
-        },
-        {
-          title: 'The 24-Hour Sequence',
-          items: [
-            { label: 'Mandatory Actions', description: 'First steps for pronouncement and official release of the body in Minnesota.' },
-            { label: 'Initial Contacts', description: 'Who must be notified immediately - hospice, doctor, or medical examiner depending on circumstances.' },
-          ],
-        },
-        {
-          title: 'Custody & Transport Laws',
-          items: [
-            { label: 'Right to Custody', description: 'Minnesota regulations on whether the family can maintain custody or if a funeral director is mandatory.' },
-            { label: 'Transit Permits', description: 'Requirements for moving the body from the place of death to an uncommon service facility in Minnesota.' },
-            { label: 'Non-Standard Cooling', description: 'Refrigeration or dry ice requirements for non-embalmed bodies in Minnesota.' },
-          ],
-        },
-        {
-          title: 'Disposition Logistics: Choosing the Path',
-          items: [
-            { label: 'Immediate Coordination', description: 'Step-by-step for contacting and initiating an uncommon service in Minnesota during a crisis.' },
-            { label: 'Provider Pathways', description: 'Fast-access links to facilities equipped for immediate intake in Minnesota.' },
-          ],
-        },
-        {
-          title: 'Paperwork & Deadlines',
-          items: [
-            { label: 'Critical Filing', description: 'Mandatory timelines for filing the death certificate and burial-transit permits in Minnesota.' },
-            { label: 'Official Resources', description: 'Contact information for the local registrar or coroner to resolve logistical delays.' },
-          ],
-        },
-      ],
+      sections: [],
     },
   },
   {
@@ -1035,44 +813,7 @@ export const hubDirectory = [
     },
     immediate: {
       intro: 'Navigate alternative options and state specific resources needed for a recent death\'s service plan.',
-      sections: [
-        {
-          title: 'Service Status & Authority',
-          items: [
-            { label: 'Existing Plan', description: 'Instructions for presenting appointment of agent forms to medical facilities in Georgia.' },
-            { label: 'No Existing Plan', description: 'Priority list of legal next-of-kin authorized to choose an uncommon service path in Georgia.' },
-          ],
-        },
-        {
-          title: 'The 24-Hour Sequence',
-          items: [
-            { label: 'Mandatory Actions', description: 'First steps for pronouncement and official release of the body in Georgia.' },
-            { label: 'Initial Contacts', description: 'Who must be notified immediately - hospice, doctor, or medical examiner depending on circumstances.' },
-          ],
-        },
-        {
-          title: 'Custody & Transport Laws',
-          items: [
-            { label: 'Right to Custody', description: 'Georgia regulations on whether the family can maintain custody or if a funeral director is mandatory.' },
-            { label: 'Transit Permits', description: 'Requirements for moving the body from the place of death to an uncommon service facility in Georgia.' },
-            { label: 'Non-Standard Cooling', description: 'Refrigeration or dry ice requirements for non-embalmed bodies in Georgia.' },
-          ],
-        },
-        {
-          title: 'Disposition Logistics: Choosing the Path',
-          items: [
-            { label: 'Immediate Coordination', description: 'Step-by-step for contacting and initiating an uncommon service in Georgia during a crisis.' },
-            { label: 'Provider Pathways', description: 'Fast-access links to facilities equipped for immediate intake in Georgia.' },
-          ],
-        },
-        {
-          title: 'Paperwork & Deadlines',
-          items: [
-            { label: 'Critical Filing', description: 'Mandatory timelines for filing the death certificate and burial-transit permits in Georgia.' },
-            { label: 'Official Resources', description: 'Contact information for the local registrar or coroner to resolve logistical delays.' },
-          ],
-        },
-      ],
+      sections: [],
     },
   },
   {
@@ -1146,44 +887,7 @@ export const hubDirectory = [
     },
     immediate: {
       intro: 'Navigate alternative options and state specific resources needed for a recent death\'s service plan.',
-      sections: [
-        {
-          title: 'Service Status & Authority',
-          items: [
-            { label: 'Existing Plan', description: 'Instructions for presenting appointment of agent forms to medical facilities in New York.' },
-            { label: 'No Existing Plan', description: 'Priority list of legal next-of-kin authorized to choose an uncommon service path in New York.' },
-          ],
-        },
-        {
-          title: 'The 24-Hour Sequence',
-          items: [
-            { label: 'Mandatory Actions', description: 'First steps for pronouncement and official release of the body in New York.' },
-            { label: 'Initial Contacts', description: 'Who must be notified immediately - hospice, doctor, or medical examiner depending on circumstances.' },
-          ],
-        },
-        {
-          title: 'Custody & Transport Laws',
-          items: [
-            { label: 'Right to Custody', description: 'New York regulations on whether the family can maintain custody or if a funeral director is mandatory.' },
-            { label: 'Transit Permits', description: 'Requirements for moving the body from the place of death to an uncommon service facility in New York.' },
-            { label: 'Non-Standard Cooling', description: 'Refrigeration or dry ice requirements for non-embalmed bodies in New York.' },
-          ],
-        },
-        {
-          title: 'Disposition Logistics: Choosing the Path',
-          items: [
-            { label: 'Immediate Coordination', description: 'Step-by-step for contacting and initiating an uncommon service in New York during a crisis.' },
-            { label: 'Provider Pathways', description: 'Fast-access links to facilities equipped for immediate intake in New York.' },
-          ],
-        },
-        {
-          title: 'Paperwork & Deadlines',
-          items: [
-            { label: 'Critical Filing', description: 'Mandatory timelines for filing the death certificate and burial-transit permits in New York.' },
-            { label: 'Official Resources', description: 'Contact information for the local registrar or coroner to resolve logistical delays.' },
-          ],
-        },
-      ],
+      sections: [],
     },
   },
 ];
