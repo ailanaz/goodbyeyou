@@ -3036,7 +3036,10 @@ function CombinedStateDetailPage() {
                 {hub.legalResources && (
                   <div className="option-detail-list">
                     {hub.legalResources.items.map((item) => {
-                      if (item.involves || item.links) {
+                      const hasDetails = Boolean(item.involves || item.links);
+                      const isExpandableCard = hasDetails && item.expandable !== false;
+
+                      if (isExpandableCard) {
                         const itemKey = `legal-${item.label.replace(/\s+/g, '-').toLowerCase()}`;
                         const isItemExpanded = !!expandedOptions[itemKey];
                         return (
@@ -3084,6 +3087,26 @@ function CombinedStateDetailPage() {
                             <p>{item.description}</p>
                           </div>
                         </div>
+                        {hasDetails && (
+                          <div className="option-detail-body option-detail-body--static">
+                            {item.involves && (
+                              <ul className="option-detail-involves">
+                                {item.involves.map((point) => (
+                                  <li key={point}>{point}</li>
+                                ))}
+                              </ul>
+                            )}
+                            {item.links && (
+                              <div className="option-detail-links">
+                                {item.links.map((link) => (
+                                  <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="option-detail-link">
+                                    {link.label} <span className="option-detail-link-agency">{link.agency}</span>
+                                  </a>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        )}
                       </div>
                       );
                     })}

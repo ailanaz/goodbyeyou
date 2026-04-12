@@ -552,16 +552,17 @@ export const hubDirectory = [
       intro: 'Colorado has transitioned from being the least regulated state in the country to one of the most proactive, following several high-profile industry scandals. Here are the key legal protections and tools available.',
       items: [
         {
-          label: 'Disposition of Last Remains Declaration (C.R.S. 15-19-102)',
-          description: 'This is the most important document for alternative planning. It is a legally binding form that allows you to name a specific person to carry out your wishes and explicitly mandates methods like "Natural Organic Reduction" or "Aquamation." It overrides the standard next-of-kin priority list.',
+          label: 'Disposition of Last Remains Declaration',
+          description: 'This is the core Colorado document for naming who controls disposition and for recording specific wishes about your final arrangements. For alternative planning, it is the clearest way to state who should carry out the plan and what type of disposition you want followed.',
         },
         {
           label: 'Designated Beneficiary Agreement (DBA)',
-          description: 'In Colorado, you have the legal right to decide who carries out your final wishes. Without a written document, the state follows a priority list (spouse, adult children, parents). The DBA is a flexible, Colorado-specific legal form that allows unmarried partners or close friends to have the same legal standing as a spouse regarding body disposition, medical decisions, and funeral and estate decisions.',
+          description: 'In Colorado, the Designated Beneficiary Agreement is a state-specific tool that can give an unmarried partner, close friend, or other trusted adult legal standing in key end-of-life and after-death matters. It is often used when someone wants decision-making authority to be clear outside the standard next-of-kin order.',
           involves: [
-            'Must be notarized and filed with your local County Clerk and Recorder to be valid.',
-            'Grants the same legal standing as a spouse for disposition decisions.',
-            'Covers both body disposition and medical decisions.',
+            'It can help with body disposition, medical decision-making, and funeral and estate-related authority.',
+            'It is especially important when the person you want making decisions is not your legal spouse or default next of kin.',
+            'It should be completed carefully, notarized, and filed in the proper local office so it is available when needed.',
+            'It works best when paired with other planning documents so your wishes and your decision-maker are both clearly documented.',
           ],
           links: [
             { label: 'DBA Template', agency: 'CO Gerontological Society', url: 'https://www.senioranswers.org/counseling/legal/advance-directives/financial/designated-beneficiary/' },
@@ -569,19 +570,20 @@ export const hubDirectory = [
         },
         {
           label: 'Medical Durable Power of Attorney (MDPOA)',
-          description: 'Appoints a representative to make healthcare and end-of-life medical decisions if you are incapacitated.',
+          description: 'This document appoints the person who can make healthcare and end-of-life medical decisions if you cannot speak for yourself. It is separate from after-death disposition authority, but it is often part of the same planning process.',
+          expandable: false,
           links: [
             { label: 'Medical Aid in Dying Info', agency: 'Compassion & Choices Colorado', url: 'https://www.compassionandchoices.org/' },
           ],
         },
         {
           label: 'Consumer Protection and the Funeral Rule',
-          description: 'Federal and state laws protect your right to price transparency and choice.',
+          description: 'Colorado families still rely on the federal Funeral Rule and related consumer protections when comparing providers, declining unwanted services, and asking what is actually required.',
           involves: [
-            'You have the right to receive a General Price List (GPL) immediately upon asking, even over the phone.',
-            'You are not required to buy a "package" - you can pick and choose specific services (e.g., just the cremation, no viewing).',
-            'Funeral homes in Colorado cannot charge you a fee for using a casket or shroud purchased elsewhere (like online or from a local craftsman).',
-            'No Colorado law requires routine embalming. Most facilities must offer refrigeration as an alternative for the first 24-72 hours.',
+            'You have the right to receive a General Price List when you ask, including when you are comparison shopping.',
+            'You are not required to buy a bundled package if you only want certain services.',
+            'A provider cannot charge an extra fee just because you bring in a casket, container, or shroud from somewhere else.',
+            'Routine embalming is not automatically required under Colorado law, and refrigeration is often the practical alternative in the early period after death.',
           ],
           links: [
             { label: 'The Funeral Rule Guide', agency: 'Federal Trade Commission (FTC)', url: 'https://www.ftc.gov/business-guidance/resources/complying-funeral-rule' },
@@ -589,10 +591,12 @@ export const hubDirectory = [
         },
         {
           label: 'Licensing and Oversight (Colorado DPO)',
-          description: 'Following legislation passed in 2024 (HB24-1335 and SB24-173), Colorado now requires strict professional standards. The regulator is the Colorado Division of Professions and Occupations (DPO).',
+          description: 'Colorado now has a more active oversight structure for funeral, cremation, and natural reduction services. The Colorado Division of Professions and Occupations is the main regulator for licensing, inspection, and complaints.',
           involves: [
-            'As of January 1, 2026, all funeral directors, cremationists, and natural reductionists must be in the process of obtaining state licensure.',
-            'The state now has full-time inspectors authorized to conduct unannounced checks on funeral homes and crematories.',
+            'Licensing rules now matter more when choosing a provider, especially for newer or specialized services.',
+            'You can verify whether a provider is properly licensed before committing.',
+            'The state can receive complaints and investigate misconduct or compliance problems.',
+            'This is the right place to check oversight information when something feels unclear or concerning.',
           ],
           links: [
             { label: 'Verify a Provider License', agency: 'DORA License Lookup', url: 'https://dpo.colorado.gov/' },
@@ -601,11 +605,12 @@ export const hubDirectory = [
         },
         {
           label: 'Pre-Need Contract Safety (Colorado Division of Insurance)',
-          description: 'If you are paying for services in advance, your money is protected by the Colorado Division of Insurance.',
+          description: 'If you are paying for funeral or disposition services in advance, Colorado consumer protections matter. This card covers the key safety questions around pre-need contracts and where to check the company behind them.',
           involves: [
-            'Providers must place your funds in a regulated trust or use them to purchase a life insurance policy.',
-            'Always ask for the name of the trustee and a receipt.',
-            'You can verify a "Pre-Need Seller" license through the DORA (Department of Regulatory Agencies) portal.',
+            'Ask how the money is being held and what protections apply if the business changes hands or closes.',
+            'Keep receipts, contract copies, and the name of the trustee or funding vehicle in your records.',
+            'Confirm that the seller is properly authorized before paying in advance.',
+            'Use the Division of Insurance consumer guidance when you are comparing or reviewing a pre-need arrangement.',
           ],
           links: [
             { label: 'Pre-Need Consumer Tips', agency: 'CO Division of Insurance', url: 'https://doi.colorado.gov/' },
@@ -613,7 +618,8 @@ export const hubDirectory = [
         },
         {
           label: 'Funeral Consumer\'s Alliance of Colorado (FCAC)',
-          description: 'A non-profit dedicated to protecting a consumer\'s right to choose a meaningful, dignified, and affordable final arrangement.',
+          description: 'FCAC is a consumer-focused resource for people who want clearer funeral information, stronger protections, and more confidence when making arrangements or reviewing provider practices.',
+          expandable: false,
           links: [
             { label: 'Legal Aid for Seniors', agency: 'Colorado Legal Services', url: 'https://www.coloradolegalservices.org/' },
           ],
