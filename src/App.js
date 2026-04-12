@@ -2883,6 +2883,43 @@ function CombinedStateDetailPage() {
                     </div>
                   </div>
                 ))}
+                {hub.extras && hub.extras.length > 0 && (
+                  <div className="option-category">
+                    <div className="option-category-header">
+                      <h3 className="option-category-title">Additional Options in {hub.region}</h3>
+                    </div>
+                    <div className="option-detail-list">
+                      {hub.extras.map((extra) => {
+                        const isExpanded = !!expandedOptions[extra.id];
+                        return (
+                        <div className={`option-detail${isExpanded ? ' option-detail--expanded' : ''}`} id={extra.id} key={extra.id}>
+                          <button
+                            className="option-detail-header"
+                            type="button"
+                            aria-expanded={isExpanded}
+                            onClick={() => setExpandedOptions((prev) => ({ ...prev, [extra.id]: !prev[extra.id] }))}
+                          >
+                            <div className="option-detail-header-text">
+                              <h4>{extra.title}</h4>
+                              <p>{extra.description}</p>
+                            </div>
+                            <span className="option-detail-toggle" aria-hidden="true">{isExpanded ? '\u2212' : '\u2304'}</span>
+                          </button>
+                          {isExpanded && (
+                          <div className="option-detail-body">
+                            <ul className="option-detail-involves">
+                              {extra.involves.map((point) => (
+                                <li key={point}>{point}</li>
+                              ))}
+                            </ul>
+                          </div>
+                          )}
+                        </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {topSections.map((section, idx) => {
