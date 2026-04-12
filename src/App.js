@@ -3401,6 +3401,76 @@ function CombinedStateDetailPage() {
                   </div>
                   );
                 })()}
+                {(() => {
+                  const dispKey = 'disposition-declaration';
+                  const isDispExpanded = !!expandedOptions[dispKey];
+                  const dispositionFormLinks = {
+                    colorado: { form: 'Disposition of Last Remains Declaration', url: 'https://www.denbar.org/', agency: 'Denver Bar Association Template' },
+                    california: { form: 'Statutory Form for Right to Control Disposition', url: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=7100.&lawCode=HSC', agency: 'CA Health & Safety Code \u00A7 7100' },
+                    washington: { form: 'Appointment of Agent to Control Disposition', url: 'https://app.leg.wa.gov/rcw/default.aspx?cite=68.50.160', agency: 'RCW 68.50.160 Form' },
+                    oregon: { form: 'Appointment of Person to Make Decisions', url: 'https://www.oregon.gov/oha/ph/providerpartnerresources/emstraumasystems/pages/advancedirectives.aspx', agency: 'Advance Directive Form (Section 4)' },
+                  };
+                  const stateForm = dispositionFormLinks[hubId];
+                  return (
+                  <div className="doula-intro-section">
+                    <h3 className="option-category-title" style={{ marginTop: '24px' }}>The Disposition of Last Remains Declaration</h3>
+                    <p className="doula-intro-description">This is a standalone legal document that allows you to do two specific things: appoint a person (your "agent") to carry out your wishes and state exactly what those wishes are. It is a powerful legal shield because, in many states (like Colorado), it is legally binding and overrides the standard hierarchy of next-of-kin.</p>
+                    <div className={`option-detail${isDispExpanded ? ' option-detail--expanded' : ''}`}>
+                      <button
+                        className="option-detail-header"
+                        type="button"
+                        aria-expanded={isDispExpanded}
+                        onClick={() => setExpandedOptions((prev) => ({ ...prev, [dispKey]: !prev[dispKey] }))}
+                      >
+                        <div className="option-detail-header-text">
+                          <h4>What it involves</h4>
+                          <p>Appointment of an agent, selection of method, special instructions, and notarization requirements.</p>
+                        </div>
+                        <span className="option-detail-toggle" aria-hidden="true">{isDispExpanded ? '\u2212' : '\u2304'}</span>
+                      </button>
+                      {isDispExpanded && (
+                      <div className="option-detail-body">
+                        <h5 className="option-detail-subheading">What it involves</h5>
+                        <ul className="option-detail-involves">
+                          <li><strong>Appointment of Agent:</strong> Naming one primary person (and ideally one alternate) who has the sole legal authority to sign contracts with a funeral home or crematory.</li>
+                          <li><strong>Selection of Method:</strong> Checking a box for your preferred method (Burial, Cremation, Natural Organic Reduction, Aquamation, etc.).</li>
+                          <li><strong>Special Instructions:</strong> A section where you can write specific, grounded rules (e.g., "No embalming," "I wish for my soil to be scattered at [Location]," or "I want a home funeral vigil for 24 hours").</li>
+                          <li><strong>Notarization/Witnessing:</strong> Most states require at least one notary or two witnesses to make the document legally enforceable.</li>
+                        </ul>
+                        <h5 className="option-detail-subheading">Key considerations</h5>
+                        <ul className="option-detail-involves">
+                          <li><strong>The "Tie-Breaker":</strong> If your siblings or children disagree on what to do with your body, this document ends the argument instantly.</li>
+                          <li><strong>Bypassing the "Default":</strong> Without this, the law usually defaults to a spouse, then a majority of children. If you want a friend or a non-married partner in charge, you must use this form.</li>
+                          <li><strong>Separation from the Will:</strong> Do not rely on your Will for these instructions. Wills are often read weeks after a death; this document is needed within hours.</li>
+                          <li><strong>Updateability:</strong> You can revoke or change this at any time by simply signing a new one and destroying the old copy.</li>
+                        </ul>
+                        <h5 className="option-detail-subheading">Estimated cost</h5>
+                        <p className="doula-intro-description" style={{ marginBottom: '8px' }}>$0 - $50. The forms are usually free (see below); the only cost is typically a small fee for a Notary Public.</p>
+                        <div className="disposition-notice">
+                          <p><strong>Important:</strong> Always give a copy of this signed form to your named agent and your preferred service provider (like the NOR facility or Green Cemetery) ahead of time. Keeping it in a "safe" or "locked box" is the most common mistake - if the agent cannot find it on the day of death, it does not exist.</p>
+                        </div>
+                        <h5 className="option-detail-subheading">State-specific form links</h5>
+                        <div className="option-detail-links">
+                          {stateForm && (
+                            <a href={stateForm.url} target="_blank" rel="noopener noreferrer" className="option-detail-link">
+                              {stateForm.form} <span className="option-detail-link-agency">{stateForm.agency}</span>
+                            </a>
+                          )}
+                          {!stateForm && (
+                            <a href="https://www.greenburialcouncil.org/" target="_blank" rel="noopener noreferrer" className="option-detail-link">
+                              Self-Drafted Funeral Directive Template <span className="option-detail-link-agency">Green Burial Council</span>
+                            </a>
+                          )}
+                          <a href="https://www.greenburialcouncil.org/" target="_blank" rel="noopener noreferrer" className="option-detail-link">
+                            National Funeral Directive Template <span className="option-detail-link-agency">Green Burial Council</span>
+                          </a>
+                        </div>
+                      </div>
+                      )}
+                    </div>
+                  </div>
+                  );
+                })()}
                 {hub.legalResources && hub.legalResources.intro && (
                   <p className="sdl-section-sub">{hub.legalResources.intro}</p>
                 )}
