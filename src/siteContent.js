@@ -57,6 +57,53 @@ export const hubDirectory = [
         {
           title: 'Provider Directory',
           items: [],
+          intro: 'California has a broad mix of alternative providers, including aquamation specialists, conservation burial grounds, and organizations coordinating out-of-state NOR transport. These cards collect the provider focus, service coverage, and contact details in one place.',
+          providers: [
+            {
+              name: 'Earth Funeral',
+              description: 'A specialized Natural Organic Reduction (NOR) provider that coordinates the interstate transport process for California families seeking soil transformation services.',
+              services: 'Natural Organic Reduction (Body Composting), out-of-state transport logistics, and family guidance throughout the NOR process.',
+              locations: [
+                'Serving California statewide; operational NOR hub in Las Vegas, NV',
+              ],
+              phone: '(818) 698-2358',
+              email: '',
+              website: 'earthfuneral.com',
+            },
+            {
+              name: 'Bravo Family Mortuary',
+              description: 'A leading Southern California provider for aquamation and certified green burial preparation, with a focus on lower-impact alternatives to conventional arrangements.',
+              services: 'Aquamation (Water Cremation), certified green burial preparation, and direct family support.',
+              locations: [
+                '4427 Poplar Ave, San Diego, CA 92120',
+              ],
+              phone: '(833) 782-7296',
+              email: '',
+              website: 'bravofamilymortuary.com',
+            },
+            {
+              name: 'Forever Fernwood',
+              description: 'A premier conservation burial forest offering a fully natural, vault-free burial setting in a protected landscape.',
+              services: 'Conservation burial, natural burial, and scenic forest interment.',
+              locations: [
+                '301 Tennessee Valley Rd, Mill Valley, CA 94941',
+              ],
+              phone: '(415) 383-3284',
+              email: '',
+              website: 'fernwood.com',
+            },
+            {
+              name: 'Anubis Cremations',
+              description: 'A California-wide provider focused on eco-friendly water cremation and simple, streamlined arrangements for families seeking lower-impact disposition.',
+              services: 'Eco-friendly water cremation, direct cremation, and statewide coordination.',
+              locations: [
+                'Serving all California counties',
+              ],
+              phone: '(323) 644-3323',
+              email: '',
+              website: 'anubiscremation.com',
+            },
+          ],
         },
         {
           title: 'Cost Estimates',
