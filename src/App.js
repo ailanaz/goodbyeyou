@@ -3412,9 +3412,7 @@ function CombinedStateDetailPage() {
                   };
                   const stateForm = dispositionFormLinks[hubId];
                   return (
-                  <div className="doula-intro-section">
-                    <h3 className="option-category-title" style={{ marginTop: '24px' }}>The Disposition of Last Remains Declaration</h3>
-                    <p className="doula-intro-description">This is a standalone legal document that allows you to do two specific things: appoint a person (your "agent") to carry out your wishes and state exactly what those wishes are. It is a powerful legal shield because, in many states (like Colorado), it is legally binding and overrides the standard hierarchy of next-of-kin.</p>
+                  <div style={{ marginTop: '24px' }}>
                     <div className={`option-detail${isDispExpanded ? ' option-detail--expanded' : ''}`}>
                       <button
                         className="option-detail-header"
@@ -3423,8 +3421,8 @@ function CombinedStateDetailPage() {
                         onClick={() => setExpandedOptions((prev) => ({ ...prev, [dispKey]: !prev[dispKey] }))}
                       >
                         <div className="option-detail-header-text">
-                          <h4>What it involves</h4>
-                          <p>Appointment of an agent, selection of method, special instructions, and notarization requirements.</p>
+                          <h4>The Disposition of Last Remains Declaration</h4>
+                          <p>This is a standalone legal document that allows you to do two specific things: appoint a person (your "agent") to carry out your wishes and state exactly what those wishes are. It is a powerful legal shield because, in many states (like Colorado), it is legally binding and overrides the standard hierarchy of next-of-kin.</p>
                         </div>
                         <span className="option-detail-toggle" aria-hidden="true">{isDispExpanded ? '\u2212' : '\u2304'}</span>
                       </button>
