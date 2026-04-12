@@ -2781,8 +2781,8 @@ function CombinedStateDetailPage() {
   const allNavSections = [
     'Available Options',
     ...topSections.map((s) => s.title),
-    'Planning Ahead',
-    'Planning Now',
+    'Legal',
+    'Other Resources',
   ];
 
   const scrollToSection = (index) => {
@@ -2965,7 +2965,7 @@ function CombinedStateDetailPage() {
 
               <div className="sdl-section sdl-section--planning-ahead" id={`section-${topSections.length + 1}`}>
                 <div className="sdl-section-header">
-                  <h2>Planning Ahead</h2>
+                  <h2>Legal</h2>
                 </div>
                 {planningRest.map((section) => (
                   <div className="option-category" key={section.title}>
@@ -3021,7 +3021,7 @@ function CombinedStateDetailPage() {
 
               <div className="sdl-section sdl-section--planning-now" id={`section-${topSections.length + 2}`}>
                 <div className="sdl-section-header">
-                  <h2>Planning Now</h2>
+                  <h2>Other Resources</h2>
                 </div>
                 {immediate.sections.map((section) => (
                   <div className="option-category" key={section.title}>
