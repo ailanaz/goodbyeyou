@@ -3390,7 +3390,6 @@ function CombinedStateDetailPage() {
                           <li>Always verify if a doula is comfortable with the specific "Alternative" methods (like NOR or Home Funerals) listed on this site</li>
                           <li>Most doulas in the directory offer a free 15-30 minute "chemistry call" to see if you are a good fit</li>
                         </ul>
-                        <p className="doula-cost-note"><strong>Estimated Cost:</strong> Free to Search</p>
                         <div className="option-detail-links">
                           <a href="https://www.nedalliance.org/find-a-doula" target="_blank" rel="noopener noreferrer" className="option-detail-link">
                             Search the NEDA Directory Here <span className="option-detail-link-agency">National End-of-Life Doula Alliance</span>
