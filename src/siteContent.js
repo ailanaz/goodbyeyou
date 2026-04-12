@@ -128,6 +128,15 @@ export const hubDirectory = [
     definition:
       'Use California Planning for alternative funeral choices, timing, documents, providers, and supporting resources tied to California.',
     tags: ['Aquamation', 'Green burial', 'NOR', 'Tree burial'],
+    costs: {
+      'natural-organic-reduction': { range: '$5,000 - $7,500', includes: 'The reduction process, soil curing, and coordination of soil return or conservation donation.' },
+      'aquamation': { range: '$2,000 - $3,500', includes: 'The resomation process, return of remains, urn, and standard filing support.' },
+      'green-burial': { range: '$4,500 - $9,000', includes: 'Plot, opening and closing fees, biodegradable burial requirements, and conservation or cemetery costs where applicable.' },
+      'burial-at-sea': { range: '$3,000 - $6,000', includes: 'Boat charter, specialized weighted casket or shroud, and required legal filings.' },
+      'whole-body-donation': { range: '$0', includes: 'Most California university programs cover transport, study use, final cremation, and ash return when accepted.' },
+      'cryonics': { range: '$80,000 - $200,000+', includes: 'Standby team mobilization, vitrification, and long-term storage fees.' },
+      'reef-memorials': { range: '$3,000 - $5,000', includes: 'Reef casting, deployment boat trip, and GPS memorial coordinates, in addition to cremation or aquamation costs.' },
+    },
     searchTerms: ['California', 'CA', 'Los Angeles', 'San Francisco', 'Sacramento', 'San Diego'],
     modules: [
       {
@@ -163,15 +172,15 @@ export const hubDirectory = [
         {
           title: 'Availability: Uncommon Service Menu',
           items: [
-            { label: 'Legal Status', description: 'Aquamation is widely available. Green burial and whole-body donation are authorized. Home funeral is permitted with family-directed care. NOR is legal but in-state facilities are not permitted to open until January 1, 2027. California leads the nation in total number of natural burial sites and tree burial forests.' },
-            { label: 'NOR Logistics', description: 'While NOR is legal, in-state facilities are not yet operational. Providers like Earth and Recompose coordinate the legal transport of remains to their hubs in Washington or Nevada as a standard part of their service package for California residents seeking NOR now.' },
-            { label: 'Top Providers', description: 'Earth Funeral uses a proprietary soil transformation process and manages logistics for California residents to their West Coast hub. Forever Fernwood (Mill Valley) is a leader in conservation burial and forest-based interment. Morgan Oaks Eternal Preserve (Lincoln) is a dedicated green burial park focused on land restoration.' },
+            { label: 'Legal Status', description: 'Aquamation, green burial, whole-body donation, and home funeral are all accessible in California. Natural organic reduction is legal and available through specialized provider pathways, and California remains a national leader in natural burial grounds and coastal memorial options.' },
+            { label: 'NOR Logistics', description: 'California families can access soil transformation through providers that coordinate intake, transport, reduction, and soil return or donation. Timing, provider coverage, and final soil-use plans should be confirmed before arrangements are finalized.' },
+            { label: 'Top Providers', description: 'Earth Funeral supports California families seeking soil transformation. Bravo Family Mortuary offers aquamation and green burial preparation in Southern California. Forever Fernwood (Mill Valley) is a leading conservation burial destination, and California universities support major willed-body donation pathways.' },
           ],
         },
         {
           title: 'Explore Options',
           items: [
-            { label: 'Method Deep Dives', description: 'Links to technical descriptions of green burial preparation, aquamation processing, home funeral care, and whole-body donation programs available in California.' },
+            { label: 'Method Deep Dives', description: 'Links to technical descriptions of green burial, conservation burial, aquamation, soil transformation, sea burial, whole-body donation, cryonics, and reef memorial pathways available in California.' },
             { label: 'Environmental & Practical Impact', description: 'Comparative data on environmental footprint, space requirements, and processing timelines for each method.' },
           ],
         },

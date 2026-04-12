@@ -2706,7 +2706,7 @@ function AlternativeFuneralOptionsPage() {
 
 const stateAvailableOptions = {
   illinois: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'aquamation', 'whole-body-donation', 'state-anatomical-boards'],
-  california: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'conservation-burial', 'aquamation', 'natural-organic-reduction', 'direct-nourishment-tree-burial', 'whole-body-donation', 'state-anatomical-boards'],
+  california: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'conservation-burial', 'aquamation', 'natural-organic-reduction', 'burial-at-sea', 'direct-nourishment-tree-burial', 'whole-body-donation', 'state-anatomical-boards', 'cryonics', 'reef-memorials'],
   washington: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'conservation-burial', 'aquamation', 'natural-organic-reduction', 'whole-body-donation', 'state-anatomical-boards'],
   colorado: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'aquamation', 'natural-organic-reduction', 'open-air-funeral-pyre', 'whole-body-donation', 'state-anatomical-boards'],
   oregon: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'conservation-burial', 'aquamation', 'natural-organic-reduction', 'whole-body-donation', 'state-anatomical-boards'],
@@ -2716,12 +2716,156 @@ const stateAvailableOptions = {
   'new-york': ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'aquamation', 'natural-organic-reduction', 'whole-body-donation', 'state-anatomical-boards'],
 };
 
+const stateOptionOverrides = {
+  california: {
+    'natural-organic-reduction': {
+      title: 'Natural Organic Reduction (Soil Transformation)',
+      description:
+        'The body is placed in a specialized vessel with organic materials such as straw, wood chips, and alfalfa, where controlled natural processes transform it into nutrient-rich soil over several weeks.',
+      involves: [
+        'Body placed in a vessel with a specific blend of organic materials',
+        'Controlled decomposition managed by heat, moisture, and airflow',
+        'Results in approximately one cubic yard of nutrient-rich soil',
+        'Soil can be returned to the family or donated to conservation land',
+        'Fully managed by professional soil transformation facilities',
+      ],
+      considerations: [
+        'One of the lowest environmental impacts of all disposition methods',
+        'California law allows the resulting soil to be used on private land with permission',
+        'Higher cost than basic cremation but often comparable to traditional burial',
+        'Longer timeline, typically 45 to 60 days, compared with other methods',
+        'Provider and transport coordination still matters before arrangements are finalized',
+      ],
+    },
+    aquamation: {
+      title: 'Aquamation (Water Cremation)',
+      description:
+        'Technically known as Alkaline Hydrolysis, this process uses water flow, temperature, and alkalinity to accelerate natural decomposition as a gentler alternative to flame-based cremation.',
+      involves: [
+        'Body placed in a stainless steel pressurized vessel',
+        'Solution of 95% water and 5% alkali used to dissolve soft tissue',
+        'Bone fragments are processed into ashes and returned to the family',
+        'Sterile liquid byproduct is safely recycled through local water systems',
+        'Professional handling and filing support coordinated through the provider',
+      ],
+      considerations: [
+        'Legal and widely available throughout California',
+        'Carbon footprint is roughly one tenth that of flame cremation',
+        'No mercury emissions and no fossil fuel combustion',
+        'Results in approximately 20% more ashes than flame cremation',
+        'Families may still want a separate memorial or witness moment',
+      ],
+    },
+    'burial-at-sea': {
+      title: 'Full-Body Sea Burial',
+      description:
+        'California offers a legal pathway for full-body burial in the Pacific Ocean, following EPA and Coast Guard rules for environmental safety, distance from shore, and permanent interment.',
+      involves: [
+        'Body prepared without embalming and placed in a weighted biodegradable shroud or coffin',
+        'Deployment takes place at least 3 nautical miles from shore',
+        'Depth requirements typically exceed 600 feet to support permanent rest',
+        'GPS coordinates can be provided to the family for the burial location',
+        'Arrangement is coordinated through a licensed charter or specialty provider',
+      ],
+      considerations: [
+        'Completely legal in California with proper EPA notification',
+        'Often coordinated through specialized boat charters in ports such as San Pedro, San Diego, or the Bay Area',
+        'Weather conditions and sea state can affect scheduling',
+        'Can be especially meaningful for veterans or those with a strong connection to the ocean',
+        'Full-body sea burial is more logistically involved than ash scattering at sea',
+      ],
+    },
+    'green-burial': {
+      title: 'Green & Conservation Burial',
+      description:
+        'Burial in a natural setting without concrete vaults, metal caskets, or toxic embalming fluids. In California, this ranges from dedicated green sections in cemeteries to protected conservation forests.',
+      involves: [
+        'No embalming or chemical preservation of the body',
+        'Use of a biodegradable shroud, wicker basket, or simple pine box',
+        'Grave is typically dug to a shallower depth to encourage aerobic decomposition',
+        'Grave may be marked with GPS, a natural stone, or a native tree or shrub',
+        'Settings can include dedicated green cemeteries or conservation-focused burial land',
+      ],
+      considerations: [
+        'California has conservation preserves where burial fees help support land protection',
+        'No perpetual lawn-style maintenance in the most natural sites',
+        'One of the most circular and eco-conscious forms of burial',
+        'Lower hardware costs, but California land values can still make the overall cost significant',
+        'Site rules vary between hybrid green sections and dedicated conservation grounds',
+      ],
+    },
+    'whole-body-donation': {
+      title: 'Whole-Body Medical Donation',
+      description:
+        'Donation of the body to a University of California medical school or another research institution to support anatomy education, surgical training, and scientific advancement.',
+      involves: [
+        'Pre-registration with a university willed body program or other approved medical donation program',
+        'Immediate transport to the receiving facility at the time of death',
+        'Body used for anatomy instruction or specialized surgical research',
+        'University or program often arranges cremation after study concludes',
+        'Ashes may be returned to the family after the program, often one to two years later',
+      ],
+      considerations: [
+        'Most programs are no cost to the family when the donor is accepted',
+        'Acceptance is not guaranteed because medical condition, timing, or logistics can disqualify a donation',
+        'A backup plan such as direct cremation is still needed in case of non-acceptance',
+        'This is a highly altruistic pathway with direct impact on future healthcare training',
+        'Requirements differ between university programs, state boards, and private donation organizations',
+      ],
+    },
+    cryonics: {
+      title: 'Cryonics Standby & Preservation',
+      description:
+        'Vitrification and storage of the body at ultra-low temperatures with the intent of possible future revival. California is a major coordination point for cryonics standby teams and preservation planning.',
+      involves: [
+        'Membership or contract with an organization such as Alcor or the Cryonics Institute',
+        'Standby team dispatched to the place of death for immediate cooling and stabilization',
+        'Blood replaced with cryoprotectant solution to limit ice crystal formation',
+        'Long-term storage in liquid nitrogen at a specialized facility',
+        'Advance legal, medical, and financial planning required before death',
+      ],
+      considerations: [
+        'Extremely high cost and often funded through a dedicated life insurance policy',
+        'Requires significant advance planning and rapid response logistics',
+        'California and Arizona remain major regional hubs for this option',
+        'No current scientific proof that revival will become possible',
+        'Families should understand both the speculative nature and the long-term storage commitment',
+      ],
+    },
+    'reef-memorials': {
+      title: 'Living Reef Memorials',
+      description:
+        'This memorial pathway follows cremation or aquamation. Remains are mixed into a pH-neutral reef structure and placed on the ocean floor to support a permanent marine habitat.',
+      involves: [
+        'Ashes are mixed into pH-neutral concrete reef structures',
+        'Families may assist in casting the reef and adding handprints or mementos',
+        'Reef is deployed to an approved site on the ocean floor',
+        'GPS coordinates or location details are provided for the memorial site',
+        'Memorial becomes part of a living reef system for fish and marine life',
+      ],
+      considerations: [
+        'Not a primary disposition method and requires prior cremation or aquamation',
+        'Can actively help rebuild marine habitat',
+        'Provides a permanent underwater memorial with a defined placement location',
+        'Requires coordination with both the cremation provider and the reef memorial operator',
+        'Coastal scheduling, permitting, and weather conditions affect timing',
+      ],
+    },
+  },
+};
+
 function getStateOptionCategories(hubId) {
   const available = stateAvailableOptions[hubId] || [];
+  const overrides = stateOptionOverrides[hubId] || {};
   return optionCategories
     .map((cat) => ({
       ...cat,
-      options: cat.options.filter((opt) => available.includes(opt.id)),
+      options: cat.options
+        .filter((opt) => available.includes(opt.id))
+        .map((opt) => ({
+          ...opt,
+          ...(overrides[opt.id] || {}),
+        })),
     }))
     .filter((cat) => cat.options.length > 0);
 }
