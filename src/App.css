@@ -3052,6 +3052,8 @@ ul { list-style: none; }
     font-size: 0.9rem;
     color: var(--color-text-mid);
     line-height: 1.6;
+    margin-top: 24px;
+    margin-bottom: 24px;
 }
 
 .option-detail-header--static {
