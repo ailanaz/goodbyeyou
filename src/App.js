@@ -3001,6 +3001,7 @@ function CombinedStateDetailPage() {
                       <div className="option-category" key={section.title}>
                         <div className="option-category-header">
                           <h3 className="option-category-title">{section.title}</h3>
+                          {section.intro && <p className="option-category-description">{section.intro}</p>}
                         </div>
                         <div className="option-detail-list">
                           {section.items.map((item) => {
@@ -3038,18 +3039,56 @@ function CombinedStateDetailPage() {
                               <div className="option-detail-header option-detail-header--static">
                                 <div className="option-detail-header-text">
                                   <h4>{item.label}</h4>
-                                  <p>{item.description}</p>
+                                  <p>{item.description}{item.link && (
+                                    <> <a href={item.link} target="_blank" rel="noopener noreferrer">Visit site</a></>
+                                  )}</p>
                                 </div>
                               </div>
                             </div>
                             );
                           })}
                         </div>
+                        {section.attorneys && (
+                          <div className="provider-list">
+                            {section.attorneys.map((attorney) => {
+                              const attKey = attorney.name.replace(/\s+/g, '-').toLowerCase();
+                              const isAttExpanded = !!expandedOptions[attKey];
+                              return (
+                              <div className={`option-detail${isAttExpanded ? ' option-detail--expanded' : ''}`} key={attorney.name}>
+                                <button
+                                  className="option-detail-header"
+                                  type="button"
+                                  aria-expanded={isAttExpanded}
+                                  onClick={() => setExpandedOptions((prev) => ({ ...prev, [attKey]: !prev[attKey] }))}
+                                >
+                                  <div className="option-detail-header-text">
+                                    <h4>{attorney.name}</h4>
+                                    <p>{attorney.focus}</p>
+                                  </div>
+                                  <span className="option-detail-toggle" aria-hidden="true">{isAttExpanded ? '\u2212' : '\u2304'}</span>
+                                </button>
+                                {isAttExpanded && (
+                                <div className="option-detail-body provider-detail-body">
+                                  <div className="provider-contact">
+                                    <p><strong>Location:</strong> {attorney.location}</p>
+                                    <p><strong>Phone:</strong> {attorney.phone}</p>
+                                    <p className="provider-website">
+                                      <strong>Website:</strong>{' '}
+                                      <a href={`https://${attorney.website}`} target="_blank" rel="noopener noreferrer">{attorney.website}</a>
+                                    </p>
+                                  </div>
+                                </div>
+                                )}
+                              </div>
+                              );
+                            })}
+                          </div>
+                        )}
                       </div>
                     ))}
                     {hub.legalResources.links && (
                       <div className="legal-links">
-                        <h3 className="option-category-title">Key Resource Links</h3>
+                        <h3 className="option-category-title">Quick Contact Directory</h3>
                         <div className="legal-links-list">
                           {hub.legalResources.links.map((link) => (
                             <div className="legal-link-item" key={link.label}>

@@ -577,10 +577,89 @@ export const hubDirectory = [
             },
           ],
         },
+        {
+          title: 'Essential Colorado Legal Documents',
+          items: [
+            {
+              label: 'Disposition of Last Remains Declaration (C.R.S. 15-19-102)',
+              description: 'This is the most important document for alternative planning. It is a legally binding form that allows you to name a specific person to carry out your wishes and explicitly mandates methods like "Natural Organic Reduction" or "Aquamation." It overrides the standard next-of-kin priority list.',
+            },
+            {
+              label: 'Designated Beneficiary Agreement (DBA)',
+              description: 'A flexible Colorado-specific tool that allows you to grant a non-relative (like a partner or friend) the legal power to make funeral and estate decisions.',
+            },
+            {
+              label: 'Medical Durable Power of Attorney (MDPOA)',
+              description: 'Appoints a representative to make healthcare and end-of-life medical decisions if you are incapacitated.',
+            },
+          ],
+        },
+        {
+          title: 'Attorneys Specializing in Final Arrangements',
+          intro: 'These Colorado-based firms specialize in Elder Law, Probate, and the Disposition of Last Remains, with specific experience in alternative and green planning.',
+          items: [],
+          attorneys: [
+            {
+              name: 'Braverman Law Group, LLC',
+              focus: 'Leading specialists in Natural Organic Reduction (NOR) estate planning and Green Burial legalities.',
+              phone: '(303) 800-1588',
+              website: 'braverman-law.com',
+              location: '507 Canyon Blvd #203, Boulder, CO 80302',
+            },
+            {
+              name: 'Hammond Law Group',
+              focus: 'Experts in Disposition of Last Remains declarations and multi-generational legacy planning.',
+              phone: '(719) 520-1474',
+              website: 'coloradoestateplan.com',
+              location: '2955 Professional Pl #302, Colorado Springs, CO 80904',
+            },
+            {
+              name: 'Meurer & Potter Law Office',
+              focus: 'Focuses on using the CO Disposition of Last Remains Act to prevent family disputes over alternative wishes.',
+              phone: '(303) 991-3544',
+              website: 'meurerlawoffices.com',
+              location: '5347 S Valentia Way #335, Greenwood Village, CO 80111',
+            },
+            {
+              name: 'Law Office of Byron K. Hammond',
+              focus: 'Specialized focus on customized estate plans and sensitive post-life remembrance arrangements.',
+              phone: '(303) 501-1812',
+              website: 'bkh-law.com',
+              location: '3900 E Mexico Ave #300, Denver, CO 80210',
+            },
+            {
+              name: 'Glatstein & O\'Brien LLP',
+              focus: 'Experts in End-of-Life Directives and navigating the Medical Power of Attorney for complex cases.',
+              phone: '(303) 731-3986',
+              website: 'denverprobatelaw.com',
+              location: '2696 S Colorado Blvd #350, Denver, CO 80222',
+            },
+          ],
+        },
+        {
+          title: 'Consumer Advocacy and Regulatory Resources',
+          items: [
+            {
+              label: 'Colorado Division of Professions and Occupations (DPO)',
+              description: 'As of 2026, all funeral directors and crematories must hold state-regulated licenses. You can verify a license or file a complaint through the DPO Portal.',
+              link: 'https://dpo.colorado.gov/',
+            },
+            {
+              label: 'Funeral Consumer\'s Alliance of Colorado (FCAC)',
+              description: 'A non-profit dedicated to protecting a consumer\'s right to choose a meaningful, dignified, and affordable final arrangement.',
+            },
+            {
+              label: 'Colorado Division of Insurance',
+              description: 'Use this to verify "Pre-Need" funeral contracts and ensure your prepaid funds are being held in a state-regulated trust.',
+            },
+          ],
+        },
       ],
       links: [
+        { label: 'Verify a Provider License', agency: 'DORA License Lookup', url: 'https://dpo.colorado.gov/' },
+        { label: 'Legal Aid for Seniors', agency: 'Colorado Legal Services', url: 'https://www.coloradolegalservices.org/' },
+        { label: 'Medical Aid in Dying Info', agency: 'Compassion & Choices Colorado', url: 'https://www.compassionandchoices.org/' },
         { label: 'File a Complaint', agency: 'CO Division of Professions & Occupations', url: 'https://dpo.colorado.gov/' },
-        { label: 'Verify a License', agency: 'CO Department of Regulatory Agencies', url: 'https://apps.colorado.gov/dora/licensing/Lookup/LicenseLookup.aspx' },
         { label: 'Pre-Need Consumer Tips', agency: 'CO Division of Insurance', url: 'https://doi.colorado.gov/' },
         { label: 'DBA Template', agency: 'CO Gerontological Society', url: 'https://www.senioranswers.org/' },
         { label: 'The Funeral Rule Guide', agency: 'Federal Trade Commission (FTC)', url: 'https://www.ftc.gov/business-guidance/resources/complying-funeral-rule' },
