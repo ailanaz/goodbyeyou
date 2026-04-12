@@ -2460,10 +2460,10 @@ function Footer() {
             <h4>GoodbyeYou</h4>
             <ul>
               <li>
-                <Link to="/alternative-funeral-options">Alternative Funeral Options</Link>
+                <Link to="/exploreoptions">Explore Alternative Options</Link>
               </li>
               <li>
-                <Link to="/exploreoptions">Explore Alternative Options</Link>
+                <Link to="/alternative-funeral-options">State Search</Link>
               </li>
               <li>
                 <Link to="/after-death-steps">Arrangements Checklist</Link>
