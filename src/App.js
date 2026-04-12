@@ -3318,6 +3318,54 @@ function CombinedStateDetailPage() {
                       })}
                     </div>
                   )}
+                  {section.providerCategories && section.providerCategories.map((cat) => (
+                    <div className="provider-category" key={cat.category}>
+                      <h3 className="option-category-title" style={{ marginTop: '24px' }}>{cat.category}</h3>
+                      <div className="provider-list">
+                        {cat.providers.map((provider) => {
+                          const provKey = `cat-${provider.name.replace(/\s+/g, '-').toLowerCase()}`;
+                          const isProvExpanded = !!expandedOptions[provKey];
+                          return (
+                          <div className={`option-detail${isProvExpanded ? ' option-detail--expanded' : ''}`} key={provider.name}>
+                            <button
+                              className="option-detail-header"
+                              type="button"
+                              aria-expanded={isProvExpanded}
+                              onClick={() => setExpandedOptions((prev) => ({ ...prev, [provKey]: !prev[provKey] }))}
+                            >
+                              <div className="option-detail-header-text">
+                                <h4>{provider.name}</h4>
+                                <p>{provider.description}</p>
+                              </div>
+                              <span className="option-detail-toggle" aria-hidden="true">{isProvExpanded ? '\u2212' : '\u2304'}</span>
+                            </button>
+                            {isProvExpanded && (
+                            <div className="option-detail-body provider-detail-body">
+                              <p className="provider-services"><strong>Services:</strong> {provider.services}</p>
+                              <div className="provider-contact">
+                                {provider.locations.map((loc) => (
+                                  <p key={loc} className="provider-location">{loc}</p>
+                                ))}
+                                {provider.phone && <p className="provider-phone"><strong>Phone:</strong> {provider.phone}</p>}
+                                {provider.email && <p className="provider-email"><strong>Email:</strong> {provider.email}</p>}
+                                {provider.website && (
+                                  <p className="provider-website">
+                                    <strong>Website:</strong>{' '}
+                                    <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer">{provider.website}</a>
+                                  </p>
+                                )}
+                                {provider.costEstimate && (
+                                  <p className="provider-cost"><strong>Cost Estimate:</strong> {provider.costEstimate}</p>
+                                )}
+                              </div>
+                            </div>
+                            )}
+                          </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
                   {section.attorneys && (
                     <div className="provider-list">
                       <h3 className="option-category-title" style={{ marginTop: '24px' }}>Attorneys Specializing in Final Arrangements</h3>
