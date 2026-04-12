@@ -2886,7 +2886,7 @@ function CombinedStateDetailPage() {
                 {hub.extras && hub.extras.length > 0 && (
                   <div className="option-category">
                     <div className="option-category-header">
-                      <h3 className="option-category-title">Additional Options in {hub.region}</h3>
+                      <h3 className="option-category-title">Other Service Options</h3>
                     </div>
                     <div className="option-detail-list">
                       {hub.extras.map((extra) => {
