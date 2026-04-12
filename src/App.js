@@ -3357,7 +3357,7 @@ function CombinedStateDetailPage() {
                   const isDoulaExpanded = !!expandedOptions[doulaKey];
                   return (
                   <div className="doula-intro-section">
-                    <h3 className="doula-intro-title">End-of-Life Doulas: Compassionate Support for the Final Transition</h3>
+                    <h3 className="option-category-title" style={{ marginTop: '24px' }}>End-of-Life Doulas</h3>
                     <p className="doula-intro-description">An End-of-Life Doula (also known as a death doula or death midwife) is a non-medical professional trained to provide emotional, spiritual, and physical support to individuals and their families during the dying process. While hospice handles the medical clinical care, a doula fills the gap by providing continuous presence, advocacy, and practical planning.</p>
                     <h4 className="doula-purpose-title">Their Purpose:</h4>
                     <p className="doula-intro-description">The primary goal of a doula is to "normalize" death and help the dying individual maintain agency over their final days. They assist in creating a "sacred space," helping families navigate the logistics of alternative after-death care, and ensuring that the person's final wishes - whether they involve a home funeral, natural burial, or organic reduction - are honored with dignity.</p>
