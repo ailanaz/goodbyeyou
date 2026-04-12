@@ -666,30 +666,8 @@ export const hubDirectory = [
       ],
     },
     immediate: {
-      intro: 'Navigate alternative options and state specific resources needed for a recent death\'s service plan.',
-      sections: [
-        {
-          title: 'Service Status & Authority',
-          items: [
-            { label: 'Existing Plan', description: 'Instructions for presenting appointment of agent forms to medical facilities in Colorado.' },
-            { label: 'No Existing Plan', description: 'Priority list of legal next-of-kin authorized to choose an uncommon service path in Colorado.' },
-          ],
-        },
-        {
-          title: 'The 24-Hour Sequence',
-          items: [
-            { label: 'Mandatory Actions', description: 'First steps for pronouncement and official release of the body in Colorado.' },
-            { label: 'Initial Contacts', description: 'Who must be notified immediately - hospice, doctor, or medical examiner depending on circumstances.' },
-          ],
-        },
-        {
-          title: 'Paperwork & Deadlines',
-          items: [
-            { label: 'Critical Filing', description: 'Mandatory timelines for filing the death certificate and burial-transit permits in Colorado.' },
-            { label: 'Official Resources', description: 'Contact information for the local registrar or coroner to resolve logistical delays.' },
-          ],
-        },
-      ],
+      intro: '',
+      sections: [],
     },
   },
   {
