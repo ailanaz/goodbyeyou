@@ -290,8 +290,11 @@ export const hubDirectory = [
       'aquamation': { range: '$2,200 - $3,700', includes: 'The alkaline hydrolysis process, return of remains (similar to ashes), and basic transportation.' },
       'green-burial': { range: '$4,000 - $8,500', includes: 'Burial plot, opening/closing of the grave, and perpetual care. Lower end for simple meadows; higher for premium groves.' },
       'conservation-burial': { range: '$5,300 - $6,500', includes: 'Burial in a protected land trust; a portion of the fee typically goes directly to land preservation.' },
-      'open-air-funeral-pyre': { range: '$500 - $800', includes: 'Suggested donation. Covers wood, fire department presence, and body care (specifically at Crestone).' },
+      'open-air-funeral-pyre': { range: '$500 - $800', includes: 'Suggested donation for the pyre ceremony itself; transportation and separate body preparation costs are usually additional.' },
       'home-funeral': { range: '$500 - $2,000', includes: 'Costs for dry ice, cooling boards, and required permits. Higher range if hiring a Home Funeral Guide.' },
+      'home-burial': { range: '$100 - $1,000', includes: 'Recording fees, permit filings, and site documentation; grave digging, containers, and markers are usually separate.' },
+      'whole-body-donation': { range: '$0', includes: 'Most accepted programs cover transport, use of remains, final cremation, and return of ashes.' },
+      'medical-aid-in-dying': { range: '$500 - $4,000', includes: 'Medication and provider consultations; does not include funeral, cremation, or burial costs afterward.' },
       'direct-cremation': { range: '$995 - $1,800', includes: 'No viewing or service; body goes directly to the crematory. The baseline for comparison.' },
     },
     searchTerms: ['Colorado', 'CO', 'Denver', 'Boulder', 'Colorado Springs', 'Crestone'],
@@ -329,9 +332,9 @@ export const hubDirectory = [
         {
           title: 'Availability: Uncommon Service Menu',
           items: [
-            { label: 'Legal Status', description: 'NOR (human composting) and aquamation are both fully legal. Colorado was the second state to legalize human composting. It is also the only state that legally permits open-air cremation, specifically in Crestone, though restricted to local residents. Colorado ties for the highest number of aquamation providers in the country and has a very high density of green burial grounds.' },
+            { label: 'Legal Status', description: 'NOR (human composting) and aquamation are both fully legal in Colorado. The state also allows private-property burial in qualifying circumstances, and it is the only state with a legal open-air pyre program through the Crestone End of Life Project under highly specific local rules. Colorado continues to have one of the country’s strongest concentrations of aquamation and green burial options.' },
             { label: 'NOR Logistics', description: 'Fully operational in-state. Residents have local access to NOR and aquamation without the need for out-of-state transport.' },
-            { label: 'Top Providers', description: 'The Natural Funeral (Lafayette) is a holistic provider offering both aquamation and NOR in-state. Crestone End of Life Project manages the nation\'s only legal open-air cremation site. Colorado Burial Preserve (Florence) is a green-only cemetery focused on high-plains conservation.' },
+            { label: 'Top Providers', description: 'The Natural Funeral (Lafayette) is a holistic provider offering both aquamation and NOR in-state. Crestone End of Life Project manages the nation\'s only legal open-air pyre site under local eligibility rules. Colorado Burial Preserve (Florence) is a green-only cemetery focused on high-plains conservation, and Colorado medical donation programs offer strong whole-body donation pathways.' },
           ],
         },
         {
@@ -364,7 +367,7 @@ export const hubDirectory = [
             },
             {
               name: 'Crestone End of Life Project (CEOLP)',
-              description: 'A unique community-based organization that facilitates open-air pyre cremations. Note that these services are primarily for residents of the Crestone/Saguache County area.',
+              description: 'A unique community-based organization that facilitates open-air pyre cremations and natural burial under CEOLP\'s local registration rules. Current participation is limited and should be confirmed directly before planning.',
               services: 'Open-air Cremation and End-of-Life education.',
               locations: [
                 'PO Box 1238, Crestone, CO 81131',
@@ -517,6 +520,11 @@ export const hubDirectory = [
           label: 'Medical Durable Power of Attorney (MDPOA)',
           description: 'This document appoints the person who can make healthcare and end-of-life medical decisions if you cannot speak for yourself. It is separate from after-death disposition authority, but it is often part of the same planning process.',
           expandable: false,
+        },
+        {
+          label: 'Medical Aid in Dying Information',
+          description: 'Colorado\'s End-of-Life Options Act is a pre-death medical law rather than a funeral rule, but it can shape timing, location, witnesses, and immediate pickup plans after a death occurs.',
+          expandable: false,
           links: [
             { label: 'Medical Aid in Dying Info', agency: 'Compassion & Choices Colorado', url: 'https://www.compassionandchoices.org/' },
           ],
@@ -536,12 +544,13 @@ export const hubDirectory = [
         },
         {
           label: 'Licensing and Oversight (Colorado DPO)',
-          description: 'Colorado now has a more active oversight structure for funeral, cremation, and natural reduction services. The Colorado Division of Professions and Occupations is the main regulator for licensing, inspection, and complaints.',
+          description: 'Colorado now regulates funeral, cremation, and natural reduction work through the Office of Funeral and Mortuary Science Services within DPO. The current rollout affects both family logistics after a death and how providers are licensed and supervised.',
           involves: [
-            'Licensing rules now matter more when choosing a provider, especially for newer or specialized services.',
-            'You can verify whether a provider is properly licensed before committing.',
-            'The state can receive complaints and investigate misconduct or compliance problems.',
-            'This is the right place to check oversight information when something feels unclear or concerning.',
+            'Colorado rules require embalming or refrigeration when burial or cremation will not happen within 24 hours after death.',
+            'The Office of Funeral and Mortuary Science Services is the state home for provider oversight, complaints, and compliance information.',
+            'DPO has opened licensure for funeral directors, embalmers, cremationists, and natural reductionists as part of the new regulatory framework.',
+            'According to current DPO guidance, practitioners can continue working during the transition, but individual licensure becomes mandatory on January 1, 2027.',
+            'Families can use DORA tools to verify provider credentials and file complaints when something feels unclear or concerning.',
           ],
           links: [
             { label: 'Verify a Provider License', agency: 'DORA License Lookup', url: 'https://dpo.colorado.gov/' },

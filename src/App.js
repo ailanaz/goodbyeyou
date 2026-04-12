@@ -1063,6 +1063,26 @@ const optionCategories = [
           'Certification standards are updated periodically',
         ],
       },
+      {
+        id: 'medical-aid-in-dying',
+        title: 'Medical Aid in Dying (MAiD)',
+        description:
+          'A legal end-of-life option in some states for terminally ill, mentally capable adults to request and self-administer prescribed medication. This is not a disposition method, but it can shape timing, location, and after-death planning.',
+        involves: [
+          'Eligibility determined under the law of the state where the person resides',
+          'Requests and medical confirmation completed before medication is prescribed',
+          'Medication must be self-administered by the person receiving it',
+          'Location, witnesses, hospice coordination, and after-death pickup should be planned in advance',
+          'Families often pair this choice with a clear disposition plan and provider contacts',
+        ],
+        considerations: [
+          'Not legal in every state',
+          'Provider, hospice, and pharmacy participation varies',
+          'This is a pre-death medical option rather than a funeral service',
+          'It requires advance planning and careful attention to timing and paperwork',
+          'Families should understand how it affects immediate after-death logistics',
+        ],
+      },
     ],
   },
 ];
@@ -2708,7 +2728,7 @@ const stateAvailableOptions = {
   illinois: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'aquamation', 'whole-body-donation', 'state-anatomical-boards'],
   california: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'conservation-burial', 'aquamation', 'natural-organic-reduction', 'burial-at-sea', 'direct-nourishment-tree-burial', 'whole-body-donation', 'state-anatomical-boards', 'cryonics', 'reef-memorials'],
   washington: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'conservation-burial', 'aquamation', 'natural-organic-reduction', 'whole-body-donation', 'state-anatomical-boards'],
-  colorado: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'aquamation', 'natural-organic-reduction', 'open-air-funeral-pyre', 'whole-body-donation', 'state-anatomical-boards'],
+  colorado: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'home-burial', 'aquamation', 'natural-organic-reduction', 'open-air-funeral-pyre', 'whole-body-donation', 'state-anatomical-boards', 'medical-aid-in-dying'],
   oregon: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'conservation-burial', 'aquamation', 'natural-organic-reduction', 'whole-body-donation', 'state-anatomical-boards'],
   vermont: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'conservation-burial', 'natural-organic-reduction', 'whole-body-donation', 'state-anatomical-boards'],
   minnesota: ['direct-cremation', 'immediate-burial', 'home-funeral', 'green-burial', 'aquamation', 'natural-organic-reduction', 'whole-body-donation', 'state-anatomical-boards'],
@@ -2849,6 +2869,84 @@ const stateOptionOverrides = {
         'Provides a permanent underwater memorial with a defined placement location',
         'Requires coordination with both the cremation provider and the reef memorial operator',
         'Coastal scheduling, permitting, and weather conditions affect timing',
+      ],
+    },
+  },
+  colorado: {
+    'whole-body-donation': {
+      title: 'Whole-Body Medical Donation',
+      description:
+        'Permanent donation of the body to a medical school or research institution for anatomical study, surgical training, or scientific research. In Colorado, families often use university programs or private organizations such as Science Care.',
+      involves: [
+        'Pre-registration with a willed body program or research organization',
+        'Immediate transport from the place of death to the receiving facility',
+        'Use of the remains for medical education or research, often for 6 months to 2 years',
+        'Final cremation performed by the institution after the program concludes',
+        'Ashes may be returned to the family or placed in the program’s memorial setting',
+      ],
+      considerations: [
+        'Often a no-cost option for families when the donor is accepted',
+        'Not every donor is accepted at the time of death because infectious disease, trauma, body condition, or timing can disqualify a donation',
+        'A backup plan such as direct cremation is still necessary in case the donation is declined',
+        'This path offers a legacy of supporting future medical training and life-saving procedures',
+        'Requirements differ between university programs, anatomical boards, and private donation organizations',
+      ],
+    },
+    'home-burial': {
+      title: 'Private Property (Backyard) Burial',
+      description:
+        'Colorado is one of the few states that allows burial on private land outside of a formal cemetery, making it possible for some families with qualifying property to create a permanent burial place at home.',
+      involves: [
+        'Burial takes place on privately owned land without a vault or conventional cemetery requirement unless a local rule says otherwise',
+        'Exact grave-site latitude and longitude should be documented',
+        'Burial must be recorded with the county clerk and recorder within 30 days',
+        'A burial permit and final disposition authorization still need to be completed',
+        'Families are responsible for ongoing care, site documentation, and future disclosure tied to the property',
+      ],
+      considerations: [
+        'Colorado law allows private-land burial, but zoning, HOA rules, or local land-use restrictions may still block it',
+        'The burial site must be disclosed if the property is later sold',
+        'A recorded burial can affect resale value, financing, or buildability of that area',
+        'This option offers privacy and avoids perpetual-care cemetery fees',
+        'Families should confirm both county-level requirements and practical access before choosing this path',
+      ],
+    },
+    'open-air-funeral-pyre': {
+      title: 'Open-Air Pyre (Crestone Model)',
+      description:
+        'Colorado is home to the country’s only legal open-air pyre program, operated through the Crestone End of Life Project in Saguache County as a highly limited, ritual-centered cremation pathway.',
+      involves: [
+        'Body is placed on a traditional wooden pyre under the open sky',
+        'Family and community may participate in the ceremonial lighting and vigil',
+        'Remains are reduced through natural fire to bone fragments and ash',
+        'Process is coordinated and overseen by the Crestone End of Life Project',
+        'Advance transport, registration, and body-preparation planning are usually required',
+      ],
+      considerations: [
+        'Current CEOLP participation rules are limited and should be confirmed directly before planning',
+        'Transportation to the Crestone or Moffat area in Saguache County is still required',
+        'Ceremonies are weather-dependent and cannot be scheduled on an ordinary crematory timeline',
+        'This path is deeply ritualistic and communal compared with conventional cremation',
+        'Because availability is narrow, families should always keep a backup disposition plan',
+      ],
+    },
+    'medical-aid-in-dying': {
+      title: 'Medical Aid in Dying (MAiD)',
+      description:
+        'Under Colorado’s End-of-Life Options Act, an eligible terminally ill, mentally capable adult Colorado resident may request and self-administer medication to end life in a peaceful manner. While this is a pre-death medical choice, it often determines the timing and logistics of the final arrangements.',
+      involves: [
+        'Two oral requests are made to an attending provider at least 7 days apart unless a shorter prognosis exception applies',
+        'One written request is signed and witnessed by two adults',
+        'An attending provider and a consulting provider confirm terminal illness, prognosis, and eligibility',
+        'The person must be able to self-administer and ingest the medication',
+        'Families usually coordinate the place of death, hospice involvement, and after-death pickup in advance',
+      ],
+      considerations: [
+        'Available only to eligible adult Colorado residents under state law',
+        'Physician, hospice, pharmacy, and insurance participation varies',
+        'Colorado law lists the terminal illness, not suicide, on the death certificate',
+        'Advance coordination with a funeral home or chosen provider is important because transport often needs to happen promptly after death',
+        'Careful planning is still needed around witnesses, records, medication timing, and backup support',
       ],
     },
   },
