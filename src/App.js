@@ -3035,59 +3035,53 @@ function CombinedStateDetailPage() {
                 </div>
                 {hub.legalResources && (
                   <>
-                    {hub.legalResources.sections.map((section) => (
-                      <div className="option-category" key={section.title}>
-                        <div className="option-category-header">
-                          <h3 className="option-category-title">{section.title}</h3>
-                          {section.intro && <p className="option-category-description">{section.intro}</p>}
-                        </div>
-                        <div className="option-detail-list">
-                          {section.items.map((item) => {
-                            if (item.involves) {
-                              const itemKey = `legal-${item.label.replace(/\s+/g, '-').toLowerCase()}`;
-                              const isItemExpanded = !!expandedOptions[itemKey];
-                              return (
-                              <div className={`option-detail${isItemExpanded ? ' option-detail--expanded' : ''}`} key={item.label}>
-                                <button
-                                  className="option-detail-header"
-                                  type="button"
-                                  aria-expanded={isItemExpanded}
-                                  onClick={() => setExpandedOptions((prev) => ({ ...prev, [itemKey]: !prev[itemKey] }))}
-                                >
-                                  <div className="option-detail-header-text">
-                                    <h4>{item.label}</h4>
-                                    <p>{item.description}</p>
-                                  </div>
-                                  <span className="option-detail-toggle" aria-hidden="true">{isItemExpanded ? '\u2212' : '\u2304'}</span>
-                                </button>
-                                {isItemExpanded && (
-                                <div className="option-detail-body">
-                                  <ul className="option-detail-involves">
-                                    {item.involves.map((point) => (
-                                      <li key={point}>{point}</li>
-                                    ))}
-                                  </ul>
-                                </div>
-                                )}
+                    <div className="option-detail-list">
+                      {hub.legalResources.items.map((item) => {
+                        if (item.involves) {
+                          const itemKey = `legal-${item.label.replace(/\s+/g, '-').toLowerCase()}`;
+                          const isItemExpanded = !!expandedOptions[itemKey];
+                          return (
+                          <div className={`option-detail${isItemExpanded ? ' option-detail--expanded' : ''}`} key={item.label}>
+                            <button
+                              className="option-detail-header"
+                              type="button"
+                              aria-expanded={isItemExpanded}
+                              onClick={() => setExpandedOptions((prev) => ({ ...prev, [itemKey]: !prev[itemKey] }))}
+                            >
+                              <div className="option-detail-header-text">
+                                <h4>{item.label}</h4>
+                                <p>{item.description}{item.link && (
+                                  <> <a href={item.link} target="_blank" rel="noopener noreferrer">Visit site</a></>
+                                )}</p>
                               </div>
-                              );
-                            }
-                            return (
-                            <div className="option-detail" key={item.label}>
-                              <div className="option-detail-header option-detail-header--static">
-                                <div className="option-detail-header-text">
-                                  <h4>{item.label}</h4>
-                                  <p>{item.description}{item.link && (
-                                    <> <a href={item.link} target="_blank" rel="noopener noreferrer">Visit site</a></>
-                                  )}</p>
-                                </div>
-                              </div>
+                              <span className="option-detail-toggle" aria-hidden="true">{isItemExpanded ? '\u2212' : '\u2304'}</span>
+                            </button>
+                            {isItemExpanded && (
+                            <div className="option-detail-body">
+                              <ul className="option-detail-involves">
+                                {item.involves.map((point) => (
+                                  <li key={point}>{point}</li>
+                                ))}
+                              </ul>
                             </div>
-                            );
-                          })}
+                            )}
+                          </div>
+                          );
+                        }
+                        return (
+                        <div className="option-detail" key={item.label}>
+                          <div className="option-detail-header option-detail-header--static">
+                            <div className="option-detail-header-text">
+                              <h4>{item.label}</h4>
+                              <p>{item.description}{item.link && (
+                                <> <a href={item.link} target="_blank" rel="noopener noreferrer">Visit site</a></>
+                              )}</p>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                        );
+                      })}
+                    </div>
                     {hub.legalResources.links && (
                       <div className="legal-links">
                         <h3 className="option-category-title">Quick Contact Directory</h3>
