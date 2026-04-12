@@ -3054,6 +3054,33 @@ ul { list-style: none; }
     cursor: default;
 }
 
+.option-cost-estimate {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border-light);
+}
+
+.option-cost-estimate h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 6px;
+}
+
+.option-cost-range {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+}
+
+.option-cost-includes {
+    font-size: 0.85rem;
+    color: var(--color-text-mid);
+    line-height: 1.6;
+}
+
 .option-detail-involves {
     list-style: none;
     padding: 0;

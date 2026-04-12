@@ -2771,7 +2771,7 @@ function CombinedStateDetailPage() {
   const stateOptions = getStateOptionCategories(hubId);
 
   const topSections = planning.sections.filter((s) =>
-    s.title.includes('Provider Directory') || s.title.includes('Cost Estimates')
+    s.title.includes('Provider Directory')
   );
 
   const planningRest = planning.sections.filter((s) =>
@@ -2880,6 +2880,13 @@ function CombinedStateDetailPage() {
                                 </ul>
                               </div>
                             </div>
+                            {hub.costs && hub.costs[option.id] && (
+                              <div className="option-cost-estimate">
+                                <h4>Estimated Cost</h4>
+                                <p className="option-cost-range">{hub.costs[option.id].range}</p>
+                                <p className="option-cost-includes">{hub.costs[option.id].includes}</p>
+                              </div>
+                            )}
                           </div>
                           )}
                         </div>

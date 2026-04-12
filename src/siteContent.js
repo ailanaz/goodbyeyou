@@ -361,6 +361,15 @@ export const hubDirectory = [
     definition:
       'Use Colorado Planning for alternative funeral choices, timing, documents, providers, and supporting resources tied to Colorado.',
     tags: ['NOR', 'Aquamation', 'Open-air pyre', 'Green burial'],
+    costs: {
+      'natural-organic-reduction': { range: '$6,200 - $7,500', includes: 'The 30-60 day reduction process, soil curing, and a portion of soil returned to the family or donated.' },
+      'aquamation': { range: '$2,200 - $3,700', includes: 'The alkaline hydrolysis process, return of remains (similar to ashes), and basic transportation.' },
+      'green-burial': { range: '$4,000 - $8,500', includes: 'Burial plot, opening/closing of the grave, and perpetual care. Lower end for simple meadows; higher for premium groves.' },
+      'conservation-burial': { range: '$5,300 - $6,500', includes: 'Burial in a protected land trust; a portion of the fee typically goes directly to land preservation.' },
+      'open-air-funeral-pyre': { range: '$500 - $800', includes: 'Suggested donation. Covers wood, fire department presence, and body care (specifically at Crestone).' },
+      'home-funeral': { range: '$500 - $2,000', includes: 'Costs for dry ice, cooling boards, and required permits. Higher range if hiring a Home Funeral Guide.' },
+      'direct-cremation': { range: '$995 - $1,800', includes: 'No viewing or service; body goes directly to the crematory. The baseline for comparison.' },
+    },
     searchTerms: ['Colorado', 'CO', 'Denver', 'Boulder', 'Colorado Springs', 'Crestone'],
     modules: [
       {
