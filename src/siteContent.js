@@ -103,6 +103,16 @@ export const hubDirectory = [
               email: '',
               website: 'anubiscremation.com',
             },
+            {
+              name: 'Life\'s Plan Inc.',
+              description: 'Chicago-area coordination for organ donation and family-led home vigils.',
+              services: 'Organ donation coordination, family-led home vigils, and comprehensive planning.',
+              locations: ['Chicago, IL and surrounding areas'],
+              phone: '(630) 628-7189',
+              email: '',
+              website: 'lifesplaninc.org',
+              costEstimate: '$1,000 - $3,200 for comprehensive planning and bedside presence.',
+            },
           ],
         },
         {
@@ -129,10 +139,14 @@ export const hubDirectory = [
       'Use California Planning for alternative funeral choices, timing, documents, providers, and supporting resources tied to California.',
     tags: ['Aquamation', 'Green burial', 'NOR', 'Tree burial'],
     costs: {
+      'direct-cremation': { range: '$900 - $1,900', includes: 'Transport, the cremation process, a basic urn, and the mandatory California state regulatory fee.' },
+      'home-funeral': { range: '$500 - $2,500', includes: 'Dry ice, local permits, and specialized transportation; the higher end can include a home funeral guide or consultant.' },
       'natural-organic-reduction': { range: '$5,000 - $7,500', includes: 'The reduction process, soil curing, and coordination of soil return or conservation donation.' },
       'aquamation': { range: '$2,000 - $3,500', includes: 'The resomation process, return of remains, urn, and standard filing support.' },
-      'green-burial': { range: '$4,500 - $9,000', includes: 'Plot, opening and closing fees, biodegradable burial requirements, and conservation or cemetery costs where applicable.' },
+      'green-burial': { range: '$4,500 - $8,000', includes: 'The burial plot, opening and closing labor fees, and a basic biodegradable shroud or casket.' },
+      'conservation-burial': { range: '$6,000 - $11,000', includes: 'Conservation land burial fees, opening and closing, and the long-term stewardship endowment or land-protection contribution.' },
       'burial-at-sea': { range: '$3,000 - $6,000', includes: 'Boat charter, specialized weighted casket or shroud, and required legal filings.' },
+      'direct-nourishment-tree-burial': { range: '$5,500 - $9,500', includes: 'The burial plot, nutrient kit, sapling, and initial arboricultural care.' },
       'whole-body-donation': { range: '$0', includes: 'Most California university programs cover transport, study use, final cremation, and ash return when accepted.' },
       'cryonics': { range: '$80,000 - $200,000+', includes: 'Standby team mobilization, vitrification, and long-term storage fees.' },
       'reef-memorials': { range: '$3,000 - $5,000', includes: 'Reef casting, deployment boat trip, and GPS memorial coordinates, in addition to cremation or aquamation costs.' },
@@ -187,6 +201,18 @@ export const hubDirectory = [
         {
           title: 'Provider Directory',
           items: [],
+          providers: [
+            {
+              name: 'Sacred Crossings',
+              description: 'Home Funerals, Conscious Dying, and full-body sea burial coordination.',
+              services: 'Home Funerals, Conscious Dying, and full-body sea burial coordination.',
+              locations: ['Los Angeles, CA'],
+              phone: '(310) 868-2444',
+              email: '',
+              website: 'sacredcrossings.com',
+              costEstimate: '$1,500 - $5,000 for full-service packages; $100 - $200 per hour for consultations.',
+            },
+          ],
         },
         {
           title: 'Cost Estimates',
@@ -261,6 +287,18 @@ export const hubDirectory = [
         {
           title: 'Provider Directory',
           items: [],
+          providers: [
+            {
+              name: 'A Sacred Moment (Char Barrett)',
+              description: 'PNW leaders in Home Funerals, Green Burial, and coordinating with NOR facilities.',
+              services: 'Home Funerals, Green Burial, and coordinating with NOR facilities.',
+              locations: ['Serving Washington statewide'],
+              phone: '(425) 316-8290',
+              email: '',
+              website: 'asacredmoment.com',
+              costEstimate: '$1,200 - $4,000 for full-service vigil support.',
+            },
+          ],
         },
         {
           title: 'Cost Estimates',
@@ -644,6 +682,18 @@ export const hubDirectory = [
         {
           title: 'Provider Directory',
           items: [],
+          providers: [
+            {
+              name: 'The Peaceful Presence Project',
+              description: 'Sliding-scale services focused on equity, advance care planning, and rural support.',
+              services: 'Sliding-scale end-of-life support, advance care planning, and rural outreach.',
+              locations: ['Serving Oregon statewide'],
+              phone: '(541) 583-2292',
+              email: '',
+              website: 'thepeacefulpresenceproject.org',
+              costEstimate: 'Sliding Scale ($35 - $75/hr); Full packages range $600 - $2,900.',
+            },
+          ],
         },
         {
           title: 'Cost Estimates',
@@ -718,6 +768,18 @@ export const hubDirectory = [
         {
           title: 'Provider Directory',
           items: [],
+          providers: [
+            {
+              name: 'Lindsey Warren Doula Services',
+              description: 'UVM-certified, specialized in green burial, shrouding, and Medical Aid in Dying (MAiD) support.',
+              services: 'Green burial, shrouding, and Medical Aid in Dying (MAiD) support.',
+              locations: ['Serving Vermont statewide'],
+              phone: '(802) 498-5700',
+              email: '',
+              website: 'lindseywarrendoula.com',
+              costEstimate: '$700 - $2,500; Highly personalized for forest burial traditions.',
+            },
+          ],
         },
         {
           title: 'Cost Estimates',
@@ -792,6 +854,18 @@ export const hubDirectory = [
         {
           title: 'Provider Directory',
           items: [],
+          providers: [
+            {
+              name: 'Minnesota Death Collaborative',
+              description: 'A network of practitioners focused on the "5 Domains of Life" and sacred passage.',
+              services: 'End-of-life planning, legacy projects, and sacred passage coordination.',
+              locations: ['Minneapolis-St. Paul Metro and statewide'],
+              phone: '(612) 799-6782 (Befriending Death)',
+              email: '',
+              website: 'mndeathcollaborative.org',
+              costEstimate: '$800 - $3,000 depending on the complexity of legacy projects.',
+            },
+          ],
         },
         {
           title: 'Cost Estimates',
@@ -866,6 +940,18 @@ export const hubDirectory = [
         {
           title: 'Provider Directory',
           items: [],
+          providers: [
+            {
+              name: 'Sacred Infinity (Amanda Reams)',
+              description: 'End-of-life education, death midwifery, and southern green burial support.',
+              services: 'End-of-life education, death midwifery, and green burial support.',
+              locations: ['Serving Georgia statewide'],
+              phone: '(678) 993-3331',
+              email: '',
+              website: 'sacredinfinity.net',
+              costEstimate: '$800 - $2,800; Hourly rates typically start at $75.',
+            },
+          ],
         },
         {
           title: 'Cost Estimates',
@@ -940,6 +1026,18 @@ export const hubDirectory = [
         {
           title: 'Provider Directory',
           items: [],
+          providers: [
+            {
+              name: 'Rachel Cao (NYC End-of-Life Doula)',
+              description: 'Serving the five boroughs with virtual and in-person ritual and legacy support.',
+              services: 'Virtual and in-person ritual planning, legacy support, and end-of-life doula services.',
+              locations: ['New York City (all five boroughs)'],
+              phone: '(646) 926-4457',
+              email: '',
+              website: 'rachelendoflifedoula.com',
+              costEstimate: '$2,000 - $5,500 for urban-intensive support packages.',
+            },
+          ],
         },
         {
           title: 'Cost Estimates',

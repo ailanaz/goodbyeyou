@@ -2738,6 +2738,44 @@ const stateAvailableOptions = {
 
 const stateOptionOverrides = {
   california: {
+    'direct-cremation': {
+      title: 'Direct Cremation',
+      description:
+        'Cremation without a prior funeral service, viewing, or visitation. The body goes directly from the place of death to the crematory, and this remains the most common disposition choice in California.',
+      involves: [
+        'Body transported directly to the cremation facility',
+        'Cremation performed within the legal timeframe, usually after the 24-hour waiting period',
+        'Ashes returned to the family in a basic container or a chosen urn',
+        'Death certificate and burial permit filed by the provider',
+        'Any memorial or tribute can be planned separately afterward',
+      ],
+      considerations: [
+        'The baseline for affordable disposition in California',
+        'Does not include a formal witnessing of the start of cremation unless separately arranged',
+        'Irreversible process, with no option for later burial or organic reduction',
+        'Can be followed by a memorial service at any location and at any later time',
+        'Families should compare provider pricing carefully because add-on fees still vary',
+      ],
+    },
+    'home-funeral': {
+      title: 'Home Funeral',
+      description:
+        'Caring for the deceased at home with family-directed preparation and a vigil. California is generally treated as a non-restrictive state, meaning families can act as their own funeral directors even though many still hire a death midwife or doula for guidance.',
+      involves: [
+        'Family-directed body care such as washing, dressing, and cooling',
+        'Use of dry ice or cooling boards for preservation during a 1 to 3 day vigil',
+        'Family filing of the death certificate through the local registrar process',
+        'Coordination of transport to the crematory, cemetery, or other final place of rest',
+        'Optional support from a home funeral guide, doula, or consultant',
+      ],
+      considerations: [
+        'Legal in California without a licensed funeral director taking over the arrangement',
+        'Requires a permit for disposition through the local health or registrar process',
+        'Can create a slower, more private, and deeply personal grieving space',
+        'Often saves significantly on professional service fees and facility rental costs',
+        'Families still need to be ready for time-sensitive cooling, paperwork, and transport',
+      ],
+    },
     'natural-organic-reduction': {
       title: 'Natural Organic Reduction (Soil Transformation)',
       description:
@@ -2796,22 +2834,61 @@ const stateOptionOverrides = {
       ],
     },
     'green-burial': {
-      title: 'Green & Conservation Burial',
+      title: 'Natural Burial (Green Burial)',
       description:
-        'Burial in a natural setting without concrete vaults, metal caskets, or toxic embalming fluids. In California, this ranges from dedicated green sections in cemeteries to protected conservation forests.',
+        'Burial in a designated natural section of a cemetery without embalming, concrete vaults, or metal caskets. California has a strong network of hybrid cemeteries that offer this vault-free option.',
       involves: [
         'No embalming or chemical preservation of the body',
         'Use of a biodegradable shroud, wicker basket, or simple pine box',
-        'Grave is typically dug to a shallower depth to encourage aerobic decomposition',
-        'Grave may be marked with GPS, a natural stone, or a native tree or shrub',
-        'Settings can include dedicated green cemeteries or conservation-focused burial land',
+        'Burial in a shallower grave, typically 3 to 4 feet, to encourage aerobic decomposition',
+        'Marking the grave with a natural fieldstone or GPS coordinates',
+        'Placement in a designated natural burial section or cemetery that allows vault-free burial',
+        'Minimal intervention so the body can return to the earth more directly',
       ],
       considerations: [
-        'California has conservation preserves where burial fees help support land protection',
-        'No perpetual lawn-style maintenance in the most natural sites',
-        'One of the most circular and eco-conscious forms of burial',
-        'Lower hardware costs, but California land values can still make the overall cost significant',
-        'Site rules vary between hybrid green sections and dedicated conservation grounds',
+        'Eliminates the cost of a vault and often avoids expensive conventional caskets',
+        'Plot prices in California urban areas can be much higher than rural burial sites',
+        'Promotes a direct dust-to-dust return to the earth',
+        'Aligns well with many religious traditions including Jewish and Muslim burial practices',
+        'Each cemetery still sets its own rules for containers, grave marking, and timing',
+      ],
+    },
+    'conservation-burial': {
+      title: 'Conservation Burial',
+      description:
+        'Green burial within a protected land trust or nature preserve. In California, these arrangements support the permanent protection and restoration of the surrounding forest, meadow, or wildland.',
+      involves: [
+        'All of the core requirements of natural burial, including no embalming chemicals or vaults',
+        'Burial within protected wildland such as a conservation preserve or forest setting',
+        'A permanent conservation easement helps ensure the land will not be developed',
+        'Native trees or wildflowers may be planted on or near the burial area',
+        'Burial fees often include a direct land-protection or stewardship contribution',
+      ],
+      considerations: [
+        'Creates a legacy of land preservation as part of the final arrangement',
+        'Availability is limited, with only a small number of dedicated conservation preserves in California',
+        'The plot fee often includes a direct contribution to a land trust or stewardship fund',
+        'Offers a living memorial in an unmanicured landscape rather than a lawn cemetery',
+        'Families should confirm whether the site is hybrid green burial land or true conservation land',
+      ],
+    },
+    'direct-nourishment-tree-burial': {
+      title: 'Direct-Nourishment Tree Burial',
+      description:
+        'A specialized burial method that combines a nutrient-dense soil buffer with a biodegradable shroud to support a newly planted sapling. This remains an emerging option in California’s alternative-first funeral market.',
+      involves: [
+        'Body wrapped in a natural fiber shroud without a casket',
+        'A specialized nutrient buffer is placed in the grave to help balance soil conditions',
+        'A native California sapling such as an oak or cypress is planted directly above the burial',
+        'Minerals from the body become part of the long-term growth cycle of the tree',
+        'Arrangement is coordinated with a cemetery or preserve that specifically allows tree planting',
+      ],
+      considerations: [
+        'Turns the burial into a living, tangible memorial centered on a tree',
+        'Requires a cemetery or conservation preserve that specifically allows above-grave planting',
+        'Long-term survival of the tree depends on climate, irrigation, and site stewardship',
+        'Offers one of the most direct biological connections between the body and new plant life',
+        'Provider availability is still limited because this is an emerging specialty path',
       ],
     },
     'whole-body-donation': {
@@ -3183,7 +3260,55 @@ function CombinedStateDetailPage() {
                       </div>
                     ))}
                   </div>
-                  {section.providers && (
+                  {section.providers && (() => {
+                    const doulaKey = 'doula-neda-directory';
+                    const isDoulaExpanded = !!expandedOptions[doulaKey];
+                    return (
+                    <>
+                    <div className="doula-intro-section">
+                      <h3 className="doula-intro-title">End-of-Life Doulas: Compassionate Support for the Final Transition</h3>
+                      <p className="doula-intro-description">An End-of-Life Doula (also known as a death doula or death midwife) is a non-medical professional trained to provide emotional, spiritual, and physical support to individuals and their families during the dying process. While hospice handles the medical clinical care, a doula fills the gap by providing continuous presence, advocacy, and practical planning.</p>
+                      <h4 className="doula-purpose-title">Their Purpose:</h4>
+                      <p className="doula-intro-description">The primary goal of a doula is to "normalize" death and help the dying individual maintain agency over their final days. They assist in creating a "sacred space," helping families navigate the logistics of alternative after-death care, and ensuring that the person's final wishes - whether they involve a home funeral, natural burial, or organic reduction - are honored with dignity.</p>
+                      <div className={`option-detail${isDoulaExpanded ? ' option-detail--expanded' : ''}`}>
+                        <button
+                          className="option-detail-header"
+                          type="button"
+                          aria-expanded={isDoulaExpanded}
+                          onClick={() => setExpandedOptions((prev) => ({ ...prev, [doulaKey]: !prev[doulaKey] }))}
+                        >
+                          <div className="option-detail-header-text">
+                            <h4>NEDA "Find a Doula" Directory</h4>
+                            <p>The National End-of-Life Doula Alliance (NEDA) is the primary non-profit organization that sets the standard for doula education and ethics. Their directory is the most reliable tool for finding practitioners who have earned the "NEDA Proficiency Badge."</p>
+                          </div>
+                          <span className="option-detail-toggle" aria-hidden="true">{isDoulaExpanded ? '\u2212' : '\u2304'}</span>
+                        </button>
+                        {isDoulaExpanded && (
+                        <div className="option-detail-body">
+                          <h5 className="option-detail-subheading">What it involves</h5>
+                          <ul className="option-detail-involves">
+                            <li>Access to a searchable database of practitioners by zip code and state</li>
+                            <li>Identification of doulas who hold specialized proficiency badges in end-of-life care</li>
+                            <li>Links to individual doula websites, services, and specialized training backgrounds</li>
+                            <li>Access to the NEDA Code of Ethics and Scope of Practice for consumer protection</li>
+                          </ul>
+                          <h5 className="option-detail-subheading">Key considerations</h5>
+                          <ul className="option-detail-involves">
+                            <li>NEDA is a member-based organization, not a hiring agency</li>
+                            <li>Practitioners in the directory are independent and set their own rates</li>
+                            <li>Always verify if a doula is comfortable with the specific "Alternative" methods (like NOR or Home Funerals) listed on this site</li>
+                            <li>Most doulas in the directory offer a free 15-30 minute "chemistry call" to see if you are a good fit</li>
+                          </ul>
+                          <p className="doula-cost-note"><strong>Estimated Cost:</strong> Free to Search</p>
+                          <div className="option-detail-links">
+                            <a href="https://www.nedalliance.org/find-a-doula" target="_blank" rel="noopener noreferrer" className="option-detail-link">
+                              Search the NEDA Directory Here <span className="option-detail-link-agency">National End-of-Life Doula Alliance</span>
+                            </a>
+                          </div>
+                        </div>
+                        )}
+                      </div>
+                    </div>
                     <div className="provider-list">
                       {section.providers.map((provider) => {
                         const provKey = provider.name.replace(/\s+/g, '-').toLowerCase();
@@ -3218,6 +3343,9 @@ function CombinedStateDetailPage() {
                                   <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer">{provider.website}</a>
                                 </p>
                               )}
+                              {provider.costEstimate && (
+                                <p className="provider-cost"><strong>Cost Estimate:</strong> {provider.costEstimate}</p>
+                              )}
                             </div>
                           </div>
                           )}
@@ -3225,7 +3353,9 @@ function CombinedStateDetailPage() {
                         );
                       })}
                     </div>
-                  )}
+                    </>
+                    );
+                  })()}
                   {section.attorneys && (
                     <div className="provider-list">
                       <h3 className="option-category-title" style={{ marginTop: '24px' }}>Attorneys Specializing in Final Arrangements</h3>

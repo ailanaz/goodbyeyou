@@ -3179,6 +3179,57 @@ ul { list-style: none; }
     text-decoration: underline;
 }
 
+.provider-cost {
+    margin-top: 4px;
+    padding-top: 8px;
+    border-top: 1px solid var(--color-border-light);
+    color: var(--color-primary) !important;
+}
+
+/* Doula Intro Section */
+.doula-intro-section {
+    margin-bottom: 24px;
+}
+
+.doula-intro-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 12px;
+}
+
+.doula-intro-description {
+    font-size: 0.9rem;
+    color: var(--color-text-mid);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.doula-purpose-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.doula-cost-note {
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    margin-top: 12px;
+}
+
+.option-detail-subheading {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-top: 16px;
+    margin-bottom: 4px;
+}
+
+.option-detail-subheading:first-child {
+    margin-top: 0;
+}
+
 /* Legal Resource Links */
 .legal-links {
     margin-top: 32px;
