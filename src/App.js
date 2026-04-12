@@ -1553,18 +1553,6 @@ function useMetaDescription(description) {
   }, [description]);
 }
 
-function PlaceholderAnchor({ children }) {
-  return (
-    <a
-      href="/"
-      onClick={(event) => {
-        event.preventDefault();
-      }}
-    >
-      {children}
-    </a>
-  );
-}
 
 function PageHero({ eyebrow, title, subtitle, warm = false, titleClassName = '' }) {
   return (
@@ -2464,7 +2452,7 @@ function Footer() {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <PlaceholderAnchor>Privacy</PlaceholderAnchor>
+                <Link to="/privacy">Privacy</Link>
               </li>
             </ul>
           </div>
@@ -3098,6 +3086,77 @@ function ResourcesPage() {
   );
 }
 
+function PrivacyPolicyPage() {
+  useDocumentTitle('Privacy Policy - GoodbyeYou');
+  useMetaDescription('GoodbyeYou privacy policy. Learn how we handle your data and protect your privacy.');
+
+  return (
+    <>
+      <PageHero
+        eyebrow="Legal"
+        title="Privacy Policy"
+      />
+      <section className="section">
+        <div className="container privacy-content">
+          <p className="privacy-updated">Last updated: April 11, 2026</p>
+
+          <h2>Introduction</h2>
+          <p>GoodbyeYou ("we," "us," or "our") operates the website goodbyeyou.com (the "Site"). This Privacy Policy explains how we collect, use, and protect information when you visit our Site.</p>
+
+          <h2>Information We Collect</h2>
+          <h3>Information You Provide</h3>
+          <p>We do not require you to create an account or provide personal information to use this Site. If you contact us via email, we will receive whatever information you choose to include in your message.</p>
+
+          <h3>Automatically Collected Information</h3>
+          <p>When you visit the Site, we may automatically collect certain technical information, including:</p>
+          <ul>
+            <li>Browser type and version</li>
+            <li>Operating system</li>
+            <li>Pages visited and time spent on those pages</li>
+            <li>Referring website or source</li>
+            <li>General geographic location (city/region level, not precise location)</li>
+          </ul>
+          <p>This information is collected through standard web analytics tools and is used in aggregate to understand how visitors use the Site.</p>
+
+          <h2>How We Use Information</h2>
+          <p>Any information we collect is used solely to:</p>
+          <ul>
+            <li>Maintain and improve the Site</li>
+            <li>Understand usage patterns and visitor behavior in aggregate</li>
+            <li>Respond to inquiries sent to us directly</li>
+          </ul>
+          <p>We do not sell, rent, or share personal information with third parties for marketing purposes.</p>
+
+          <h2>Cookies and Tracking</h2>
+          <p>The Site may use cookies or similar technologies for basic functionality and analytics. Cookies are small text files stored on your device. You can control cookie settings through your browser preferences. Disabling cookies may not affect your experience on this Site.</p>
+
+          <h2>Third-Party Links</h2>
+          <p>The Site contains links to external websites, including service providers, government resources, and other organizations. We are not responsible for the privacy practices or content of those external sites. We encourage you to review the privacy policies of any site you visit through our links.</p>
+
+          <h2>Affiliate Relationships</h2>
+          <p>Some links on the Site may be affiliate links. If you follow an affiliate link and make a purchase or take an action, we may receive a small commission at no additional cost to you. Affiliate relationships do not influence the content, listings, or recommendations on this Site.</p>
+
+          <h2>Data Retention</h2>
+          <p>Analytics data is retained in aggregate form. We do not maintain individual user profiles or track identifiable browsing histories.</p>
+
+          <h2>Children's Privacy</h2>
+          <p>This Site is not directed at individuals under the age of 13. We do not knowingly collect personal information from children.</p>
+
+          <h2>Your Rights</h2>
+          <p>Depending on your location, you may have the right to request access to, correction of, or deletion of any personal information we hold. Since we collect minimal personal data, most visitors will have no stored personal information with us. If you have questions, contact us at the email below.</p>
+
+          <h2>Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated "Last updated" date. Continued use of the Site after changes constitutes acceptance of the revised policy.</p>
+
+          <h2>Contact</h2>
+          <p>If you have questions about this Privacy Policy, you can reach us at:</p>
+          <p><a href="mailto:goodbyeyou@infoinbox.site">goodbyeyou@infoinbox.site</a></p>
+        </div>
+      </section>
+    </>
+  );
+}
+
 function AppLayout() {
   return (
     <>
@@ -3108,6 +3167,7 @@ function AppLayout() {
         <Route path="/states/:hubId" element={<CombinedStateDetailPage />} />
         <Route path="/exploreoptions" element={<ExploreOptionsPage />} />
         <Route path="/after-death-steps" element={<ResourcesPage />} />
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
         {/* Redirects from old URLs */}
         <Route path="/funeralplanning" element={<Navigate to="/alternative-funeral-options" replace />} />
         <Route path="/when-time-has-run-out" element={<Navigate to="/alternative-funeral-options" replace />} />
