@@ -538,10 +538,6 @@ export const hubDirectory = [
       intro: 'Colorado has transitioned from being the least regulated state in the country to one of the most proactive, following several high-profile industry scandals. Here are the key legal protections and tools available.',
       items: [
         {
-          label: 'Disposition of Last Remains Declaration',
-          description: 'This is the core Colorado document for naming who controls disposition and for recording specific wishes about your final arrangements. For alternative planning, it is the clearest way to state who should carry out the plan and what type of disposition you want followed.',
-        },
-        {
           label: 'Designated Beneficiary Agreement (DBA)',
           description: 'In Colorado, the Designated Beneficiary Agreement is a state-specific tool that can give an unmarried partner, close friend, or other trusted adult legal standing in key end-of-life and after-death matters. It is often used when someone wants decision-making authority to be clear outside the standard next-of-kin order.',
           involves: [
