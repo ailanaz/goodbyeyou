@@ -3183,6 +3183,12 @@ ul { list-style: none; }
 .legal-link-agency {
     font-size: 0.8rem;
     color: var(--color-text-light);
+    text-decoration: none;
+}
+
+.legal-link-agency:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
 }
 
 /* Privacy Policy */

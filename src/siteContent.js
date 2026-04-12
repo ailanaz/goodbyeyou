@@ -550,7 +550,7 @@ export const hubDirectory = [
           ],
         },
         {
-          title: '2026 Licensing and Oversight',
+          title: 'Licensing and Oversight',
           items: [
             {
               label: 'New Licensing Requirements',

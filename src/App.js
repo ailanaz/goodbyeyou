@@ -3093,7 +3093,7 @@ function CombinedStateDetailPage() {
                           {hub.legalResources.links.map((link) => (
                             <div className="legal-link-item" key={link.label}>
                               <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
-                              <span className="legal-link-agency">{link.agency}</span>
+                              <a href={link.url} target="_blank" rel="noopener noreferrer" className="legal-link-agency">{link.agency}</a>
                             </div>
                           ))}
                         </div>
