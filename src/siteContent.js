@@ -656,7 +656,7 @@ export const hubDirectory = [
         { label: 'Medical Aid in Dying Info', agency: 'Compassion & Choices Colorado', url: 'https://www.compassionandchoices.org/' },
         { label: 'File a Complaint', agency: 'CO Division of Professions & Occupations', url: 'https://dpo.colorado.gov/' },
         { label: 'Pre-Need Consumer Tips', agency: 'CO Division of Insurance', url: 'https://doi.colorado.gov/' },
-        { label: 'DBA Template', agency: 'CO Gerontological Society', url: 'https://www.senioranswers.org/' },
+        { label: 'DBA Template', agency: 'CO Gerontological Society', url: 'https://www.senioranswers.org/counseling/legal/advance-directives/financial/designated-beneficiary/' },
         { label: 'The Funeral Rule Guide', agency: 'Federal Trade Commission (FTC)', url: 'https://www.ftc.gov/business-guidance/resources/complying-funeral-rule' },
       ],
     },
