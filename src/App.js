@@ -3356,11 +3356,7 @@ function CombinedStateDetailPage() {
                   const doulaKey = 'doula-neda-directory';
                   const isDoulaExpanded = !!expandedOptions[doulaKey];
                   return (
-                  <div className="doula-intro-section">
-                    <h3 className="option-category-title" style={{ marginTop: '24px' }}>End-of-Life Doulas</h3>
-                    <p className="doula-intro-description">An End-of-Life Doula (also known as a death doula or death midwife) is a non-medical professional trained to provide emotional, spiritual, and physical support to individuals and their families during the dying process. While hospice handles the medical clinical care, a doula fills the gap by providing continuous presence, advocacy, and practical planning.</p>
-                    <h4 className="doula-purpose-title">Their Purpose:</h4>
-                    <p className="doula-intro-description">The primary goal of a doula is to "normalize" death and help the dying individual maintain agency over their final days. They assist in creating a "sacred space," helping families navigate the logistics of alternative after-death care, and ensuring that the person's final wishes - whether they involve a home funeral, natural burial, or organic reduction - are honored with dignity.</p>
+                  <div style={{ marginTop: '24px' }}>
                     <div className={`option-detail${isDoulaExpanded ? ' option-detail--expanded' : ''}`}>
                       <button
                         className="option-detail-header"
@@ -3369,13 +3365,17 @@ function CombinedStateDetailPage() {
                         onClick={() => setExpandedOptions((prev) => ({ ...prev, [doulaKey]: !prev[doulaKey] }))}
                       >
                         <div className="option-detail-header-text">
-                          <h4>NEDA "Find a Doula" Directory</h4>
-                          <p>The National End-of-Life Doula Alliance (NEDA) is the primary non-profit organization that sets the standard for doula education and ethics. Their directory is the most reliable tool for finding practitioners who have earned the "NEDA Proficiency Badge."</p>
+                          <h4>End-of-Life Doulas</h4>
+                          <p>An End-of-Life Doula (also known as a death doula or death midwife) is a non-medical professional trained to provide emotional, spiritual, and physical support to individuals and their families during the dying process. While hospice handles the medical clinical care, a doula fills the gap by providing continuous presence, advocacy, and practical planning.</p>
                         </div>
                         <span className="option-detail-toggle" aria-hidden="true">{isDoulaExpanded ? '\u2212' : '\u2304'}</span>
                       </button>
                       {isDoulaExpanded && (
                       <div className="option-detail-body">
+                        <h5 className="option-detail-subheading">Their Purpose</h5>
+                        <p className="doula-intro-description">The primary goal of a doula is to "normalize" death and help the dying individual maintain agency over their final days. They assist in creating a "sacred space," helping families navigate the logistics of alternative after-death care, and ensuring that the person's final wishes - whether they involve a home funeral, natural burial, or organic reduction - are honored with dignity.</p>
+                        <h5 className="option-detail-subheading">NEDA "Find a Doula" Directory</h5>
+                        <p className="doula-intro-description">The National End-of-Life Doula Alliance (NEDA) is the primary non-profit organization that sets the standard for doula education and ethics. Their directory is the most reliable tool for finding practitioners who have earned the "NEDA Proficiency Badge."</p>
                         <h5 className="option-detail-subheading">What it involves</h5>
                         <ul className="option-detail-involves">
                           <li>Access to a searchable database of practitioners by zip code and state</li>
