@@ -2769,7 +2769,6 @@ function CombinedStateDetailPage() {
   const allNavSections = [
     'Available Options',
     ...topSections.map((s) => s.title),
-    'Legal Resources',
     'Other Resources',
   ];
 
@@ -2958,6 +2957,7 @@ function CombinedStateDetailPage() {
                             <div className="option-detail-header-text">
                               <h4>{provider.name}</h4>
                               <p>{provider.description}</p>
+
                             </div>
                             <span className="option-detail-toggle" aria-hidden="true">{isProvExpanded ? '\u2212' : '\u2304'}</span>
                           </button>
@@ -2984,18 +2984,56 @@ function CombinedStateDetailPage() {
                       })}
                     </div>
                   )}
+                  {section.attorneys && (
+                    <div className="provider-list">
+                      <h3 className="option-category-title" style={{ marginTop: '24px' }}>Attorneys Specializing in Final Arrangements</h3>
+                      <p className="option-category-description">These Colorado-based firms specialize in Elder Law, Probate, and the Disposition of Last Remains, with specific experience in alternative and green planning.</p>
+                      {section.attorneys.map((attorney) => {
+                        const attKey = `dir-${attorney.name.replace(/\s+/g, '-').toLowerCase()}`;
+                        const isAttExpanded = !!expandedOptions[attKey];
+                        return (
+                        <div className={`option-detail${isAttExpanded ? ' option-detail--expanded' : ''}`} key={attorney.name}>
+                          <button
+                            className="option-detail-header"
+                            type="button"
+                            aria-expanded={isAttExpanded}
+                            onClick={() => setExpandedOptions((prev) => ({ ...prev, [attKey]: !prev[attKey] }))}
+                          >
+                            <div className="option-detail-header-text">
+                              <h4>{attorney.name}</h4>
+                              <p>{attorney.focus}</p>
+                            </div>
+                            <span className="option-detail-toggle" aria-hidden="true">{isAttExpanded ? '\u2212' : '\u2304'}</span>
+                          </button>
+                          {isAttExpanded && (
+                          <div className="option-detail-body provider-detail-body">
+                            <div className="provider-contact">
+                              <p><strong>Location:</strong> {attorney.location}</p>
+                              <p><strong>Phone:</strong> {attorney.phone}</p>
+                              <p className="provider-website">
+                                <strong>Website:</strong>{' '}
+                                <a href={`https://${attorney.website}`} target="_blank" rel="noopener noreferrer">{attorney.website}</a>
+                              </p>
+                            </div>
+                          </div>
+                          )}
+                        </div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
                 );
               })}
 
-              <div className="sdl-section sdl-section--planning-ahead" id={`section-${topSections.length + 1}`}>
+              <div className="sdl-section sdl-section--planning-now" id={`section-${topSections.length + 1}`}>
                 <div className="sdl-section-header">
-                  <h2>Legal Resources</h2>
+                  <h2>Other Resources</h2>
                   {hub.legalResources && hub.legalResources.intro && (
                     <p className="sdl-section-sub">{hub.legalResources.intro}</p>
                   )}
                 </div>
-                {hub.legalResources ? (
+                {hub.legalResources && (
                   <>
                     {hub.legalResources.sections.map((section) => (
                       <div className="option-category" key={section.title}>
@@ -3048,42 +3086,6 @@ function CombinedStateDetailPage() {
                             );
                           })}
                         </div>
-                        {section.attorneys && (
-                          <div className="provider-list">
-                            {section.attorneys.map((attorney) => {
-                              const attKey = attorney.name.replace(/\s+/g, '-').toLowerCase();
-                              const isAttExpanded = !!expandedOptions[attKey];
-                              return (
-                              <div className={`option-detail${isAttExpanded ? ' option-detail--expanded' : ''}`} key={attorney.name}>
-                                <button
-                                  className="option-detail-header"
-                                  type="button"
-                                  aria-expanded={isAttExpanded}
-                                  onClick={() => setExpandedOptions((prev) => ({ ...prev, [attKey]: !prev[attKey] }))}
-                                >
-                                  <div className="option-detail-header-text">
-                                    <h4>{attorney.name}</h4>
-                                    <p>{attorney.focus}</p>
-                                  </div>
-                                  <span className="option-detail-toggle" aria-hidden="true">{isAttExpanded ? '\u2212' : '\u2304'}</span>
-                                </button>
-                                {isAttExpanded && (
-                                <div className="option-detail-body provider-detail-body">
-                                  <div className="provider-contact">
-                                    <p><strong>Location:</strong> {attorney.location}</p>
-                                    <p><strong>Phone:</strong> {attorney.phone}</p>
-                                    <p className="provider-website">
-                                      <strong>Website:</strong>{' '}
-                                      <a href={`https://${attorney.website}`} target="_blank" rel="noopener noreferrer">{attorney.website}</a>
-                                    </p>
-                                  </div>
-                                </div>
-                                )}
-                              </div>
-                              );
-                            })}
-                          </div>
-                        )}
                       </div>
                     ))}
                     {hub.legalResources.links && (
@@ -3100,34 +3102,27 @@ function CombinedStateDetailPage() {
                       </div>
                     )}
                   </>
-                ) : (
-                  planningRest.map((section) => (
-                    <div className="option-category" key={section.title}>
-                      <div className="option-category-header">
-                        <h3 className="option-category-title">{section.title}</h3>
-                      </div>
-                      <div className="option-detail-list">
-                        {section.items.map((item) => (
-                          <div className="option-detail" key={item.label}>
-                            <div className="option-detail-header option-detail-header--static">
-                              <div className="option-detail-header-text">
-                                <h4>{item.label}</h4>
-                                <p>{item.description}</p>
-                              </div>
+                )}
+                {planningRest.length > 0 && planningRest.map((section) => (
+                  <div className="option-category" key={section.title}>
+                    <div className="option-category-header">
+                      <h3 className="option-category-title">{section.title}</h3>
+                    </div>
+                    <div className="option-detail-list">
+                      {section.items.map((item) => (
+                        <div className="option-detail" key={item.label}>
+                          <div className="option-detail-header option-detail-header--static">
+                            <div className="option-detail-header-text">
+                              <h4>{item.label}</h4>
+                              <p>{item.description}</p>
                             </div>
                           </div>
-                        ))}
-                      </div>
+                        </div>
+                      ))}
                     </div>
-                  ))
-                )}
-              </div>
-
-              <div className="sdl-section sdl-section--planning-now" id={`section-${topSections.length + 2}`}>
-                <div className="sdl-section-header">
-                  <h2>Other Resources</h2>
-                </div>
-                {immediate.sections.map((section) => (
+                  </div>
+                ))}
+                {immediate.sections.length > 0 && immediate.sections.map((section) => (
                   <div className="option-category" key={section.title}>
                     <div className="option-category-header">
                       <h3 className="option-category-title">{section.title}</h3>
