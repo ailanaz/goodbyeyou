@@ -411,13 +411,6 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Explore Options',
-          items: [
-            { label: 'Method Deep Dives', description: 'Links to technical descriptions of natural organic reduction, aquamation processing, green burial preparation, open-air cremation, and home funeral care available in Colorado.' },
-            { label: 'Environmental & Practical Impact', description: 'Comparative data on environmental footprint, space requirements, and processing timelines for each method.' },
-          ],
-        },
-        {
           title: 'Provider Directory',
           intro: 'Colorado has some of the most established "alternative-first" providers in the country. Below are the names and contact details for the primary organizations specializing in Natural Organic Reduction (NOR), Aquamation, and Green Burial.',
           items: [],
@@ -488,13 +481,6 @@ export const hubDirectory = [
           ],
         },
         {
-          title: 'Future Logistics',
-          items: [
-            { label: 'Legal Authority', description: 'Information on Colorado disposition authorization forms and appointment of agent documentation.' },
-            { label: 'Form Downloads', description: 'Direct links to required documentation to ensure uncommon wishes are honored by law in Colorado.' },
-          ],
-        },
-        {
           title: 'Colorado Extras',
           items: [
             {
@@ -531,7 +517,7 @@ export const hubDirectory = [
               ],
             },
             {
-              label: 'The Mushroom Suit (2026 Update)',
+              label: 'The Mushroom Suit',
               description: 'The original "Infinity Burial Suit" by Coeio (made famous by Luke Perry) is currently in a transition period and can be difficult to source as a standalone retail product. However, the technology has evolved into the Mushroom Coffin and Mycelium Shrouds.',
               involves: [
                 'A biodegradable burial container or garment grown from mycelium (the root structure of mushrooms) and hemp/sawdust. Unlike the original "suit," these are "living" vessels that actively remediate toxins in the soil and facilitate a faster return to the earth.',
@@ -559,21 +545,6 @@ export const hubDirectory = [
           items: [
             { label: 'Mandatory Actions', description: 'First steps for pronouncement and official release of the body in Colorado.' },
             { label: 'Initial Contacts', description: 'Who must be notified immediately - hospice, doctor, or medical examiner depending on circumstances.' },
-          ],
-        },
-        {
-          title: 'Custody & Transport Laws',
-          items: [
-            { label: 'Right to Custody', description: 'Colorado regulations on whether the family can maintain custody or if a funeral director is mandatory.' },
-            { label: 'Transit Permits', description: 'Requirements for moving the body from the place of death to an uncommon service facility in Colorado.' },
-            { label: 'Non-Standard Cooling', description: 'Refrigeration or dry ice requirements for non-embalmed bodies in Colorado.' },
-          ],
-        },
-        {
-          title: 'Disposition Logistics: Choosing the Path',
-          items: [
-            { label: 'Immediate Coordination', description: 'Step-by-step for contacting and initiating an uncommon service in Colorado during a crisis.' },
-            { label: 'Provider Pathways', description: 'Fast-access links to facilities equipped for immediate intake in Colorado.' },
           ],
         },
         {

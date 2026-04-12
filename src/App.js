@@ -2769,7 +2769,7 @@ function CombinedStateDetailPage() {
   const allNavSections = [
     'Available Options',
     ...topSections.map((s) => s.title),
-    'Legal',
+    'Legal Resources',
     'Other Resources',
   ];
 
@@ -2953,7 +2953,7 @@ function CombinedStateDetailPage() {
 
               <div className="sdl-section sdl-section--planning-ahead" id={`section-${topSections.length + 1}`}>
                 <div className="sdl-section-header">
-                  <h2>Legal</h2>
+                  <h2>Legal Resources</h2>
                 </div>
                 {planningRest.map((section) => (
                   <div className="option-category" key={section.title}>
