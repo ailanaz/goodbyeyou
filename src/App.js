@@ -3304,94 +3304,36 @@ function CombinedStateDetailPage() {
                   )}
                   {section.providers && (
                     <div className="provider-list">
-                      {section.providers.map((provider) => {
-                        const provKey = provider.name.replace(/\s+/g, '-').toLowerCase();
-                        const isProvExpanded = !!expandedOptions[provKey];
-                        return (
-                        <div className={`option-detail${isProvExpanded ? ' option-detail--expanded' : ''}`} key={provider.name}>
-                          <button
-                            className="option-detail-header"
-                            type="button"
-                            aria-expanded={isProvExpanded}
-                            onClick={() => setExpandedOptions((prev) => ({ ...prev, [provKey]: !prev[provKey] }))}
-                          >
-                            <div className="option-detail-header-text">
-                              <h4>{provider.name}</h4>
-                              <p>{provider.description}</p>
-                            </div>
-                            <span className="option-detail-toggle" aria-hidden="true">{isProvExpanded ? '\u2212' : '\u2304'}</span>
-                          </button>
-                          {isProvExpanded && (
-                          <div className="option-detail-body provider-detail-body">
-                            <p className="provider-services"><strong>Services:</strong> {provider.services}</p>
-                            <div className="provider-contact">
-                              {provider.locations.map((loc) => (
-                                <p key={loc} className="provider-location">{loc}</p>
-                              ))}
-                              {provider.phone && <p className="provider-phone"><strong>Phone:</strong> {provider.phone}</p>}
-                              {provider.email && <p className="provider-email"><strong>Email:</strong> {provider.email}</p>}
-                              {provider.website && (
-                                <p className="provider-website">
-                                  <strong>Website:</strong>{' '}
-                                  <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer">{provider.website}</a>
-                                </p>
-                              )}
-                              {provider.costEstimate && (
-                                <p className="provider-cost"><strong>Cost Estimate:</strong> {provider.costEstimate}</p>
-                              )}
-                            </div>
+                      {section.providers.map((provider) => (
+                        <div className="option-detail provider-basic-card" key={provider.name}>
+                          <div className="provider-basic-card-body">
+                            <h4 className="provider-basic-name">{provider.name}</h4>
+                            {provider.services && <p className="provider-basic-line"><strong>Services:</strong> {provider.services}</p>}
+                            {provider.locations && provider.locations.map((loc) => (
+                              <p key={loc} className="provider-basic-line"><strong>Location:</strong> {loc}</p>
+                            ))}
+                            {provider.website && <p className="provider-basic-line"><strong>Website:</strong> {provider.website}</p>}
                           </div>
-                          )}
                         </div>
-                        );
-                      })}
+                      ))}
                     </div>
                   )}
                   {section.providerCategories && section.providerCategories.map((cat) => (
                     <div className="provider-category" key={cat.category}>
                       <h3 className="option-category-title" style={{ marginTop: '24px' }}>{cat.category}</h3>
                       <div className="provider-list">
-                        {cat.providers.map((provider) => {
-                          const provKey = `cat-${provider.name.replace(/\s+/g, '-').toLowerCase()}`;
-                          const isProvExpanded = !!expandedOptions[provKey];
-                          return (
-                          <div className={`option-detail${isProvExpanded ? ' option-detail--expanded' : ''}`} key={provider.name}>
-                            <button
-                              className="option-detail-header"
-                              type="button"
-                              aria-expanded={isProvExpanded}
-                              onClick={() => setExpandedOptions((prev) => ({ ...prev, [provKey]: !prev[provKey] }))}
-                            >
-                              <div className="option-detail-header-text">
-                                <h4>{provider.name}</h4>
-                                <p>{provider.description}</p>
-                              </div>
-                              <span className="option-detail-toggle" aria-hidden="true">{isProvExpanded ? '\u2212' : '\u2304'}</span>
-                            </button>
-                            {isProvExpanded && (
-                            <div className="option-detail-body provider-detail-body">
-                              <p className="provider-services"><strong>Services:</strong> {provider.services}</p>
-                              <div className="provider-contact">
-                                {provider.locations.map((loc) => (
-                                  <p key={loc} className="provider-location">{loc}</p>
-                                ))}
-                                {provider.phone && <p className="provider-phone"><strong>Phone:</strong> {provider.phone}</p>}
-                                {provider.email && <p className="provider-email"><strong>Email:</strong> {provider.email}</p>}
-                                {provider.website && (
-                                  <p className="provider-website">
-                                    <strong>Website:</strong>{' '}
-                                    <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer">{provider.website}</a>
-                                  </p>
-                                )}
-                                {provider.costEstimate && (
-                                  <p className="provider-cost"><strong>Cost Estimate:</strong> {provider.costEstimate}</p>
-                                )}
-                              </div>
+                        {cat.providers.map((provider) => (
+                          <div className="option-detail provider-basic-card" key={provider.name}>
+                            <div className="provider-basic-card-body">
+                              <h4 className="provider-basic-name">{provider.name}</h4>
+                              {provider.services && <p className="provider-basic-line"><strong>Services:</strong> {provider.services}</p>}
+                              {provider.locations && provider.locations.map((loc) => (
+                                <p key={loc} className="provider-basic-line"><strong>Location:</strong> {loc}</p>
+                              ))}
+                              {provider.website && <p className="provider-basic-line"><strong>Website:</strong> {provider.website}</p>}
                             </div>
-                            )}
                           </div>
-                          );
-                        })}
+                        ))}
                       </div>
                     </div>
                   ))}
@@ -3409,38 +3351,16 @@ function CombinedStateDetailPage() {
                     <h3 className="option-category-title" style={{ marginTop: '24px' }}>Attorneys Specializing in Final Arrangements</h3>
                     <p className="option-category-description">These {hub.region}-based firms specialize in Elder Law, Probate, and the Disposition of Last Remains, with specific experience in alternative and green planning.</p>
                     <div className="provider-list">
-                      {section.attorneys.map((attorney) => {
-                        const attKey = `dir-${attorney.name.replace(/\s+/g, '-').toLowerCase()}`;
-                        const isAttExpanded = !!expandedOptions[attKey];
-                        return (
-                        <div className={`option-detail${isAttExpanded ? ' option-detail--expanded' : ''}`} key={attorney.name}>
-                          <button
-                            className="option-detail-header"
-                            type="button"
-                            aria-expanded={isAttExpanded}
-                            onClick={() => setExpandedOptions((prev) => ({ ...prev, [attKey]: !prev[attKey] }))}
-                          >
-                            <div className="option-detail-header-text">
-                              <h4>{attorney.name}</h4>
-                              <p>{attorney.focus}</p>
-                            </div>
-                            <span className="option-detail-toggle" aria-hidden="true">{isAttExpanded ? '\u2212' : '\u2304'}</span>
-                          </button>
-                          {isAttExpanded && (
-                          <div className="option-detail-body provider-detail-body">
-                            <div className="provider-contact">
-                              <p><strong>Location:</strong> {attorney.location}</p>
-                              <p><strong>Phone:</strong> {attorney.phone}</p>
-                              <p className="provider-website">
-                                <strong>Website:</strong>{' '}
-                                <a href={`https://${attorney.website}`} target="_blank" rel="noopener noreferrer">{attorney.website}</a>
-                              </p>
-                            </div>
+                      {section.attorneys.map((attorney) => (
+                        <div className="option-detail provider-basic-card" key={attorney.name}>
+                          <div className="provider-basic-card-body">
+                            <h4 className="provider-basic-name">{attorney.name}</h4>
+                            {attorney.focus && <p className="provider-basic-line"><strong>Services:</strong> {attorney.focus}</p>}
+                            {attorney.location && <p className="provider-basic-line"><strong>Location:</strong> {attorney.location}</p>}
+                            {attorney.website && <p className="provider-basic-line"><strong>Website:</strong> {attorney.website}</p>}
                           </div>
-                          )}
                         </div>
-                        );
-                      })}
+                      ))}
                     </div>
                   </div>
                 ))}

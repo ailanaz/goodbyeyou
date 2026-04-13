@@ -3188,6 +3188,32 @@ ul { list-style: none; }
     color: var(--color-primary) !important;
 }
 
+/* Basic Info Card */
+.provider-basic-card {
+    padding: 16px 20px;
+    cursor: default;
+}
+
+.provider-basic-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.provider-basic-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-heading);
+    margin: 0 0 4px 0;
+}
+
+.provider-basic-line {
+    font-size: 0.92rem;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.5;
+}
+
 /* Doula Intro Section */
 .doula-intro-section {
     margin-bottom: 24px;
