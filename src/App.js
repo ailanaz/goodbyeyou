@@ -3797,7 +3797,7 @@ function PrivacyPolicyPage() {
 
           <h2>Contact</h2>
           <p>If you have questions about this Privacy Policy, you can reach us at:</p>
-          <p><a href="mailto:goodbyeyou@infoinbox.site">goodbyeyou@infoinbox.site</a></p>
+          <p><a href="mailto:hello@goodbyeyou.com">hello@goodbyeyou.com</a></p>
         </div>
       </section>
     </>
