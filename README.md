@@ -1,6 +1,6 @@
 # GoodbyeYou
 
-Alternative funeral planning resources with state-specific options, providers, and next steps for non-traditional after-death services.
+Alternative final arrangements planning and resources with state-specific options, providers, and next steps for non-traditional after-death services.
 
 ## Pages
 
