@@ -1573,6 +1573,27 @@ function useMetaDescription(description) {
   }, [description]);
 }
 
+function usePageMeta(title, description) {
+  useEffect(() => {
+    const url = `https://goodbyeyou.com${window.location.pathname}`;
+    // Canonical
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', url);
+    // OG tags
+    const ogMap = { 'og:title': title, 'og:description': description, 'og:url': url };
+    Object.entries(ogMap).forEach(([prop, val]) => {
+      let tag = document.querySelector(`meta[property="${prop}"]`);
+      if (tag) tag.setAttribute('content', val);
+    });
+    // Twitter tags
+    const twMap = { 'twitter:title': title, 'twitter:description': description };
+    Object.entries(twMap).forEach(([name, val]) => {
+      let tag = document.querySelector(`meta[name="${name}"]`);
+      if (tag) tag.setAttribute('content', val);
+    });
+  }, [title, description]);
+}
+
 
 function PageHero({ eyebrow, title, subtitle, warm = false, titleClassName = '' }) {
   return (
@@ -2542,6 +2563,7 @@ function HomeAboutSection() {
 function HomePage() {
   useDocumentTitle('GoodbyeYou - Alternative Funeral Planning Resources');
   useMetaDescription('Find alternative funeral options by state, including home funeral, green burial, aquamation, and other non-traditional after-death services with clear next steps.');
+  usePageMeta('GoodbyeYou - Alternative Funeral Planning Resources', 'Find alternative funeral options by state, including home funeral, green burial, aquamation, and other non-traditional after-death services with clear next steps.');
 
   const homeGuidanceItems = [
     {
@@ -2618,6 +2640,7 @@ function HomePage() {
 function ExploreOptionsPage() {
   useDocumentTitle('Explore Alternative Funeral Options - GoodbyeYou');
   useMetaDescription('Browse alternative funeral services including home funeral, green burial, aquamation, natural organic reduction, whole-body donation, and more.');
+  usePageMeta('Explore Alternative Funeral Options - GoodbyeYou', 'Browse alternative funeral services including home funeral, green burial, aquamation, natural organic reduction, whole-body donation, and more.');
 
   return (
     <>
@@ -2691,6 +2714,7 @@ function ImmediateRedirect() {
 function AlternativeFuneralOptionsPage() {
   useDocumentTitle('Alternative Funeral Options by State - GoodbyeYou');
   useMetaDescription('Search your state for alternative funeral options including green burial, aquamation, human composting, home funeral, and more. Find providers, logistics, and resources.');
+  usePageMeta('Alternative Funeral Options by State - GoodbyeYou', 'Search your state for alternative funeral options including green burial, aquamation, human composting, home funeral, and more. Find providers, logistics, and resources.');
 
   return (
     <>
@@ -3053,6 +3077,7 @@ function CombinedStateDetailPage() {
 
   useDocumentTitle(hub ? `Alternative Funeral Options: ${hub.region} - GoodbyeYou` : 'Alternative Funeral Options - GoodbyeYou');
   useMetaDescription(hub ? `Alternative funeral options in ${hub.region}. Explore available services, providers, costs, logistics, and legal documentation for home funeral, green burial, aquamation, and more.` : 'Find alternative funeral options by state.');
+  usePageMeta(hub ? `Alternative Funeral Options: ${hub.region} - GoodbyeYou` : 'Alternative Funeral Options - GoodbyeYou', hub ? `Alternative funeral options in ${hub.region}. Explore available services, providers, costs, logistics, and legal documentation for home funeral, green burial, aquamation, and more.` : 'Find alternative funeral options by state.');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -3668,6 +3693,7 @@ function CombinedStateDetailPage() {
 function ResourcesPage() {
   useDocumentTitle('Arrangements Checklist - GoodbyeYou');
   useMetaDescription('Download planning, immediate-need, and general after-death checklists, plus follow-up resources covering what to do first, who to contact, documents, and provider pathways.');
+  usePageMeta('Arrangements Checklist - GoodbyeYou', 'Download planning, immediate-need, and general after-death checklists, plus follow-up resources covering what to do first, who to contact, documents, and provider pathways.');
 
   return (
     <>
@@ -3709,6 +3735,7 @@ function ResourcesPage() {
 function PrivacyPolicyPage() {
   useDocumentTitle('Privacy Policy - GoodbyeYou');
   useMetaDescription('GoodbyeYou privacy policy. Learn how we handle your data and protect your privacy.');
+  usePageMeta('Privacy Policy - GoodbyeYou', 'GoodbyeYou privacy policy. Learn how we handle your data and protect your privacy.');
 
   return (
     <>
