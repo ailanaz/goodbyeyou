@@ -1141,7 +1141,7 @@ const planningChecklist = {
 };
 
 const currentLossChecklist = {
-  title: 'Immediate Need Checklist for Alternative Services',
+  title: 'Immediate Need (At-Need) Checklist for Alternative Services',
   purpose:
     'Protect the ability to carry out an alternative after-death service while also covering the standard actions that still need attention after a death occurs.',
   sections: [
@@ -1490,18 +1490,18 @@ const generalChecklist = {
 const checklistPageSections = [
   {
     id: 'alternative-planning-checklist',
-    eyebrow: 'Planning Ahead',
+    eyebrow: 'Planning Ahead (Pre-Need)',
     title: 'Alternative planning checklist',
     description:
-      'Alternative and uncommon services can require more planning before a death because availability, timing, legal conditions, and provider logistics may affect what is possible. This checklist focuses on those service-specific needs while also covering the standard planning steps that help others carry the plan out.',
+      'Alternative and uncommon services can require more pre-need planning because availability, timing, legal conditions, and provider logistics may affect what is possible. This checklist focuses on those service-specific needs while also covering the standard planning steps that help others carry the plan out.',
     checklist: planningChecklist,
   },
   {
     id: 'immediate-need-checklist',
-    eyebrow: 'Recent Loss',
+    eyebrow: 'Recent Loss (At-Need)',
     title: 'Immediate need checklist',
     description:
-      'Alternative and uncommon services can be harder to navigate after a death because transport, timing, provider access, and legal conditions can quickly shape what remains possible. This checklist focuses on protecting those options while also covering the standard actions that still need immediate attention.',
+      'Alternative and uncommon services can be harder to navigate at-need, after a death has occurred, because transport, timing, provider access, and legal conditions can quickly shape what remains possible. This checklist focuses on protecting those options while also covering the standard actions that still need immediate attention.',
     checklist: currentLossChecklist,
   },
   {
@@ -1519,14 +1519,14 @@ const checklistLinks = {
     path: '/after-death-steps#alternative-planning-checklist',
     title: 'Alternative planning checklist',
     description:
-      'Open the planning checklist for alternative or uncommon services, including option-specific logistics and the standard preparation steps.',
+      'Open the pre-need planning checklist for alternative or uncommon services, including option-specific logistics and the standard preparation steps.',
     linkLabel: 'Go to checklist',
   },
   immediate: {
     path: '/after-death-steps#immediate-need-checklist',
     title: 'Immediate need checklist',
     description:
-      'Open the recent-loss checklist for alternative or uncommon services, including immediate logistics and the standard actions that still need attention.',
+      'Open the at-need checklist for a recent loss, including immediate logistics for alternative or uncommon services and the standard actions that still need attention.',
     linkLabel: 'Open the immediate need checklist',
   },
   general: {
@@ -2581,7 +2581,7 @@ function HomePage() {
     {
       title: 'Get Organized',
       description:
-        'Navigate comprehensive checklists, designed for clarity, to walk you through every step, from immediate essential tasks to final arrangements.',
+        'Navigate comprehensive checklists for both pre-need and at-need situations, designed for clarity, to walk you through every step from essential tasks to final arrangements.',
       icon: <img src="/Access%20regulatory%20resources.png" alt="" className="home-guidance-icon-image" />,
     },
   ];
@@ -2609,6 +2609,7 @@ function HomePage() {
           <p className="home-plan-preview-intro">
             Navigate uncommon after-death services with state-specific regulations
             and clear steps for both pre-planning and immediate-need scenarios,
+            whether you are arranging pre-need or at-need,
             from the first call to final arrangements.
           </p>
           <div className="home-plan-preview-shell">
@@ -2728,7 +2729,7 @@ function AlternativeFuneralOptionsPage() {
         <div className="container">
           <SectionIntro
             title="State Search"
-            subtitle={<>Search or select a state to view alternative options, providers, and resources.<br />Each state page covers what is available<br />whether you are planning ahead or handling a recent loss.</>}
+            subtitle={<>Search or select a state to view alternative options, providers, and resources.<br />Each state page covers what is available<br />whether you are planning ahead (pre-need) or handling a recent loss (at-need).</>}
           />
           <USMapInteractive />
           <StateSearchBlock
@@ -3692,8 +3693,8 @@ function CombinedStateDetailPage() {
 
 function ResourcesPage() {
   useDocumentTitle('Arrangements Checklist - GoodbyeYou');
-  useMetaDescription('Download planning, immediate-need, and general after-death checklists, plus follow-up resources covering what to do first, who to contact, documents, and provider pathways.');
-  usePageMeta('Arrangements Checklist - GoodbyeYou', 'Download planning, immediate-need, and general after-death checklists, plus follow-up resources covering what to do first, who to contact, documents, and provider pathways.');
+  useMetaDescription('Pre-need and at-need checklists for alternative after-death services, plus follow-up resources covering what to do first, who to contact, documents, and provider pathways.');
+  usePageMeta('Arrangements Checklist - GoodbyeYou', 'Pre-need and at-need checklists for alternative after-death services, plus follow-up resources covering what to do first, who to contact, documents, and provider pathways.');
 
   return (
     <>
