@@ -339,6 +339,43 @@ export const hubDirectory = [
               ],
             },
           ],
+          attorneys: [
+            {
+              name: 'Law Offices of Daniel A. Hunt',
+              focus: 'Experts in Health & Safety Code 7100 disputes and pre-planning for complex disposition wishes.',
+              phone: '(916) 488-9788',
+              website: 'dhtrustlaw.com',
+              location: 'Sacramento / Folsom',
+            },
+            {
+              name: 'The Elder & Disability Law Firm, APC',
+              focus: 'Specialized in Advance Directives and protecting the rights of individuals choosing alternative exits.',
+              phone: '(909) 677-2671',
+              website: 'california-elder-law.com',
+              location: 'Redlands / Riverside',
+            },
+            {
+              name: 'Frisella Neilson, APC',
+              focus: 'Focuses on Incapacity Planning and ensuring post-death agents are properly empowered for non-traditional burials.',
+              phone: '(619) 260-3500',
+              website: 'frisellalaw.com',
+              location: 'San Diego',
+            },
+            {
+              name: 'Steven M. Sweat, APC',
+              focus: 'Specialists in Funeral Home Negligence and ensuring providers honor specific green/alternative contracts.',
+              phone: '(310) 592-0445',
+              website: 'victimslawyer.com',
+              location: 'Los Angeles / Glendale',
+            },
+            {
+              name: 'Kazerouni Law Group, APC',
+              focus: 'Consumer Protection specialists who assist with disputes regarding overcharging or "The Funeral Rule" violations.',
+              phone: '(800) 400-6808',
+              website: 'kazlg.com',
+              location: 'Costa Mesa / SF',
+            },
+          ],
         },
         {
           title: 'Cost Estimates',
@@ -350,8 +387,61 @@ export const hubDirectory = [
       ],
     },
     immediate: {
-      intro: 'Navigate alternative options and state specific resources needed for a recent death service plan.',
+      intro: '',
       sections: [],
+    },
+    legalResources: {
+      intro: 'In California, the legal framework for after-death wishes is primarily governed by Health and Safety Code sections 7100-7117. Unlike some states where these instructions are buried in a broad "Advance Directive," California law recognizes specific written instructions for the Right to Control Disposition.',
+      items: [
+        {
+          label: 'Statutory Form for Right to Control Disposition (CA H&S Code 7100)',
+          description: 'This is the "gold standard" document in California. It allows you to name a specific person (agent) to carry out your wishes and provide binding instructions for alternative methods like Aquamation or Sea Burial.',
+          links: [
+            { label: 'CA Health & Safety Code 7100', agency: 'California Legislature', url: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=7100.&lawCode=HSC' },
+          ],
+        },
+        {
+          label: 'Advance Healthcare Directive (AHCD)',
+          description: 'While primarily for medical decisions, California\'s AHCD includes a section for "Post-Death Instructions." This is where you can legally mandate Natural Organic Reduction (NOR) (legal in CA as of 2027, or via transport now) or Body Donation.',
+        },
+        {
+          label: 'Personal Authorization for Sea Burial',
+          description: 'If choosing full-body sea burial, California providers often require a specific signed authorization that acknowledges the EPA\'s 3-nautical-mile and 600-foot depth requirements.',
+          links: [
+            { label: 'Sea Burial Legalities', agency: 'EPA Region 9 (Pacific Southwest)', url: 'https://www.epa.gov/ocean-dumping/burial-sea' },
+          ],
+        },
+        {
+          label: 'California Cemetery & Funeral Bureau (CFB)',
+          description: 'The state agency that regulates all funeral directors and crematories. You can verify a license or file a complaint regarding an alternative provider through their Consumer Portal.',
+          links: [
+            { label: 'Verify a Funeral Director License', agency: 'DCA License Search', url: 'https://www.dca.ca.gov/consumers/index.shtml' },
+          ],
+        },
+        {
+          label: 'Funeral Consumers Alliance (FCA) of California',
+          description: 'A powerful non-profit advocate that helps Californians compare "General Price Lists" (GPLs) and understand their rights to a "vault-free" green burial.',
+          links: [
+            { label: 'Legal Aid for Seniors', agency: 'California Rural Legal Assistance (CRLA)', url: 'https://www.crla.org/' },
+          ],
+        },
+        {
+          label: 'H.E.A.L. (Hospice Education & Adult Literacy)',
+          description: 'Provides legal resources specifically for those navigating Medical Aid in Dying (MAiD) and the subsequent disposition of remains.',
+        },
+        {
+          label: 'Consumer Protection and the Funeral Rule',
+          description: 'California families are protected by both state and federal consumer laws when comparing providers, declining unwanted services, and asking what is actually required.',
+          involves: [
+            'You have the right to receive a General Price List when you ask, including when you are comparison shopping.',
+            'You are not required to buy a bundled package if you only want certain services.',
+            'A provider cannot charge an extra fee just because you bring in a casket, container, or shroud from somewhere else.',
+          ],
+          links: [
+            { label: 'The Funeral Rule Guide', agency: 'Federal Trade Commission (FTC)', url: 'https://www.ftc.gov/business-guidance/resources/complying-funeral-rule' },
+          ],
+        },
+      ],
     },
   },
   {

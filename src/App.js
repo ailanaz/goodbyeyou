@@ -3369,7 +3369,7 @@ function CombinedStateDetailPage() {
                   {section.attorneys && (
                     <div className="provider-list">
                       <h3 className="option-category-title" style={{ marginTop: '24px' }}>Attorneys Specializing in Final Arrangements</h3>
-                      <p className="option-category-description">These Colorado-based firms specialize in Elder Law, Probate, and the Disposition of Last Remains, with specific experience in alternative and green planning.</p>
+                      <p className="option-category-description">These {hub.region}-based firms specialize in Elder Law, Probate, and the Disposition of Last Remains, with specific experience in alternative and green planning.</p>
                       {section.attorneys.map((attorney) => {
                         const attKey = `dir-${attorney.name.replace(/\s+/g, '-').toLowerCase()}`;
                         const isAttExpanded = !!expandedOptions[attKey];
