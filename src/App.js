@@ -3086,9 +3086,12 @@ function CombinedStateDetailPage() {
     !s.title.includes('Availability') && !s.title.includes('Provider Directory') && !s.title.includes('Cost Estimates') && !s.title.includes('Explore Options')
   );
 
+  const hasLegalResources = Boolean(hub.legalResources || (topSections.length > 0 && topSections.some((s) => s.attorneys)));
+
   const allNavSections = [
     'Available Options',
-    ...topSections.map((s) => s.title),
+    ...topSections.map(() => 'Service Providers'),
+    ...(hasLegalResources ? ['Legal Resources'] : []),
     'Other Resources',
   ];
 
@@ -3246,7 +3249,7 @@ function CombinedStateDetailPage() {
                 return (
                 <div className={`sdl-section ${sectionColor}`} key={section.title} id={`section-${idx + 1}`}>
                   <div className="sdl-section-header">
-                    <h2>{section.title.includes('Provider') ? `Provider Directory in ${hub.region}` : section.title}</h2>
+                    <h2>{section.title.includes('Provider') ? `Service Providers in ${hub.region}` : section.title}</h2>
                     {section.intro && <p className="sdl-section-sub">{section.intro}</p>}
                   </div>
                   {section.items.length > 0 && (
@@ -3366,10 +3369,20 @@ function CombinedStateDetailPage() {
                       </div>
                     </div>
                   ))}
-                  {section.attorneys && (
+                </div>
+                );
+              })}
+
+              {hasLegalResources && (
+              <div className="sdl-section sdl-section--planning-ahead" id={`section-${topSections.length + 1}`}>
+                <div className="sdl-section-header">
+                  <h2>Legal Resources</h2>
+                </div>
+                {topSections.map((section) => section.attorneys && (
+                  <div key="attorneys">
+                    <h3 className="option-category-title" style={{ marginTop: '24px' }}>Attorneys Specializing in Final Arrangements</h3>
+                    <p className="option-category-description">These {hub.region}-based firms specialize in Elder Law, Probate, and the Disposition of Last Remains, with specific experience in alternative and green planning.</p>
                     <div className="provider-list">
-                      <h3 className="option-category-title" style={{ marginTop: '24px' }}>Attorneys Specializing in Final Arrangements</h3>
-                      <p className="option-category-description">These {hub.region}-based firms specialize in Elder Law, Probate, and the Disposition of Last Remains, with specific experience in alternative and green planning.</p>
                       {section.attorneys.map((attorney) => {
                         const attKey = `dir-${attorney.name.replace(/\s+/g, '-').toLowerCase()}`;
                         const isAttExpanded = !!expandedOptions[attKey];
@@ -3403,12 +3416,12 @@ function CombinedStateDetailPage() {
                         );
                       })}
                     </div>
-                  )}
-                </div>
-                );
-              })}
+                  </div>
+                ))}
+              </div>
+              )}
 
-              <div className="sdl-section sdl-section--planning-now" id={`section-${topSections.length + 1}`}>
+              <div className="sdl-section sdl-section--planning-now" id={`section-${topSections.length + (hasLegalResources ? 2 : 1)}`}>
                 <div className="sdl-section-header">
                   <h2>Other Resources</h2>
                 </div>
